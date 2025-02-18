@@ -1,2 +1,0 @@
-set(perception_msgs_MESSAGE_FILES "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/PercCmd.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/PercState.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/PercReq.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/TaskList.msg")
-set(perception_msgs_SERVICE_FILES "")

@@ -1,8 +1,0 @@
-prefix=/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/ros_interface
-
-Name: ros_interface
-Description: Description of ros_interface
-Version: 1.0.0
-Cflags: -I/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/ros_interface/include
-Libs: -L${prefix}/lib 
-Requires: message_runtime

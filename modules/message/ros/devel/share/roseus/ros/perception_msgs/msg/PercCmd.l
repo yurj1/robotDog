@@ -1,1 +1,0 @@
-/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/roseus/ros/perception_msgs/msg/PercCmd.l

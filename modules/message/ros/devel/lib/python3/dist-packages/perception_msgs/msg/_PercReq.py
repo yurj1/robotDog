@@ -1,1 +1,0 @@
-/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/lib/python3/dist-packages/perception_msgs/msg/_PercReq.py

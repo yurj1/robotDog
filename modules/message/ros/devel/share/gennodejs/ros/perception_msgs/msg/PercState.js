@@ -1,1 +1,0 @@
-/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/gennodejs/ros/perception_msgs/msg/PercState.js

@@ -1,1 +1,0 @@
-/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/ros_interface/share/roseus/ros/ros_interface/msg/GaussianInfo.l
