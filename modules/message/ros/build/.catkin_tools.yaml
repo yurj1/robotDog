@@ -1,0 +1,6 @@
+devel_space: /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel
+install: false
+install_space: /home/meizan/workspace/athena-robot-dog/modules/message/ros/install
+profile: default
+source_space: /home/meizan/workspace/athena-robot-dog/modules/message/ros/src
+workspace: /home/meizan/workspace/athena-robot-dog/modules/message/ros
