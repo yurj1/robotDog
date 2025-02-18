@@ -1,0 +1,2 @@
+source devel/setup.bash
+roslaunch perception_bridge perception_bridge_two.launch

@@ -1,0 +1,1 @@
+/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/catkin_tools_prebuild/local_setup.bash

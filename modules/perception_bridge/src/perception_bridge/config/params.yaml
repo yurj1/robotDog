@@ -1,0 +1,9 @@
+perception_bridge:
+  point_map:
+    A_point: {x: 6.3, y: 5.0, z: 0.0, qx: 0.0, qy: 0.0, qz: 0.63, qw: 0.76}
+    B_point: {x: 5.6, y: -1.8, z: 0.0, qx: 0.0, qy: 0.0, qz: -0.63, qw: 0.77}
+    C_point: {x: 0.7, y: -1.2, z: 0.0, qx: 0.0, qy: 0.0, qz: -0.75, qw: 0.65}
+    D_point: {x: -0.7, y: 0.2, z: 0.0, qx: 0.0, qy: 0.0, qz: 0.0, qw: 1.0}
+    E_point: {x: 3.5, y: 0.4, z: 0.0, qx: 0.0, qy: 0.0, qz: 0.0, qw: 1.0}
+    F_point: {x: 1.5, y: 6.2, z: 0.0, qx: 0.0, qy: 0.0, qz: 0.0, qw: 1.0}
+    G_point: {x: 0.7, y: 0.0, z: 0.0, qx: 0.0, qy: 0.0, qz: 0.0, qw: 1.0}

@@ -1,0 +1,48 @@
+{
+    "robot_dog_state_machine": [
+        {
+            "StateName": "Start",
+            "Transition": [
+                {
+                    "Key": "Idle",
+                    "Target": "IdleDog"
+                }
+            ],
+            "Parent": "null"
+        },
+        {
+            "StateName": "IdleDog",
+            "Transition": [
+                {
+                    "Key": "Run",
+                    "Target": "RunningDog"
+                }
+            ],
+            "Parent": "null"
+        },
+        {
+            "StateName": "RunningDog",
+            "Transition": [
+                {
+                    "Key": "complete",
+                    "Target": "FinishDog"
+                },
+                {
+                    "Key": "Idle",
+                    "Target": "IdleDog"
+                }
+            ],
+            "Parent": "null"
+        },
+        {
+            "StateName": "FinishDog",
+            "Transition": [
+                {
+                    "Key": "Idle",
+                    "Target": "Idle"
+                }
+            ],
+            "Parent": "null"
+        }
+    ]
+}

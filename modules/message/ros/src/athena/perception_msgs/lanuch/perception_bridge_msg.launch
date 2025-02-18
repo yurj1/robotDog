@@ -1,0 +1,4 @@
+<launch>
+        <!-- 加载参数文件 -->
+        <rosparam command="load" file="$(find perception_msgs)/src/config/params.yaml" />
+</launch>

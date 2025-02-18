@@ -1,0 +1,4 @@
+Symlinking /home/meizan/workspace/athena-robot-dog/modules/perception_bridge/devel/share/perception_bridge/cmake/perception_bridgeConfig.cmake
+Symlinking /home/meizan/workspace/athena-robot-dog/modules/perception_bridge/devel/share/perception_bridge/cmake/perception_bridgeConfig-version.cmake
+Symlinking /home/meizan/workspace/athena-robot-dog/modules/perception_bridge/devel/lib/pkgconfig/perception_bridge.pc
+Symlinking /home/meizan/workspace/athena-robot-dog/modules/perception_bridge/devel/lib/perception_bridge/perception_bridge_two_node

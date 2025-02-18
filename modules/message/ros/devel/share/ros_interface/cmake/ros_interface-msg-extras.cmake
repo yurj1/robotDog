@@ -1,0 +1,1 @@
+/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/ros_interface/share/ros_interface/cmake/ros_interface-msg-extras.cmake
