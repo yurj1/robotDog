@@ -14,7 +14,7 @@
 
 #if GLOG_ENABLE
 #include <glog/logging.h>
-#elif MDCLOG_ENABLE
+#elif MDCLOG_ENABLEg
 #include <ara/log/logging.h>
 #endif
 
@@ -28,8 +28,9 @@
 
 using namespace std;
 using namespace athena::function;
-
+#ifndef G_TEST
 int main(int argc, char** argv) {
+  std::cout << 1 << std::endl;
   std::string file_path = "./conf/function/robot-dog/robot_dog.json";
   system("mkdir -p log");
 #if ROS_ENABLE
@@ -51,3 +52,4 @@ int main(int argc, char** argv) {
     robotDog->Close();
   return 1;
 }
+#endif
