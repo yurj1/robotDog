@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 3.5)
 
 #设置项目名称
-project(emergency_stop)
+project(robot_dog_app)
 
 #设置环境变量编译器类型，编译用到的源文件全部都要放到这里
 set(CMAKE_SYSTEM_NAME Linux)
@@ -11,7 +11,7 @@ set(CMAKE_CXX_COMPILER /usr/bin/aarch64-linux-gnu-g++)
 
 set(CMAKE_CROSSCOMPILING TRUE)
 
-set(APP_NAME emergency_stop)
+set(APP_NAME robot_dog_app)
 set(THIRD_PATH_HOME_PATH /usr/local/athena/third_party)
 set(ATHENA_ALGORITHM_PATH_HOME_PATH /usr/local/athena/athena_algorithm)
 
@@ -23,7 +23,7 @@ if(ROS2_ENABLE)
 	find_package(ros2_interface REQUIRED)
 	include_directories(
 	${rclcpp_INCLUDE_DIRS}
-	${PROJECT_SOURCE_DIR}/../../message/ros2/install/ros2_interface/include
+	${PROJECT_SOURCE_DIR}/../message/ros2/install/ros2_interface/include
 	)
 endif()
 
@@ -33,7 +33,7 @@ if(ROS_ENABLE)
 	find_package(roscpp REQUIRED)
 	include_directories(
 	${roscpp_INCLUDE_DIRS}
-	${PROJECT_SOURCE_DIR}/../../message/ros/devel/include
+	${PROJECT_SOURCE_DIR}/../message/ros/devel/include
 	)
 endif()
 
@@ -108,7 +108,7 @@ link_directories(
 
 set(BOOST_LINK_LIBS "-lboost_system  -lboost_signals")
 
-file(GLOB_RECURSE SOURCE_FILES src/*.c src/*.cxx src/*.cpp src/*.cc  ../../common/*.c ../../common/*.cxx ../../common/*.cpp ../../common/*.cc)
+file(GLOB_RECURSE SOURCE_FILES src/*.c src/*.cxx src/*.cpp src/*.cc  ../common/*.c ../common/*.cxx ../common/*.cpp ../common/*.cc)
 
 if(DDS_ENABLE)
 find_package(fastcdr HINTS ${THIRD_PATH_HOME_PATH}/arm64/lib/cmake/fastcdr)
