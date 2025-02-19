@@ -1,8 +1,0 @@
-prefix=/home/meizan/workspace/athena-robot-dog/modules/perception_bridge/devel/.private/perception_bridge
-
-Name: perception_bridge
-Description: Description of perception_bridge
-Version: 3.2.1
-Cflags: -I/home/meizan/workspace/athena-robot-dog/modules/perception_bridge/src/perception_bridge/include
-Libs: -L${prefix}/lib 
-Requires: roscpp std_msgs geometry_msgs perception_msgs

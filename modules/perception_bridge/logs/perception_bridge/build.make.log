@@ -1,6 +1,0 @@
-[35m[1mScanning dependencies of target perception_bridge_two_node[0m
-[ 50%] [32mBuilding CXX object CMakeFiles/perception_bridge_two_node.dir/src/perception_bridge_node.cpp.o[0m
-[ 50%] [32mBuilding CXX object CMakeFiles/perception_bridge_two_node.dir/src/RobotDogState.cpp.o[0m
-[ 75%] [32mBuilding CXX object CMakeFiles/perception_bridge_two_node.dir/src/DogMain.cpp.o[0m
-[100%] [32m[1mLinking CXX executable /home/meizan/workspace/athena-robot-dog/modules/perception_bridge/devel/.private/perception_bridge/lib/perception_bridge/perception_bridge_two_node[0m
-[100%] Built target perception_bridge_two_node
