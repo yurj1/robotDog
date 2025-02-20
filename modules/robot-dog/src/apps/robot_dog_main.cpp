@@ -566,7 +566,9 @@ namespace athena
         }
 
     void RobotDogMain::clear() {
-        task_list_.task_id = 0;
+      //感知数据初始化
+      {
+        task_list_perception_.task_id = 0;
         geometry_msgs::Pose pose;
         pose.position.x = 0;
         pose.position.y = 0;
@@ -575,17 +577,38 @@ namespace athena
         pose.orientation.y = 0;
         pose.orientation.z = 0;
         pose.orientation.w = 0;
-        task_list_.target_position = pose;
-        task_list_.target_object = "";
-        task_list_.task_state = perception_bridge::TaskState::STATE_IDLE;
-        task_list_.task_result = perception_bridge::TaskResult::RESULT_INVALID;
-        task_list_.isInPlaceRotation = false;
-
+        task_list_perception_.target_position = pose;
+        task_list_perception_.target_object = "";
+        task_list_perception_.task_state = perception_bridge::TaskState::STATE_IDLE;
+        task_list_perception_.task_result = perception_bridge::TaskResult::RESULT_INVALID;
+        task_list_perception_.isInPlaceRotation = false;
+      }
+      //规控数据初始化
+      {
+        task_list_planning_.task_id = 0;
+        geometry_msgs::Pose pose;
+        pose.position.x = 0;
+        pose.position.y = 0;
+        pose.position.z = 0;
+        pose.orientation.x = 0;
+        pose.orientation.y = 0;
+        pose.orientation.z = 0;
+        pose.orientation.w = 0;
+        task_list_planning_.target_position = pose;
+        task_list_planning_.target_object = "";
+        task_list_planning_.task_state = perception_bridge::TaskState::STATE_IDLE;
+        task_list_planning_.task_result = perception_bridge::TaskResult::RESULT_INVALID;
+        task_list_planning_.isInPlaceRotation = false;
+      } 
+      //状态反馈初始化
+      {
         perc_state_.action_id = 0;
-        /* perc_state_.exe_state = perception_msgs::PercState::ACTION_IDLE;
-        perc_state_.exe_result = perception_msgs::PercState::ACTION_NONE; */
-        state_manager_.Clear();
-        UpdateState();
+        perc_state_.err_code = 0;
+        perc_state_.exe_result = 0;
+      }
+        
+      state_manager_.Clear();
+      UpdateState();
     }
       
     bool RobotDogMain::getPose(const std::string& point_name, geometry_msgs::Pose& pose) {
@@ -638,7 +661,7 @@ namespace athena
     void RobotDogMain::CancelTask() {
         //事件更新
           state_manager_.handleTaskEvent(TASK_CANCEL);
-          task_list_.task_type = perception_bridge::TaskType::TASK_CANCEL;
+          task_list_perception_.task_type = perception_bridge::TaskType::TASK_CANCEL;
           perc_state_.perc_kind = perception_msgs::PercState::PERC_CANCEL;
           ROS_INFO("Cancel Task");
     }
@@ -647,7 +670,7 @@ namespace athena
     void RobotDogMain::GoDest(const perception_msgs::PercCmd::ConstPtr& msg) {
         //事件更新
           state_manager_.handleTaskEvent(TASK_NAVIGATION);
-          task_list_.task_type = perception_bridge::TaskType::TASK_NAVIGATION;
+          task_list_planning_.task_type = perception_bridge::TaskType::TASK_NAVIGATION;
           perc_state_.perc_kind = perception_msgs::PercState::PERC_DEST;
           std::string point_name = msg->point_name;
           geometry_msgs::Pose pose;
@@ -658,7 +681,7 @@ namespace athena
             ROS_INFO("  Orientation: x=%f, y=%f, z=%f, w=%f", 
                     pose.orientation.x, pose.orientation.y, 
                     pose.orientation.z, pose.orientation.w);
-            task_list_.target_position = pose;
+            task_list_planning_.target_position = pose;
 
             PublishPose(pose);
           } else {
@@ -669,7 +692,7 @@ namespace athena
     void RobotDogMain::Follow(const perception_msgs::PercCmd::ConstPtr& msg) {
         //事件更新
           state_manager_.handleTaskEvent(TASK_FOLLOW);
-          task_list_.task_type = perception_bridge::TaskType::TASK_FOLLOW;
+          task_list_perception_.task_type = perception_bridge::TaskType::TASK_FOLLOW;
           perc_state_.perc_kind = perception_msgs::PercState::PERC_FOLLOW;
           ROS_INFO("Follow %s:", msg->follow_name.c_str());
     }
@@ -677,7 +700,7 @@ namespace athena
     void RobotDogMain::Welcome(const perception_msgs::PercCmd::ConstPtr& msg) {
         //事件更新
           state_manager_.handleTaskEvent(TASK_WELCOME);
-          task_list_.task_type = perception_bridge::TaskType::TASK_WELCOME;
+          task_list_perception_.task_type = perception_bridge::TaskType::TASK_WELCOME;
           perc_state_.perc_kind = 61;
           ROS_INFO("Welcome %s:", msg->follow_name.c_str());
     }
@@ -686,7 +709,8 @@ namespace athena
       {
         //事件更新
         state_manager_.handleTaskEvent(TASK_LOBBY);
-        task_list_.task_type = perception_bridge::TaskType::TASK_LOBBY;
+        task_list_perception_.task_type = perception_bridge::TaskType::TASK_LOBBY;
+        task_list_planning_.task_type = perception_bridge::TaskType::TASK_NAVIGATION;
         perc_state_.perc_kind = 62;
         std::string point_name = msg->point_name;
         geometry_msgs::Pose pose;
@@ -698,8 +722,6 @@ namespace athena
                   pose.orientation.x, pose.orientation.y, 
                   pose.orientation.z, pose.orientation.w);
           
-          //pt_pub_.publish(pose);
-          //_pubscriber[PUB_TOP::PT].publish(pose);
           PublishPose(pose);
         } else {//固定点坐标赋值
           ROS_INFO("Point %s not found! Get Point value", point_name.c_str());
@@ -707,8 +729,9 @@ namespace athena
           pose.position.y = msg->point.y;
           pose.position.z = msg->point.z;
         }//不是固定点则坐标赋值
-        task_list_.target_position = pose;
-        task_list_.isInPlaceRotation = true;
+        task_list_planning_.target_position = pose;
+        task_list_planning_.isInPlaceRotation = true;
+        PublishTaskList(task_list_planning_);
         ROS_INFO("Find %s:", msg->follow_name.c_str());
     }
 
@@ -718,9 +741,10 @@ namespace athena
 
         clear();
         
-        task_list_.task_id = msg->action_id;
+        task_list_perception_.task_id = msg->action_id;
+        task_list_planning_.task_id = msg->action_id;
         perc_state_.action_id = msg->action_id;
-        task_list_.target_object = msg->follow_name;
+        task_list_perception_.target_object = msg->follow_name;
 
         switch (msg->perc_kind)
         {
@@ -742,32 +766,32 @@ namespace athena
         case perception_msgs::PercCmd::PERC_NODE_CLOSE://关闭感知规划模块
           //事件更新
           state_manager_.handleTaskEvent(TASK_NODE_CLOSE);
-          task_list_.task_type = perception_bridge::TaskType::TASK_NODE_CLOSE;
+          task_list_perception_.task_type = perception_bridge::TaskType::TASK_NODE_CLOSE;
           perc_state_.perc_kind = perception_msgs::PercState::PERC_NODE_CLOSE;
           break;
         case perception_msgs::PercCmd::PERC_NODE_START://启动感知规划模块
           //事件更新
           state_manager_.handleTaskEvent(TASK_NODE_START);
-          task_list_.task_type = perception_bridge::TaskType::TASK_NODE_START;
+          task_list_perception_.task_type = perception_bridge::TaskType::TASK_NODE_START;
           perc_state_.perc_kind = perception_msgs::PercState::PERC_NODE_START;
           break;
         case perception_msgs::PercCmd::PERC_NODE_RESET://重启感知规划模块
           //事件更新
           state_manager_.handleTaskEvent(TASK_NODE_RESET);
-          task_list_.task_type = perception_bridge::TaskType::TASK_NODE_RESET;
+          task_list_perception_.task_type = perception_bridge::TaskType::TASK_NODE_RESET;
           perc_state_.perc_kind = perception_msgs::PercState::PERC_NODE_RESET;
           break;
         default:
           break;
         }
-        PublishTaskList(task_list_);
+        PublishTaskList(task_list_perception_);
     }
     //处理感知反馈消息
     void RobotDogMain::ptCallback(const perception_msgs::TaskList::ConstPtr& msg) {
         ROS_INFO("Received TaskPt: task_type=%u, x=%f, y=%f, z=%f target_object=%s",
                   msg->task_type, msg->target_position.position.x,  msg->target_position.position.y,  msg->target_position.position.z, msg->target_object.c_str());
 
-        if(task_list_.task_type != msg->task_type){
+        if(task_list_perception_.task_type != msg->task_type){
             ROS_WARN("Different types");
         }
         auto GetPose = [](const perception_msgs::TaskList::ConstPtr& msg){
@@ -787,26 +811,26 @@ namespace athena
         {
         case perception_bridge::TaskType::TASK_FOLLOW://跟随任务
         case perception_bridge::TaskType::TASK_WELCOME://欢迎任务
-          task_list_.task_type = perception_bridge::TaskType::TASK_NAVIGATION;
-          task_list_.target_position = pose;
+          task_list_planning_.task_type = perception_bridge::TaskType::TASK_NAVIGATION;
+          task_list_planning_.target_position = pose;
 
           PublishPose(pose);
-          PublishTaskList(task_list_);
+          PublishTaskList(task_list_planning_);
           break;
         case perception_bridge::TaskType::TASK_LOBBY://找人任务
-          if(msg->target_object == task_list_.target_object){
+          if(msg->target_object == task_list_perception_.target_object){
               ROS_INFO("Find target suceess!");
                 state_manager_.SetCanFinish(true);
-                task_list_.isInPlaceRotation = false;
+                task_list_perception_.isInPlaceRotation = false;
           }
           else{
             ROS_INFO("Find target error!");
           }
-          task_list_.task_type = perception_bridge::TaskType::TASK_NAVIGATION;
-          task_list_.target_position = pose;
+          task_list_planning_.task_type = perception_bridge::TaskType::TASK_NAVIGATION;
+          task_list_planning_.target_position = pose;
 
           PublishPose(pose);
-          PublishTaskList(task_list_);
+          PublishTaskList(task_list_planning_);
           break;
         default:
           break;

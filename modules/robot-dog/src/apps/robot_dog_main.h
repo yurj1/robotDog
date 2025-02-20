@@ -258,7 +258,8 @@ namespace athena
       void PublishPose(geometry_msgs::Pose msg);
       void PublishState(perception_msgs::PercState msg);
     private:
-      perception_msgs::TaskList task_list_;
+      perception_msgs::TaskList task_list_perception_; //to perception
+      perception_msgs::TaskList task_list_planning_; //to planning
       perception_msgs::PercState perc_state_;
 
       // 状态管理器
