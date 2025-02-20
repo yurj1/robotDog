@@ -56,13 +56,18 @@ void RobotDogState::handleTaskEvent(const TaskType& event)
 
 void RobotDogState::handleStateEvent(const TaskState& state,  const TaskResult& result)
 {
-    ROS_INFO("Recv state: [%d], result: [%d]", state, result);
+    
     //特殊状态下不切换为完成状态
     if(!m_can_finish && state == TaskState::STATE_COMPLETED){
         ROS_INFO("Special task not Done");
         return;
     }
-    if(m_currentState != state) m_currentState = state;
-    if(m_currentResult != result) m_currentResult = result;
+
+    if(m_currentState != state || m_currentResult != result) {
+        ROS_INFO("Recv  change state: [%d]-> [%d], result: [%d] -> [%d]", m_currentState, state, m_currentResult, result);
+        m_currentState = state;
+        m_currentResult = result;
+    }
+
 }
 
