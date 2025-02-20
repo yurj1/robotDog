@@ -14,7 +14,6 @@
 #include "modules/common/state_machine/state_context.hpp"
 #include "modules/common/state_machine/state_flags.hpp"
 #include "modules/common/state_machine/state.hpp"
-#include "message_manager/message_manager.h"
 #include "modules/common/timer/timer_manager.h"
 #include "modules/common/fault/fault_client.hpp"
 #include "modules/common/timer/ad_timer_manager.h"
@@ -45,7 +44,7 @@ namespace athena
 
     class RobotDogMain {
     public:
-    RobotDogMain(std::string file_path);
+    RobotDogMain(std::string file_path = "./conf/function/robot-dog/robot_dog.json");
     ~RobotDogMain() = default;
       /**
        * @brief     初始化．
@@ -89,10 +88,6 @@ namespace athena
       std::shared_ptr<RobotDogConf> GetConf() const;
       // 初始化待传参数
       void clear();
-      // 根据 point_name 获取 geometry_msgs/Pose
-      bool getPose(const std::string& point_name, geometry_msgs::Pose& pose);
-      // 将状态管理的状态更新到字段消息中
-      void UpdateState();
 
     protected:
       // 初始化状态
@@ -199,6 +194,10 @@ namespace athena
       void stateCallback(const perception_msgs::TaskList::ConstPtr& msg);
       const std::map<std::string, geometry_msgs::Pose>& GetPointMap();
 
+      void PublishTaskList(perception_msgs::TaskList msg);
+      void PublishPose(geometry_msgs::Pose msg);
+      void PublishState(perception_msgs::PercState msg);
+
     protected:
       /**
        * @brief     状态机初始化.
@@ -242,21 +241,6 @@ namespace athena
        */
       void Spin();
 
-    private:
-      // 取消任务
-      void CancelTask();
-      // 前往固定点任务
-      void GoDest(const perception_msgs::PercCmd::ConstPtr& msg);
-      // 跟随任务
-      void Follow(const perception_msgs::PercCmd::ConstPtr& msg);
-      // 欢迎任务
-      void Welcome(const perception_msgs::PercCmd::ConstPtr& msg);
-      // 找人任务
-      void GoDestAndFindTarget(const perception_msgs::PercCmd::ConstPtr& msg);
-
-      void PublishTaskList(perception_msgs::TaskList msg);
-      void PublishPose(geometry_msgs::Pose msg);
-      void PublishState(perception_msgs::PercState msg);
     private:
       perception_msgs::TaskList task_list_perception_; //to perception
       perception_msgs::TaskList task_list_planning_; //to planning

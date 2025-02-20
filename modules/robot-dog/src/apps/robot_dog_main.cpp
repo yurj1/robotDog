@@ -1,6 +1,18 @@
 #include <apps/robot_dog_main.h>
 #include "version.h"
 
+#include <csignal>
+// 全局标志位，用于控制主循环
+volatile sig_atomic_t appRun = 1;
+void signal_handler(int signal) {
+    if (signal == SIGINT) { // 检查是否为 Ctrl+C 信号(SIGINT)
+        AINFO << "Caught SIGINT, initiating graceful shutdown...";
+        appRun = 0; // 设置标志位以退出程序循环
+        // 终止程序
+        std::exit(EXIT_SUCCESS);
+    }
+}
+
 namespace athena
 {
   namespace function {
@@ -88,10 +100,10 @@ namespace athena
 
     void RobotDogMain::Loop()
     {
-      while (1)
+      while (appRun)
       {
         std::cout << "\033[32m" << Version::GetVersion() <<  "\tDate: " << Version::GetCurrentDateTime() << std::endl;
-        sleep(30);
+        std::this_thread::sleep_for(std::chrono::seconds(30));
       }
       
     }
@@ -193,7 +205,7 @@ namespace athena
     //按周期发布状态
     void RobotDogMain::StateCallback(void *param)
     {
-      PublishState(perc_state_); // 发布状态
+      PublishState(state_manager_.GetStateCallback()); // 发布状态
     }
 
     /* void RobotDogMain::PublishObuCmdMsg(int code, int val)
@@ -553,7 +565,7 @@ namespace athena
 
     void RobotDogMain::Spin()
         {
-          while (1)
+          while (appRun)
           {
             if (function_activation_)
             {
@@ -607,240 +619,20 @@ namespace athena
         perc_state_.exe_result = 0;
       }
         
-      state_manager_.Clear();
-      UpdateState();
+      state_manager_.Init();
     }
       
-    bool RobotDogMain::getPose(const std::string& point_name, geometry_msgs::Pose& pose) {
-      const auto& point_map = GetPointMap();
-        auto it = point_map.find(point_name);
-        if (it != point_map.end()) {
-          pose = it->second;
-          return true;
-        }
-        ROS_ERROR("Point name not found: %s", point_name.c_str());
-        return false;
-    }
-
-    void RobotDogMain::UpdateState() {
-        switch (state_manager_.GetState())
-        {
-        case STATE_IDLE:
-          perc_state_.exe_state = perception_msgs::PercState::ACTION_IDLE;
-          break;
-        case STATE_RUNNING:
-          perc_state_.exe_state = perception_msgs::PercState::ACTION_RUNNING;
-          break;
-        case STATE_COMPLETED:
-          perc_state_.exe_state = perception_msgs::PercState::ACTION_DONE;
-          break;
-        default:
-          break;
-        }
-
-        switch (state_manager_.GetResult())
-        {
-        case RESULT_INVALID:
-          perc_state_.exe_result = perception_msgs::PercState::ACTION_NONE;
-          break;
-        case RESULT_SUCCESS:
-          perc_state_.exe_result = perception_msgs::PercState::ACTION_SUCCESS;
-          break;
-        case RESULT_FAILED:
-          perc_state_.exe_result = perception_msgs::PercState::ACTION_FAIL;
-          break;
-        default:
-          break;
-        }
-    }
-
-    /* void RobotDogMain::loadPointMap() {
-        
-    } */
-
-    void RobotDogMain::CancelTask() {
-        //事件更新
-          state_manager_.handleTaskEvent(TASK_CANCEL);
-          task_list_perception_.task_type = perception_bridge::TaskType::TASK_CANCEL;
-          perc_state_.perc_kind = perception_msgs::PercState::PERC_CANCEL;
-          ROS_INFO("Cancel Task");
-    }
-
-    //前往固定点任务
-    void RobotDogMain::GoDest(const perception_msgs::PercCmd::ConstPtr& msg) {
-        //事件更新
-          state_manager_.handleTaskEvent(TASK_NAVIGATION);
-          task_list_planning_.task_type = perception_bridge::TaskType::TASK_NAVIGATION;
-          perc_state_.perc_kind = perception_msgs::PercState::PERC_DEST;
-          std::string point_name = msg->point_name;
-          geometry_msgs::Pose pose;
-          if (this->getPose(point_name, pose)) {
-            ROS_INFO("Pose for %s:", point_name.c_str());
-            ROS_INFO("  Position: x=%f, y=%f, z=%f", 
-                    pose.position.x, pose.position.y, pose.position.z);
-            ROS_INFO("  Orientation: x=%f, y=%f, z=%f, w=%f", 
-                    pose.orientation.x, pose.orientation.y, 
-                    pose.orientation.z, pose.orientation.w);
-            task_list_planning_.target_position = pose;
-
-            PublishPose(pose);
-          } else {
-            ROS_WARN("Point %s not found!", point_name.c_str());
-          }
-    }
-    //跟随任务
-    void RobotDogMain::Follow(const perception_msgs::PercCmd::ConstPtr& msg) {
-        //事件更新
-          state_manager_.handleTaskEvent(TASK_FOLLOW);
-          task_list_perception_.task_type = perception_bridge::TaskType::TASK_FOLLOW;
-          perc_state_.perc_kind = perception_msgs::PercState::PERC_FOLLOW;
-          ROS_INFO("Follow %s:", msg->follow_name.c_str());
-    }
-    //欢迎任务
-    void RobotDogMain::Welcome(const perception_msgs::PercCmd::ConstPtr& msg) {
-        //事件更新
-          state_manager_.handleTaskEvent(TASK_WELCOME);
-          task_list_perception_.task_type = perception_bridge::TaskType::TASK_WELCOME;
-          perc_state_.perc_kind = 61;
-          ROS_INFO("Welcome %s:", msg->follow_name.c_str());
-    }
-    //找人任务
-    void RobotDogMain::GoDestAndFindTarget(const perception_msgs::PercCmd::ConstPtr& msg)
-      {
-        //事件更新
-        state_manager_.handleTaskEvent(TASK_LOBBY);
-        task_list_perception_.task_type = perception_bridge::TaskType::TASK_LOBBY;
-        task_list_planning_.task_type = perception_bridge::TaskType::TASK_NAVIGATION;
-        perc_state_.perc_kind = 62;
-        std::string point_name = msg->point_name;
-        geometry_msgs::Pose pose;
-        if (this->getPose(point_name, pose)) {
-          ROS_INFO("Pose for %s:", point_name.c_str());
-          ROS_INFO("  Position: x=%f, y=%f, z=%f", 
-                  pose.position.x, pose.position.y, pose.position.z);
-          ROS_INFO("  Orientation: x=%f, y=%f, z=%f, w=%f", 
-                  pose.orientation.x, pose.orientation.y, 
-                  pose.orientation.z, pose.orientation.w);
-          
-          PublishPose(pose);
-        } else {//固定点坐标赋值
-          ROS_INFO("Point %s not found! Get Point value", point_name.c_str());
-          pose.position.x = msg->point.x;
-          pose.position.y = msg->point.y;
-          pose.position.z = msg->point.z;
-        }//不是固定点则坐标赋值
-        task_list_planning_.target_position = pose;
-        task_list_planning_.isInPlaceRotation = true;
-        PublishTaskList(task_list_planning_);
-        ROS_INFO("Find %s:", msg->follow_name.c_str());
-    }
-
     //处理集成消息
     void RobotDogMain::cmdCallback(const perception_msgs::PercCmd::ConstPtr& msg) {
-        ROS_INFO("Received PercCmd: action_id=%lu, perc_kind=%u", msg->action_id, msg->perc_kind);
-
-        clear();
-        
-        task_list_perception_.task_id = msg->action_id;
-        task_list_planning_.task_id = msg->action_id;
-        perc_state_.action_id = msg->action_id;
-        task_list_perception_.target_object = msg->follow_name;
-
-        switch (msg->perc_kind)
-        {
-        case perception_msgs::PercCmd::PERC_CANCEL://取消任务
-          CancelTask();
-          break;
-        case perception_msgs::PercCmd::PERC_DEST://前往固定点
-          GoDest(msg);
-          break;
-        case perception_msgs::PercCmd::PERC_FOLLOW://跟随任务
-          Follow(msg);
-          break;
-        case perception_msgs::PercCmd::PERC_WELCOME_DEMO://欢迎任务
-          Welcome(msg);
-          break;
-        case perception_msgs::PercCmd::PERC_LOBBY_DEMO://找人任务
-          GoDestAndFindTarget(msg);
-          break;
-        case perception_msgs::PercCmd::PERC_NODE_CLOSE://关闭感知规划模块
-          //事件更新
-          state_manager_.handleTaskEvent(TASK_NODE_CLOSE);
-          task_list_perception_.task_type = perception_bridge::TaskType::TASK_NODE_CLOSE;
-          perc_state_.perc_kind = perception_msgs::PercState::PERC_NODE_CLOSE;
-          break;
-        case perception_msgs::PercCmd::PERC_NODE_START://启动感知规划模块
-          //事件更新
-          state_manager_.handleTaskEvent(TASK_NODE_START);
-          task_list_perception_.task_type = perception_bridge::TaskType::TASK_NODE_START;
-          perc_state_.perc_kind = perception_msgs::PercState::PERC_NODE_START;
-          break;
-        case perception_msgs::PercCmd::PERC_NODE_RESET://重启感知规划模块
-          //事件更新
-          state_manager_.handleTaskEvent(TASK_NODE_RESET);
-          task_list_perception_.task_type = perception_bridge::TaskType::TASK_NODE_RESET;
-          perc_state_.perc_kind = perception_msgs::PercState::PERC_NODE_RESET;
-          break;
-        default:
-          break;
-        }
-        PublishTaskList(task_list_perception_);
+        state_manager_.handleTaskEvent(msg);
     }
     //处理感知反馈消息
     void RobotDogMain::ptCallback(const perception_msgs::TaskList::ConstPtr& msg) {
-        ROS_INFO("Received TaskPt: task_type=%u, x=%f, y=%f, z=%f target_object=%s",
-                  msg->task_type, msg->target_position.position.x,  msg->target_position.position.y,  msg->target_position.position.z, msg->target_object.c_str());
-
-        if(task_list_perception_.task_type != msg->task_type){
-            ROS_WARN("Different types");
-        }
-        auto GetPose = [](const perception_msgs::TaskList::ConstPtr& msg){
-          geometry_msgs::Pose pose;
-          pose.position.x = msg->target_position.position.x;
-          pose.position.y = msg->target_position.position.y;
-          pose.position.z = msg->target_position.position.z;
-          pose.orientation.x = msg->target_position.orientation.x;
-          pose.orientation.y = msg->target_position.orientation.y;
-          pose.orientation.z = msg->target_position.orientation.z;
-          pose.orientation.w = msg->target_position.orientation.w;
-          return pose;
-        };
-        geometry_msgs::Pose pose(GetPose(msg));
-        
-        switch (msg->task_type)
-        {
-        case perception_bridge::TaskType::TASK_FOLLOW://跟随任务
-        case perception_bridge::TaskType::TASK_WELCOME://欢迎任务
-          task_list_planning_.task_type = perception_bridge::TaskType::TASK_NAVIGATION;
-          task_list_planning_.target_position = pose;
-
-          PublishPose(pose);
-          PublishTaskList(task_list_planning_);
-          break;
-        case perception_bridge::TaskType::TASK_LOBBY://找人任务
-          if(msg->target_object == task_list_perception_.target_object){
-              ROS_INFO("Find target suceess!");
-                state_manager_.SetCanFinish(true);
-                task_list_perception_.isInPlaceRotation = false;
-          }
-          else{
-            ROS_INFO("Find target error!");
-          }
-          task_list_planning_.task_type = perception_bridge::TaskType::TASK_NAVIGATION;
-          task_list_planning_.target_position = pose;
-
-          PublishPose(pose);
-          PublishTaskList(task_list_planning_);
-          break;
-        default:
-          break;
-        }
+        state_manager_.handlePerceptionEvent(msg);
     }
     //处理规划状态反馈消息
     void RobotDogMain::stateCallback(const perception_msgs::TaskList::ConstPtr& msg) {
         state_manager_.handleStateEvent(static_cast<TaskState>(msg->task_state), static_cast<TaskResult>(msg->task_result));
-        //狀態更新
-        UpdateState();
     }
 
   }

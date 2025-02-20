@@ -10,7 +10,7 @@
 #include <iostream>
 #include <signal.h>
 
-#include "robot_dog_main.h"
+#include "global_project.h"
 
 #if GLOG_ENABLE
 #include <glog/logging.h>
@@ -30,8 +30,7 @@ using namespace std;
 using namespace athena::function;
 #ifndef G_TEST
 int main(int argc, char** argv) {
-  std::cout << 1 << std::endl;
-  std::string file_path = "./conf/function/robot-dog/robot_dog.json";
+  //std::string file_path = "./conf/function/robot-dog/robot_dog.json";
   system("mkdir -p log");
 #if ROS_ENABLE
   ros::init(argc, argv, "robot_dog_app");
@@ -46,10 +45,14 @@ int main(int argc, char** argv) {
 #endif
 
   // 创建 RobotDogMain 对象
-    RobotDogMain* robotDog = new RobotDogMain(file_path);
-    robotDog->Start();
-    robotDog->Loop();
-    robotDog->Close();
+    RobotDogMain* robotDog = AfjGetMain();
+    if(robotDog != nullptr)
+    {
+      robotDog->Start();
+      robotDog->Loop();
+      robotDog->Close();
+    }
+    
   return 1;
 }
 #endif
