@@ -66,6 +66,7 @@ void RobotDogState::Init()
         
     m_currentState = TaskState::STATE_IDLE;
     m_currentResult = TaskResult::RESULT_INVALID;
+    m_can_finish = true;
 }
 
 void RobotDogState::SetCanFinish(const bool& enable)
