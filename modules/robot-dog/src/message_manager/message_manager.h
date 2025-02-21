@@ -14,7 +14,7 @@
 #include <perception_msgs/PercState.h>
 #include <perception_msgs/TaskList.h>
 #include <geometry_msgs/Pose.h>
-#include <apps/enum.h>
+#include <common/enum.h>
 
 //发布反馈消息给集成模块
 #ifndef pub_feedback_to_cmd

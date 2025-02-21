@@ -1,5 +1,5 @@
 #include <apps/robot_dog_main.h>
-#include "version.h"
+#include "version/version.h"
 
 #include <csignal>
 // 全局标志位，用于控制主循环

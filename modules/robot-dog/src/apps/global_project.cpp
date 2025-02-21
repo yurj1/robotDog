@@ -2,10 +2,13 @@
 namespace athena
 {
   namespace function {
-        RobotDogMain* AGetMain()
-                {
-                    static RobotDogMain m;
-                    return &m;
-                }
+      std::shared_ptr<RobotDogMain> rMain;
+
+      std::shared_ptr<RobotDogMain> AGetMain()
+              {
+                  if(rMain == nullptr)
+                    rMain = std::make_shared<RobotDogMain>();
+                  return rMain;
+              }
   }
 }

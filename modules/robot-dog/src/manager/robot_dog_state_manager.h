@@ -1,6 +1,6 @@
 #ifndef __ROBOT_DOG_STATE_H__
 #define __ROBOT_DOG_STATE_H__
-#include <enum.h>
+#include <common/enum.h>
 #include "message_manager/message_manager.h"
 using namespace perception_bridge;
 //状态机切换

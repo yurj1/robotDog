@@ -45,7 +45,7 @@ int main(int argc, char** argv) {
 #endif
 
   // 创建 RobotDogMain 对象
-    RobotDogMain* robotDog = AfjGetMain();
+    auto robotDog = AfjGetMain();
     if(robotDog != nullptr)
     {
       robotDog->Start();

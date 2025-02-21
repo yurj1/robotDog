@@ -8,7 +8,7 @@
 namespace athena
 {
   namespace function {
-        RobotDogMain* AGetMain();
+        std::shared_ptr<RobotDogMain> AGetMain();
   }
 }
 #endif //__ROBOT_DOG_PROJECT_H__

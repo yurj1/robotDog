@@ -2,7 +2,7 @@
 #define __PERCEPTION_BRIDGE_H__
 
 #include <ros/ros.h>
-#include <robot_dog_state_manager.h>
+#include <manager/robot_dog_state_manager.h>
 
 #include <mutex>
 #include <thread>
