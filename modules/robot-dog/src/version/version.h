@@ -9,7 +9,7 @@
                17：day
                1： modify count （cur day）
 */
-#define VERSION "Version: 1.02.17.2"
+#define VERSION "Version: 1.02.21.1"
 #define BUILD_TIME_STRING "Build on " __DATE__ " " __TIME__
 
 namespace Version {
