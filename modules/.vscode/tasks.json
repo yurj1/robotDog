@@ -14,7 +14,7 @@
                 "-j$(nproc)"
             ],
             "options": {
-                "cwd": "${workspaceFolder}/build"
+                "cwd": "${workspaceFolder}/robot-dog/build"
             },
             "group": {
                 "kind": "build",
@@ -32,10 +32,10 @@
                 "-DDDS_ENABLE=OFF",
                 "-DGLOG_ENABLE=ON",
                 "-DCMAKE_BUILD_TYPE=Release",
-                "../robot-dog"
+                "../"
             ],
             "options": {
-                "cwd": "${workspaceFolder}/build"
+                "cwd": "${workspaceFolder}/robot-dog/build"
             },
             "group": "none"
         },
@@ -45,7 +45,7 @@
             "command": "rm",
             "args": [
                 "-rf",
-                "build"
+                "robot-dog/build"
             ],
             "group": "none"
         },
@@ -55,7 +55,7 @@
             "command": "mkdir",
             "args": [
                 "-p",
-                "build"
+                "robot-dog/build"
             ],
             "group": "build"
         }
