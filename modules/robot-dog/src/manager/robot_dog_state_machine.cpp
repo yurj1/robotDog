@@ -39,7 +39,7 @@ namespace athena
 
       // 初始化默认进入空闲模式
       robot_dog_conf_sm->NextState("Idle");
-      std::cout << "change : RobotDogMainIdle " << std::endl;
+      AINFO << "change : RobotDogMainIdle ";
 
       return true;
     }
@@ -50,7 +50,7 @@ namespace athena
       //std::cout << "state_machine : Idle " << std::endl;
       if (state_manager_.GetState() == perception_bridge::STATE_RUNNING)
       {
-        std::cout << "change : RobotDogMainRun " << std::endl;
+        AINFO << "change : RobotDogMainRun ";
         robot_dog_conf_sm->NextState("Run");
         return;
       }
@@ -62,13 +62,13 @@ namespace athena
       //std::cout << "state_machine : Run " << std::endl;
       if (state_manager_.GetState() == perception_bridge::STATE_COMPLETED)
       {
-        std::cout << "change : RobotDogMainComplete " << std::endl;
+        AINFO << "change : RobotDogMainComplete ";
         robot_dog_conf_sm->NextState("complete");
         return;
       }
       else if (state_manager_.GetState() == perception_bridge::STATE_IDLE)
       {
-        std::cout << "change : RobotDogMainIdle " << std::endl;
+        AINFO << "change : RobotDogMainIdle ";
         robot_dog_conf_sm->NextState("Idle");
         return;
       }
@@ -80,7 +80,7 @@ namespace athena
       //std::cout << "state_machine : Complete " << std::endl;
       if (state_manager_.GetState() == perception_bridge::STATE_IDLE)
       {
-        std::cout << "change : RobotDogMainIdle " << std::endl;
+        AINFO << "change : RobotDogMainIdle ";
         robot_dog_conf_sm->NextState("Idle");
         return;
       }

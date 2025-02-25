@@ -2,7 +2,7 @@
     "app_name": "robot_dog",
     "description": "robot_dog module",
     "log_file_path": "./log",
-    "log_level": 1,
+    "log_level": 0,
     "logging_data_enable": false,
     "use_system_timestamp": true,
     "produce_emergency_stop_command_duration": 20,
