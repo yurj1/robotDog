@@ -116,7 +116,7 @@ void RobotDogState::CancelTask() {
 //前往固定点任务
 void RobotDogState::GoDest(const perception_msgs::PercCmd::ConstPtr& msg) {
     SetCanFinish(true);
-    task_list_planning_.task_type = perception_bridge::TaskType::TASK_NAVIGATION;
+    task_list_planning_.task_type = perception_bridge::TaskType::TASK_PRECISE_DOCKING;
     perc_state_.perc_kind = perception_msgs::PercState::PERC_DEST;
     std::string point_name = msg->point_name;
     geometry_msgs::Pose pose;

@@ -58,6 +58,18 @@
                 "robot-dog/build"
             ],
             "group": "build"
+        },
+        {
+            "label": "run",
+            "type": "shell",
+            "command":"bash",
+            "args": [
+                "start.sh"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/robot-dog/bin/"
+            },
+            "group": "build"
         }
     ]
 }

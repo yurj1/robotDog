@@ -4,14 +4,15 @@
 namespace perception_bridge {
     enum TaskType
     {
-        TASK_CANCEL = 0,      // 取消任务
-        TASK_NAVIGATION = 1,  // 导航任务
-        TASK_FOLLOW = 2,      // 跟随任务
-        TASK_WELCOME = 3,     // 欢迎任务
-        TASK_LOBBY = 4,       // 找人任务
-        TASK_NODE_CLOSE = 200, // 关闭感知规划模块
-        TASK_NODE_START = 201, // 开启感知规划模块
-        TASK_NODE_RESET = 202, // 重启感知规划模块
+        TASK_CANCEL = 0,      // 取消任务  (通用)
+        TASK_NAVIGATION = 1,  // 导航任务  (规划）
+        TASK_FOLLOW = 2,      // 跟随任务  (集成)
+        TASK_WELCOME = 3,     // 欢迎任务  (集成)
+        TASK_LOBBY = 4,       // 找人任务  (集成)
+        TASK_PRECISE_DOCKING = 5,  //精准停靠 (规划）)
+        TASK_NODE_CLOSE = 200, // 关闭感知规划模块  (通用)
+        TASK_NODE_START = 201, // 开启感知规划模块  (通用)
+        TASK_NODE_RESET = 202, // 重启感知规划模块  (通用)
 
         TASK_NONE = 800, // 空任务
     };
