@@ -1,5 +1,8 @@
 #ifndef __ROBOT_DOG_STATE_H__
 #define __ROBOT_DOG_STATE_H__
+
+#include <mutex>
+
 #include <common/enum.h>
 #include "message_manager/message_manager.h"
 using namespace perception_bridge;
@@ -45,7 +48,7 @@ private:
     TaskResult m_currentResult;//当前结果（0：无效；1：成功；2：失败）
     bool m_can_finish;//完成条件
 
-
+    std::mutex m_mutex;
 };
 
 #endif //__ROBOT_DOG_STATE_H__

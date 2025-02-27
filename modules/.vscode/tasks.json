@@ -9,12 +9,15 @@
                 "mkdir",
                 "cmake"
             ],
-            "command": "make",
+            "command": "cd",
             "args": [
+                "build",
+                "&&",
+                "make",
                 "-j$(nproc)"
             ],
             "options": {
-                "cwd": "${workspaceFolder}/robot-dog/build"
+                "cwd": "${workspaceFolder}/robot-dog"
             },
             "group": {
                 "kind": "build",
@@ -24,8 +27,11 @@
         {
             "label": "cmake",
             "type": "shell",
-            "command": "cmake",
+            "command": "cd",
             "args": [
+                "build",
+                "&&",
+                "cmake",
                 "-DROS_ENABLE=ON",
                 "-DROS2_ENABLE=OFF",
                 "-DLCM_ENABLE=OFF",
@@ -35,7 +41,7 @@
                 "../"
             ],
             "options": {
-                "cwd": "${workspaceFolder}/robot-dog/build"
+                "cwd": "${workspaceFolder}/robot-dog"
             },
             "group": "none"
         },

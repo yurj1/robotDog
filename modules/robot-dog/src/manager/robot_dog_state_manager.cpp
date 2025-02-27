@@ -7,6 +7,7 @@ RobotDogState::RobotDogState()
     , m_currentState(TaskState::STATE_IDLE)
     , m_currentResult(TaskResult::RESULT_INVALID)
     , m_can_finish(true)
+    , m_mutex()
 {
     Init();
 }
@@ -92,6 +93,7 @@ const perception_msgs::TaskList& RobotDogState::GetOutputPlanning()
 
 const perception_msgs::PercState& RobotDogState::GetStateCallback()
 {
+    std::lock_guard<std::mutex> lock(m_mutex);
     return perc_state_;
 }
 
@@ -303,39 +305,39 @@ void RobotDogState::handleStateEvent(const TaskState& state,  const TaskResult& 
     }
 
     if(m_currentState != state || m_currentResult != result) {
+        std::lock_guard<std::mutex> lock(m_mutex);
         ROS_INFO("Recv  change state: [%d]-> [%d], result: [%d] -> [%d]", m_currentState, state, m_currentResult, result);
         m_currentState = state;
         m_currentResult = result;
-    }
 
-    switch (GetState())
-    {
-    case STATE_IDLE:
-        perc_state_.exe_state = perception_msgs::PercState::ACTION_IDLE;
-        break;
-    case STATE_RUNNING:
-        perc_state_.exe_state = perception_msgs::PercState::ACTION_RUNNING;
-        break;
-    case STATE_COMPLETED:
-        perc_state_.exe_state = perception_msgs::PercState::ACTION_DONE;
-        break;
-    default:
-        break;
-    }
+        switch (m_currentState)
+        {
+        case STATE_IDLE:
+            perc_state_.exe_state = perception_msgs::PercState::ACTION_IDLE;
+            break;
+        case STATE_RUNNING:
+            perc_state_.exe_state = perception_msgs::PercState::ACTION_RUNNING;
+            break;
+        case STATE_COMPLETED:
+            perc_state_.exe_state = perception_msgs::PercState::ACTION_DONE;
+            break;
+        default:
+            break;
+        }
 
-    switch (GetResult())
-    {
-    case RESULT_INVALID:
-        perc_state_.exe_result = perception_msgs::PercState::ACTION_NONE;
-        break;
-    case RESULT_SUCCESS:
-        perc_state_.exe_result = perception_msgs::PercState::ACTION_SUCCESS;
-        break;
-    case RESULT_FAILED:
-        perc_state_.exe_result = perception_msgs::PercState::ACTION_FAIL;
-        break;
-    default:
-        break;
+        switch (m_currentResult)
+        {
+        case RESULT_INVALID:
+            perc_state_.exe_result = perception_msgs::PercState::ACTION_NONE;
+            break;
+        case RESULT_SUCCESS:
+            perc_state_.exe_result = perception_msgs::PercState::ACTION_SUCCESS;
+            break;
+        case RESULT_FAILED:
+            perc_state_.exe_result = perception_msgs::PercState::ACTION_FAIL;
+            break;
+        default:
+            break;
+        }
     }
-
 }
