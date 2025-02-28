@@ -234,6 +234,8 @@ namespace athena
       // 定时器
       std::shared_ptr<ADTimerManager<RobotDogMain, void>> ad_timer_manager_;
       std::shared_ptr<WheelTimer<RobotDogMain, void>> task_1000ms_;
+      std::shared_ptr<WheelTimer<RobotDogMain, void>> task_state_callback_;;
+      
       /**
        * @brief     Spin．
        * @param[in] void.

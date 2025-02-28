@@ -81,6 +81,8 @@ namespace athena
             ad_timer_manager_ = std::make_shared<ADTimerManager<RobotDogMain, void>>();
             task_1000ms_ =
                 std::make_shared<WheelTimer<RobotDogMain, void>>(ad_timer_manager_);
+            task_state_callback_ = 
+                std::make_shared<WheelTimer<RobotDogMain, void>>(ad_timer_manager_);
             task_thread_.reset(new std::thread([this]
                                               { Spin(); }));
             if (task_thread_ == nullptr)
@@ -160,7 +162,7 @@ namespace athena
         return;
       }
       task_1000ms_->AddTimer(1000, &RobotDogMain::Task1000ms, this);
-      task_1000ms_->AddTimer(50, &RobotDogMain::StateCallback, this);//只有50hz
+      task_state_callback_->AddTimer(50, &RobotDogMain::StateCallback, this);//只有50hz
       // 所有定时器都使用高级定时器，方便激活和去激活。
       std::cout << "===================function activate=================="
                 << std::endl;
@@ -181,6 +183,7 @@ namespace athena
         return;
       }
       task_1000ms_->Stop();
+      task_state_callback_->Stop();
       {
         // 清除所有内部计算的中间结果，保证回到刚init完的状态
       }
@@ -205,7 +208,7 @@ namespace athena
     //按周期发布状态
     void RobotDogMain::StateCallback(void *param)
     {
-      PublishState(state_manager_.GetStateCallback()); // 发布状态
+      PublishState(state_manager_.GetConstStateMsg()); // 发布状态
     }
 
     /* void RobotDogMain::PublishObuCmdMsg(int code, int val)
@@ -632,7 +635,7 @@ namespace athena
     }
     //处理规划状态反馈消息
     void RobotDogMain::stateCallback(const perception_msgs::TaskList::ConstPtr& msg) {
-        state_manager_.handleStateEvent(static_cast<TaskState>(msg->task_state), static_cast<TaskResult>(msg->task_result));
+        state_manager_.handleStateEvent(msg);
     }
 
   }

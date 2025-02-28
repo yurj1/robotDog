@@ -1,11 +1,12 @@
-#include <robot_dog_state_manager.h>
-#include "global_project.h"
+
 #include <ros/ros.h>
+
+#include "apps/global_project.h"
+#include "robot_dog_state_manager.h"
+#include "mode/factory.hpp"
 
 RobotDogState::RobotDogState()
     : m_taskType(TaskType::TASK_NONE)
-    , m_currentState(TaskState::STATE_IDLE)
-    , m_currentResult(TaskResult::RESULT_INVALID)
     , m_can_finish(true)
     , m_mutex()
 {
@@ -14,59 +15,21 @@ RobotDogState::RobotDogState()
 
 TaskState RobotDogState::GetState()
 {
-    return m_currentState;
+    return (TaskState)perc_state_.exe_state;
 }
 
 TaskResult RobotDogState::GetResult()
 {
-    return m_currentResult;
+    return (TaskResult)perc_state_.exe_result;
 }
 
 void RobotDogState::Init()
 {
-    //感知数据初始化
-      {
-        task_list_perception_.task_id = 0;
-        geometry_msgs::Pose pose;
-        pose.position.x = 0;
-        pose.position.y = 0;
-        pose.position.z = 0;
-        pose.orientation.x = 0;
-        pose.orientation.y = 0;
-        pose.orientation.z = 0;
-        pose.orientation.w = 0;
-        task_list_perception_.target_position = pose;
-        task_list_perception_.target_object = "";
-        task_list_perception_.task_state = perception_bridge::TaskState::STATE_IDLE;
-        task_list_perception_.task_result = perception_bridge::TaskResult::RESULT_INVALID;
-        task_list_perception_.isInPlaceRotation = false;
-      }
-      //规控数据初始化
-      {
-        task_list_planning_.task_id = 0;
-        geometry_msgs::Pose pose;
-        pose.position.x = 0;
-        pose.position.y = 0;
-        pose.position.z = 0;
-        pose.orientation.x = 0;
-        pose.orientation.y = 0;
-        pose.orientation.z = 0;
-        pose.orientation.w = 0;
-        task_list_planning_.target_position = pose;
-        task_list_planning_.target_object = "";
-        task_list_planning_.task_state = perception_bridge::TaskState::STATE_IDLE;
-        task_list_planning_.task_result = perception_bridge::TaskResult::RESULT_INVALID;
-        task_list_planning_.isInPlaceRotation = false;
-      } 
-      //状态反馈初始化
-      {
-        perc_state_.action_id = 0;
-        perc_state_.err_code = 0;
-        perc_state_.exe_result = 0;
-      }
-        
-    m_currentState = TaskState::STATE_IDLE;
-    m_currentResult = TaskResult::RESULT_INVALID;
+    //状态反馈初始化
+    perc_state_.action_id = 0;
+    perc_state_.err_code = 0;
+    perc_state_.exe_result = 0;
+
     m_can_finish = true;
 }
 
@@ -81,22 +44,23 @@ bool RobotDogState::GetCanFinish()
     return m_can_finish;
 }
 
-const perception_msgs::TaskList& RobotDogState::GetOutputPerception()
-{
-    return task_list_perception_;
-}
-
 const perception_msgs::TaskList& RobotDogState::GetOutputPlanning()
 {
     return task_list_planning_;
 }
 
-const perception_msgs::PercState& RobotDogState::GetStateCallback()
+const perception_msgs::PercState& RobotDogState::GetConstStateMsg()
 {
     std::lock_guard<std::mutex> lock(m_mutex);
     return perc_state_;
 }
 
+perception_msgs::PercState& RobotDogState::GetStateMsg()
+{
+    std::lock_guard<std::mutex> lock(m_mutex);
+    return perc_state_;
+}
+/*
 bool RobotDogState::getPose(const std::string& point_name, geometry_msgs::Pose& pose) {
     const auto& point_map = AfjGetMain()->GetPointMap();
     auto it = point_map.find(point_name);
@@ -187,64 +151,27 @@ void RobotDogState::GoDestAndFindTarget(const perception_msgs::PercCmd::ConstPtr
         AERROR << "main is nullptr";
     ROS_INFO("Find %s:", msg->follow_name.c_str());
 }
-
+*/
 void RobotDogState::handleTaskEvent(const perception_msgs::PercCmd::ConstPtr& msg)
 {
     ROS_INFO("Received PercCmd: action_id=%lu, perc_kind=%u", msg->action_id, msg->perc_kind);
 
     Init();
+    std::shared_ptr<ModeBase> mode;
     
-    task_list_perception_.task_id = msg->action_id;
-    task_list_planning_.task_id = msg->action_id;
-    perc_state_.action_id = msg->action_id;
-    task_list_perception_.target_object = msg->follow_name;
-
-    switch (msg->perc_kind)
-    {
-    case perception_msgs::PercCmd::PERC_CANCEL://取消任务
-        CancelTask();
-        break;
-    case perception_msgs::PercCmd::PERC_DEST://前往固定点
-        GoDest(msg);
-        break;
-    case perception_msgs::PercCmd::PERC_FOLLOW://跟随任务
-        Follow(msg);
-        break;
-    case perception_msgs::PercCmd::PERC_WELCOME_DEMO://欢迎任务
-        Welcome(msg);
-        break;
-    case perception_msgs::PercCmd::PERC_LOBBY_DEMO://找人任务
-        GoDestAndFindTarget(msg);
-        break;
-    case perception_msgs::PercCmd::PERC_NODE_CLOSE://关闭感知规划模块
-        SetCanFinish(true);
-        task_list_perception_.task_type = perception_bridge::TaskType::TASK_NODE_CLOSE;
-        perc_state_.perc_kind = perception_msgs::PercState::PERC_NODE_CLOSE;
-        break;
-    case perception_msgs::PercCmd::PERC_NODE_START://启动感知规划模块
-        SetCanFinish(true);
-        task_list_perception_.task_type = perception_bridge::TaskType::TASK_NODE_START;
-        perc_state_.perc_kind = perception_msgs::PercState::PERC_NODE_START;
-        break;
-    case perception_msgs::PercCmd::PERC_NODE_RESET://重启感知规划模块
-        SetCanFinish(true);
-        task_list_perception_.task_type = perception_bridge::TaskType::TASK_NODE_RESET;
-        perc_state_.perc_kind = perception_msgs::PercState::PERC_NODE_RESET;
-        break;
-    default:
-        AERROR << "Recv not type";
-        break;
-    }
+    mode = Factory::CreateModeFactory(msg->perc_kind);
+        if(mode == nullptr)
+        {
+            AERROR << "Not find mode";
+            return;
+        }
+        mode->Handle(msg, this);
 }
 
 void RobotDogState::handlePerceptionEvent(const perception_msgs::TaskList::ConstPtr& msg)
 {
     ROS_INFO("Received TaskPt: task_type=%u, x=%f, y=%f, z=%f target_object=%s",
                   msg->task_type, msg->target_position.position.x,  msg->target_position.position.y,  msg->target_position.position.z, msg->target_object.c_str());
-
-    if(task_list_perception_.task_type != msg->task_type){
-        ROS_WARN("Different types");
-    }
 
     geometry_msgs::Pose pose;
     pose.position.x = msg->target_position.position.x;
@@ -271,14 +198,10 @@ void RobotDogState::handlePerceptionEvent(const perception_msgs::TaskList::Const
         
         break;
     case perception_bridge::TaskType::TASK_LOBBY://找人任务
-        if(msg->target_object == task_list_perception_.target_object){
-            ROS_INFO("Find target suceess!");
-            SetCanFinish(true);
-            task_list_perception_.isInPlaceRotation = false;
-        }
-        else{
-        ROS_INFO("Find target error!");
-        }
+        ROS_INFO("Find target suceess!");
+        SetCanFinish(true);
+
+        task_list_planning_.isInPlaceRotation = false;
         task_list_planning_.task_type = perception_bridge::TaskType::TASK_NAVIGATION;
         task_list_planning_.target_position = pose;
 
@@ -295,22 +218,23 @@ void RobotDogState::handlePerceptionEvent(const perception_msgs::TaskList::Const
     }
 }
 
-void RobotDogState::handleStateEvent(const TaskState& state,  const TaskResult& result)
+void RobotDogState::handleStateEvent(const perception_msgs::TaskList::ConstPtr& msg)
 {
     
     //特殊状态下不切换为完成状态
-    if(!m_can_finish && state == TaskState::STATE_COMPLETED){
+    if(!m_can_finish && (uint8_t)msg->task_state == TaskState::STATE_COMPLETED){
         ROS_INFO("Special task not Done");
         return;
     }
 
-    if(m_currentState != state || m_currentResult != result) {
+    if(perc_state_.exe_state != (uint8_t)msg->task_state || perc_state_.exe_result != (uint8_t)msg->task_result) {
         std::lock_guard<std::mutex> lock(m_mutex);
-        ROS_INFO("Recv  change state: [%d]-> [%d], result: [%d] -> [%d]", m_currentState, state, m_currentResult, result);
-        m_currentState = state;
-        m_currentResult = result;
+        ROS_INFO("Recv  change state: [%d]-> [%d], result: [%d] -> [%d]", perc_state_.exe_state, (uint8_t)msg->task_state , perc_state_.exe_result, (uint8_t)msg->task_result);
 
-        switch (m_currentState)
+        perc_state_.exe_state = static_cast<uint8_t>(msg->task_state);
+        perc_state_.exe_result = static_cast<uint8_t>(msg->task_result);
+
+        /* switch (m_currentState)
         {
         case STATE_IDLE:
             perc_state_.exe_state = perception_msgs::PercState::ACTION_IDLE;
@@ -338,6 +262,6 @@ void RobotDogState::handleStateEvent(const TaskState& state,  const TaskResult& 
             break;
         default:
             break;
-        }
+        } */
     }
 }

@@ -59,7 +59,7 @@ namespace athena
     // 运行状态
     void RobotDogMain::RunningStateUpdate(const std::string &state_name, int state)
     {
-      //std::cout << "state_machine : Run " << std::endl;
+      AINFO << "state_machine : Run";
       if (state_manager_.GetState() == perception_bridge::STATE_COMPLETED)
       {
         AINFO << "change : RobotDogMainComplete ";
