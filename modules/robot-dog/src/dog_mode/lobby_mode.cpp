@@ -1,8 +1,11 @@
 #include "lobby_mode.h"
-#include "apps/global_project.h"
+#include "common/global_project.h"
 
-LobbyMode::LobbyMode()
-  : task_list_perception_()
+using namespace athena::function::action;
+
+LobbyMode::LobbyMode(TaskType type)
+  : ModeBase(type)
+  , task_list_perception_()
   , task_list_planning_()
 {
 }
@@ -21,8 +24,10 @@ void LobbyMode::Handle(const perception_msgs::PercCmd::ConstPtr& msg, RobotDogSt
 
     //特殊模式，不能直接完成
     data_manager->SetCanFinish(false);
+    
     task_list_perception_.task_type = perception_bridge::TaskType::TASK_LOBBY;
     task_list_planning_.task_type = perception_bridge::TaskType::TASK_NAVIGATION;
+    //前往固定点，到达终点时，需要打转
     task_list_planning_.isInPlaceRotation = true;
     
     //获取固定点坐标

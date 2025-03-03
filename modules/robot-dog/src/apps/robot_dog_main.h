@@ -18,7 +18,6 @@
 #include "modules/common/fault/fault_client.hpp"
 #include "modules/common/timer/ad_timer_manager.h"
 #include "modules/common/base_message/message_status.hpp"
-#include "modules/robot-dog/src/common/local_view.h"
 #include "modules/common/base_message/message_status.hpp"
 
 #if LCM_ENABLE

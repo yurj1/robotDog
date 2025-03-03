@@ -5,6 +5,7 @@
 
 #include <common/enum.h>
 #include "message_manager/message_manager.h"
+
 using namespace perception_bridge;
 //状态机切换
 class RobotDogState
@@ -30,12 +31,10 @@ public:
     void handlePerceptionEvent(const perception_msgs::TaskList::ConstPtr& msg);
 private:
     //数据
+    perception_msgs::PercCmd recv_cmd_msg_info_; //to planning
     perception_msgs::TaskList task_list_planning_; //to planning
     perception_msgs::PercState perc_state_;
 
-    TaskType m_taskType;//模式类型
-/*     TaskState m_currentState;//当前状态（0：空闲；1：执行中；2：完成）
-    TaskResult m_currentResult;//当前结果（0：无效；1：成功；2：失败） */
     bool m_can_finish;//完成条件
 
     std::mutex m_mutex;

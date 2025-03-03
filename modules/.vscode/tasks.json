@@ -5,8 +5,6 @@
             "label": "make robot dog",
             "type": "shell",
             "dependsOn": [
-                "clean",
-                "mkdir",
                 "cmake"
             ],
             "command": "cd",
@@ -50,10 +48,10 @@
             "type": "shell",
             "command": "rm",
             "args": [
-                "-rf",
-                "robot-dog/build"
+                "-r",
+                "robot-dog/build/*"
             ],
-            "group": "none"
+            "group": "build"
         },
         {
             "label": "mkdir",

@@ -1,8 +1,11 @@
 #include "dest_mode.h"
-#include "apps/global_project.h"
+#include "common/global_project.h"
 
-DestMode::DestMode()
-  :pubData_()
+using namespace athena::function::action;
+
+DestMode::DestMode(TaskType type)
+  : ModeBase(type)
+  , pubData_()
 {
 }
 
@@ -12,6 +15,10 @@ void DestMode::Init()
 
 void DestMode::Handle(const perception_msgs::PercCmd::ConstPtr& msg, RobotDogState* data_manager)
 {
+    //可直接完成
+    data_manager->SetCanFinish(true);
+    
+
     //坐标
     geometry_msgs::Pose pose;
     //状态更新
@@ -30,8 +37,6 @@ void DestMode::Handle(const perception_msgs::PercCmd::ConstPtr& msg, RobotDogSta
         return false;
     };
 
-    //可直接完成
-    data_manager->SetCanFinish(true);
     //类型赋值
     pubData_.task_id = msg->action_id;
     pubData_.task_type = perception_bridge::TaskType::TASK_PRECISE_DOCKING;

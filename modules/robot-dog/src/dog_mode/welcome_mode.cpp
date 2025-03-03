@@ -1,13 +1,18 @@
 #include "welcome_mode.h"
-#include "apps/global_project.h"
+#include "common/global_project.h"
 
-WelcomeMode::WelcomeMode()
-  :pubData_()
+using namespace athena::function::action;
+
+WelcomeMode::WelcomeMode(TaskType type)
+  : ModeBase(type)
+  , pubData_()
 {
 }
 
 void WelcomeMode::Handle(const perception_msgs::PercCmd::ConstPtr& msg, RobotDogState* data_manager)
 {
+    data_manager->SetCanFinish(true);
+    
     //状态更新
     {
         auto& stateResult = data_manager->GetStateMsg();
@@ -15,7 +20,7 @@ void WelcomeMode::Handle(const perception_msgs::PercCmd::ConstPtr& msg, RobotDog
         stateResult.action_id = msg->action_id;
     }
     
-    data_manager->SetCanFinish(true);
+    
     pubData_.task_id = msg->action_id;
     pubData_.task_type = perception_bridge::TaskType::TASK_WELCOME;
     pubData_.target_object = msg->follow_name;

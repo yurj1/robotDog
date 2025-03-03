@@ -1,21 +1,25 @@
 #include "node_manager_mode.h"
-#include "apps/global_project.h"
+#include "common/global_project.h"
 
-NodeManagerMode::NodeManagerMode(NodeType type)
-  :pubData_()
-  ,type_(type)
+using namespace athena::function::action;
+
+NodeManagerMode::NodeManagerMode(TaskType t_type, NodeType n_type)
+  : ModeBase(t_type)
+  , pubData_()
+  , n_type_(n_type)
 {
 }
 
 void NodeManagerMode::Handle(const perception_msgs::PercCmd::ConstPtr& msg, RobotDogState* data_manager)
 {
+    
     //状态更新
     auto& stateResult = data_manager->GetStateMsg();
     stateResult.action_id = msg->action_id;
     data_manager->SetCanFinish(true);
     pubData_.task_id = msg->action_id;
 
-    switch (type_)
+    switch (n_type_)
     {
     case NodeManagerMode::NodeType::CLOSE:
         pubData_.task_type = perception_bridge::TaskType::TASK_NODE_CLOSE;
@@ -30,6 +34,8 @@ void NodeManagerMode::Handle(const perception_msgs::PercCmd::ConstPtr& msg, Robo
         stateResult.perc_kind = perception_msgs::PercState::PERC_NODE_RESET;
         break;
     default:
+        AERROR << "node type is not parse";
+        return;
         break;
     }
 

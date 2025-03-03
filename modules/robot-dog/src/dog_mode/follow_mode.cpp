@@ -1,8 +1,11 @@
 #include "follow_mode.h"
-#include "apps/global_project.h"
+#include "common/global_project.h"
 
-FollowMode::FollowMode()
-  :pubData_()
+using namespace athena::function::action;
+
+FollowMode::FollowMode(TaskType type)
+  : ModeBase(type)
+  , pubData_()
 {
 }
 
@@ -15,6 +18,7 @@ void FollowMode::Handle(const perception_msgs::PercCmd::ConstPtr& msg, RobotDogS
       stateResult.action_id = msg->action_id;
     }
     data_manager->SetCanFinish(false);
+    
     pubData_.task_id = msg->action_id;
     pubData_.target_object = msg->follow_name;
     pubData_.task_type = perception_bridge::TaskType::TASK_FOLLOW;

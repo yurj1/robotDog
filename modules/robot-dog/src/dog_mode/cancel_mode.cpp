@@ -1,8 +1,11 @@
 #include "cancel_mode.h"
-#include "apps/global_project.h"
+#include "common/global_project.h"
 
-CancelMode::CancelMode()
-  :pubData_()
+using namespace athena::function::action;
+
+CancelMode::CancelMode(TaskType type)
+  : ModeBase(type)
+  , pubData_()
 {
 }
 
@@ -10,6 +13,7 @@ void CancelMode::Handle(const perception_msgs::PercCmd::ConstPtr& msg, RobotDogS
 {
     //可直接完成
     data_manager->SetCanFinish(true);
+    
     //状态更新
     auto& stateResult = data_manager->GetStateMsg();
     stateResult.perc_kind = perception_msgs::PercState::PERC_CANCEL;

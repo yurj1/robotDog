@@ -10,7 +10,7 @@
 #include <iostream>
 #include <signal.h>
 
-#include "global_project.h"
+#include "common/global_project.h"
 
 #if GLOG_ENABLE
 #include <glog/logging.h>
