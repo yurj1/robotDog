@@ -19,7 +19,7 @@ void CancelMode::Handle(const perception_msgs::PercCmd::ConstPtr& msg, RobotDogS
     stateResult.perc_kind = perception_msgs::PercState::PERC_CANCEL;
     stateResult.action_id = msg->action_id;
     pubData_.task_id = msg->action_id;
-    pubData_.task_type = perception_bridge::TaskType::TASK_CANCEL;
+    pubData_.task_type = robot_dog::operations::TaskType::TASK_CANCEL;
     
     ROS_INFO("Cancel Task");
     AfjGetMain()->PublishTaskList(pubData_);

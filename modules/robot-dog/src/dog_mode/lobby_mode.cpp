@@ -25,8 +25,8 @@ void LobbyMode::Handle(const perception_msgs::PercCmd::ConstPtr& msg, RobotDogSt
     //特殊模式，不能直接完成
     data_manager->SetCanFinish(false);
     
-    task_list_perception_.task_type = perception_bridge::TaskType::TASK_LOBBY;
-    task_list_planning_.task_type = perception_bridge::TaskType::TASK_NAVIGATION;
+    task_list_perception_.task_type = robot_dog::operations::TaskType::TASK_LOBBY;
+    task_list_planning_.task_type = robot_dog::operations::TaskType::TASK_NAVIGATION;
     //前往固定点，到达终点时，需要打转
     task_list_planning_.isInPlaceRotation = true;
     

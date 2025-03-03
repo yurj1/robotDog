@@ -594,8 +594,8 @@ namespace athena
         pose.orientation.w = 0;
         task_list_perception_.target_position = pose;
         task_list_perception_.target_object = "";
-        task_list_perception_.task_state = perception_bridge::TaskState::STATE_IDLE;
-        task_list_perception_.task_result = perception_bridge::TaskResult::RESULT_INVALID;
+        task_list_perception_.task_state = robot_dog::operations::TaskState::STATE_IDLE;
+        task_list_perception_.task_result = robot_dog::operations::TaskResult::RESULT_INVALID;
         task_list_perception_.isInPlaceRotation = false;
       }
       //规控数据初始化
@@ -611,8 +611,8 @@ namespace athena
         pose.orientation.w = 0;
         task_list_planning_.target_position = pose;
         task_list_planning_.target_object = "";
-        task_list_planning_.task_state = perception_bridge::TaskState::STATE_IDLE;
-        task_list_planning_.task_result = perception_bridge::TaskResult::RESULT_INVALID;
+        task_list_planning_.task_state = robot_dog::operations::TaskState::STATE_IDLE;
+        task_list_planning_.task_result = robot_dog::operations::TaskResult::RESULT_INVALID;
         task_list_planning_.isInPlaceRotation = false;
       } 
       //状态反馈初始化

@@ -22,15 +22,15 @@ void NodeManagerMode::Handle(const perception_msgs::PercCmd::ConstPtr& msg, Robo
     switch (n_type_)
     {
     case NodeManagerMode::NodeType::CLOSE:
-        pubData_.task_type = perception_bridge::TaskType::TASK_NODE_CLOSE;
+        pubData_.task_type = robot_dog::operations::TaskType::TASK_NODE_CLOSE;
         stateResult.perc_kind = perception_msgs::PercState::PERC_NODE_CLOSE;
         break;
     case NodeManagerMode::NodeType::START:
-        pubData_.task_type = perception_bridge::TaskType::TASK_NODE_START;
+        pubData_.task_type = robot_dog::operations::TaskType::TASK_NODE_START;
         stateResult.perc_kind = perception_msgs::PercState::PERC_NODE_START;
         break;
     case NodeManagerMode::NodeType::RESET:
-        pubData_.task_type = perception_bridge::TaskType::TASK_NODE_RESET;
+        pubData_.task_type = robot_dog::operations::TaskType::TASK_NODE_RESET;
         stateResult.perc_kind = perception_msgs::PercState::PERC_NODE_RESET;
         break;
     default:

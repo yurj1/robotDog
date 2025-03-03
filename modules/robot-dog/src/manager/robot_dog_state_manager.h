@@ -6,7 +6,7 @@
 #include <common/enum.h>
 #include "message_manager/message_manager.h"
 
-using namespace perception_bridge;
+using namespace robot_dog::operations;
 //状态机切换
 class RobotDogState
 {

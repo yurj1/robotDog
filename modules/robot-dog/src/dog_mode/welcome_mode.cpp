@@ -22,7 +22,7 @@ void WelcomeMode::Handle(const perception_msgs::PercCmd::ConstPtr& msg, RobotDog
     
     
     pubData_.task_id = msg->action_id;
-    pubData_.task_type = perception_bridge::TaskType::TASK_WELCOME;
+    pubData_.task_type = robot_dog::operations::TaskType::TASK_WELCOME;
     pubData_.target_object = msg->follow_name;
     
     ROS_INFO("Welcome %s:", msg->follow_name.c_str());

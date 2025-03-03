@@ -21,7 +21,7 @@ void FollowMode::Handle(const perception_msgs::PercCmd::ConstPtr& msg, RobotDogS
     
     pubData_.task_id = msg->action_id;
     pubData_.target_object = msg->follow_name;
-    pubData_.task_type = perception_bridge::TaskType::TASK_FOLLOW;
+    pubData_.task_type = robot_dog::operations::TaskType::TASK_FOLLOW;
     
     ROS_INFO("Follow %s:", msg->follow_name.c_str());
     AfjGetMain()->PublishTaskList(pubData_);

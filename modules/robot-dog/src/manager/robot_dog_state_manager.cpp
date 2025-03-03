@@ -44,8 +44,8 @@ void RobotDogState::Init()
     pose.orientation.w = 0;
     task_list_planning_.target_position = pose;
     task_list_planning_.target_object = "";
-    task_list_planning_.task_state = perception_bridge::TaskState::STATE_IDLE;
-    task_list_planning_.task_result = perception_bridge::TaskResult::RESULT_INVALID;
+    task_list_planning_.task_state = robot_dog::operations::TaskState::STATE_IDLE;
+    task_list_planning_.task_result = robot_dog::operations::TaskResult::RESULT_INVALID;
     task_list_planning_.isInPlaceRotation = false;
     }
     m_can_finish = true;
@@ -110,9 +110,9 @@ void RobotDogState::handlePerceptionEvent(const perception_msgs::TaskList::Const
     
     switch (msg->task_type)
     {
-    case perception_bridge::TaskType::TASK_FOLLOW://跟随任务
-    case perception_bridge::TaskType::TASK_WELCOME://欢迎任务
-        task_list_planning_.task_type = perception_bridge::TaskType::TASK_NAVIGATION;
+    case robot_dog::operations::TaskType::TASK_FOLLOW://跟随任务
+    case robot_dog::operations::TaskType::TASK_WELCOME://欢迎任务
+        task_list_planning_.task_type = robot_dog::operations::TaskType::TASK_NAVIGATION;
         task_list_planning_.target_position = pose;
         if(AfjGetMainNotNull)
         {
@@ -123,7 +123,7 @@ void RobotDogState::handlePerceptionEvent(const perception_msgs::TaskList::Const
             std::cout << "main is null" << std::endl;
         
         break;
-    case perception_bridge::TaskType::TASK_LOBBY://找人任务
+    case robot_dog::operations::TaskType::TASK_LOBBY://找人任务
         
         if(recv_cmd_msg_info_.follow_name == msg->target_object)
             ROS_INFO("Find target suceess!");
@@ -132,7 +132,7 @@ void RobotDogState::handlePerceptionEvent(const perception_msgs::TaskList::Const
         
         SetCanFinish(true);
 
-        task_list_planning_.task_type = perception_bridge::TaskType::TASK_NAVIGATION;
+        task_list_planning_.task_type = robot_dog::operations::TaskType::TASK_NAVIGATION;
         task_list_planning_.target_position = pose;
 
         if(AfjGetMainNotNull)

@@ -39,7 +39,7 @@ void DestMode::Handle(const perception_msgs::PercCmd::ConstPtr& msg, RobotDogSta
 
     //类型赋值
     pubData_.task_id = msg->action_id;
-    pubData_.task_type = perception_bridge::TaskType::TASK_PRECISE_DOCKING;
+    pubData_.task_type = robot_dog::operations::TaskType::TASK_PRECISE_DOCKING;
     std::string point_name = msg->point_name;
     
     //获取坐标
