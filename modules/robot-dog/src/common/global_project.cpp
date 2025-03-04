@@ -1,16 +1,14 @@
 #include "global_project.h"
-
-namespace athena
+using namespace athena::function;
+namespace global
 {
-  namespace common {
-      std::shared_ptr<athena::function::RobotDogMain> AGetMain()
-              {
-                static std::shared_ptr<athena::function::RobotDogMain> instance;
-                
-                if(instance == nullptr){
-                  instance = std::make_shared<athena::function::RobotDogMain>();
-                }
-                return instance;
-              }
-  }
+  std::shared_ptr<RobotDogMain> AGetMain()
+          {
+            static std::shared_ptr<RobotDogMain> instance;
+            
+            if(instance == nullptr){
+              instance = std::make_shared<RobotDogMain>();
+            }
+            return instance;
+          }
 }

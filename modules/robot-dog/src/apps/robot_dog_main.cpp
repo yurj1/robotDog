@@ -2,12 +2,15 @@
 #include "version/version.h"
 
 #include <csignal>
-// 全局标志位，用于控制主循环
-volatile sig_atomic_t appRun = 1;
+namespace global {
+  // 全局标志位，用于控制主循环
+  volatile sig_atomic_t appRun = 1;
+}
+
 void signal_handler(int signal) {
     if (signal == SIGINT) { // 检查是否为 Ctrl+C 信号(SIGINT)
         AINFO << "Caught SIGINT, initiating graceful shutdown...";
-        appRun = 0; // 设置标志位以退出程序循环
+        global::appRun = 0; // 设置标志位以退出程序循环
         // 终止程序
         std::exit(EXIT_SUCCESS);
     }
@@ -15,94 +18,89 @@ void signal_handler(int signal) {
 
 namespace athena
 {
-  namespace function {
+  namespace function 
+  {
     RobotDogMain::RobotDogMain(std::string file_path)
       : config_file_path_(file_path) 
     {
     }
       
     void RobotDogMain::Start()
+    {
+      // step1 初始化状态设置为false
+      {
+        is_init_ = false;
+        function_activation_ = false;
+      }
+
+      // step2 变量初始化
+      {
+        VariableInit();
+      }
+      //std::cout << "perception_bridge_json_ is start : " << config_file_path_ << std::endl;
+      // step3 配置文件初始化
+      {
+        std::ifstream in(config_file_path_);
+        in >> roobt_dog_json_;
+        if (roobt_dog_json_.is_null())
         {
-          // step1 初始化状态设置为false
-          {
-            is_init_ = false;
-            function_activation_ = false;
-          }
-
-          // step2 变量初始化
-          {
-            VariableInit();
-          }
-          //std::cout << "perception_bridge_json_ is start : " << config_file_path_ << std::endl;
-          // step3 配置文件初始化
-          {
-            std::ifstream in(config_file_path_);
-            in >> roobt_dog_json_;
-            if (roobt_dog_json_.is_null())
-            {
-              std::cout << "perception_bridge_json_ is null" << std::endl;
-              return;
-            }
-          }
-
-          // step4 日志初始化
-          {
-            LOGGING_INIT(robot_dog_conf_, roobt_dog_json_)
-          }
-
-          // step4 IPC初始化
-          {
-            MESSAGE_INIT(robot_dog_conf_, roobt_dog_json_)
-          }
-
-          // step5 读取配置文件
-          {
-            /* produce_emergency_stop_command_duration_ =
-                roobt_dog_json_["produce_emergency_stop_command_duration"];
-            publish_emergency_stop_command_duration_ =
-                roobt_dog_json_["publish_emergency_stop_command_duration"]; */
-            robot_dog_conf_->set_use_system_timestamp(
-                roobt_dog_json_["use_system_timestamp"]);
-          }
-
-          // step6 故障码初始化
-          // FaultMonitorInit();
-
-          // step7 算法初始化
-          {
-            RobotDogMainStateMachineInit();
-          }
-
-          // step8 定时器和线程初始化
-          {
-            /* status_detect_duration_ = (uint32_t)(double)
-                roobt_dog_json_["status"]["status_detect_duration"]; */
-
-            ad_timer_manager_ = std::make_shared<ADTimerManager<RobotDogMain, void>>();
-            task_1000ms_ =
-                std::make_shared<WheelTimer<RobotDogMain, void>>(ad_timer_manager_);
-            task_state_callback_ = 
-                std::make_shared<WheelTimer<RobotDogMain, void>>(ad_timer_manager_);
-            task_thread_.reset(new std::thread([this]
-                                              { Spin(); }));
-            if (task_thread_ == nullptr)
-            {
-              AERROR << "Unable to create task_thread_ thread.";
-              return;
-            }
-          }
-          // step9 初始化状态为true
-          {
-            is_init_ = true;
-          }
-          TaskActivate();
-
-          Detach();
+          std::cout << "perception_bridge_json_ is null" << std::endl;
+          return;
         }
+      }
+
+      // step4 日志初始化
+      {
+        LOGGING_INIT(robot_dog_conf_, roobt_dog_json_)
+      }
+
+      // step4 IPC初始化
+      {
+        MESSAGE_INIT(robot_dog_conf_, roobt_dog_json_)
+      }
+
+      // step5 读取配置文件
+      {
+        robot_dog_conf_->set_use_system_timestamp(
+        roobt_dog_json_["use_system_timestamp"]);
+      }
+
+      // step6 故障码初始化
+      // FaultMonitorInit();
+
+      // step7 算法初始化
+      {
+        RobotDogMainStateMachineInit();
+      }
+
+      // step8 定时器和线程初始化
+      {
+
+        ad_timer_manager_ = std::make_shared<ADTimerManager<RobotDogMain, void>>();
+        task_1000ms_ =
+            std::make_shared<WheelTimer<RobotDogMain, void>>(ad_timer_manager_);
+        task_state_callback_ = 
+            std::make_shared<WheelTimer<RobotDogMain, void>>(ad_timer_manager_);
+        task_thread_.reset(new std::thread([this]
+                                          { Spin(); }));
+        if (task_thread_ == nullptr)
+        {
+          AERROR << "Unable to create task_thread_ thread.";
+          return;
+        }
+      }
+      // step9 初始化状态为true
+      {
+        is_init_ = true;
+      }
+      TaskActivate();
+
+      Detach();
+    }
 
     void RobotDogMain::Loop()
     {
-      while (appRun)
+      while (global::appRun)
       {
         std::cout << "\033[32m" << Version::GetVersion() <<  "\tDate: " << Version::GetCurrentDateTime() << std::endl;
         std::this_thread::sleep_for(std::chrono::seconds(30));
@@ -162,7 +160,7 @@ namespace athena
         return;
       }
       task_1000ms_->AddTimer(1000, &RobotDogMain::Task1000ms, this);
-      task_state_callback_->AddTimer(50, &RobotDogMain::StateCallback, this);//只有50hz
+      task_state_callback_->AddTimer(50, &RobotDogMain::StateCallback, this);//50ms 1次 == 20hz
       // 所有定时器都使用高级定时器，方便激活和去激活。
       std::cout << "===================function activate=================="
                 << std::endl;
@@ -210,67 +208,6 @@ namespace athena
     {
       PublishState(state_manager_.GetConstStateMsg()); // 发布状态
     }
-
-    /* void RobotDogMain::PublishObuCmdMsg(int code, int val)
-    {
-      athena::interface::Header header;
-      INTERFACE_HEADER_ASSIGN(obu_cmd_msg_output_)
-      obu_cmd_msg_output_.set_id(4);
-      obu_cmd_msg_output_.set_name("RobotDogMain");
-      athena::interface::ObuCmd obu_cmd_;
-      obu_cmd_.set_code(code);
-      obu_cmd_.set_val(val);
-      obu_cmd_msg_output_.clear_obu_cmd_list();
-      obu_cmd_msg_output_.add_obu_cmd_list(obu_cmd_);
-      PublishObuCmdMsgOutput(obu_cmd_msg_output_);
-    } */
-
-      /* void RobotDogMain::PublishObuCmdMsgOutput(
-        athena::interface::ObuCmdMsg obu_cmd_msg_output)
-    {
-#if LCM_ENABLE
-      if (message_manager_.count("LCM") > 0)
-        message_manager_["LCM"]->PublishObuCmdMsgOutput(obu_cmd_msg_output);
-#endif
-
-#if ROS_ENABLE
-      if (message_manager_.count("ROS") > 0)
-        message_manager_["ROS"]->PublishObuCmdMsgOutput(obu_cmd_msg_output);
-#endif
-
-#if DDS_ENABLE
-      if (message_manager_.count("DDS") > 0)
-        message_manager_["DDS"]->PublishObuCmdMsgOutput(obu_cmd_msg_output);
-#endif
-
-#if ROS2_ENABLE
-      if (message_manager_.count("ROS2") > 0)
-        message_manager_["ROS2"]->PublishObuCmdMsgOutput(obu_cmd_msg_output);
-#endif
-    } 
-
-    void RobotDogMain::PublishEvents(athena::interface::Events events)
-    {
-#if LCM_ENABLE
-      if (message_manager_.count("LCM") > 0)
-        message_manager_["LCM"]->PublishEventsOutput(events);
-#endif
-
-#if ROS_ENABLE
-      if (message_manager_.count("ROS") > 0)
-        message_manager_["ROS"]->PublishEventsOutput(events);
-#endif
-
-#if DDS_ENABLE
-      if (message_manager_.count("DDS") > 0)
-        message_manager_["DDS"]->PublishEventsOutput(events);
-#endif
-
-#if ROS2_ENABLE
-      if (message_manager_.count("ROS2") > 0)
-        message_manager_["ROS2"]->PublishEventsOutput(events);
-#endif
-    }*/
 
     std::shared_ptr<RobotDogConf> RobotDogMain::GetConf() const
     {
@@ -568,7 +505,7 @@ namespace athena
 
     void RobotDogMain::Spin()
         {
-          while (appRun)
+          while (global::appRun)
           {
             if (function_activation_)
             {
