@@ -4,7 +4,7 @@
 #include <csignal>
 namespace global {
   // 全局标志位，用于控制主循环
-  volatile sig_atomic_t appRun = 1;
+  sig_atomic_t appRun = 1;
 }
 
 void signal_handler(int signal) {
