@@ -49,7 +49,10 @@ template <typename T> void RosMessageManager<T>::Init(T* t) {
   // 发布反馈消息给集成
   _pubscriber.insert(std::make_pair<std::string, ros::Publisher>(pub_feedback_to_cmd, nh_.advertise<perception_msgs::PercState>(pub_feedback_to_cmd, 10)));
   //state_pub_ = nh.advertise<perception_msgs::PercState>(pub_feedback_to_cmd, 10);
-
+  
+  //发布动作信息给集成
+  _pubscriber.insert(std::make_pair<std::string, ros::Publisher>(pub_action_info_to_cmd, nh_.advertise<perception_msgs::ActionEntry>(pub_action_info_to_cmd, 10)));
+  
   // 线程执行开始
   handle_message_thread_.reset(new std::thread([this] { Run(); }));
   if (handle_message_thread_ == nullptr) {
@@ -99,6 +102,11 @@ void RosMessageManager<T>::PublishPose(geometry_msgs::Pose msg) {
 template <typename T>
 void RosMessageManager<T>::PublishState(perception_msgs::PercState msg) {
   _pubscriber[pub_feedback_to_cmd].publish(msg);
+}
+
+template <typename T>
+void RosMessageManager<T>::PublishAction(perception_msgs::ActionEntry msg) {
+  _pubscriber[pub_action_info_to_cmd].publish(msg);
 }
 
 template <typename T>

@@ -1,4 +1,7 @@
 file(REMOVE_RECURSE
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/gennodejs/ros/perception_msgs/msg/ActionEntry.js"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/gennodejs/ros/perception_msgs/msg/AlarmEntry.js"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/gennodejs/ros/perception_msgs/msg/DogState.js"
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/gennodejs/ros/perception_msgs/msg/PercCmd.js"
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/gennodejs/ros/perception_msgs/msg/PercReq.js"
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/gennodejs/ros/perception_msgs/msg/PercState.js"

@@ -6,6 +6,12 @@
                :std_msgs-msg
 )
   :components ((:file "_package")
+    (:file "ActionEntry" :depends-on ("_package_ActionEntry"))
+    (:file "_package_ActionEntry" :depends-on ("_package"))
+    (:file "AlarmEntry" :depends-on ("_package_AlarmEntry"))
+    (:file "_package_AlarmEntry" :depends-on ("_package"))
+    (:file "DogState" :depends-on ("_package_DogState"))
+    (:file "_package_DogState" :depends-on ("_package"))
     (:file "PercCmd" :depends-on ("_package_PercCmd"))
     (:file "_package_PercCmd" :depends-on ("_package"))
     (:file "PercReq" :depends-on ("_package_PercReq"))

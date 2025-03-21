@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
-messages_str = "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/PercCmd.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/PercState.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/PercReq.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/TaskList.msg"
+messages_str = "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/PercCmd.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/PercState.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/PercReq.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/TaskList.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/ActionEntry.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/AlarmEntry.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/DogState.msg"
 services_str = ""
 pkg_name = "perception_msgs"
 dependencies_str = "geometry_msgs;std_msgs"

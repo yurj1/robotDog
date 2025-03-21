@@ -1,4 +1,7 @@
 file(REMOVE_RECURSE
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/common-lisp/ros/perception_msgs/msg/ActionEntry.lisp"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/common-lisp/ros/perception_msgs/msg/AlarmEntry.lisp"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/common-lisp/ros/perception_msgs/msg/DogState.lisp"
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/common-lisp/ros/perception_msgs/msg/PercCmd.lisp"
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/common-lisp/ros/perception_msgs/msg/PercReq.lisp"
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/common-lisp/ros/perception_msgs/msg/PercState.lisp"

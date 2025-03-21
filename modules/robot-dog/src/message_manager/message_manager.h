@@ -13,6 +13,7 @@
 #include <perception_msgs/PercCmd.h>
 #include <perception_msgs/PercState.h>
 #include <perception_msgs/TaskList.h>
+#include <perception_msgs/ActionEntry.h>
 #include <geometry_msgs/Pose.h>
 #include <common/enum.h>
 
@@ -20,6 +21,12 @@
 #ifndef pub_feedback_to_cmd
  #define pub_feedback_to_cmd "/planning/perc_state"
 #endif
+
+//发布动作消息给集成模块
+#ifndef pub_action_info_to_cmd
+ #define pub_action_info_to_cmd "/dog_action"
+#endif
+
 //发布任务模式给规划和感知模块
 #ifndef pub_perception_mode
  #define pub_perception_mode "/perception_bridge/task_list"
@@ -63,6 +70,7 @@ public:
   virtual void PublishTaskList(perception_msgs::TaskList msg) = 0;
   virtual void PublishPose(geometry_msgs::Pose msg) = 0;
   virtual void PublishState(perception_msgs::PercState msg) = 0;
+  virtual void PublishAction(perception_msgs::ActionEntry msg) = 0;
   virtual const std::map<std::string, geometry_msgs::Pose>& GetPointMap() = 0;
   
 };

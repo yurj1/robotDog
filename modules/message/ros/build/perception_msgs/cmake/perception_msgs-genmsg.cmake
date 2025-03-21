@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "perception_msgs: 4 messages, 0 services")
+message(STATUS "perception_msgs: 7 messages, 0 services")
 
 set(MSG_I_FLAGS "-Iperception_msgs:/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg;-Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg;-Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg")
 
@@ -34,7 +34,22 @@ add_custom_target(_perception_msgs_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/TaskList.msg" NAME_WE)
 add_custom_target(_perception_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "perception_msgs" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/TaskList.msg" "geometry_msgs/Pose:geometry_msgs/Quaternion:geometry_msgs/Point"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "perception_msgs" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/TaskList.msg" "geometry_msgs/Pose:geometry_msgs/Point:geometry_msgs/Quaternion"
+)
+
+get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/ActionEntry.msg" NAME_WE)
+add_custom_target(_perception_msgs_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "perception_msgs" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/ActionEntry.msg" ""
+)
+
+get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/AlarmEntry.msg" NAME_WE)
+add_custom_target(_perception_msgs_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "perception_msgs" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/AlarmEntry.msg" ""
+)
+
+get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/DogState.msg" NAME_WE)
+add_custom_target(_perception_msgs_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "perception_msgs" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/DogState.msg" "geometry_msgs/Pose:geometry_msgs/Point:perception_msgs/AlarmEntry:geometry_msgs/Quaternion"
 )
 
 #
@@ -64,7 +79,25 @@ _generate_msg_cpp(perception_msgs
 _generate_msg_cpp(perception_msgs
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/TaskList.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/perception_msgs
+)
+_generate_msg_cpp(perception_msgs
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/ActionEntry.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/perception_msgs
+)
+_generate_msg_cpp(perception_msgs
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/AlarmEntry.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/perception_msgs
+)
+_generate_msg_cpp(perception_msgs
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/DogState.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/AlarmEntry.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/perception_msgs
 )
 
@@ -89,6 +122,12 @@ add_dependencies(perception_msgs_generate_messages_cpp _perception_msgs_generate
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/PercReq.msg" NAME_WE)
 add_dependencies(perception_msgs_generate_messages_cpp _perception_msgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/TaskList.msg" NAME_WE)
+add_dependencies(perception_msgs_generate_messages_cpp _perception_msgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/ActionEntry.msg" NAME_WE)
+add_dependencies(perception_msgs_generate_messages_cpp _perception_msgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/AlarmEntry.msg" NAME_WE)
+add_dependencies(perception_msgs_generate_messages_cpp _perception_msgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/DogState.msg" NAME_WE)
 add_dependencies(perception_msgs_generate_messages_cpp _perception_msgs_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -121,7 +160,25 @@ _generate_msg_eus(perception_msgs
 _generate_msg_eus(perception_msgs
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/TaskList.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg"
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/perception_msgs
+)
+_generate_msg_eus(perception_msgs
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/ActionEntry.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/perception_msgs
+)
+_generate_msg_eus(perception_msgs
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/AlarmEntry.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/perception_msgs
+)
+_generate_msg_eus(perception_msgs
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/DogState.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/AlarmEntry.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/perception_msgs
 )
 
@@ -146,6 +203,12 @@ add_dependencies(perception_msgs_generate_messages_eus _perception_msgs_generate
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/PercReq.msg" NAME_WE)
 add_dependencies(perception_msgs_generate_messages_eus _perception_msgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/TaskList.msg" NAME_WE)
+add_dependencies(perception_msgs_generate_messages_eus _perception_msgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/ActionEntry.msg" NAME_WE)
+add_dependencies(perception_msgs_generate_messages_eus _perception_msgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/AlarmEntry.msg" NAME_WE)
+add_dependencies(perception_msgs_generate_messages_eus _perception_msgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/DogState.msg" NAME_WE)
 add_dependencies(perception_msgs_generate_messages_eus _perception_msgs_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -178,7 +241,25 @@ _generate_msg_lisp(perception_msgs
 _generate_msg_lisp(perception_msgs
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/TaskList.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/perception_msgs
+)
+_generate_msg_lisp(perception_msgs
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/ActionEntry.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/perception_msgs
+)
+_generate_msg_lisp(perception_msgs
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/AlarmEntry.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/perception_msgs
+)
+_generate_msg_lisp(perception_msgs
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/DogState.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/AlarmEntry.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/perception_msgs
 )
 
@@ -203,6 +284,12 @@ add_dependencies(perception_msgs_generate_messages_lisp _perception_msgs_generat
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/PercReq.msg" NAME_WE)
 add_dependencies(perception_msgs_generate_messages_lisp _perception_msgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/TaskList.msg" NAME_WE)
+add_dependencies(perception_msgs_generate_messages_lisp _perception_msgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/ActionEntry.msg" NAME_WE)
+add_dependencies(perception_msgs_generate_messages_lisp _perception_msgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/AlarmEntry.msg" NAME_WE)
+add_dependencies(perception_msgs_generate_messages_lisp _perception_msgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/DogState.msg" NAME_WE)
 add_dependencies(perception_msgs_generate_messages_lisp _perception_msgs_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -235,7 +322,25 @@ _generate_msg_nodejs(perception_msgs
 _generate_msg_nodejs(perception_msgs
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/TaskList.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/perception_msgs
+)
+_generate_msg_nodejs(perception_msgs
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/ActionEntry.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/perception_msgs
+)
+_generate_msg_nodejs(perception_msgs
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/AlarmEntry.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/perception_msgs
+)
+_generate_msg_nodejs(perception_msgs
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/DogState.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/AlarmEntry.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/perception_msgs
 )
 
@@ -260,6 +365,12 @@ add_dependencies(perception_msgs_generate_messages_nodejs _perception_msgs_gener
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/PercReq.msg" NAME_WE)
 add_dependencies(perception_msgs_generate_messages_nodejs _perception_msgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/TaskList.msg" NAME_WE)
+add_dependencies(perception_msgs_generate_messages_nodejs _perception_msgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/ActionEntry.msg" NAME_WE)
+add_dependencies(perception_msgs_generate_messages_nodejs _perception_msgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/AlarmEntry.msg" NAME_WE)
+add_dependencies(perception_msgs_generate_messages_nodejs _perception_msgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/DogState.msg" NAME_WE)
 add_dependencies(perception_msgs_generate_messages_nodejs _perception_msgs_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -292,7 +403,25 @@ _generate_msg_py(perception_msgs
 _generate_msg_py(perception_msgs
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/TaskList.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/perception_msgs
+)
+_generate_msg_py(perception_msgs
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/ActionEntry.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/perception_msgs
+)
+_generate_msg_py(perception_msgs
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/AlarmEntry.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/perception_msgs
+)
+_generate_msg_py(perception_msgs
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/DogState.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/AlarmEntry.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/perception_msgs
 )
 
@@ -317,6 +446,12 @@ add_dependencies(perception_msgs_generate_messages_py _perception_msgs_generate_
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/PercReq.msg" NAME_WE)
 add_dependencies(perception_msgs_generate_messages_py _perception_msgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/TaskList.msg" NAME_WE)
+add_dependencies(perception_msgs_generate_messages_py _perception_msgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/ActionEntry.msg" NAME_WE)
+add_dependencies(perception_msgs_generate_messages_py _perception_msgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/AlarmEntry.msg" NAME_WE)
+add_dependencies(perception_msgs_generate_messages_py _perception_msgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/DogState.msg" NAME_WE)
 add_dependencies(perception_msgs_generate_messages_py _perception_msgs_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility

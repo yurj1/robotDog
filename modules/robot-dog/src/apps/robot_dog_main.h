@@ -196,6 +196,10 @@ namespace athena
       void PublishTaskList(perception_msgs::TaskList msg);
       void PublishPose(geometry_msgs::Pose msg);
       void PublishState(perception_msgs::PercState msg);
+      void PublishAction(perception_msgs::ActionEntry&msg){
+        if (message_manager_.count("ROS") > 0)
+          message_manager_["ROS"]->PublishAction(msg);
+      }
 
     protected:
       /**

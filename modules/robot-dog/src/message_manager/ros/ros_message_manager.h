@@ -49,6 +49,7 @@ public:
   void PublishTaskList(perception_msgs::TaskList msg)override;
   void PublishPose(geometry_msgs::Pose msg)override;
   void PublishState(perception_msgs::PercState msg)override;
+  void PublishAction(perception_msgs::ActionEntry msg)override;
 
   const std::map<std::string, geometry_msgs::Pose>& GetPointMap() override{
     return point_map_;

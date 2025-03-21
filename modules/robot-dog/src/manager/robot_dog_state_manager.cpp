@@ -96,8 +96,10 @@ void RobotDogState::handleTaskEvent(const perception_msgs::PercCmd::ConstPtr& ms
 
 void RobotDogState::handlePerceptionEvent(const perception_msgs::TaskList::ConstPtr& msg)
 {
-    ROS_INFO("Received TaskPt: task_type=%u, x=%f, y=%f, z=%f target_object=%s",
-                  msg->task_type, msg->target_position.position.x,  msg->target_position.position.y,  msg->target_position.position.z, msg->target_object.c_str());
+    ROS_INFO("Received TaskPt: task_type=%u, x=%f, y=%f, z=%f target_object=%s task_state=%u",
+                  msg->task_type, msg->target_position.position.x,  msg->target_position.position.y,  msg->target_position.position.z, msg->target_object.c_str(), msg->task_state);
+
+    static bool is_perception_error = false;
 
     geometry_msgs::Pose pose;
     pose.position.x = msg->target_position.position.x;
@@ -108,10 +110,26 @@ void RobotDogState::handlePerceptionEvent(const perception_msgs::TaskList::Const
     pose.orientation.z = msg->target_position.orientation.z;
     pose.orientation.w = msg->target_position.orientation.w;
     
+    perception_msgs::ActionEntry actionMsg;
+
     switch (msg->task_type)
     {
     case robot_dog::operations::TaskType::TASK_FOLLOW://跟随任务
     case robot_dog::operations::TaskType::TASK_WELCOME://欢迎任务
+        if(msg->task_state == 2)//主人识别失败
+        {
+            if(is_perception_error) return;
+            
+            actionMsg.id = 1;
+            actionMsg.info = "等等我";
+            AfjGetMain()->PublishAction(actionMsg);
+
+            is_perception_error = true;
+            return;
+        }
+        //复位
+        if(is_perception_error) is_perception_error = false;
+
         task_list_planning_.task_type = robot_dog::operations::TaskType::TASK_NAVIGATION;
         task_list_planning_.target_position = pose;
         if(AfjGetMainNotNull)

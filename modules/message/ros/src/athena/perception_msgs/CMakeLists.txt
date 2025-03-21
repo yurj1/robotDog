@@ -55,6 +55,9 @@ add_message_files(
     PercState.msg
     PercReq.msg
     TaskList.msg
+    ActionEntry.msg
+    AlarmEntry.msg
+    DogState.msg
   )
 
 ## Generate services in the 'srv' folder

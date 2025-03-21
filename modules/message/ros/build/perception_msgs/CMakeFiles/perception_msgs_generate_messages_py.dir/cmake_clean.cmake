@@ -1,4 +1,7 @@
 file(REMOVE_RECURSE
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/lib/python3/dist-packages/perception_msgs/msg/_ActionEntry.py"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/lib/python3/dist-packages/perception_msgs/msg/_AlarmEntry.py"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/lib/python3/dist-packages/perception_msgs/msg/_DogState.py"
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/lib/python3/dist-packages/perception_msgs/msg/_PercCmd.py"
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/lib/python3/dist-packages/perception_msgs/msg/_PercReq.py"
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/lib/python3/dist-packages/perception_msgs/msg/_PercState.py"

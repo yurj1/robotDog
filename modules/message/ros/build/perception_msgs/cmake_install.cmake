@@ -134,6 +134,9 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/PercState.msg"
     "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/PercReq.msg"
     "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/TaskList.msg"
+    "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/ActionEntry.msg"
+    "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/AlarmEntry.msg"
+    "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/DogState.msg"
     )
 endif()
 
