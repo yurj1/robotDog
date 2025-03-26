@@ -4,6 +4,6 @@
 (defsystem "perception_msgs-srv"
   :depends-on (:roslisp-msg-protocol :roslisp-utils )
   :components ((:file "_package")
-    (:file "RecordBag" :depends-on ("_package_RecordBag"))
-    (:file "_package_RecordBag" :depends-on ("_package"))
+    (:file "DogRecordBag" :depends-on ("_package_DogRecordBag"))
+    (:file "_package_DogRecordBag" :depends-on ("_package"))
   ))

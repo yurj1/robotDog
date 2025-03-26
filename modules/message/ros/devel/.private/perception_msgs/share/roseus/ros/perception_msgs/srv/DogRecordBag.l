@@ -1,0 +1,189 @@
+;; Auto-generated. Do not edit!
+
+
+(when (boundp 'perception_msgs::DogRecordBag)
+  (if (not (find-package "PERCEPTION_MSGS"))
+    (make-package "PERCEPTION_MSGS"))
+  (shadow 'DogRecordBag (find-package "PERCEPTION_MSGS")))
+(unless (find-package "PERCEPTION_MSGS::DOGRECORDBAG")
+  (make-package "PERCEPTION_MSGS::DOGRECORDBAG"))
+(unless (find-package "PERCEPTION_MSGS::DOGRECORDBAGREQUEST")
+  (make-package "PERCEPTION_MSGS::DOGRECORDBAGREQUEST"))
+(unless (find-package "PERCEPTION_MSGS::DOGRECORDBAGRESPONSE")
+  (make-package "PERCEPTION_MSGS::DOGRECORDBAGRESPONSE"))
+
+(in-package "ROS")
+
+
+
+
+
+(defclass perception_msgs::DogRecordBagRequest
+  :super ros::object
+  :slots (_bagMode _bagName _topics _bashName ))
+
+(defmethod perception_msgs::DogRecordBagRequest
+  (:init
+   (&key
+    ((:bagMode __bagMode) 0)
+    ((:bagName __bagName) "")
+    ((:topics __topics) (let (r) (dotimes (i 0) (push "" r)) r))
+    ((:bashName __bashName) "")
+    )
+   (send-super :init)
+   (setq _bagMode (round __bagMode))
+   (setq _bagName (string __bagName))
+   (setq _topics __topics)
+   (setq _bashName (string __bashName))
+   self)
+  (:bagMode
+   (&optional __bagMode)
+   (if __bagMode (setq _bagMode __bagMode)) _bagMode)
+  (:bagName
+   (&optional __bagName)
+   (if __bagName (setq _bagName __bagName)) _bagName)
+  (:topics
+   (&optional __topics)
+   (if __topics (setq _topics __topics)) _topics)
+  (:bashName
+   (&optional __bashName)
+   (if __bashName (setq _bashName __bashName)) _bashName)
+  (:serialization-length
+   ()
+   (+
+    ;; uint8 _bagMode
+    1
+    ;; string _bagName
+    4 (length _bagName)
+    ;; string[] _topics
+    (apply #'+ (mapcar #'(lambda (x) (+ 4 (length x))) _topics)) 4
+    ;; string _bashName
+    4 (length _bashName)
+    ))
+  (:serialize
+   (&optional strm)
+   (let ((s (if strm strm
+              (make-string-output-stream (send self :serialization-length)))))
+     ;; uint8 _bagMode
+       (write-byte _bagMode s)
+     ;; string _bagName
+       (write-long (length _bagName) s) (princ _bagName s)
+     ;; string[] _topics
+     (write-long (length _topics) s)
+     (dolist (elem _topics)
+       (write-long (length elem) s) (princ elem s)
+       )
+     ;; string _bashName
+       (write-long (length _bashName) s) (princ _bashName s)
+     ;;
+     (if (null strm) (get-output-stream-string s))))
+  (:deserialize
+   (buf &optional (ptr- 0))
+   ;; uint8 _bagMode
+     (setq _bagMode (sys::peek buf ptr- :char)) (incf ptr- 1)
+   ;; string _bagName
+     (let (n) (setq n (sys::peek buf ptr- :integer)) (incf ptr- 4) (setq _bagName (subseq buf ptr- (+ ptr- n))) (incf ptr- n))
+   ;; string[] _topics
+   (let (n)
+     (setq n (sys::peek buf ptr- :integer)) (incf ptr- 4)
+     (setq _topics (make-list n))
+     (dotimes (i n)
+     (let (n) (setq n (sys::peek buf ptr- :integer)) (incf ptr- 4) (setf (elt _topics i) (subseq buf ptr- (+ ptr- n))) (incf ptr- n))
+     ))
+   ;; string _bashName
+     (let (n) (setq n (sys::peek buf ptr- :integer)) (incf ptr- 4) (setq _bashName (subseq buf ptr- (+ ptr- n))) (incf ptr- n))
+   ;;
+   self)
+  )
+
+(defclass perception_msgs::DogRecordBagResponse
+  :super ros::object
+  :slots (_success _errorInfo ))
+
+(defmethod perception_msgs::DogRecordBagResponse
+  (:init
+   (&key
+    ((:success __success) nil)
+    ((:errorInfo __errorInfo) "")
+    )
+   (send-super :init)
+   (setq _success __success)
+   (setq _errorInfo (string __errorInfo))
+   self)
+  (:success
+   (&optional (__success :null))
+   (if (not (eq __success :null)) (setq _success __success)) _success)
+  (:errorInfo
+   (&optional __errorInfo)
+   (if __errorInfo (setq _errorInfo __errorInfo)) _errorInfo)
+  (:serialization-length
+   ()
+   (+
+    ;; bool _success
+    1
+    ;; string _errorInfo
+    4 (length _errorInfo)
+    ))
+  (:serialize
+   (&optional strm)
+   (let ((s (if strm strm
+              (make-string-output-stream (send self :serialization-length)))))
+     ;; bool _success
+       (if _success (write-byte -1 s) (write-byte 0 s))
+     ;; string _errorInfo
+       (write-long (length _errorInfo) s) (princ _errorInfo s)
+     ;;
+     (if (null strm) (get-output-stream-string s))))
+  (:deserialize
+   (buf &optional (ptr- 0))
+   ;; bool _success
+     (setq _success (not (= 0 (sys::peek buf ptr- :char)))) (incf ptr- 1)
+   ;; string _errorInfo
+     (let (n) (setq n (sys::peek buf ptr- :integer)) (incf ptr- 4) (setq _errorInfo (subseq buf ptr- (+ ptr- n))) (incf ptr- n))
+   ;;
+   self)
+  )
+
+(defclass perception_msgs::DogRecordBag
+  :super ros::object
+  :slots ())
+
+(setf (get perception_msgs::DogRecordBag :md5sum-) "0e3c6c8f89a4078d1c2279ef76b31bf7")
+(setf (get perception_msgs::DogRecordBag :datatype-) "perception_msgs/DogRecordBag")
+(setf (get perception_msgs::DogRecordBag :request) perception_msgs::DogRecordBagRequest)
+(setf (get perception_msgs::DogRecordBag :response) perception_msgs::DogRecordBagResponse)
+
+(defmethod perception_msgs::DogRecordBagRequest
+  (:response () (instance perception_msgs::DogRecordBagResponse :init)))
+
+(setf (get perception_msgs::DogRecordBagRequest :md5sum-) "0e3c6c8f89a4078d1c2279ef76b31bf7")
+(setf (get perception_msgs::DogRecordBagRequest :datatype-) "perception_msgs/DogRecordBagRequest")
+(setf (get perception_msgs::DogRecordBagRequest :definition-)
+      "uint8 bagMode
+string bagName
+string[] topics
+string bashName
+---
+bool success
+string errorInfo
+
+")
+
+(setf (get perception_msgs::DogRecordBagResponse :md5sum-) "0e3c6c8f89a4078d1c2279ef76b31bf7")
+(setf (get perception_msgs::DogRecordBagResponse :datatype-) "perception_msgs/DogRecordBagResponse")
+(setf (get perception_msgs::DogRecordBagResponse :definition-)
+      "uint8 bagMode
+string bagName
+string[] topics
+string bashName
+---
+bool success
+string errorInfo
+
+")
+
+
+
+(provide :perception_msgs/DogRecordBag "0e3c6c8f89a4078d1c2279ef76b31bf7")
+
+

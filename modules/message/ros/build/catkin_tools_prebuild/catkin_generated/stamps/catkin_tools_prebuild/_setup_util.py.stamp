@@ -268,7 +268,7 @@ if __name__ == '__main__':
 
         if not args.local:
             # environment at generation time
-            CMAKE_PREFIX_PATH = r'/home/meizan/workspace/vis_flashocc_bak/quad_msg/devel;/opt/ros/noetic;/home/meizan/seres-modules/modules/message/ros2/install/shm_msgs;/home/meizan/seres-modules/modules/message/ros2/install/rosbridge_msgs;/home/meizan/seres-modules/modules/message/ros2/install/ros2_interface;/home/meizan/seres-modules/modules/drivers/hesai_driver/src/HesaiLidar_ROS_2.0/ros2/install/shm_msgs'.split(';')
+            CMAKE_PREFIX_PATH = r'/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel;/home/meizan/workspace/vis_flashocc_bak/quad_msg/devel;/opt/ros/noetic;/home/meizan/seres-modules/modules/message/ros2/install/shm_msgs;/home/meizan/seres-modules/modules/message/ros2/install/rosbridge_msgs;/home/meizan/seres-modules/modules/message/ros2/install/ros2_interface;/home/meizan/seres-modules/modules/drivers/hesai_driver/src/HesaiLidar_ROS_2.0/ros2/install/shm_msgs'.split(';')
         else:
             # don't consider any other prefix path than this one
             CMAKE_PREFIX_PATH = []

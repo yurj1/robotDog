@@ -1,8 +1,8 @@
 
 "use strict";
 
-let RecordBag = require('./RecordBag.js')
+let DogRecordBag = require('./DogRecordBag.js')
 
 module.exports = {
-  RecordBag: RecordBag,
+  DogRecordBag: DogRecordBag,
 };

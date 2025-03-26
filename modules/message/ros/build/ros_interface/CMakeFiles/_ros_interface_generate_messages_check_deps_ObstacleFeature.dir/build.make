@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/meizan/workspace/athena-robot-dog/modules/message/ros/b
 include CMakeFiles/_ros_interface_generate_messages_check_deps_ObstacleFeature.dir/progress.make
 
 CMakeFiles/_ros_interface_generate_messages_check_deps_ObstacleFeature:
-	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py ros_interface /home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleFeature.msg ros_interface/TrajectoryPoint:ros_interface/PathPoint:ros_interface/ObstaclePriority:ros_interface/TrajectoryPointInPrediction:ros_interface/TrajectoryInPrediction:ros_interface/Point3D:ros_interface/PredictionTrajectoryPoint
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py ros_interface /home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleFeature.msg ros_interface/PredictionTrajectoryPoint:ros_interface/PathPoint:ros_interface/TrajectoryPoint:ros_interface/ObstaclePriority:ros_interface/TrajectoryPointInPrediction:ros_interface/Point3D:ros_interface/TrajectoryInPrediction
 
 _ros_interface_generate_messages_check_deps_ObstacleFeature: CMakeFiles/_ros_interface_generate_messages_check_deps_ObstacleFeature
 _ros_interface_generate_messages_check_deps_ObstacleFeature: CMakeFiles/_ros_interface_generate_messages_check_deps_ObstacleFeature.dir/build.make

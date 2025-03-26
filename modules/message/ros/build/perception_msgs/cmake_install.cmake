@@ -141,7 +141,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/perception_msgs/srv" TYPE FILE FILES "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/srv/RecordBag.srv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/perception_msgs/srv" TYPE FILE FILES "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/srv/DogRecordBag.srv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)

@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/meizan/workspace/athena-robot-dog/modules/message/ros/b
 include CMakeFiles/_ros_interface_generate_messages_check_deps_HMIObuCmdMsg.dir/progress.make
 
 CMakeFiles/_ros_interface_generate_messages_check_deps_HMIObuCmdMsg:
-	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py ros_interface /home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIObuCmdMsg.msg ros_interface/HMIObuCmd:std_msgs/Header
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py ros_interface /home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIObuCmdMsg.msg std_msgs/Header:ros_interface/HMIObuCmd
 
 _ros_interface_generate_messages_check_deps_HMIObuCmdMsg: CMakeFiles/_ros_interface_generate_messages_check_deps_HMIObuCmdMsg
 _ros_interface_generate_messages_check_deps_HMIObuCmdMsg: CMakeFiles/_ros_interface_generate_messages_check_deps_HMIObuCmdMsg.dir/build.make

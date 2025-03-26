@@ -6,7 +6,7 @@ file(REMOVE_RECURSE
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/common-lisp/ros/perception_msgs/msg/PercReq.lisp"
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/common-lisp/ros/perception_msgs/msg/PercState.lisp"
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/common-lisp/ros/perception_msgs/msg/TaskList.lisp"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/common-lisp/ros/perception_msgs/srv/RecordBag.lisp"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/common-lisp/ros/perception_msgs/srv/DogRecordBag.lisp"
   "CMakeFiles/perception_msgs_generate_messages_lisp"
 )
 

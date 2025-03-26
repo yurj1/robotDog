@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/meizan/workspace/athena-robot-dog/modules/message/ros/b
 include CMakeFiles/_perception_msgs_generate_messages_check_deps_DogState.dir/progress.make
 
 CMakeFiles/_perception_msgs_generate_messages_check_deps_DogState:
-	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py perception_msgs /home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/DogState.msg geometry_msgs/Pose:geometry_msgs/Point:perception_msgs/AlarmEntry:geometry_msgs/Quaternion
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py perception_msgs /home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/DogState.msg geometry_msgs/Pose:perception_msgs/AlarmEntry:geometry_msgs/Point:geometry_msgs/Quaternion
 
 _perception_msgs_generate_messages_check_deps_DogState: CMakeFiles/_perception_msgs_generate_messages_check_deps_DogState
 _perception_msgs_generate_messages_check_deps_DogState: CMakeFiles/_perception_msgs_generate_messages_check_deps_DogState.dir/build.make

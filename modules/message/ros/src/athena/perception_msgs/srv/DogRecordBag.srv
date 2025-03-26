@@ -1,0 +1,7 @@
+uint8 bagMode
+string bagName
+string[] topics
+string bashName
+---
+bool success
+string errorInfo

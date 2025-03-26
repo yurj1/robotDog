@@ -1,21 +1,21 @@
 Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
 Change Dir: /home/meizan/workspace/athena-robot-dog/modules/message/ros/build/ros_interface/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_d7ca1/fast && /usr/bin/make -f CMakeFiles/cmTC_d7ca1.dir/build.make CMakeFiles/cmTC_d7ca1.dir/build
+Run Build Command(s):/usr/bin/make cmTC_48f15/fast && /usr/bin/make -f CMakeFiles/cmTC_48f15.dir/build.make CMakeFiles/cmTC_48f15.dir/build
 make[1]: 进入目录“/home/meizan/workspace/athena-robot-dog/modules/message/ros/build/ros_interface/CMakeFiles/CMakeTmp”
-Building C object CMakeFiles/cmTC_d7ca1.dir/src.c.o
-/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_d7ca1.dir/src.c.o   -c /home/meizan/workspace/athena-robot-dog/modules/message/ros/build/ros_interface/CMakeFiles/CMakeTmp/src.c
-Linking C executable cmTC_d7ca1
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d7ca1.dir/link.txt --verbose=1
-/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_d7ca1.dir/src.c.o  -o cmTC_d7ca1 
-/usr/bin/ld: CMakeFiles/cmTC_d7ca1.dir/src.c.o: in function `main':
+Building C object CMakeFiles/cmTC_48f15.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_48f15.dir/src.c.o   -c /home/meizan/workspace/athena-robot-dog/modules/message/ros/build/ros_interface/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_48f15
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_48f15.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_48f15.dir/src.c.o  -o cmTC_48f15 
+/usr/bin/ld: CMakeFiles/cmTC_48f15.dir/src.c.o: in function `main':
 src.c:(.text+0x46): undefined reference to `pthread_create'
 /usr/bin/ld: src.c:(.text+0x52): undefined reference to `pthread_detach'
 /usr/bin/ld: src.c:(.text+0x63): undefined reference to `pthread_join'
 collect2: error: ld returned 1 exit status
-make[1]: *** [CMakeFiles/cmTC_d7ca1.dir/build.make:87：cmTC_d7ca1] 错误 1
+make[1]: *** [CMakeFiles/cmTC_48f15.dir/build.make:87：cmTC_48f15] 错误 1
 make[1]: 离开目录“/home/meizan/workspace/athena-robot-dog/modules/message/ros/build/ros_interface/CMakeFiles/CMakeTmp”
-make: *** [Makefile:121：cmTC_d7ca1/fast] 错误 2
+make: *** [Makefile:121：cmTC_48f15/fast] 错误 2
 
 
 Source file was:
@@ -41,18 +41,18 @@ int main(void)
 Determining if the function pthread_create exists in the pthreads failed with the following output:
 Change Dir: /home/meizan/workspace/athena-robot-dog/modules/message/ros/build/ros_interface/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_153c7/fast && /usr/bin/make -f CMakeFiles/cmTC_153c7.dir/build.make CMakeFiles/cmTC_153c7.dir/build
+Run Build Command(s):/usr/bin/make cmTC_7ac10/fast && /usr/bin/make -f CMakeFiles/cmTC_7ac10.dir/build.make CMakeFiles/cmTC_7ac10.dir/build
 make[1]: 进入目录“/home/meizan/workspace/athena-robot-dog/modules/message/ros/build/ros_interface/CMakeFiles/CMakeTmp”
-Building C object CMakeFiles/cmTC_153c7.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_153c7.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
-Linking C executable cmTC_153c7
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_153c7.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_153c7.dir/CheckFunctionExists.c.o  -o cmTC_153c7  -lpthreads 
+Building C object CMakeFiles/cmTC_7ac10.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_7ac10.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_7ac10
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7ac10.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_7ac10.dir/CheckFunctionExists.c.o  -o cmTC_7ac10  -lpthreads 
 /usr/bin/ld: 找不到 -lpthreads
 collect2: error: ld returned 1 exit status
-make[1]: *** [CMakeFiles/cmTC_153c7.dir/build.make:87：cmTC_153c7] 错误 1
+make[1]: *** [CMakeFiles/cmTC_7ac10.dir/build.make:87：cmTC_7ac10] 错误 1
 make[1]: 离开目录“/home/meizan/workspace/athena-robot-dog/modules/message/ros/build/ros_interface/CMakeFiles/CMakeTmp”
-make: *** [Makefile:121：cmTC_153c7/fast] 错误 2
+make: *** [Makefile:121：cmTC_7ac10/fast] 错误 2
 
 
 
