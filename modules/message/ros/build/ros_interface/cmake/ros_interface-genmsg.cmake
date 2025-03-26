@@ -124,7 +124,7 @@ add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/VehicleMotion.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/VehicleMotion.msg" "ros_interface/PathPoint:ros_interface/VehicleMotionPoint:ros_interface/TrajectoryPoint"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/VehicleMotion.msg" "ros_interface/PathPoint:ros_interface/TrajectoryPoint:ros_interface/VehicleMotionPoint"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/GaussianInfo.msg" NAME_WE)
@@ -164,7 +164,7 @@ add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Events.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Events.msg" "ros_interface/Event:std_msgs/Header:ros_interface/Time"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Events.msg" "std_msgs/Header:ros_interface/Event:ros_interface/Time"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/EStop.msg" NAME_WE)
@@ -179,7 +179,7 @@ add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Pose.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Pose.msg" "ros_interface/PointENU:ros_interface/Quaternion:ros_interface/Point3D"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Pose.msg" "ros_interface/Quaternion:ros_interface/Point3D:ros_interface/PointENU"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Uncertainty.msg" NAME_WE)
@@ -219,52 +219,52 @@ add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PredictionObstacles.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PredictionObstacles.msg" "std_msgs/Header:ros_interface/ObstaclePriority:ros_interface/PerceptionObstacle:ros_interface/PredictionObstacle:ros_interface/TrajectoryInPrediction:ros_interface/Point3D:ros_interface/ObstacleInteractiveTag:ros_interface/ObstacleIntent:ros_interface/PathPoint:ros_interface/TrajectoryPoint"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PredictionObstacles.msg" "ros_interface/ObstacleInteractiveTag:std_msgs/Header:ros_interface/TrajectoryPoint:ros_interface/PredictionObstacle:ros_interface/PathPoint:ros_interface/PerceptionObstacle:ros_interface/ObstacleIntent:ros_interface/ObstaclePriority:ros_interface/TrajectoryInPrediction:ros_interface/Point3D"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Location.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Location.msg" "std_msgs/Header:ros_interface/PointLLH:ros_interface/Point3D:ros_interface/PointENU"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Location.msg" "ros_interface/Point3D:std_msgs/Header:ros_interface/PointENU:ros_interface/PointLLH"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Odometry.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Odometry.msg" "std_msgs/Header:ros_interface/PointENU:ros_interface/Quaternion"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Odometry.msg" "ros_interface/Quaternion:std_msgs/Header:ros_interface/PointENU"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleList.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleList.msg" "ros_interface/ImageKeyPoint:std_msgs/Header:ros_interface/Obstacle:ros_interface/SensorCalibrator:ros_interface/Point3D:ros_interface/Time:ros_interface/Point2D:ros_interface/BBox2D"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleList.msg" "std_msgs/Header:ros_interface/Point2D:ros_interface/BBox2D:ros_interface/Obstacle:ros_interface/ImageKeyPoint:ros_interface/SensorCalibrator:ros_interface/Point3D:ros_interface/Time"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneList.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneList.msg" "std_msgs/Header:ros_interface/LaneLine:ros_interface/RoadMark:ros_interface/HolisticPathPrediction:ros_interface/SensorCalibrator:ros_interface/Point3D:ros_interface/EndPoints:ros_interface/Time:ros_interface/Point2D:ros_interface/LaneLineCubicCurve"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneList.msg" "std_msgs/Header:ros_interface/EndPoints:ros_interface/RoadMark:ros_interface/LaneLineCubicCurve:ros_interface/LaneLine:ros_interface/Point2D:ros_interface/HolisticPathPrediction:ros_interface/SensorCalibrator:ros_interface/Point3D:ros_interface/Time"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficLightMsg.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficLightMsg.msg" "std_msgs/Header:ros_interface/TrafficLightBox:ros_interface/Point3D:ros_interface/Time:ros_interface/TrafficLight:ros_interface/ImageRect:ros_interface/TrafficLightDebug"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficLightMsg.msg" "ros_interface/TrafficLightBox:std_msgs/Header:ros_interface/TrafficLightDebug:ros_interface/ImageRect:ros_interface/TrafficLight:ros_interface/Point3D:ros_interface/Time"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Ultrasonic.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Ultrasonic.msg" "std_msgs/Header:ros_interface/UltrasonicObstacle"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Ultrasonic.msg" "ros_interface/UltrasonicObstacle:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarObstacleListMsg.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarObstacleListMsg.msg" "std_msgs/Header:ros_interface/Status:ros_interface/RadarObstacle:ros_interface/RadarStateError:ros_interface/Point2D:ros_interface/RadarState:ros_interface/RadarStateMode"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarObstacleListMsg.msg" "ros_interface/RadarObstacle:ros_interface/RadarStateMode:std_msgs/Header:ros_interface/Status:ros_interface/RadarStateError:ros_interface/Point2D:ros_interface/RadarState"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointCloud.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointCloud.msg" "std_msgs/Header:ros_interface/PointXYZIRT"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointCloud.msg" "ros_interface/PointXYZIRT:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarObstacle.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarObstacle.msg" "ros_interface/Status:ros_interface/Point2D"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarObstacle.msg" "ros_interface/Point2D:ros_interface/Status"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/UltrasonicObstacle.msg" NAME_WE)
@@ -289,27 +289,27 @@ add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Gnss.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Gnss.msg" "std_msgs/Header:ros_interface/Point3D"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Gnss.msg" "ros_interface/Point3D:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Imu.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Imu.msg" "std_msgs/Header:ros_interface/Quaternion:ros_interface/Point3D"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Imu.msg" "ros_interface/Point3D:ros_interface/Quaternion:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Ins.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Ins.msg" "std_msgs/Header:ros_interface/Point3D"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Ins.msg" "ros_interface/Point3D:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObuCmdMsg.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObuCmdMsg.msg" "std_msgs/Header:ros_interface/ObuCmd"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObuCmdMsg.msg" "ros_interface/ObuCmd:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RoutingRequest.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RoutingRequest.msg" "std_msgs/Header:ros_interface/KeyPoint"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RoutingRequest.msg" "ros_interface/KeyPoint:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObuCmd.msg" NAME_WE)
@@ -319,7 +319,7 @@ add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingInfo.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingInfo.msg" "ros_interface/ParkingStopper:std_msgs/Header:ros_interface/Polygon3D:ros_interface/Point3D"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingInfo.msg" "ros_interface/Polygon3D:ros_interface/Point3D:std_msgs/Header:ros_interface/ParkingStopper"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/KeyPoint.msg" NAME_WE)
@@ -334,7 +334,7 @@ add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficLight.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficLight.msg" "ros_interface/Time:ros_interface/ImageRect:ros_interface/Point3D"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficLight.msg" "ros_interface/Point3D:ros_interface/ImageRect:ros_interface/Time"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/StopPoint.msg" NAME_WE)
@@ -359,17 +359,17 @@ add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RoutingResponse.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RoutingResponse.msg" "ros_interface/LanePoint:std_msgs/Header:ros_interface/Point3D:ros_interface/LaneInfo"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RoutingResponse.msg" "ros_interface/LaneInfo:ros_interface/Point3D:ros_interface/LanePoint:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/StopInfo.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/StopInfo.msg" "std_msgs/Header:ros_interface/Point3D:ros_interface/StopPoint"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/StopInfo.msg" "ros_interface/Point3D:std_msgs/Header:ros_interface/StopPoint"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ADCTrajectory.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ADCTrajectory.msg" "std_msgs/Header:ros_interface/RSSInfo:ros_interface/PathPoint:ros_interface/EStop:ros_interface/TrajectoryPoint"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ADCTrajectory.msg" "std_msgs/Header:ros_interface/RSSInfo:ros_interface/TrajectoryPoint:ros_interface/PathPoint:ros_interface/EStop"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/BBox2D.msg" NAME_WE)
@@ -379,7 +379,7 @@ add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Obstacle.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Obstacle.msg" "ros_interface/ImageKeyPoint:ros_interface/SensorCalibrator:ros_interface/Point3D:ros_interface/Time:ros_interface/Point2D:ros_interface/BBox2D"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Obstacle.msg" "ros_interface/Point2D:ros_interface/BBox2D:ros_interface/SensorCalibrator:ros_interface/ImageKeyPoint:ros_interface/Point3D:ros_interface/Time"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RSSInfo.msg" NAME_WE)
@@ -399,7 +399,7 @@ add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PredictionObstacle.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PredictionObstacle.msg" "ros_interface/ObstaclePriority:ros_interface/PerceptionObstacle:ros_interface/TrajectoryInPrediction:ros_interface/Point3D:ros_interface/ObstacleInteractiveTag:ros_interface/ObstacleIntent:ros_interface/PathPoint:ros_interface/TrajectoryPoint"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PredictionObstacle.msg" "ros_interface/ObstacleInteractiveTag:ros_interface/TrajectoryPoint:ros_interface/PathPoint:ros_interface/PerceptionObstacle:ros_interface/ObstacleIntent:ros_interface/ObstaclePriority:ros_interface/TrajectoryInPrediction:ros_interface/Point3D"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryInPrediction.msg" NAME_WE)
@@ -424,12 +424,12 @@ add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleFeature.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleFeature.msg" "ros_interface/ObstaclePriority:ros_interface/TrajectoryInPrediction:ros_interface/Point3D:ros_interface/PredictionTrajectoryPoint:ros_interface/PathPoint:ros_interface/TrajectoryPoint:ros_interface/TrajectoryPointInPrediction"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleFeature.msg" "ros_interface/TrajectoryPoint:ros_interface/PathPoint:ros_interface/ObstaclePriority:ros_interface/TrajectoryPointInPrediction:ros_interface/TrajectoryInPrediction:ros_interface/Point3D:ros_interface/PredictionTrajectoryPoint"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneLine.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneLine.msg" "ros_interface/Point3D:ros_interface/EndPoints:ros_interface/Time:ros_interface/Point2D:ros_interface/LaneLineCubicCurve"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneLine.msg" "ros_interface/EndPoints:ros_interface/LaneLineCubicCurve:ros_interface/Point2D:ros_interface/Point3D:ros_interface/Time"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneLineCubicCurve.msg" NAME_WE)
@@ -444,7 +444,7 @@ add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/FreeSpace.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/FreeSpace.msg" "std_msgs/Header:ros_interface/Polygon2D:ros_interface/Point2D"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/FreeSpace.msg" "ros_interface/Polygon2D:std_msgs/Header:ros_interface/Point2D"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HolisticPathPrediction.msg" NAME_WE)
@@ -474,7 +474,7 @@ add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarState.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarState.msg" "ros_interface/RadarStateMode:ros_interface/RadarStateError"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarState.msg" "ros_interface/RadarStateError:ros_interface/RadarStateMode"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarStateError.msg" NAME_WE)
@@ -489,7 +489,7 @@ add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SotifMonitorResult.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SotifMonitorResult.msg" "ros_interface/SLPoint:std_msgs/Header:ros_interface/Grid:ros_interface/Point3D:ros_interface/Region"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SotifMonitorResult.msg" "std_msgs/Header:ros_interface/Grid:ros_interface/Region:ros_interface/Point3D:ros_interface/SLPoint"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Region.msg" NAME_WE)
@@ -504,17 +504,17 @@ add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CameraParkingInfo.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CameraParkingInfo.msg" "ros_interface/ImageKeyPoint:std_msgs/Header:ros_interface/Point3D"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CameraParkingInfo.msg" "ros_interface/Point3D:std_msgs/Header:ros_interface/ImageKeyPoint"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CameraParkingInfoList.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CameraParkingInfoList.msg" "ros_interface/ImageKeyPoint:std_msgs/Header:ros_interface/Point3D:ros_interface/CameraParkingInfo:ros_interface/CameraParkingStopper:ros_interface/BBox2D"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CameraParkingInfoList.msg" "std_msgs/Header:ros_interface/CameraParkingInfo:ros_interface/CameraParkingStopper:ros_interface/BBox2D:ros_interface/ImageKeyPoint:ros_interface/Point3D"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SecurityDecision.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SecurityDecision.msg" "std_msgs/Header:ros_interface/WarningCommand:ros_interface/TrajectoryLimitCommand"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SecurityDecision.msg" "ros_interface/TrajectoryLimitCommand:ros_interface/WarningCommand:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/WarningCommand.msg" NAME_WE)
@@ -529,7 +529,7 @@ add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingInfoList.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingInfoList.msg" "std_msgs/Header:ros_interface/ParkingInfo:ros_interface/Point3D:ros_interface/Polygon3D:ros_interface/ParkingStopper"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingInfoList.msg" "ros_interface/Polygon3D:std_msgs/Header:ros_interface/ParkingStopper:ros_interface/ParkingInfo:ros_interface/Point3D"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CommCommand.msg" NAME_WE)
@@ -544,7 +544,7 @@ add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ModuleStatus.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ModuleStatus.msg" "ros_interface/Message:std_msgs/Header"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ModuleStatus.msg" "std_msgs/Header:ros_interface/Message"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Command.msg" NAME_WE)
@@ -559,7 +559,7 @@ add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PlanningAnalysis.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PlanningAnalysis.msg" "std_msgs/Header:ros_interface/Polygon2D:ros_interface/PlanningParkingDebug:ros_interface/Point2dList:ros_interface/Point2D:ros_interface/TimeConsume:ros_interface/Trajectory:ros_interface/PathPoint:ros_interface/TrajectoryPoint"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PlanningAnalysis.msg" "std_msgs/Header:ros_interface/Point2dList:ros_interface/Polygon2D:ros_interface/TrajectoryPoint:ros_interface/PlanningParkingDebug:ros_interface/Point2D:ros_interface/PathPoint:ros_interface/Trajectory:ros_interface/TimeConsume"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TimeConsume.msg" NAME_WE)
@@ -569,22 +569,22 @@ add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PlanningParkingDebug.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PlanningParkingDebug.msg" "ros_interface/Polygon2D:ros_interface/Point2dList:ros_interface/Point2D:ros_interface/Trajectory:ros_interface/PathPoint:ros_interface/TrajectoryPoint"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PlanningParkingDebug.msg" "ros_interface/Polygon2D:ros_interface/TrajectoryPoint:ros_interface/Point2D:ros_interface/PathPoint:ros_interface/Trajectory:ros_interface/Point2dList"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryArray.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryArray.msg" "std_msgs/Header:ros_interface/Path:ros_interface/Trajectory:ros_interface/PathPoint:ros_interface/TrajectoryPoint"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryArray.msg" "std_msgs/Header:ros_interface/TrajectoryPoint:ros_interface/Path:ros_interface/PathPoint:ros_interface/Trajectory"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/VehicleState.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/VehicleState.msg" "std_msgs/Header:ros_interface/PointENU:ros_interface/Point3D:ros_interface/Pose:ros_interface/Quaternion"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/VehicleState.msg" "ros_interface/Pose:std_msgs/Header:ros_interface/Quaternion:ros_interface/PointENU:ros_interface/Point3D"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/DrivableRegion.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/DrivableRegion.msg" "std_msgs/Header:ros_interface/Polygon3D:ros_interface/Point3D"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/DrivableRegion.msg" "ros_interface/Polygon3D:ros_interface/Point3D:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleInteractiveTag.msg" NAME_WE)
@@ -594,7 +594,7 @@ add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Twist.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Twist.msg" "std_msgs/Header:ros_interface/Point3D"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Twist.msg" "ros_interface/Point3D:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingStateDisplay.msg" NAME_WE)
@@ -614,7 +614,7 @@ add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingOutInfo.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingOutInfo.msg" "std_msgs/Header:ros_interface/Point3D"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingOutInfo.msg" "ros_interface/Point3D:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/JunctionInfo.msg" NAME_WE)
@@ -624,7 +624,7 @@ add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficEvents.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficEvents.msg" "ros_interface/LimitSpeedInfo:std_msgs/Header:ros_interface/RouteFusionInfo:ros_interface/JunctionInfo:ros_interface/Point3D"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficEvents.msg" "ros_interface/LimitSpeedInfo:std_msgs/Header:ros_interface/JunctionInfo:ros_interface/Point3D:ros_interface/RouteFusionInfo"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LimitSpeedInfo.msg" NAME_WE)
@@ -644,12 +644,12 @@ add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/WLConstraintInfoList.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/WLConstraintInfoList.msg" "std_msgs/Header:ros_interface/Point3D:ros_interface/WLConstraintInfo"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/WLConstraintInfoList.msg" "ros_interface/WLConstraintInfo:ros_interface/Point3D:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/WLConstraintInfo.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/WLConstraintInfo.msg" "std_msgs/Header:ros_interface/Point3D"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/WLConstraintInfo.msg" "ros_interface/Point3D:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/UssObstacleList.msg" NAME_WE)
@@ -664,27 +664,27 @@ add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/UssParkingInfoList.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/UssParkingInfoList.msg" "std_msgs/Header:ros_interface/Point3D:ros_interface/UssParkingInfo"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/UssParkingInfoList.msg" "ros_interface/Point3D:ros_interface/UssParkingInfo:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/UssParkingInfo.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/UssParkingInfo.msg" "std_msgs/Header:ros_interface/Point3D"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/UssParkingInfo.msg" "ros_interface/Point3D:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CameraParkingStopper.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CameraParkingStopper.msg" "std_msgs/Header:ros_interface/BBox2D"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CameraParkingStopper.msg" "ros_interface/BBox2D:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingStopper.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingStopper.msg" "std_msgs/Header:ros_interface/Point3D"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingStopper.msg" "ros_interface/Point3D:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/DiagnosticArray.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/DiagnosticArray.msg" "ros_interface/KeyValues:std_msgs/Header:ros_interface/DiagnosticStatus"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/DiagnosticArray.msg" "ros_interface/KeyValues:ros_interface/DiagnosticStatus:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/DiagnosticStatus.msg" NAME_WE)
@@ -709,7 +709,7 @@ add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/GlobalRouteMsg.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/GlobalRouteMsg.msg" "ros_interface/LaneletInfo:std_msgs/Header"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/GlobalRouteMsg.msg" "std_msgs/Header:ros_interface/LaneletInfo"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RouteFusionInfo.msg" NAME_WE)
@@ -719,7 +719,7 @@ add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RoadMarkList.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RoadMarkList.msg" "std_msgs/Header:ros_interface/RoadMark"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RoadMarkList.msg" "ros_interface/RoadMark:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIObuCmd.msg" NAME_WE)
@@ -739,17 +739,17 @@ add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIParkingInfo.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIParkingInfo.msg" "std_msgs/Header:ros_interface/Polygon3D:ros_interface/Point3D"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIParkingInfo.msg" "ros_interface/Polygon3D:ros_interface/Point3D:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIParkingInfoList.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIParkingInfoList.msg" "ros_interface/Polygon3D:std_msgs/Header:ros_interface/HMIParkingInfo:ros_interface/Point3D"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIParkingInfoList.msg" "ros_interface/Polygon3D:ros_interface/Point3D:std_msgs/Header:ros_interface/HMIParkingInfo"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIVehicleMsg.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIVehicleMsg.msg" "std_msgs/Header:ros_interface/PointLLH:ros_interface/PointENU"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIVehicleMsg.msg" "std_msgs/Header:ros_interface/PointENU:ros_interface/PointLLH"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIObstacle.msg" NAME_WE)
@@ -759,7 +759,7 @@ add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIObstacleList.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIObstacleList.msg" "std_msgs/Header:ros_interface/Point3D:ros_interface/HMIObstacle"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIObstacleList.msg" "ros_interface/HMIObstacle:ros_interface/Point3D:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMITrajectoryPoint.msg" NAME_WE)
@@ -769,7 +769,7 @@ add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMITrajectory.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMITrajectory.msg" "std_msgs/Header:ros_interface/Point3D:ros_interface/HMITrajectoryPoint"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMITrajectory.msg" "ros_interface/HMITrajectoryPoint:std_msgs/Header:ros_interface/Point3D"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIDiagnosticStatus.msg" NAME_WE)
@@ -779,12 +779,12 @@ add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIDiagnosticArray.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIDiagnosticArray.msg" "std_msgs/Header:ros_interface/HMIDiagnosticStatus"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIDiagnosticArray.msg" "ros_interface/HMIDiagnosticStatus:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/GuideInfo.msg" NAME_WE)
 add_custom_target(_ros_interface_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/GuideInfo.msg" "ros_interface/GuideRoad:std_msgs/Header:ros_interface/CurvatureInfo"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ros_interface" "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/GuideInfo.msg" "ros_interface/CurvatureInfo:std_msgs/Header:ros_interface/GuideRoad"
 )
 
 get_filename_component(_filename "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/GuideRoad.msg" NAME_WE)
@@ -932,7 +932,7 @@ _generate_msg_cpp(ros_interface
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/VehicleMotion.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/VehicleMotionPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/VehicleMotionPoint.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
@@ -980,7 +980,7 @@ _generate_msg_cpp(ros_interface
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Events.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Event.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Event.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
@@ -998,7 +998,7 @@ _generate_msg_cpp(ros_interface
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Pose.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointENU.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Quaternion.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Quaternion.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointENU.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
@@ -1046,61 +1046,61 @@ _generate_msg_cpp(ros_interface
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PredictionObstacles.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstaclePriority.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PerceptionObstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PredictionObstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryInPrediction.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleInteractiveTag.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleIntent.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleInteractiveTag.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PredictionObstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PerceptionObstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleIntent.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstaclePriority.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryInPrediction.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Location.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointLLH.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointENU.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointENU.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointLLH.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Odometry.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointENU.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Quaternion.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Quaternion.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointENU.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleList.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageKeyPoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Obstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SensorCalibrator.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/BBox2D.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/BBox2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Obstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageKeyPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SensorCalibrator.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneList.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneLine.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RoadMark.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HolisticPathPrediction.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SensorCalibrator.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/EndPoints.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneLineCubicCurve.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/EndPoints.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RoadMark.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneLineCubicCurve.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneLine.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HolisticPathPrediction.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SensorCalibrator.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficLightMsg.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficLightBox.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficLight.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageRect.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficLightDebug.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficLightBox.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficLightDebug.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageRect.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficLight.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Ultrasonic.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/UltrasonicObstacle.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/UltrasonicObstacle.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarObstacleListMsg.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Status.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarObstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarStateError.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarState.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarStateMode.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarObstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarStateMode.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Status.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarStateError.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarState.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointCloud.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointXYZIRT.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointXYZIRT.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarObstacle.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Status.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Status.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
@@ -1130,31 +1130,31 @@ _generate_msg_cpp(ros_interface
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Gnss.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Imu.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Quaternion.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Quaternion.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Ins.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObuCmdMsg.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObuCmd.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObuCmd.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RoutingRequest.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/KeyPoint.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/KeyPoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
@@ -1166,7 +1166,7 @@ _generate_msg_cpp(ros_interface
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingInfo.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingStopper.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingStopper.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
@@ -1184,7 +1184,7 @@ _generate_msg_cpp(ros_interface
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficLight.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageRect.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageRect.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
@@ -1214,19 +1214,19 @@ _generate_msg_cpp(ros_interface
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RoutingResponse.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LanePoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneInfo.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LanePoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/StopInfo.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/StopPoint.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/StopPoint.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ADCTrajectory.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RSSInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/EStop.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RSSInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/EStop.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
@@ -1238,7 +1238,7 @@ _generate_msg_cpp(ros_interface
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Obstacle.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageKeyPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SensorCalibrator.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/BBox2D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/BBox2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SensorCalibrator.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageKeyPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
@@ -1262,7 +1262,7 @@ _generate_msg_cpp(ros_interface
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PredictionObstacle.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstaclePriority.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PerceptionObstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryInPrediction.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleInteractiveTag.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleIntent.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleInteractiveTag.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PerceptionObstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleIntent.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstaclePriority.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryInPrediction.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
@@ -1292,13 +1292,13 @@ _generate_msg_cpp(ros_interface
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleFeature.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstaclePriority.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryInPrediction.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PredictionTrajectoryPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPointInPrediction.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstaclePriority.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPointInPrediction.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryInPrediction.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PredictionTrajectoryPoint.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneLine.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/EndPoints.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneLineCubicCurve.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/EndPoints.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneLineCubicCurve.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
@@ -1316,7 +1316,7 @@ _generate_msg_cpp(ros_interface
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/FreeSpace.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon2D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
@@ -1352,7 +1352,7 @@ _generate_msg_cpp(ros_interface
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarState.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarStateMode.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarStateError.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarStateError.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarStateMode.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
@@ -1370,7 +1370,7 @@ _generate_msg_cpp(ros_interface
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SotifMonitorResult.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SLPoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Grid.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Region.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Grid.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Region.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SLPoint.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
@@ -1388,19 +1388,19 @@ _generate_msg_cpp(ros_interface
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CameraParkingInfo.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageKeyPoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageKeyPoint.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CameraParkingInfoList.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageKeyPoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CameraParkingInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CameraParkingStopper.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/BBox2D.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CameraParkingInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CameraParkingStopper.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/BBox2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageKeyPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SecurityDecision.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/WarningCommand.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryLimitCommand.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryLimitCommand.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/WarningCommand.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
@@ -1418,7 +1418,7 @@ _generate_msg_cpp(ros_interface
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingInfoList.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingStopper.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingStopper.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
@@ -1436,7 +1436,7 @@ _generate_msg_cpp(ros_interface
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ModuleStatus.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Message.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Message.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
@@ -1454,7 +1454,7 @@ _generate_msg_cpp(ros_interface
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PlanningAnalysis.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PlanningParkingDebug.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2dList.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TimeConsume.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Trajectory.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2dList.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PlanningParkingDebug.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Trajectory.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TimeConsume.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
@@ -1466,25 +1466,25 @@ _generate_msg_cpp(ros_interface
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PlanningParkingDebug.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2dList.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Trajectory.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Trajectory.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2dList.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryArray.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Path.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Trajectory.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Path.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Trajectory.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/VehicleState.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointENU.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Pose.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Quaternion.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Quaternion.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointENU.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/DrivableRegion.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
@@ -1496,7 +1496,7 @@ _generate_msg_cpp(ros_interface
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Twist.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
@@ -1520,7 +1520,7 @@ _generate_msg_cpp(ros_interface
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingOutInfo.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
@@ -1532,7 +1532,7 @@ _generate_msg_cpp(ros_interface
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficEvents.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LimitSpeedInfo.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RouteFusionInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/JunctionInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LimitSpeedInfo.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/JunctionInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RouteFusionInfo.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
@@ -1556,13 +1556,13 @@ _generate_msg_cpp(ros_interface
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/WLConstraintInfoList.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/WLConstraintInfo.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/WLConstraintInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/WLConstraintInfo.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
@@ -1580,31 +1580,31 @@ _generate_msg_cpp(ros_interface
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/UssParkingInfoList.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/UssParkingInfo.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/UssParkingInfo.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/UssParkingInfo.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CameraParkingStopper.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/BBox2D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/BBox2D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingStopper.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/DiagnosticArray.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/KeyValues.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/DiagnosticStatus.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/KeyValues.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/DiagnosticStatus.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
@@ -1634,7 +1634,7 @@ _generate_msg_cpp(ros_interface
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/GlobalRouteMsg.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneletInfo.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneletInfo.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
@@ -1646,7 +1646,7 @@ _generate_msg_cpp(ros_interface
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RoadMarkList.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RoadMark.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RoadMark.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
@@ -1670,19 +1670,19 @@ _generate_msg_cpp(ros_interface
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIParkingInfo.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIParkingInfoList.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIParkingInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIParkingInfo.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIVehicleMsg.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointLLH.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointENU.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointENU.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointLLH.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
@@ -1694,7 +1694,7 @@ _generate_msg_cpp(ros_interface
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIObstacleList.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIObstacle.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIObstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
@@ -1706,7 +1706,7 @@ _generate_msg_cpp(ros_interface
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMITrajectory.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMITrajectoryPoint.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMITrajectoryPoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
@@ -1718,13 +1718,13 @@ _generate_msg_cpp(ros_interface
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIDiagnosticArray.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIDiagnosticStatus.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIDiagnosticStatus.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/GuideInfo.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/GuideRoad.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CurvatureInfo.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CurvatureInfo.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/GuideRoad.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_cpp(ros_interface
@@ -2205,7 +2205,7 @@ _generate_msg_eus(ros_interface
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/VehicleMotion.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/VehicleMotionPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/VehicleMotionPoint.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
@@ -2253,7 +2253,7 @@ _generate_msg_eus(ros_interface
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Events.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Event.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Event.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
@@ -2271,7 +2271,7 @@ _generate_msg_eus(ros_interface
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Pose.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointENU.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Quaternion.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Quaternion.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointENU.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
@@ -2319,61 +2319,61 @@ _generate_msg_eus(ros_interface
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PredictionObstacles.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstaclePriority.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PerceptionObstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PredictionObstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryInPrediction.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleInteractiveTag.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleIntent.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleInteractiveTag.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PredictionObstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PerceptionObstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleIntent.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstaclePriority.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryInPrediction.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Location.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointLLH.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointENU.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointENU.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointLLH.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Odometry.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointENU.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Quaternion.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Quaternion.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointENU.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleList.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageKeyPoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Obstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SensorCalibrator.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/BBox2D.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/BBox2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Obstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageKeyPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SensorCalibrator.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneList.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneLine.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RoadMark.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HolisticPathPrediction.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SensorCalibrator.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/EndPoints.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneLineCubicCurve.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/EndPoints.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RoadMark.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneLineCubicCurve.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneLine.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HolisticPathPrediction.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SensorCalibrator.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficLightMsg.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficLightBox.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficLight.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageRect.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficLightDebug.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficLightBox.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficLightDebug.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageRect.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficLight.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Ultrasonic.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/UltrasonicObstacle.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/UltrasonicObstacle.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarObstacleListMsg.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Status.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarObstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarStateError.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarState.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarStateMode.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarObstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarStateMode.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Status.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarStateError.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarState.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointCloud.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointXYZIRT.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointXYZIRT.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarObstacle.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Status.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Status.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
@@ -2403,31 +2403,31 @@ _generate_msg_eus(ros_interface
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Gnss.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Imu.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Quaternion.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Quaternion.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Ins.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObuCmdMsg.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObuCmd.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObuCmd.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RoutingRequest.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/KeyPoint.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/KeyPoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
@@ -2439,7 +2439,7 @@ _generate_msg_eus(ros_interface
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingInfo.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingStopper.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingStopper.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
@@ -2457,7 +2457,7 @@ _generate_msg_eus(ros_interface
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficLight.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageRect.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageRect.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
@@ -2487,19 +2487,19 @@ _generate_msg_eus(ros_interface
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RoutingResponse.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LanePoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneInfo.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LanePoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/StopInfo.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/StopPoint.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/StopPoint.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ADCTrajectory.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RSSInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/EStop.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RSSInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/EStop.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
@@ -2511,7 +2511,7 @@ _generate_msg_eus(ros_interface
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Obstacle.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageKeyPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SensorCalibrator.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/BBox2D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/BBox2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SensorCalibrator.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageKeyPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
@@ -2535,7 +2535,7 @@ _generate_msg_eus(ros_interface
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PredictionObstacle.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstaclePriority.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PerceptionObstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryInPrediction.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleInteractiveTag.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleIntent.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleInteractiveTag.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PerceptionObstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleIntent.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstaclePriority.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryInPrediction.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
@@ -2565,13 +2565,13 @@ _generate_msg_eus(ros_interface
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleFeature.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstaclePriority.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryInPrediction.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PredictionTrajectoryPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPointInPrediction.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstaclePriority.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPointInPrediction.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryInPrediction.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PredictionTrajectoryPoint.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneLine.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/EndPoints.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneLineCubicCurve.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/EndPoints.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneLineCubicCurve.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
@@ -2589,7 +2589,7 @@ _generate_msg_eus(ros_interface
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/FreeSpace.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon2D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
@@ -2625,7 +2625,7 @@ _generate_msg_eus(ros_interface
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarState.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarStateMode.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarStateError.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarStateError.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarStateMode.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
@@ -2643,7 +2643,7 @@ _generate_msg_eus(ros_interface
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SotifMonitorResult.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SLPoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Grid.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Region.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Grid.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Region.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SLPoint.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
@@ -2661,19 +2661,19 @@ _generate_msg_eus(ros_interface
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CameraParkingInfo.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageKeyPoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageKeyPoint.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CameraParkingInfoList.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageKeyPoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CameraParkingInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CameraParkingStopper.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/BBox2D.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CameraParkingInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CameraParkingStopper.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/BBox2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageKeyPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SecurityDecision.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/WarningCommand.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryLimitCommand.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryLimitCommand.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/WarningCommand.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
@@ -2691,7 +2691,7 @@ _generate_msg_eus(ros_interface
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingInfoList.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingStopper.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingStopper.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
@@ -2709,7 +2709,7 @@ _generate_msg_eus(ros_interface
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ModuleStatus.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Message.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Message.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
@@ -2727,7 +2727,7 @@ _generate_msg_eus(ros_interface
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PlanningAnalysis.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PlanningParkingDebug.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2dList.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TimeConsume.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Trajectory.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2dList.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PlanningParkingDebug.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Trajectory.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TimeConsume.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
@@ -2739,25 +2739,25 @@ _generate_msg_eus(ros_interface
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PlanningParkingDebug.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2dList.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Trajectory.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Trajectory.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2dList.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryArray.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Path.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Trajectory.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Path.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Trajectory.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/VehicleState.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointENU.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Pose.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Quaternion.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Quaternion.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointENU.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/DrivableRegion.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
@@ -2769,7 +2769,7 @@ _generate_msg_eus(ros_interface
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Twist.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
@@ -2793,7 +2793,7 @@ _generate_msg_eus(ros_interface
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingOutInfo.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
@@ -2805,7 +2805,7 @@ _generate_msg_eus(ros_interface
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficEvents.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LimitSpeedInfo.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RouteFusionInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/JunctionInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LimitSpeedInfo.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/JunctionInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RouteFusionInfo.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
@@ -2829,13 +2829,13 @@ _generate_msg_eus(ros_interface
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/WLConstraintInfoList.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/WLConstraintInfo.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/WLConstraintInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/WLConstraintInfo.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
@@ -2853,31 +2853,31 @@ _generate_msg_eus(ros_interface
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/UssParkingInfoList.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/UssParkingInfo.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/UssParkingInfo.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/UssParkingInfo.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CameraParkingStopper.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/BBox2D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/BBox2D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingStopper.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/DiagnosticArray.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/KeyValues.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/DiagnosticStatus.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/KeyValues.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/DiagnosticStatus.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
@@ -2907,7 +2907,7 @@ _generate_msg_eus(ros_interface
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/GlobalRouteMsg.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneletInfo.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneletInfo.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
@@ -2919,7 +2919,7 @@ _generate_msg_eus(ros_interface
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RoadMarkList.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RoadMark.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RoadMark.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
@@ -2943,19 +2943,19 @@ _generate_msg_eus(ros_interface
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIParkingInfo.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIParkingInfoList.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIParkingInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIParkingInfo.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIVehicleMsg.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointLLH.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointENU.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointENU.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointLLH.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
@@ -2967,7 +2967,7 @@ _generate_msg_eus(ros_interface
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIObstacleList.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIObstacle.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIObstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
@@ -2979,7 +2979,7 @@ _generate_msg_eus(ros_interface
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMITrajectory.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMITrajectoryPoint.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMITrajectoryPoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
@@ -2991,13 +2991,13 @@ _generate_msg_eus(ros_interface
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIDiagnosticArray.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIDiagnosticStatus.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIDiagnosticStatus.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/GuideInfo.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/GuideRoad.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CurvatureInfo.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CurvatureInfo.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/GuideRoad.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ros_interface
 )
 _generate_msg_eus(ros_interface
@@ -3478,7 +3478,7 @@ _generate_msg_lisp(ros_interface
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/VehicleMotion.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/VehicleMotionPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/VehicleMotionPoint.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
@@ -3526,7 +3526,7 @@ _generate_msg_lisp(ros_interface
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Events.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Event.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Event.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
@@ -3544,7 +3544,7 @@ _generate_msg_lisp(ros_interface
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Pose.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointENU.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Quaternion.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Quaternion.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointENU.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
@@ -3592,61 +3592,61 @@ _generate_msg_lisp(ros_interface
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PredictionObstacles.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstaclePriority.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PerceptionObstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PredictionObstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryInPrediction.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleInteractiveTag.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleIntent.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleInteractiveTag.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PredictionObstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PerceptionObstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleIntent.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstaclePriority.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryInPrediction.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Location.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointLLH.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointENU.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointENU.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointLLH.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Odometry.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointENU.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Quaternion.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Quaternion.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointENU.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleList.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageKeyPoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Obstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SensorCalibrator.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/BBox2D.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/BBox2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Obstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageKeyPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SensorCalibrator.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneList.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneLine.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RoadMark.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HolisticPathPrediction.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SensorCalibrator.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/EndPoints.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneLineCubicCurve.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/EndPoints.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RoadMark.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneLineCubicCurve.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneLine.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HolisticPathPrediction.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SensorCalibrator.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficLightMsg.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficLightBox.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficLight.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageRect.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficLightDebug.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficLightBox.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficLightDebug.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageRect.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficLight.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Ultrasonic.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/UltrasonicObstacle.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/UltrasonicObstacle.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarObstacleListMsg.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Status.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarObstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarStateError.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarState.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarStateMode.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarObstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarStateMode.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Status.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarStateError.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarState.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointCloud.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointXYZIRT.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointXYZIRT.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarObstacle.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Status.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Status.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
@@ -3676,31 +3676,31 @@ _generate_msg_lisp(ros_interface
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Gnss.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Imu.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Quaternion.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Quaternion.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Ins.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObuCmdMsg.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObuCmd.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObuCmd.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RoutingRequest.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/KeyPoint.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/KeyPoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
@@ -3712,7 +3712,7 @@ _generate_msg_lisp(ros_interface
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingInfo.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingStopper.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingStopper.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
@@ -3730,7 +3730,7 @@ _generate_msg_lisp(ros_interface
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficLight.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageRect.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageRect.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
@@ -3760,19 +3760,19 @@ _generate_msg_lisp(ros_interface
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RoutingResponse.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LanePoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneInfo.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LanePoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/StopInfo.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/StopPoint.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/StopPoint.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ADCTrajectory.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RSSInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/EStop.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RSSInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/EStop.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
@@ -3784,7 +3784,7 @@ _generate_msg_lisp(ros_interface
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Obstacle.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageKeyPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SensorCalibrator.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/BBox2D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/BBox2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SensorCalibrator.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageKeyPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
@@ -3808,7 +3808,7 @@ _generate_msg_lisp(ros_interface
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PredictionObstacle.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstaclePriority.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PerceptionObstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryInPrediction.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleInteractiveTag.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleIntent.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleInteractiveTag.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PerceptionObstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleIntent.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstaclePriority.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryInPrediction.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
@@ -3838,13 +3838,13 @@ _generate_msg_lisp(ros_interface
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleFeature.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstaclePriority.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryInPrediction.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PredictionTrajectoryPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPointInPrediction.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstaclePriority.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPointInPrediction.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryInPrediction.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PredictionTrajectoryPoint.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneLine.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/EndPoints.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneLineCubicCurve.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/EndPoints.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneLineCubicCurve.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
@@ -3862,7 +3862,7 @@ _generate_msg_lisp(ros_interface
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/FreeSpace.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon2D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
@@ -3898,7 +3898,7 @@ _generate_msg_lisp(ros_interface
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarState.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarStateMode.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarStateError.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarStateError.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarStateMode.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
@@ -3916,7 +3916,7 @@ _generate_msg_lisp(ros_interface
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SotifMonitorResult.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SLPoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Grid.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Region.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Grid.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Region.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SLPoint.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
@@ -3934,19 +3934,19 @@ _generate_msg_lisp(ros_interface
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CameraParkingInfo.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageKeyPoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageKeyPoint.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CameraParkingInfoList.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageKeyPoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CameraParkingInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CameraParkingStopper.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/BBox2D.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CameraParkingInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CameraParkingStopper.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/BBox2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageKeyPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SecurityDecision.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/WarningCommand.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryLimitCommand.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryLimitCommand.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/WarningCommand.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
@@ -3964,7 +3964,7 @@ _generate_msg_lisp(ros_interface
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingInfoList.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingStopper.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingStopper.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
@@ -3982,7 +3982,7 @@ _generate_msg_lisp(ros_interface
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ModuleStatus.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Message.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Message.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
@@ -4000,7 +4000,7 @@ _generate_msg_lisp(ros_interface
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PlanningAnalysis.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PlanningParkingDebug.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2dList.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TimeConsume.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Trajectory.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2dList.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PlanningParkingDebug.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Trajectory.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TimeConsume.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
@@ -4012,25 +4012,25 @@ _generate_msg_lisp(ros_interface
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PlanningParkingDebug.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2dList.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Trajectory.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Trajectory.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2dList.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryArray.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Path.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Trajectory.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Path.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Trajectory.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/VehicleState.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointENU.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Pose.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Quaternion.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Quaternion.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointENU.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/DrivableRegion.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
@@ -4042,7 +4042,7 @@ _generate_msg_lisp(ros_interface
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Twist.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
@@ -4066,7 +4066,7 @@ _generate_msg_lisp(ros_interface
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingOutInfo.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
@@ -4078,7 +4078,7 @@ _generate_msg_lisp(ros_interface
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficEvents.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LimitSpeedInfo.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RouteFusionInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/JunctionInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LimitSpeedInfo.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/JunctionInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RouteFusionInfo.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
@@ -4102,13 +4102,13 @@ _generate_msg_lisp(ros_interface
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/WLConstraintInfoList.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/WLConstraintInfo.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/WLConstraintInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/WLConstraintInfo.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
@@ -4126,31 +4126,31 @@ _generate_msg_lisp(ros_interface
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/UssParkingInfoList.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/UssParkingInfo.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/UssParkingInfo.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/UssParkingInfo.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CameraParkingStopper.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/BBox2D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/BBox2D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingStopper.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/DiagnosticArray.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/KeyValues.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/DiagnosticStatus.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/KeyValues.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/DiagnosticStatus.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
@@ -4180,7 +4180,7 @@ _generate_msg_lisp(ros_interface
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/GlobalRouteMsg.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneletInfo.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneletInfo.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
@@ -4192,7 +4192,7 @@ _generate_msg_lisp(ros_interface
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RoadMarkList.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RoadMark.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RoadMark.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
@@ -4216,19 +4216,19 @@ _generate_msg_lisp(ros_interface
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIParkingInfo.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIParkingInfoList.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIParkingInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIParkingInfo.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIVehicleMsg.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointLLH.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointENU.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointENU.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointLLH.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
@@ -4240,7 +4240,7 @@ _generate_msg_lisp(ros_interface
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIObstacleList.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIObstacle.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIObstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
@@ -4252,7 +4252,7 @@ _generate_msg_lisp(ros_interface
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMITrajectory.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMITrajectoryPoint.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMITrajectoryPoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
@@ -4264,13 +4264,13 @@ _generate_msg_lisp(ros_interface
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIDiagnosticArray.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIDiagnosticStatus.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIDiagnosticStatus.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/GuideInfo.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/GuideRoad.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CurvatureInfo.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CurvatureInfo.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/GuideRoad.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ros_interface
 )
 _generate_msg_lisp(ros_interface
@@ -4751,7 +4751,7 @@ _generate_msg_nodejs(ros_interface
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/VehicleMotion.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/VehicleMotionPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/VehicleMotionPoint.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
@@ -4799,7 +4799,7 @@ _generate_msg_nodejs(ros_interface
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Events.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Event.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Event.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
@@ -4817,7 +4817,7 @@ _generate_msg_nodejs(ros_interface
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Pose.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointENU.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Quaternion.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Quaternion.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointENU.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
@@ -4865,61 +4865,61 @@ _generate_msg_nodejs(ros_interface
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PredictionObstacles.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstaclePriority.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PerceptionObstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PredictionObstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryInPrediction.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleInteractiveTag.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleIntent.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleInteractiveTag.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PredictionObstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PerceptionObstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleIntent.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstaclePriority.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryInPrediction.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Location.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointLLH.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointENU.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointENU.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointLLH.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Odometry.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointENU.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Quaternion.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Quaternion.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointENU.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleList.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageKeyPoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Obstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SensorCalibrator.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/BBox2D.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/BBox2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Obstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageKeyPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SensorCalibrator.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneList.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneLine.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RoadMark.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HolisticPathPrediction.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SensorCalibrator.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/EndPoints.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneLineCubicCurve.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/EndPoints.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RoadMark.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneLineCubicCurve.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneLine.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HolisticPathPrediction.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SensorCalibrator.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficLightMsg.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficLightBox.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficLight.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageRect.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficLightDebug.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficLightBox.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficLightDebug.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageRect.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficLight.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Ultrasonic.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/UltrasonicObstacle.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/UltrasonicObstacle.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarObstacleListMsg.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Status.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarObstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarStateError.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarState.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarStateMode.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarObstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarStateMode.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Status.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarStateError.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarState.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointCloud.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointXYZIRT.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointXYZIRT.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarObstacle.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Status.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Status.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
@@ -4949,31 +4949,31 @@ _generate_msg_nodejs(ros_interface
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Gnss.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Imu.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Quaternion.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Quaternion.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Ins.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObuCmdMsg.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObuCmd.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObuCmd.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RoutingRequest.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/KeyPoint.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/KeyPoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
@@ -4985,7 +4985,7 @@ _generate_msg_nodejs(ros_interface
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingInfo.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingStopper.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingStopper.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
@@ -5003,7 +5003,7 @@ _generate_msg_nodejs(ros_interface
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficLight.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageRect.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageRect.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
@@ -5033,19 +5033,19 @@ _generate_msg_nodejs(ros_interface
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RoutingResponse.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LanePoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneInfo.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LanePoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/StopInfo.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/StopPoint.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/StopPoint.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ADCTrajectory.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RSSInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/EStop.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RSSInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/EStop.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
@@ -5057,7 +5057,7 @@ _generate_msg_nodejs(ros_interface
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Obstacle.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageKeyPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SensorCalibrator.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/BBox2D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/BBox2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SensorCalibrator.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageKeyPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
@@ -5081,7 +5081,7 @@ _generate_msg_nodejs(ros_interface
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PredictionObstacle.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstaclePriority.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PerceptionObstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryInPrediction.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleInteractiveTag.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleIntent.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleInteractiveTag.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PerceptionObstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleIntent.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstaclePriority.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryInPrediction.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
@@ -5111,13 +5111,13 @@ _generate_msg_nodejs(ros_interface
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleFeature.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstaclePriority.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryInPrediction.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PredictionTrajectoryPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPointInPrediction.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstaclePriority.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPointInPrediction.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryInPrediction.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PredictionTrajectoryPoint.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneLine.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/EndPoints.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneLineCubicCurve.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/EndPoints.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneLineCubicCurve.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
@@ -5135,7 +5135,7 @@ _generate_msg_nodejs(ros_interface
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/FreeSpace.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon2D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
@@ -5171,7 +5171,7 @@ _generate_msg_nodejs(ros_interface
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarState.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarStateMode.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarStateError.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarStateError.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarStateMode.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
@@ -5189,7 +5189,7 @@ _generate_msg_nodejs(ros_interface
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SotifMonitorResult.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SLPoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Grid.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Region.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Grid.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Region.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SLPoint.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
@@ -5207,19 +5207,19 @@ _generate_msg_nodejs(ros_interface
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CameraParkingInfo.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageKeyPoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageKeyPoint.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CameraParkingInfoList.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageKeyPoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CameraParkingInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CameraParkingStopper.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/BBox2D.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CameraParkingInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CameraParkingStopper.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/BBox2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageKeyPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SecurityDecision.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/WarningCommand.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryLimitCommand.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryLimitCommand.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/WarningCommand.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
@@ -5237,7 +5237,7 @@ _generate_msg_nodejs(ros_interface
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingInfoList.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingStopper.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingStopper.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
@@ -5255,7 +5255,7 @@ _generate_msg_nodejs(ros_interface
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ModuleStatus.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Message.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Message.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
@@ -5273,7 +5273,7 @@ _generate_msg_nodejs(ros_interface
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PlanningAnalysis.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PlanningParkingDebug.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2dList.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TimeConsume.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Trajectory.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2dList.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PlanningParkingDebug.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Trajectory.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TimeConsume.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
@@ -5285,25 +5285,25 @@ _generate_msg_nodejs(ros_interface
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PlanningParkingDebug.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2dList.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Trajectory.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Trajectory.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2dList.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryArray.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Path.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Trajectory.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Path.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Trajectory.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/VehicleState.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointENU.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Pose.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Quaternion.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Quaternion.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointENU.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/DrivableRegion.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
@@ -5315,7 +5315,7 @@ _generate_msg_nodejs(ros_interface
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Twist.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
@@ -5339,7 +5339,7 @@ _generate_msg_nodejs(ros_interface
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingOutInfo.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
@@ -5351,7 +5351,7 @@ _generate_msg_nodejs(ros_interface
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficEvents.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LimitSpeedInfo.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RouteFusionInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/JunctionInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LimitSpeedInfo.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/JunctionInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RouteFusionInfo.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
@@ -5375,13 +5375,13 @@ _generate_msg_nodejs(ros_interface
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/WLConstraintInfoList.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/WLConstraintInfo.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/WLConstraintInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/WLConstraintInfo.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
@@ -5399,31 +5399,31 @@ _generate_msg_nodejs(ros_interface
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/UssParkingInfoList.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/UssParkingInfo.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/UssParkingInfo.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/UssParkingInfo.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CameraParkingStopper.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/BBox2D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/BBox2D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingStopper.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/DiagnosticArray.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/KeyValues.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/DiagnosticStatus.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/KeyValues.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/DiagnosticStatus.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
@@ -5453,7 +5453,7 @@ _generate_msg_nodejs(ros_interface
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/GlobalRouteMsg.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneletInfo.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneletInfo.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
@@ -5465,7 +5465,7 @@ _generate_msg_nodejs(ros_interface
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RoadMarkList.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RoadMark.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RoadMark.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
@@ -5489,19 +5489,19 @@ _generate_msg_nodejs(ros_interface
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIParkingInfo.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIParkingInfoList.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIParkingInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIParkingInfo.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIVehicleMsg.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointLLH.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointENU.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointENU.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointLLH.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
@@ -5513,7 +5513,7 @@ _generate_msg_nodejs(ros_interface
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIObstacleList.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIObstacle.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIObstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
@@ -5525,7 +5525,7 @@ _generate_msg_nodejs(ros_interface
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMITrajectory.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMITrajectoryPoint.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMITrajectoryPoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
@@ -5537,13 +5537,13 @@ _generate_msg_nodejs(ros_interface
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIDiagnosticArray.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIDiagnosticStatus.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIDiagnosticStatus.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/GuideInfo.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/GuideRoad.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CurvatureInfo.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CurvatureInfo.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/GuideRoad.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/ros_interface
 )
 _generate_msg_nodejs(ros_interface
@@ -6024,7 +6024,7 @@ _generate_msg_py(ros_interface
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/VehicleMotion.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/VehicleMotionPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/VehicleMotionPoint.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
@@ -6072,7 +6072,7 @@ _generate_msg_py(ros_interface
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Events.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Event.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Event.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
@@ -6090,7 +6090,7 @@ _generate_msg_py(ros_interface
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Pose.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointENU.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Quaternion.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Quaternion.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointENU.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
@@ -6138,61 +6138,61 @@ _generate_msg_py(ros_interface
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PredictionObstacles.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstaclePriority.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PerceptionObstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PredictionObstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryInPrediction.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleInteractiveTag.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleIntent.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleInteractiveTag.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PredictionObstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PerceptionObstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleIntent.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstaclePriority.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryInPrediction.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Location.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointLLH.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointENU.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointENU.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointLLH.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Odometry.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointENU.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Quaternion.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Quaternion.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointENU.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleList.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageKeyPoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Obstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SensorCalibrator.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/BBox2D.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/BBox2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Obstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageKeyPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SensorCalibrator.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneList.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneLine.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RoadMark.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HolisticPathPrediction.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SensorCalibrator.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/EndPoints.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneLineCubicCurve.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/EndPoints.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RoadMark.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneLineCubicCurve.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneLine.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HolisticPathPrediction.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SensorCalibrator.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficLightMsg.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficLightBox.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficLight.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageRect.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficLightDebug.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficLightBox.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficLightDebug.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageRect.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficLight.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Ultrasonic.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/UltrasonicObstacle.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/UltrasonicObstacle.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarObstacleListMsg.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Status.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarObstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarStateError.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarState.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarStateMode.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarObstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarStateMode.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Status.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarStateError.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarState.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointCloud.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointXYZIRT.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointXYZIRT.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarObstacle.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Status.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Status.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
@@ -6222,31 +6222,31 @@ _generate_msg_py(ros_interface
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Gnss.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Imu.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Quaternion.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Quaternion.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Ins.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObuCmdMsg.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObuCmd.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObuCmd.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RoutingRequest.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/KeyPoint.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/KeyPoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
@@ -6258,7 +6258,7 @@ _generate_msg_py(ros_interface
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingInfo.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingStopper.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingStopper.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
@@ -6276,7 +6276,7 @@ _generate_msg_py(ros_interface
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficLight.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageRect.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageRect.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
@@ -6306,19 +6306,19 @@ _generate_msg_py(ros_interface
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RoutingResponse.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LanePoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneInfo.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LanePoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/StopInfo.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/StopPoint.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/StopPoint.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ADCTrajectory.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RSSInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/EStop.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RSSInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/EStop.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
@@ -6330,7 +6330,7 @@ _generate_msg_py(ros_interface
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Obstacle.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageKeyPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SensorCalibrator.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/BBox2D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/BBox2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SensorCalibrator.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageKeyPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
@@ -6354,7 +6354,7 @@ _generate_msg_py(ros_interface
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PredictionObstacle.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstaclePriority.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PerceptionObstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryInPrediction.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleInteractiveTag.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleIntent.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleInteractiveTag.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PerceptionObstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleIntent.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstaclePriority.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryInPrediction.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
@@ -6384,13 +6384,13 @@ _generate_msg_py(ros_interface
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstacleFeature.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstaclePriority.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryInPrediction.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PredictionTrajectoryPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPointInPrediction.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ObstaclePriority.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPointInPrediction.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryInPrediction.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PredictionTrajectoryPoint.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneLine.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/EndPoints.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneLineCubicCurve.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/EndPoints.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneLineCubicCurve.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Time.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
@@ -6408,7 +6408,7 @@ _generate_msg_py(ros_interface
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/FreeSpace.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon2D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
@@ -6444,7 +6444,7 @@ _generate_msg_py(ros_interface
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarState.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarStateMode.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarStateError.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarStateError.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarStateMode.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
@@ -6462,7 +6462,7 @@ _generate_msg_py(ros_interface
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SotifMonitorResult.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SLPoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Grid.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Region.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Grid.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Region.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SLPoint.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
@@ -6480,19 +6480,19 @@ _generate_msg_py(ros_interface
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CameraParkingInfo.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageKeyPoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageKeyPoint.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CameraParkingInfoList.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageKeyPoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CameraParkingInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CameraParkingStopper.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/BBox2D.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CameraParkingInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CameraParkingStopper.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/BBox2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ImageKeyPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/SecurityDecision.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/WarningCommand.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryLimitCommand.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryLimitCommand.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/WarningCommand.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
@@ -6510,7 +6510,7 @@ _generate_msg_py(ros_interface
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingInfoList.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingStopper.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingStopper.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
@@ -6528,7 +6528,7 @@ _generate_msg_py(ros_interface
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ModuleStatus.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Message.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Message.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
@@ -6546,7 +6546,7 @@ _generate_msg_py(ros_interface
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PlanningAnalysis.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PlanningParkingDebug.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2dList.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TimeConsume.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Trajectory.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2dList.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PlanningParkingDebug.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Trajectory.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TimeConsume.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
@@ -6558,25 +6558,25 @@ _generate_msg_py(ros_interface
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PlanningParkingDebug.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2dList.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Trajectory.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Trajectory.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point2dList.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryArray.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Path.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Trajectory.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrajectoryPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Path.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PathPoint.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Trajectory.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/VehicleState.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointENU.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Pose.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Quaternion.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Quaternion.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointENU.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/DrivableRegion.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
@@ -6588,7 +6588,7 @@ _generate_msg_py(ros_interface
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Twist.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
@@ -6612,7 +6612,7 @@ _generate_msg_py(ros_interface
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingOutInfo.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
@@ -6624,7 +6624,7 @@ _generate_msg_py(ros_interface
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficEvents.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LimitSpeedInfo.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RouteFusionInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/JunctionInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LimitSpeedInfo.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/JunctionInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RouteFusionInfo.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
@@ -6648,13 +6648,13 @@ _generate_msg_py(ros_interface
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/WLConstraintInfoList.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/WLConstraintInfo.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/WLConstraintInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/WLConstraintInfo.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
@@ -6672,31 +6672,31 @@ _generate_msg_py(ros_interface
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/UssParkingInfoList.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/UssParkingInfo.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/UssParkingInfo.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/UssParkingInfo.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CameraParkingStopper.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/BBox2D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/BBox2D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/ParkingStopper.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/DiagnosticArray.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/KeyValues.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/DiagnosticStatus.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/KeyValues.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/DiagnosticStatus.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
@@ -6726,7 +6726,7 @@ _generate_msg_py(ros_interface
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/GlobalRouteMsg.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneletInfo.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/LaneletInfo.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
@@ -6738,7 +6738,7 @@ _generate_msg_py(ros_interface
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RoadMarkList.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RoadMark.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RoadMark.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
@@ -6762,19 +6762,19 @@ _generate_msg_py(ros_interface
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIParkingInfo.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIParkingInfoList.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIParkingInfo.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Polygon3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIParkingInfo.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIVehicleMsg.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointLLH.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointENU.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointENU.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/PointLLH.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
@@ -6786,7 +6786,7 @@ _generate_msg_py(ros_interface
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIObstacleList.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIObstacle.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIObstacle.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
@@ -6798,7 +6798,7 @@ _generate_msg_py(ros_interface
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMITrajectory.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMITrajectoryPoint.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMITrajectoryPoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/Point3D.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
@@ -6810,13 +6810,13 @@ _generate_msg_py(ros_interface
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIDiagnosticArray.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIDiagnosticStatus.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/HMIDiagnosticStatus.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/GuideInfo.msg"
   "${MSG_I_FLAGS}"
-  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/GuideRoad.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CurvatureInfo.msg"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CurvatureInfo.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/GuideRoad.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ros_interface
 )
 _generate_msg_py(ros_interface

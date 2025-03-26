@@ -246,6 +246,19 @@ perception_msgs_gencpp/fast:
 .PHONY : perception_msgs_gencpp/fast
 
 #=============================================================================
+# Target rules for targets named _perception_msgs_generate_messages_check_deps_RecordBag
+
+# Build rule for target.
+_perception_msgs_generate_messages_check_deps_RecordBag: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _perception_msgs_generate_messages_check_deps_RecordBag
+.PHONY : _perception_msgs_generate_messages_check_deps_RecordBag
+
+# fast build rule for target.
+_perception_msgs_generate_messages_check_deps_RecordBag/fast:
+	$(MAKE) -f CMakeFiles/_perception_msgs_generate_messages_check_deps_RecordBag.dir/build.make CMakeFiles/_perception_msgs_generate_messages_check_deps_RecordBag.dir/build
+.PHONY : _perception_msgs_generate_messages_check_deps_RecordBag/fast
+
+#=============================================================================
 # Target rules for targets named _perception_msgs_generate_messages_check_deps_AlarmEntry
 
 # Build rule for target.
@@ -794,6 +807,7 @@ help:
 	@echo "... perception_msgs_generate_messages_eus"
 	@echo "... perception_msgs_genlisp"
 	@echo "... perception_msgs_gencpp"
+	@echo "... _perception_msgs_generate_messages_check_deps_RecordBag"
 	@echo "... _perception_msgs_generate_messages_check_deps_AlarmEntry"
 	@echo "... _perception_msgs_generate_messages_check_deps_PercCmd"
 	@echo "... install/local"

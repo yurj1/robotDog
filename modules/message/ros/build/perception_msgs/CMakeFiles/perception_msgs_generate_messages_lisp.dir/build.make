@@ -60,6 +60,7 @@ CMakeFiles/perception_msgs_generate_messages_lisp: /home/meizan/workspace/athena
 CMakeFiles/perception_msgs_generate_messages_lisp: /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/common-lisp/ros/perception_msgs/msg/ActionEntry.lisp
 CMakeFiles/perception_msgs_generate_messages_lisp: /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/common-lisp/ros/perception_msgs/msg/AlarmEntry.lisp
 CMakeFiles/perception_msgs_generate_messages_lisp: /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/common-lisp/ros/perception_msgs/msg/DogState.lisp
+CMakeFiles/perception_msgs_generate_messages_lisp: /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/common-lisp/ros/perception_msgs/srv/RecordBag.lisp
 
 
 /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/common-lisp/ros/perception_msgs/msg/PercCmd.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
@@ -83,8 +84,8 @@ CMakeFiles/perception_msgs_generate_messages_lisp: /home/meizan/workspace/athena
 /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/common-lisp/ros/perception_msgs/msg/TaskList.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
 /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/common-lisp/ros/perception_msgs/msg/TaskList.lisp: /home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/TaskList.msg
 /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/common-lisp/ros/perception_msgs/msg/TaskList.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
-/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/common-lisp/ros/perception_msgs/msg/TaskList.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
 /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/common-lisp/ros/perception_msgs/msg/TaskList.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/common-lisp/ros/perception_msgs/msg/TaskList.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/meizan/workspace/athena-robot-dog/modules/message/ros/build/perception_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Lisp code from perception_msgs/TaskList.msg"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/TaskList.msg -Iperception_msgs:/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p perception_msgs -o /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/common-lisp/ros/perception_msgs/msg
 
@@ -100,12 +101,17 @@ CMakeFiles/perception_msgs_generate_messages_lisp: /home/meizan/workspace/athena
 
 /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/common-lisp/ros/perception_msgs/msg/DogState.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
 /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/common-lisp/ros/perception_msgs/msg/DogState.lisp: /home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/DogState.msg
-/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/common-lisp/ros/perception_msgs/msg/DogState.lisp: /home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/AlarmEntry.msg
 /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/common-lisp/ros/perception_msgs/msg/DogState.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
-/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/common-lisp/ros/perception_msgs/msg/DogState.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
 /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/common-lisp/ros/perception_msgs/msg/DogState.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/common-lisp/ros/perception_msgs/msg/DogState.lisp: /home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/AlarmEntry.msg
+/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/common-lisp/ros/perception_msgs/msg/DogState.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/meizan/workspace/athena-robot-dog/modules/message/ros/build/perception_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating Lisp code from perception_msgs/DogState.msg"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/DogState.msg -Iperception_msgs:/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p perception_msgs -o /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/common-lisp/ros/perception_msgs/msg
+
+/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/common-lisp/ros/perception_msgs/srv/RecordBag.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
+/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/common-lisp/ros/perception_msgs/srv/RecordBag.lisp: /home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/srv/RecordBag.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/meizan/workspace/athena-robot-dog/modules/message/ros/build/perception_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating Lisp code from perception_msgs/RecordBag.srv"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/srv/RecordBag.srv -Iperception_msgs:/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p perception_msgs -o /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/common-lisp/ros/perception_msgs/srv
 
 perception_msgs_generate_messages_lisp: CMakeFiles/perception_msgs_generate_messages_lisp
 perception_msgs_generate_messages_lisp: /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/common-lisp/ros/perception_msgs/msg/PercCmd.lisp
@@ -115,6 +121,7 @@ perception_msgs_generate_messages_lisp: /home/meizan/workspace/athena-robot-dog/
 perception_msgs_generate_messages_lisp: /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/common-lisp/ros/perception_msgs/msg/ActionEntry.lisp
 perception_msgs_generate_messages_lisp: /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/common-lisp/ros/perception_msgs/msg/AlarmEntry.lisp
 perception_msgs_generate_messages_lisp: /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/common-lisp/ros/perception_msgs/msg/DogState.lisp
+perception_msgs_generate_messages_lisp: /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/common-lisp/ros/perception_msgs/srv/RecordBag.lisp
 perception_msgs_generate_messages_lisp: CMakeFiles/perception_msgs_generate_messages_lisp.dir/build.make
 
 .PHONY : perception_msgs_generate_messages_lisp

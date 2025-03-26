@@ -5,6 +5,7 @@ file(REMOVE_RECURSE
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/include/perception_msgs/PercCmd.h"
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/include/perception_msgs/PercReq.h"
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/include/perception_msgs/PercState.h"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/include/perception_msgs/RecordBag.h"
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/include/perception_msgs/TaskList.h"
   "CMakeFiles/perception_msgs_generate_messages_cpp"
 )

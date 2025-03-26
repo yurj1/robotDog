@@ -60,6 +60,7 @@ CMakeFiles/perception_msgs_generate_messages_eus: /home/meizan/workspace/athena-
 CMakeFiles/perception_msgs_generate_messages_eus: /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/roseus/ros/perception_msgs/msg/ActionEntry.l
 CMakeFiles/perception_msgs_generate_messages_eus: /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/roseus/ros/perception_msgs/msg/AlarmEntry.l
 CMakeFiles/perception_msgs_generate_messages_eus: /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/roseus/ros/perception_msgs/msg/DogState.l
+CMakeFiles/perception_msgs_generate_messages_eus: /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/roseus/ros/perception_msgs/srv/RecordBag.l
 CMakeFiles/perception_msgs_generate_messages_eus: /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/roseus/ros/perception_msgs/manifest.l
 
 
@@ -84,8 +85,8 @@ CMakeFiles/perception_msgs_generate_messages_eus: /home/meizan/workspace/athena-
 /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/roseus/ros/perception_msgs/msg/TaskList.l: /opt/ros/noetic/lib/geneus/gen_eus.py
 /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/roseus/ros/perception_msgs/msg/TaskList.l: /home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/TaskList.msg
 /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/roseus/ros/perception_msgs/msg/TaskList.l: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
-/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/roseus/ros/perception_msgs/msg/TaskList.l: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
 /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/roseus/ros/perception_msgs/msg/TaskList.l: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/roseus/ros/perception_msgs/msg/TaskList.l: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/meizan/workspace/athena-robot-dog/modules/message/ros/build/perception_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating EusLisp code from perception_msgs/TaskList.msg"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/TaskList.msg -Iperception_msgs:/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p perception_msgs -o /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/roseus/ros/perception_msgs/msg
 
@@ -101,15 +102,20 @@ CMakeFiles/perception_msgs_generate_messages_eus: /home/meizan/workspace/athena-
 
 /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/roseus/ros/perception_msgs/msg/DogState.l: /opt/ros/noetic/lib/geneus/gen_eus.py
 /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/roseus/ros/perception_msgs/msg/DogState.l: /home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/DogState.msg
-/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/roseus/ros/perception_msgs/msg/DogState.l: /home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/AlarmEntry.msg
 /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/roseus/ros/perception_msgs/msg/DogState.l: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
-/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/roseus/ros/perception_msgs/msg/DogState.l: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
 /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/roseus/ros/perception_msgs/msg/DogState.l: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/roseus/ros/perception_msgs/msg/DogState.l: /home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/AlarmEntry.msg
+/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/roseus/ros/perception_msgs/msg/DogState.l: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/meizan/workspace/athena-robot-dog/modules/message/ros/build/perception_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating EusLisp code from perception_msgs/DogState.msg"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/DogState.msg -Iperception_msgs:/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p perception_msgs -o /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/roseus/ros/perception_msgs/msg
 
+/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/roseus/ros/perception_msgs/srv/RecordBag.l: /opt/ros/noetic/lib/geneus/gen_eus.py
+/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/roseus/ros/perception_msgs/srv/RecordBag.l: /home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/srv/RecordBag.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/meizan/workspace/athena-robot-dog/modules/message/ros/build/perception_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating EusLisp code from perception_msgs/RecordBag.srv"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/srv/RecordBag.srv -Iperception_msgs:/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p perception_msgs -o /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/roseus/ros/perception_msgs/srv
+
 /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/roseus/ros/perception_msgs/manifest.l: /opt/ros/noetic/lib/geneus/gen_eus.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/meizan/workspace/athena-robot-dog/modules/message/ros/build/perception_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating EusLisp manifest code for perception_msgs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/meizan/workspace/athena-robot-dog/modules/message/ros/build/perception_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating EusLisp manifest code for perception_msgs"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/roseus/ros/perception_msgs perception_msgs geometry_msgs std_msgs
 
 perception_msgs_generate_messages_eus: CMakeFiles/perception_msgs_generate_messages_eus
@@ -120,6 +126,7 @@ perception_msgs_generate_messages_eus: /home/meizan/workspace/athena-robot-dog/m
 perception_msgs_generate_messages_eus: /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/roseus/ros/perception_msgs/msg/ActionEntry.l
 perception_msgs_generate_messages_eus: /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/roseus/ros/perception_msgs/msg/AlarmEntry.l
 perception_msgs_generate_messages_eus: /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/roseus/ros/perception_msgs/msg/DogState.l
+perception_msgs_generate_messages_eus: /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/roseus/ros/perception_msgs/srv/RecordBag.l
 perception_msgs_generate_messages_eus: /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/share/roseus/ros/perception_msgs/manifest.l
 perception_msgs_generate_messages_eus: CMakeFiles/perception_msgs_generate_messages_eus.dir/build.make
 

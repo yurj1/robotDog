@@ -1,0 +1,9 @@
+uint8 bagMode #0: 结束  1: 自定义录包 2： 执行脚本录包
+# type1 
+string bagName #包名
+string[] topics #录制的所有话题
+# type2
+string bashName #脚本名
+---
+bool success
+string errorInfo

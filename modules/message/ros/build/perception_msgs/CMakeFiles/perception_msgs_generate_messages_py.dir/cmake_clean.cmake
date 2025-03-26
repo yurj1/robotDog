@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/lib/python3/dist-packages/perception_msgs/msg/_PercState.py"
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/lib/python3/dist-packages/perception_msgs/msg/_TaskList.py"
   "/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/lib/python3/dist-packages/perception_msgs/msg/__init__.py"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/lib/python3/dist-packages/perception_msgs/srv/_RecordBag.py"
+  "/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/lib/python3/dist-packages/perception_msgs/srv/__init__.py"
   "CMakeFiles/perception_msgs_generate_messages_py"
 )
 

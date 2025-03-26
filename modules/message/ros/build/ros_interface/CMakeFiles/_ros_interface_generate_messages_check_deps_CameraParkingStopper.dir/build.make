@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/meizan/workspace/athena-robot-dog/modules/message/ros/b
 include CMakeFiles/_ros_interface_generate_messages_check_deps_CameraParkingStopper.dir/progress.make
 
 CMakeFiles/_ros_interface_generate_messages_check_deps_CameraParkingStopper:
-	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py ros_interface /home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CameraParkingStopper.msg std_msgs/Header:ros_interface/BBox2D
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py ros_interface /home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/CameraParkingStopper.msg ros_interface/BBox2D:std_msgs/Header
 
 _ros_interface_generate_messages_check_deps_CameraParkingStopper: CMakeFiles/_ros_interface_generate_messages_check_deps_CameraParkingStopper
 _ros_interface_generate_messages_check_deps_CameraParkingStopper: CMakeFiles/_ros_interface_generate_messages_check_deps_CameraParkingStopper.dir/build.make

@@ -60,6 +60,7 @@ CMakeFiles/perception_msgs_generate_messages_cpp: /home/meizan/workspace/athena-
 CMakeFiles/perception_msgs_generate_messages_cpp: /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/include/perception_msgs/ActionEntry.h
 CMakeFiles/perception_msgs_generate_messages_cpp: /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/include/perception_msgs/AlarmEntry.h
 CMakeFiles/perception_msgs_generate_messages_cpp: /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/include/perception_msgs/DogState.h
+CMakeFiles/perception_msgs_generate_messages_cpp: /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/include/perception_msgs/RecordBag.h
 
 
 /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/include/perception_msgs/PercCmd.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
@@ -86,8 +87,8 @@ CMakeFiles/perception_msgs_generate_messages_cpp: /home/meizan/workspace/athena-
 /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/include/perception_msgs/TaskList.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/include/perception_msgs/TaskList.h: /home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/TaskList.msg
 /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/include/perception_msgs/TaskList.h: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
-/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/include/perception_msgs/TaskList.h: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
 /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/include/perception_msgs/TaskList.h: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/include/perception_msgs/TaskList.h: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
 /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/include/perception_msgs/TaskList.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/meizan/workspace/athena-robot-dog/modules/message/ros/build/perception_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating C++ code from perception_msgs/TaskList.msg"
 	cd /home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs && /home/meizan/workspace/athena-robot-dog/modules/message/ros/build/perception_msgs/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/TaskList.msg -Iperception_msgs:/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p perception_msgs -o /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/include/perception_msgs -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -106,13 +107,20 @@ CMakeFiles/perception_msgs_generate_messages_cpp: /home/meizan/workspace/athena-
 
 /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/include/perception_msgs/DogState.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/include/perception_msgs/DogState.h: /home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/DogState.msg
-/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/include/perception_msgs/DogState.h: /home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/AlarmEntry.msg
 /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/include/perception_msgs/DogState.h: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
-/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/include/perception_msgs/DogState.h: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
 /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/include/perception_msgs/DogState.h: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/include/perception_msgs/DogState.h: /home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/AlarmEntry.msg
+/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/include/perception_msgs/DogState.h: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
 /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/include/perception_msgs/DogState.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/meizan/workspace/athena-robot-dog/modules/message/ros/build/perception_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating C++ code from perception_msgs/DogState.msg"
 	cd /home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs && /home/meizan/workspace/athena-robot-dog/modules/message/ros/build/perception_msgs/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg/DogState.msg -Iperception_msgs:/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p perception_msgs -o /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/include/perception_msgs -e /opt/ros/noetic/share/gencpp/cmake/..
+
+/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/include/perception_msgs/RecordBag.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
+/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/include/perception_msgs/RecordBag.h: /home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/srv/RecordBag.srv
+/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/include/perception_msgs/RecordBag.h: /opt/ros/noetic/share/gencpp/msg.h.template
+/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/include/perception_msgs/RecordBag.h: /opt/ros/noetic/share/gencpp/srv.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/meizan/workspace/athena-robot-dog/modules/message/ros/build/perception_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating C++ code from perception_msgs/RecordBag.srv"
+	cd /home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs && /home/meizan/workspace/athena-robot-dog/modules/message/ros/build/perception_msgs/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/srv/RecordBag.srv -Iperception_msgs:/home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/perception_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p perception_msgs -o /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/include/perception_msgs -e /opt/ros/noetic/share/gencpp/cmake/..
 
 perception_msgs_generate_messages_cpp: CMakeFiles/perception_msgs_generate_messages_cpp
 perception_msgs_generate_messages_cpp: /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/include/perception_msgs/PercCmd.h
@@ -122,6 +130,7 @@ perception_msgs_generate_messages_cpp: /home/meizan/workspace/athena-robot-dog/m
 perception_msgs_generate_messages_cpp: /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/include/perception_msgs/ActionEntry.h
 perception_msgs_generate_messages_cpp: /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/include/perception_msgs/AlarmEntry.h
 perception_msgs_generate_messages_cpp: /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/include/perception_msgs/DogState.h
+perception_msgs_generate_messages_cpp: /home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/perception_msgs/include/perception_msgs/RecordBag.h
 perception_msgs_generate_messages_cpp: CMakeFiles/perception_msgs_generate_messages_cpp.dir/build.make
 
 .PHONY : perception_msgs_generate_messages_cpp

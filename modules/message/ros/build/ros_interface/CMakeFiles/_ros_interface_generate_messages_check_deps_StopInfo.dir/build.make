@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/meizan/workspace/athena-robot-dog/modules/message/ros/b
 include CMakeFiles/_ros_interface_generate_messages_check_deps_StopInfo.dir/progress.make
 
 CMakeFiles/_ros_interface_generate_messages_check_deps_StopInfo:
-	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py ros_interface /home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/StopInfo.msg std_msgs/Header:ros_interface/Point3D:ros_interface/StopPoint
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py ros_interface /home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/StopInfo.msg ros_interface/Point3D:std_msgs/Header:ros_interface/StopPoint
 
 _ros_interface_generate_messages_check_deps_StopInfo: CMakeFiles/_ros_interface_generate_messages_check_deps_StopInfo
 _ros_interface_generate_messages_check_deps_StopInfo: CMakeFiles/_ros_interface_generate_messages_check_deps_StopInfo.dir/build.make

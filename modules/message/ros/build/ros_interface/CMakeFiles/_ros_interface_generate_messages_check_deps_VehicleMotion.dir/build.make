@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/meizan/workspace/athena-robot-dog/modules/message/ros/b
 include CMakeFiles/_ros_interface_generate_messages_check_deps_VehicleMotion.dir/progress.make
 
 CMakeFiles/_ros_interface_generate_messages_check_deps_VehicleMotion:
-	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py ros_interface /home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/VehicleMotion.msg ros_interface/PathPoint:ros_interface/VehicleMotionPoint:ros_interface/TrajectoryPoint
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py ros_interface /home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/VehicleMotion.msg ros_interface/PathPoint:ros_interface/TrajectoryPoint:ros_interface/VehicleMotionPoint
 
 _ros_interface_generate_messages_check_deps_VehicleMotion: CMakeFiles/_ros_interface_generate_messages_check_deps_VehicleMotion
 _ros_interface_generate_messages_check_deps_VehicleMotion: CMakeFiles/_ros_interface_generate_messages_check_deps_VehicleMotion.dir/build.make
