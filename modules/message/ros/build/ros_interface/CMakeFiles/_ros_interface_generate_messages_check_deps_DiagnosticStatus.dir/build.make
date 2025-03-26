@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/meizan/workspace/athena-robot-dog/modules/message/ros/b
 include CMakeFiles/_ros_interface_generate_messages_check_deps_DiagnosticStatus.dir/progress.make
 
 CMakeFiles/_ros_interface_generate_messages_check_deps_DiagnosticStatus:
-	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py ros_interface /home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/DiagnosticStatus.msg std_msgs/Header:ros_interface/KeyValues
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py ros_interface /home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/DiagnosticStatus.msg ros_interface/KeyValues:std_msgs/Header
 
 _ros_interface_generate_messages_check_deps_DiagnosticStatus: CMakeFiles/_ros_interface_generate_messages_check_deps_DiagnosticStatus
 _ros_interface_generate_messages_check_deps_DiagnosticStatus: CMakeFiles/_ros_interface_generate_messages_check_deps_DiagnosticStatus.dir/build.make

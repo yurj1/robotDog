@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/meizan/workspace/athena-robot-dog/modules/message/ros/install/lib;/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/meizan/workspace/athena-robot-dog/modules/message/ros/install/lib;/home/meizan/workspace/vis_flashocc_bak/quad_msg/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/meizan/workspace/athena-robot-dog/modules/message/ros/b
 include CMakeFiles/_ros_interface_generate_messages_check_deps_TrafficLightMsg.dir/progress.make
 
 CMakeFiles/_ros_interface_generate_messages_check_deps_TrafficLightMsg:
-	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py ros_interface /home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficLightMsg.msg std_msgs/Header:ros_interface/TrafficLightDebug:ros_interface/TrafficLight:ros_interface/TrafficLightBox:ros_interface/Time:ros_interface/Point3D:ros_interface/ImageRect
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py ros_interface /home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/TrafficLightMsg.msg std_msgs/Header:ros_interface/TrafficLightBox:ros_interface/Point3D:ros_interface/Time:ros_interface/TrafficLight:ros_interface/ImageRect:ros_interface/TrafficLightDebug
 
 _ros_interface_generate_messages_check_deps_TrafficLightMsg: CMakeFiles/_ros_interface_generate_messages_check_deps_TrafficLightMsg
 _ros_interface_generate_messages_check_deps_TrafficLightMsg: CMakeFiles/_ros_interface_generate_messages_check_deps_TrafficLightMsg.dir/build.make

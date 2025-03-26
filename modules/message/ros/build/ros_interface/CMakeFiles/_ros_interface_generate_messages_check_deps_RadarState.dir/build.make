@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/meizan/workspace/athena-robot-dog/modules/message/ros/b
 include CMakeFiles/_ros_interface_generate_messages_check_deps_RadarState.dir/progress.make
 
 CMakeFiles/_ros_interface_generate_messages_check_deps_RadarState:
-	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py ros_interface /home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarState.msg ros_interface/RadarStateError:ros_interface/RadarStateMode
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py ros_interface /home/meizan/workspace/athena-robot-dog/modules/message/ros/src/athena/ros_interface/msg/RadarState.msg ros_interface/RadarStateMode:ros_interface/RadarStateError
 
 _ros_interface_generate_messages_check_deps_RadarState: CMakeFiles/_ros_interface_generate_messages_check_deps_RadarState
 _ros_interface_generate_messages_check_deps_RadarState: CMakeFiles/_ros_interface_generate_messages_check_deps_RadarState.dir/build.make
