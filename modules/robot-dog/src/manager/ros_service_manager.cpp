@@ -3,6 +3,7 @@
 #include <sys/types.h>
 #include <signal.h>
 #include <unistd.h>
+#include <fcntl.h>
 
 #include "common/global_project.h"
 #include "robot_dog_main.h"
@@ -207,49 +208,110 @@ bool RosServiceManager::recordBagCallback(perception_msgs::DogRecordBag::Request
 
   if(! start_record_)
   {
-    if(req.bagMode == 1)//自定义录包
-    {
-        pid_t pid = fork();
-        if (pid == 0) { // 子进程
-            std::vector<std::string> args;
-            args.push_back("rosbag");
-            args.push_back("record");
-            args.push_back("-O");
-            args.push_back(req.bagName);
-            for (const auto& topic : req.topics) {
-                args.push_back(topic);
-            }
-
-            // 构造参数数组
-            std::vector<char*> argv;
-            for (auto& arg : args) {
-                argv.push_back(&arg[0]);
-            }
-            argv.push_back(nullptr); // 参数数组以 nullptr 结尾
-
-            // 使用 execvp 启动 rosbag
-            //ROS_INFO("Rosbag recording cmd: %s", argv;
-            execvp("rosbag", argv.data());
-            exit(0); // 如果 execvp 失败，确保退出
-        } 
-        else if (pid > 0) { // 父进程
-            recorder_pid_ = pid;
-            start_record_ = true;
-            ROS_INFO("Rosbag recording started (PID: %d)", pid);
-            rsp.success = true;
-            rsp.errorInfo = "开始录包";
-        }
-        else {
+    if(req.bagMode == 1 || req.bagMode == 2) {
+        //创建管道用于进程通信
+        int pipe_fd[2];
+        if(pipe(pipe_fd) == -1)
+        {
             rsp.success = false;
-            rsp.errorInfo = "录制失败";
+            rsp.errorInfo = "create pipe failed";
+            return true;
         }
-    }
+
+        if(req.bagMode == 1)//自定义录包
+        {
+            pid_t pid = fork();
+            if (pid == 0) { // 子进程
+                // 将标准错误重定向到管道
+                dup2(pipe_fd[1], STDERR_FILENO); // 关键修改！
+                close(pipe_fd[0]);//close read
+                
+                std::vector<std::string> args;
+                args.push_back("rosbag");
+                args.push_back("record");
+                args.push_back("-O");
+                args.push_back(req.bagName);
+                for (const auto& topic : req.topics) {
+                    args.push_back(topic);
+                }
+
+                // 构造参数数组
+                std::vector<char*> argv;
+                for (auto& arg : args) {
+                    argv.push_back(&arg[0]);
+                }
+                argv.push_back(nullptr); // 参数数组以 nullptr 结尾
+
+                // 使用 execvp 启动 rosbag
+                //ROS_INFO("Rosbag recording cmd: %s", argv;
+                if(execvp("rosbag", argv.data()) == -1)
+                {
+                    std::string error = "record failed: " + std::string(strerror(errno));
+                    write(pipe_fd[1], error.c_str(), error.length());
+                    close(pipe_fd[1]);
+                    exit(1);
+                }
+                exit(0); // 如果 execvp 失败，确保退出
+            } 
+            else if (pid > 0) { // 父进程
+                close(pipe_fd[1]);//close write
+                int flags = fcntl(pipe_fd[0], F_GETFL, 0);
+                fcntl(pipe_fd[0], F_SETFL, flags | O_NONBLOCK);
+
+                fd_set fds;
+                struct timeval tv;
+                FD_ZERO(&fds);
+                FD_SET(pipe_fd[0],&fds);
+                tv.tv_sec = 1;
+                tv.tv_usec = 0;
+
+                int ret = select(pipe_fd[0] + 1, &fds, NULL, NULL, &tv);
+                if(ret > 0)
+                {
+                    char error[256];
+                    int n =read(pipe_fd[0], error, sizeof(error) - 1);
+                    close(pipe_fd[0]);
+
+                    if(n > 0) {
+                        error[n] = '\0';
+                        rsp.success = false;
+                        rsp.errorInfo = error;
+
+                        return true;
+                    }
+                }
+
+                recorder_pid_ = pid;
+                start_record_ = true;
+                ROS_INFO("Rosbag recording started (PID: %d)", pid);
+                rsp.success = true;
+                rsp.errorInfo = "开始录包";
+            }
+            else {//进程创建失败
+                close(pipe_fd[0]);
+                close(pipe_fd[1]);
+                rsp.success = false;
+                rsp.errorInfo = "create fork failed";
+            }
+        }
     else if(req.bagMode == 2) // 执行脚本
     {
+        // 1. 检查脚本是否存在
+        if (access(req.bashName.c_str(), F_OK) == -1) {
+            std::string error = "Script not found: " + std::string(strerror(errno));
+            rsp.success = false;
+            rsp.errorInfo = error;
+            return true;
+        }
+
         pid_t pid = fork();
         if (pid == 0) { // 子进程
+            // 将标准错误重定向到管道
+            dup2(pipe_fd[1], STDERR_FILENO); // 关键修改！
+            close(pipe_fd[0]);//close read
+            
             std::vector<std::string> args;
-            args.push_back("sh");
+            args.push_back("/bin/bash");
             args.push_back(req.bashName);
             
             // 构造参数数组
@@ -260,21 +322,62 @@ bool RosServiceManager::recordBagCallback(perception_msgs::DogRecordBag::Request
             argv.push_back(nullptr); // 参数数组以 nullptr 结尾
 
             // 使用 execvp 启动脚本
-            execvp("sh", argv.data());
+            ROS_INFO("children start sh");
+            if(execvp("/bin/bash", argv.data()) == -1)
+            {
+                ROS_INFO("error start sh");
+                std::string error = "record failed: " + std::string(strerror(errno));
+                write(pipe_fd[1], error.c_str(), error.length());
+                close(pipe_fd[1]);
+                exit(1);
+            }
+            close(pipe_fd[1]);
             exit(0); // 如果 execvp 失败，确保退出
         }
         else if (pid > 0) { // 父进程
+            close(pipe_fd[1]);//close write
+            int flags = fcntl(pipe_fd[0], F_GETFL, 0);
+            fcntl(pipe_fd[0], F_SETFL, flags | O_NONBLOCK);
+
+            fd_set fds;
+            struct timeval tv;
+            FD_ZERO(&fds);
+            FD_SET(pipe_fd[0],&fds);
+            tv.tv_sec = 3;
+            tv.tv_usec = 0;
+
+            int ret = select(pipe_fd[0] + 1, &fds, NULL, NULL, &tv);
+            if(ret > 0)
+            {
+                char error[256];
+                int n =read(pipe_fd[0], error, sizeof(error) - 1);
+                close(pipe_fd[0]);
+
+                if(n > 0) {
+                    error[n] = '\0';
+                    rsp.success = false;
+                    rsp.errorInfo = error;
+
+                    return true;
+                }
+            }
+
             recorder_pid_ = pid;
             start_record_ = true;
-            ROS_INFO("Script started (PID: %d)", pid);
+            ROS_INFO("Rosbag recording started (PID: %d)", pid);
             rsp.success = true;
             rsp.errorInfo = "开始执行脚本";
         }
         else {
+            close(pipe_fd[0]);
+            close(pipe_fd[1]);
             rsp.success = false;
-            rsp.errorInfo = "执行脚本失败";
+            rsp.errorInfo = "create fork failed";
         }
     }
+
+    }
+    
   }
 
   return true;
