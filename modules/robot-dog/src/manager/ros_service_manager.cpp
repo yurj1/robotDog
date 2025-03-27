@@ -201,10 +201,9 @@ bool RosServiceManager::recordBagCallback(perception_msgs::DogRecordBag::Request
       recorder_pid_ = -1;
     }
     start_record_ = false;
-
-    rsp.success = true;
-    rsp.errorInfo = "已停止";
   }
+  rsp.success = true;
+  rsp.errorInfo = "已停止";
 
   if(! start_record_)
   {
@@ -243,6 +242,37 @@ bool RosServiceManager::recordBagCallback(perception_msgs::DogRecordBag::Request
         else {
             rsp.success = false;
             rsp.errorInfo = "录制失败";
+        }
+    }
+    else if(req.bagMode == 2) // 执行脚本
+    {
+        pid_t pid = fork();
+        if (pid == 0) { // 子进程
+            std::vector<std::string> args;
+            args.push_back("sh");
+            args.push_back(req.bashName);
+            
+            // 构造参数数组
+            std::vector<char*> argv;
+            for (auto& arg : args) {
+                argv.push_back(&arg[0]);
+            }
+            argv.push_back(nullptr); // 参数数组以 nullptr 结尾
+
+            // 使用 execvp 启动脚本
+            execvp("sh", argv.data());
+            exit(0); // 如果 execvp 失败，确保退出
+        }
+        else if (pid > 0) { // 父进程
+            recorder_pid_ = pid;
+            start_record_ = true;
+            ROS_INFO("Script started (PID: %d)", pid);
+            rsp.success = true;
+            rsp.errorInfo = "开始执行脚本";
+        }
+        else {
+            rsp.success = false;
+            rsp.errorInfo = "执行脚本失败";
         }
     }
   }
