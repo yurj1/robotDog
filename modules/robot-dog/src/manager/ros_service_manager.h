@@ -34,6 +34,8 @@ public:
     //处理录包服务的反馈处理
     bool recordBagCallback(perception_msgs::DogRecordBag::Request &req, perception_msgs::DogRecordBag::Response &res);
 private:
+    bool IsRunningChildren();
+    
     //数据
     perception_msgs::PercCmd recv_cmd_msg_info_; //to planning
     perception_msgs::TaskList task_list_planning_; //to planning
