@@ -1,5 +1,6 @@
 #include "welcome_mode.h"
 #include "common/global_project.h"
+#include "robot_dog_main.h"
 
 using namespace athena::function::action;
 
@@ -9,7 +10,7 @@ WelcomeMode::WelcomeMode(TaskType type)
 {
 }
 
-void WelcomeMode::Handle(const perception_msgs::PercCmd::ConstPtr& msg, RobotDogState* data_manager)
+void WelcomeMode::Handle(const perception_msgs::PercCmd::ConstPtr& msg, RosServiceManager* data_manager)
 {
     data_manager->SetCanFinish(true);
     

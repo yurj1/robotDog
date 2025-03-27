@@ -1,4 +1,6 @@
 #include "global_project.h"
+#include "robot_dog_main.h"
+
 using namespace athena::function;
 namespace global
 {

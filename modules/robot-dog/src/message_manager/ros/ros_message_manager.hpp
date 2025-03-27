@@ -8,6 +8,7 @@
  */
 
 #include "ros_message_manager.h"
+#include "common/global_project.h"
 #include "modules/common/macros/macros.h"
 #include "modules/common/logging/logging.h"
 
@@ -20,8 +21,8 @@
 namespace athena {
 namespace function {
 using namespace athena::common;
-template <typename T> void RosMessageManager<T>::Init(T* t) {
-
+template <typename T> void RosMessageManager<T>::Init(T* t)
+{
   loadPointMap();
   is_init_ = false;
   instance_ = t;
@@ -53,6 +54,11 @@ template <typename T> void RosMessageManager<T>::Init(T* t) {
   //发布动作信息给集成
   _pubscriber.insert(std::make_pair<std::string, ros::Publisher>(pub_action_info_to_cmd, nh_.advertise<perception_msgs::ActionEntry>(pub_action_info_to_cmd, 10)));
   
+// dog作为server端的服务
+		ros::ServiceServer record_bag_service = nh_.advertiseService(dog_ros_service_record_bag,
+																&RosMessageManager::recordBagCallback, this);
+		map_service_server_.insert(std::pair<std::string, ros::ServiceServer>(dog_ros_service_record_bag, record_bag_service));
+
   // 线程执行开始
   handle_message_thread_.reset(new std::thread([this] { Run(); }));
   if (handle_message_thread_ == nullptr) {
@@ -121,6 +127,17 @@ template <typename T>
 void RosMessageManager<T>::stateCallback(const perception_msgs::TaskList::ConstPtr& msg) {
     instance_->stateCallback(msg);
 }
+//处理录包服务响应
+template <typename T>
+bool RosMessageManager<T>::recordBagCallback(perception_msgs::DogRecordBag::Request &req, perception_msgs::DogRecordBag::Response &rsp)
+{
+  if(global::AGetMain() != nullptr)
+  {
+    return AfjGetMain()->GetRosServiceManager().recordBagCallback(req, rsp);
+  }
+  return false;
+}
+
 template <typename T> void RosMessageManager<T>::Run() {
   ros::spin();
   ros::shutdown();
@@ -134,6 +151,31 @@ template <typename T> void RosMessageManager<T>::Stop() {
     AINFO << "handle_message_thread stopped [ok].";
   }
 }
+
+template <typename T> void RosMessageManager<T>::RecordBag(std::string bagName, std::vector<std::string> topics)
+{
+  // 创建 rosbag::Recorder 对象
+    // rosbag::RecorderOptions options;
+    // options.prefix = bagName;  // 设置输出文件名前缀
+    // options.record_all = false;    // 不录制所有话题
+    // options.topics = topics;       // 指定要录制的话题列表
+
+    // if(! recorder_)
+    //   recorder_ = new rosbag::Recorder(options);
+
+    // std::cout << "开始录制话题到文件: " << bagName << std::endl;
+    // for (const auto& topic : topics) {
+    //     std::cout << "- " << topic << std::endl;
+    // }
+
+    // // 启动录制线程
+    // std::thread recorderThread([this]() {
+    //     recorder_->run();
+    // });
+
+    // recorderThread.detach();
+}
+
 } // namespace function
 } // namespace athena
 #endif

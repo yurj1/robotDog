@@ -518,47 +518,6 @@ namespace athena
         }
 
     void RobotDogMain::clear() {
-      //感知数据初始化
-      {
-        task_list_perception_.task_id = 0;
-        geometry_msgs::Pose pose;
-        pose.position.x = 0;
-        pose.position.y = 0;
-        pose.position.z = 0;
-        pose.orientation.x = 0;
-        pose.orientation.y = 0;
-        pose.orientation.z = 0;
-        pose.orientation.w = 0;
-        task_list_perception_.target_position = pose;
-        task_list_perception_.target_object = "";
-        task_list_perception_.task_state = robot_dog::operations::TaskState::STATE_IDLE;
-        task_list_perception_.task_result = robot_dog::operations::TaskResult::RESULT_INVALID;
-        task_list_perception_.isInPlaceRotation = false;
-      }
-      //规控数据初始化
-      {
-        task_list_planning_.task_id = 0;
-        geometry_msgs::Pose pose;
-        pose.position.x = 0;
-        pose.position.y = 0;
-        pose.position.z = 0;
-        pose.orientation.x = 0;
-        pose.orientation.y = 0;
-        pose.orientation.z = 0;
-        pose.orientation.w = 0;
-        task_list_planning_.target_position = pose;
-        task_list_planning_.target_object = "";
-        task_list_planning_.task_state = robot_dog::operations::TaskState::STATE_IDLE;
-        task_list_planning_.task_result = robot_dog::operations::TaskResult::RESULT_INVALID;
-        task_list_planning_.isInPlaceRotation = false;
-      } 
-      //状态反馈初始化
-      {
-        perc_state_.action_id = 0;
-        perc_state_.err_code = 0;
-        perc_state_.exe_result = 0;
-      }
-        
       state_manager_.Init();
     }
       

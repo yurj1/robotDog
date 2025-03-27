@@ -1,5 +1,6 @@
 #include "dest_mode.h"
 #include "common/global_project.h"
+#include "robot_dog_main.h"
 
 using namespace athena::function::action;
 
@@ -13,7 +14,7 @@ void DestMode::Init()
 {
 }
 
-void DestMode::Handle(const perception_msgs::PercCmd::ConstPtr& msg, RobotDogState* data_manager)
+void DestMode::Handle(const perception_msgs::PercCmd::ConstPtr& msg, RosServiceManager* data_manager)
 {
     //可直接完成
     data_manager->SetCanFinish(true);

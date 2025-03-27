@@ -1,5 +1,6 @@
 #include "node_manager_mode.h"
 #include "common/global_project.h"
+#include "robot_dog_main.h"
 
 using namespace athena::function::action;
 
@@ -10,7 +11,7 @@ NodeManagerMode::NodeManagerMode(TaskType t_type, NodeType n_type)
 {
 }
 
-void NodeManagerMode::Handle(const perception_msgs::PercCmd::ConstPtr& msg, RobotDogState* data_manager)
+void NodeManagerMode::Handle(const perception_msgs::PercCmd::ConstPtr& msg, RosServiceManager* data_manager)
 {
     
     //状态更新

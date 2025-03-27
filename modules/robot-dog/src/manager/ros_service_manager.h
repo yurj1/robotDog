@@ -1,5 +1,5 @@
-#ifndef __ROBOT_DOG_STATE_H__
-#define __ROBOT_DOG_STATE_H__
+#ifndef __ROS_SERVICE_MANAGER_H__
+#define __ROS_SERVICE_MANAGER_H__
 
 #include <mutex>
 
@@ -8,10 +8,10 @@
 
 using namespace robot_dog::operations;
 //状态机切换
-class RobotDogState
+class RosServiceManager
 {
 public:
-    RobotDogState();
+    RosServiceManager();
 
     TaskState GetState();
     TaskResult GetResult();
@@ -25,10 +25,14 @@ public:
 
     void SetCanFinish(const bool& enable);
     void SetStateMsg(const perception_msgs::PercState& result){perc_state_ = result;}
-
+    //处理订阅集成发过来的任务信息
     void handleTaskEvent(const perception_msgs::PercCmd::ConstPtr& msg);
+    //处理规划集成发过来的状态信息
     void handleStateEvent(const perception_msgs::TaskList::ConstPtr& msg);
+    //处理感知发送过来的反馈信息
     void handlePerceptionEvent(const perception_msgs::TaskList::ConstPtr& msg);
+    //处理录包服务的反馈处理
+    bool recordBagCallback(perception_msgs::DogRecordBag::Request &req, perception_msgs::DogRecordBag::Response &res);
 private:
     //数据
     perception_msgs::PercCmd recv_cmd_msg_info_; //to planning
@@ -37,7 +41,10 @@ private:
 
     bool m_can_finish;//完成条件
 
+    std::atomic<bool> start_record_;
+    pid_t             recorder_pid_;
+
     std::mutex m_mutex;
 };
 
-#endif //__ROBOT_DOG_STATE_H__
+#endif //__ROS_SERVICE_MANAGER_H__

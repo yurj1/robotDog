@@ -2,7 +2,7 @@
 #define __PERCEPTION_BRIDGE_H__
 
 #include <ros/ros.h>
-#include <manager/robot_dog_state_manager.h>
+#include <manager/ros_service_manager.h>
 
 #include <mutex>
 #include <thread>
@@ -100,6 +100,8 @@ namespace athena
       // 消息控制器
       std::map<std::string, std::shared_ptr<MessageManager<RobotDogMain>>>
           message_manager_;
+      // 状态管理器
+      RosServiceManager state_manager_;
     #if LCM_ENABLE
       std::shared_ptr<LcmMessageManager<RobotDogMain>> lcm_message_manager_;
     #endif
@@ -200,6 +202,7 @@ namespace athena
         if (message_manager_.count("ROS") > 0)
           message_manager_["ROS"]->PublishAction(msg);
       }
+      const RosServiceManager& GetRosServiceManager(){ return state_manager_; }
 
     protected:
       /**
@@ -245,14 +248,6 @@ namespace athena
        * @return    void.
        */
       void Spin();
-
-    private:
-      perception_msgs::TaskList task_list_perception_; //to perception
-      perception_msgs::TaskList task_list_planning_; //to planning
-      perception_msgs::PercState perc_state_;
-
-      // 状态管理器
-      RobotDogState state_manager_;
     };
   }
 }

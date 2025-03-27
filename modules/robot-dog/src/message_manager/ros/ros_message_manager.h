@@ -12,6 +12,8 @@
 #include <thread>
 
 #include <ros/ros.h>
+#include <rosbag/bag.h>
+#include <rosbag/recorder.h>
 
 #include "ros_interface/Events.h"
 #include "ros_interface/ObuCmdMsg.h"
@@ -62,6 +64,8 @@ protected:
   void ptCallback(const perception_msgs::TaskList::ConstPtr& msg);
   // 处理规划状态反馈消息
   void stateCallback(const perception_msgs::TaskList::ConstPtr& msg);
+  //处理录包服务响应
+  bool recordBagCallback(perception_msgs::DogRecordBag::Request &req, perception_msgs::DogRecordBag::Response &rsp);
 
 protected:
   T* instance_;
@@ -82,13 +86,20 @@ protected:
    */
   void Stop();
 
+    /**
+   * @brief     录包函数.
+   * @return    void.
+   */
+  void RecordBag(std::string bagName, std::vector<std::string> topics);
+
 protected:
   ros::NodeHandle nh_;
   std::mutex mutex_;
   // ROS 订阅器和发布器
   std::map<std::string, ros::Subscriber> _subscriber;
   std::map<std::string, ros::Publisher> _pubscriber;
-  
+  std::map<std::string, ros::ServiceServer> map_service_server_; //<作为服务端的服务,服务端句柄>
+
   // 固定点映射表
   std::map<std::string, geometry_msgs::Pose> point_map_;
 };

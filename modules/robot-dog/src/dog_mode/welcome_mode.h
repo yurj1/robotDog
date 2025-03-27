@@ -9,7 +9,7 @@ namespace athena {
             {
             public:
                 WelcomeMode(TaskType type);
-                void Handle(const perception_msgs::PercCmd::ConstPtr& msg, RobotDogState* data_manager) override;
+                void Handle(const perception_msgs::PercCmd::ConstPtr& msg, RosServiceManager* data_manager) override;
             private:
                 void Init()override{}
             private:

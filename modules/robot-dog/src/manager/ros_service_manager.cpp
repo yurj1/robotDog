@@ -1,30 +1,36 @@
 
 #include <ros/ros.h>
+#include <sys/types.h>
+#include <signal.h>
+#include <unistd.h>
 
 #include "common/global_project.h"
-#include "robot_dog_state_manager.h"
+#include "robot_dog_main.h"
+#include "ros_service_manager.h"
 #include "factory/factory.h"
 
 using namespace athena::function::action;
 
-RobotDogState::RobotDogState()
+RosServiceManager::RosServiceManager()
     : m_can_finish(true)
+    ,start_record_(false)
+    ,recorder_pid_(-1)
     , m_mutex()
 {
     Init();
 }
 
-TaskState RobotDogState::GetState()
+TaskState RosServiceManager::GetState()
 {
     return (TaskState)perc_state_.exe_state;
 }
 
-TaskResult RobotDogState::GetResult()
+TaskResult RosServiceManager::GetResult()
 {
     return (TaskResult)perc_state_.exe_result;
 }
 
-void RobotDogState::Init()
+void RosServiceManager::Init()
 {
     //状态反馈初始化
     perc_state_.action_id = 0;
@@ -51,35 +57,35 @@ void RobotDogState::Init()
     m_can_finish = true;
 }
 
-void RobotDogState::SetCanFinish(const bool& enable)
+void RosServiceManager::SetCanFinish(const bool& enable)
 {
     if(m_can_finish != enable)
         m_can_finish = enable;
 }
 
-bool RobotDogState::GetCanFinish()
+bool RosServiceManager::GetCanFinish()
 {
     return m_can_finish;
 }
 
-const perception_msgs::TaskList& RobotDogState::GetOutputPlanning()
+const perception_msgs::TaskList& RosServiceManager::GetOutputPlanning()
 {
     return task_list_planning_;
 }
 
-const perception_msgs::PercState& RobotDogState::GetConstStateMsg()
+const perception_msgs::PercState& RosServiceManager::GetConstStateMsg()
 {
     std::lock_guard<std::mutex> lock(m_mutex);
     return perc_state_;
 }
 
-perception_msgs::PercState& RobotDogState::GetStateMsg()
+perception_msgs::PercState& RosServiceManager::GetStateMsg()
 {
     //std::lock_guard<std::mutex> lock(m_mutex);
     return perc_state_;
 }
 
-void RobotDogState::handleTaskEvent(const perception_msgs::PercCmd::ConstPtr& msg)
+void RosServiceManager::handleTaskEvent(const perception_msgs::PercCmd::ConstPtr& msg)
 {
     ROS_INFO("Received PercCmd: action_id=%lu, perc_kind=%u", msg->action_id, msg->perc_kind);
     recv_cmd_msg_info_ = *msg;
@@ -94,7 +100,7 @@ void RobotDogState::handleTaskEvent(const perception_msgs::PercCmd::ConstPtr& ms
         m_task->Handle(msg, this);
 }
 
-void RobotDogState::handlePerceptionEvent(const perception_msgs::TaskList::ConstPtr& msg)
+void RosServiceManager::handlePerceptionEvent(const perception_msgs::TaskList::ConstPtr& msg)
 {
     ROS_INFO("Received TaskPt: task_type=%u, x=%f, y=%f, z=%f target_object=%s task_state=%u",
                   msg->task_type, msg->target_position.position.x,  msg->target_position.position.y,  msg->target_position.position.z, msg->target_object.c_str(), msg->task_state);
@@ -167,9 +173,8 @@ void RobotDogState::handlePerceptionEvent(const perception_msgs::TaskList::Const
     }
 }
 
-void RobotDogState::handleStateEvent(const perception_msgs::TaskList::ConstPtr& msg)
+void RosServiceManager::handleStateEvent(const perception_msgs::TaskList::ConstPtr& msg)
 {
-    
     //特殊状态下不切换为完成状态
     if(!m_can_finish && (uint8_t)msg->task_state == TaskState::STATE_COMPLETED){
         ROS_INFO("Special task not Done");
@@ -182,35 +187,65 @@ void RobotDogState::handleStateEvent(const perception_msgs::TaskList::ConstPtr& 
 
         perc_state_.exe_state = static_cast<uint8_t>(msg->task_state);
         perc_state_.exe_result = static_cast<uint8_t>(msg->task_result);
-
-        /* switch (m_currentState)
-        {
-        case STATE_IDLE:
-            perc_state_.exe_state = perception_msgs::PercState::ACTION_IDLE;
-            break;
-        case STATE_RUNNING:
-            perc_state_.exe_state = perception_msgs::PercState::ACTION_RUNNING;
-            break;
-        case STATE_COMPLETED:
-            perc_state_.exe_state = perception_msgs::PercState::ACTION_DONE;
-            break;
-        default:
-            break;
-        }
-
-        switch (m_currentResult)
-        {
-        case RESULT_INVALID:
-            perc_state_.exe_result = perception_msgs::PercState::ACTION_NONE;
-            break;
-        case RESULT_SUCCESS:
-            perc_state_.exe_result = perception_msgs::PercState::ACTION_SUCCESS;
-            break;
-        case RESULT_FAILED:
-            perc_state_.exe_result = perception_msgs::PercState::ACTION_FAIL;
-            break;
-        default:
-            break;
-        } */
     }
+}
+
+bool RosServiceManager::recordBagCallback(perception_msgs::DogRecordBag::Request &req, perception_msgs::DogRecordBag::Response &rsp)
+{
+  if(start_record_ && req.bagMode == 0)
+  {
+    // 停止录制
+    if (recorder_pid_ > 0) {
+      kill(recorder_pid_, SIGINT); // 安全终止信号
+      ROS_INFO("Sent SIGINT to rosbag process (PID: %d)", recorder_pid_);
+      recorder_pid_ = -1;
+    }
+    start_record_ = false;
+
+    rsp.success = true;
+    rsp.errorInfo = "已停止";
+  }
+
+  if(! start_record_)
+  {
+    if(req.bagMode == 1)//自定义录包
+    {
+        pid_t pid = fork();
+        if (pid == 0) { // 子进程
+            std::vector<std::string> args;
+            args.push_back("rosbag");
+            args.push_back("record");
+            args.push_back("-O");
+            args.push_back(req.bagName);
+            for (const auto& topic : req.topics) {
+                args.push_back(topic);
+            }
+
+            // 构造参数数组
+            std::vector<char*> argv;
+            for (auto& arg : args) {
+                argv.push_back(&arg[0]);
+            }
+            argv.push_back(nullptr); // 参数数组以 nullptr 结尾
+
+            // 使用 execvp 启动 rosbag
+            //ROS_INFO("Rosbag recording cmd: %s", argv;
+            execvp("rosbag", argv.data());
+            exit(0); // 如果 execvp 失败，确保退出
+        } 
+        else if (pid > 0) { // 父进程
+            recorder_pid_ = pid;
+            start_record_ = true;
+            ROS_INFO("Rosbag recording started (PID: %d)", pid);
+            rsp.success = true;
+            rsp.errorInfo = "开始录包";
+        }
+        else {
+            rsp.success = false;
+            rsp.errorInfo = "录制失败";
+        }
+    }
+  }
+
+  return true;
 }

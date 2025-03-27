@@ -1,5 +1,6 @@
 #include "follow_mode.h"
 #include "common/global_project.h"
+#include "robot_dog_main.h"
 
 using namespace athena::function::action;
 
@@ -9,7 +10,7 @@ FollowMode::FollowMode(TaskType type)
 {
 }
 
-void FollowMode::Handle(const perception_msgs::PercCmd::ConstPtr& msg, RobotDogState* data_manager)
+void FollowMode::Handle(const perception_msgs::PercCmd::ConstPtr& msg, RosServiceManager* data_manager)
 {
     //状态更新
     {

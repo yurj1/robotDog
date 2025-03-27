@@ -11,6 +11,7 @@
 #include <signal.h>
 
 #include "common/global_project.h"
+#include "robot_dog_main.h"
 
 #if GLOG_ENABLE
 #include <glog/logging.h>

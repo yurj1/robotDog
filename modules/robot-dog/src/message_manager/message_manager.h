@@ -14,6 +14,7 @@
 #include <perception_msgs/PercState.h>
 #include <perception_msgs/TaskList.h>
 #include <perception_msgs/ActionEntry.h>
+#include <perception_msgs/DogRecordBag.h>
 #include <geometry_msgs/Pose.h>
 #include <common/enum.h>
 
@@ -51,6 +52,12 @@
 #ifndef sub_planning_feedback
  #define sub_planning_feedback "/planning/task_list_feedback"
 #endif
+
+//集成界面向应用层申请录包（服务端）
+#ifndef dog_ros_service_record_bag
+#define dog_ros_service_record_bag "/dog/record_bag"
+#endif
+
 
 /**
  * @namespace athena::function
