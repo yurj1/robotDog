@@ -8921,11 +8921,10 @@ CMakeFiles/robot_dog_app.dir/src/apps/main.cpp.o
  ../../message/ros/devel/include/ros_interface/ObuCmd.h
  ../../message/ros/devel/include/ros_interface/ObuCmdMsg.h
  ../../message/ros/devel/include/ros_interface/Time.h
- ../src/apps/robot_dog_main.h
  ../src/common/enum.h
  ../src/common/global_project.h
  ../src/conf/robot_dog_conf.hpp
- ../src/manager/robot_dog_state_manager.h
+ ../src/manager/ros_service_manager.h
  ../src/message_manager/dds/dds_message_manager.h
  ../src/message_manager/dds/dds_message_manager.hpp
  ../src/message_manager/lcm/lcm_message_manager.h
@@ -8937,6 +8936,7 @@ CMakeFiles/robot_dog_app.dir/src/apps/main.cpp.o
  ../src/message_manager/ros2/ros2_message_manager.hpp
  ../src/version/version.h
  /home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/apps/main.cpp
+ /home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/apps/robot_dog_main.h
  /opt/ros/noetic/include/class_loader/class_loader.hpp
  /opt/ros/noetic/include/class_loader/class_loader_core.hpp
  /opt/ros/noetic/include/class_loader/exceptions.hpp
@@ -10890,8 +10890,9 @@ CMakeFiles/robot_dog_app.dir/src/apps/robot_dog_main.cpp.o
  ../../message/ros/devel/include/ros_interface/Time.h
  ../src/apps/robot_dog_main.h
  ../src/common/enum.h
+ ../src/common/global_project.h
  ../src/conf/robot_dog_conf.hpp
- ../src/manager/robot_dog_state_manager.h
+ ../src/manager/ros_service_manager.h
  ../src/message_manager/dds/dds_message_manager.h
  ../src/message_manager/dds/dds_message_manager.hpp
  ../src/message_manager/lcm/lcm_message_manager.h
@@ -12856,8 +12857,9 @@ CMakeFiles/robot_dog_app.dir/src/common/global_project.cpp.o
  ../../message/ros/devel/include/ros_interface/Time.h
  ../src/apps/robot_dog_main.h
  ../src/common/enum.h
+ ../src/common/global_project.h
  ../src/conf/robot_dog_conf.hpp
- ../src/manager/robot_dog_state_manager.h
+ ../src/manager/ros_service_manager.h
  ../src/message_manager/dds/dds_message_manager.h
  ../src/message_manager/dds/dds_message_manager.hpp
  ../src/message_manager/lcm/lcm_message_manager.h
@@ -14825,7 +14827,7 @@ CMakeFiles/robot_dog_app.dir/src/dog_mode/cancel_mode.cpp.o
  ../src/common/enum.h
  ../src/common/global_project.h
  ../src/conf/robot_dog_conf.hpp
- ../src/manager/robot_dog_state_manager.h
+ ../src/manager/ros_service_manager.h
  ../src/message_manager/dds/dds_message_manager.h
  ../src/message_manager/dds/dds_message_manager.hpp
  ../src/message_manager/lcm/lcm_message_manager.h
@@ -16794,7 +16796,7 @@ CMakeFiles/robot_dog_app.dir/src/dog_mode/dest_mode.cpp.o
  ../src/common/enum.h
  ../src/common/global_project.h
  ../src/conf/robot_dog_conf.hpp
- ../src/manager/robot_dog_state_manager.h
+ ../src/manager/ros_service_manager.h
  ../src/message_manager/dds/dds_message_manager.h
  ../src/message_manager/dds/dds_message_manager.hpp
  ../src/message_manager/lcm/lcm_message_manager.h
@@ -18763,7 +18765,7 @@ CMakeFiles/robot_dog_app.dir/src/dog_mode/follow_mode.cpp.o
  ../src/common/enum.h
  ../src/common/global_project.h
  ../src/conf/robot_dog_conf.hpp
- ../src/manager/robot_dog_state_manager.h
+ ../src/manager/ros_service_manager.h
  ../src/message_manager/dds/dds_message_manager.h
  ../src/message_manager/dds/dds_message_manager.hpp
  ../src/message_manager/lcm/lcm_message_manager.h
@@ -20732,7 +20734,7 @@ CMakeFiles/robot_dog_app.dir/src/dog_mode/lobby_mode.cpp.o
  ../src/common/enum.h
  ../src/common/global_project.h
  ../src/conf/robot_dog_conf.hpp
- ../src/manager/robot_dog_state_manager.h
+ ../src/manager/ros_service_manager.h
  ../src/message_manager/dds/dds_message_manager.h
  ../src/message_manager/dds/dds_message_manager.hpp
  ../src/message_manager/lcm/lcm_message_manager.h
@@ -22701,7 +22703,7 @@ CMakeFiles/robot_dog_app.dir/src/dog_mode/node_manager_mode.cpp.o
  ../src/common/enum.h
  ../src/common/global_project.h
  ../src/conf/robot_dog_conf.hpp
- ../src/manager/robot_dog_state_manager.h
+ ../src/manager/ros_service_manager.h
  ../src/message_manager/dds/dds_message_manager.h
  ../src/message_manager/dds/dds_message_manager.hpp
  ../src/message_manager/lcm/lcm_message_manager.h
@@ -24670,7 +24672,7 @@ CMakeFiles/robot_dog_app.dir/src/dog_mode/welcome_mode.cpp.o
  ../src/common/enum.h
  ../src/common/global_project.h
  ../src/conf/robot_dog_conf.hpp
- ../src/manager/robot_dog_state_manager.h
+ ../src/manager/ros_service_manager.h
  ../src/message_manager/dds/dds_message_manager.h
  ../src/message_manager/dds/dds_message_manager.hpp
  ../src/message_manager/lcm/lcm_message_manager.h
@@ -26612,7 +26614,7 @@ CMakeFiles/robot_dog_app.dir/src/factory/factory_mode.cpp.o
  ../src/dog_mode/mode_base.h
  ../src/dog_mode/node_manager_mode.h
  ../src/dog_mode/welcome_mode.h
- ../src/manager/robot_dog_state_manager.h
+ ../src/manager/ros_service_manager.h
  ../src/message_manager/message_manager.h
  ../src/version/version.h
  /home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/factory/factory.h
@@ -27285,8 +27287,9 @@ CMakeFiles/robot_dog_app.dir/src/manager/robot_dog_state_machine.cpp.o
  ../../message/ros/devel/include/ros_interface/Time.h
  ../src/apps/robot_dog_main.h
  ../src/common/enum.h
+ ../src/common/global_project.h
  ../src/conf/robot_dog_conf.hpp
- ../src/manager/robot_dog_state_manager.h
+ ../src/manager/ros_service_manager.h
  ../src/message_manager/dds/dds_message_manager.h
  ../src/message_manager/dds/dds_message_manager.hpp
  ../src/message_manager/lcm/lcm_message_manager.h
@@ -29209,7 +29212,7 @@ CMakeFiles/robot_dog_app.dir/src/manager/robot_dog_state_machine.cpp.o
  /usr/local/athena/third_party/x64/include/lcm/lcm-cpp-impl.hpp
  /usr/local/athena/third_party/x64/include/lcm/lcm-cpp.hpp
  /usr/local/athena/third_party/x64/include/lcm/lcm.h
-CMakeFiles/robot_dog_app.dir/src/manager/robot_dog_state_manager.cpp.o
+CMakeFiles/robot_dog_app.dir/src/manager/ros_service_manager.cpp.o
  ../../../modules/common/base/macros.h
  ../../../modules/common/base_message/message.h
  ../../../modules/common/base_message/message_status.hpp
@@ -29255,7 +29258,7 @@ CMakeFiles/robot_dog_app.dir/src/manager/robot_dog_state_manager.cpp.o
  ../src/conf/robot_dog_conf.hpp
  ../src/dog_mode/mode_base.h
  ../src/factory/factory.h
- ../src/manager/robot_dog_state_manager.h
+ ../src/manager/ros_service_manager.h
  ../src/message_manager/dds/dds_message_manager.h
  ../src/message_manager/dds/dds_message_manager.hpp
  ../src/message_manager/lcm/lcm_message_manager.h
@@ -29266,8 +29269,8 @@ CMakeFiles/robot_dog_app.dir/src/manager/robot_dog_state_manager.cpp.o
  ../src/message_manager/ros2/ros2_message_manager.h
  ../src/message_manager/ros2/ros2_message_manager.hpp
  ../src/version/version.h
- /home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/manager/robot_dog_state_manager.cpp
- /home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/manager/robot_dog_state_manager.h
+ /home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/manager/ros_service_manager.cpp
+ /home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/manager/ros_service_manager.h
  /opt/ros/noetic/include/class_loader/class_loader.hpp
  /opt/ros/noetic/include/class_loader/class_loader_core.hpp
  /opt/ros/noetic/include/class_loader/exceptions.hpp
@@ -31221,8 +31224,9 @@ CMakeFiles/robot_dog_app.dir/src/untl_test/test_main.cpp.o
  ../../message/ros/devel/include/ros_interface/Time.h
  ../src/apps/robot_dog_main.h
  ../src/common/enum.h
+ ../src/common/global_project.h
  ../src/conf/robot_dog_conf.hpp
- ../src/manager/robot_dog_state_manager.h
+ ../src/manager/ros_service_manager.h
  ../src/message_manager/dds/dds_message_manager.h
  ../src/message_manager/dds/dds_message_manager.hpp
  ../src/message_manager/lcm/lcm_message_manager.h

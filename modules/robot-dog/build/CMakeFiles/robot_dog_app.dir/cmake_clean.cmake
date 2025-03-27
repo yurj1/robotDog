@@ -109,7 +109,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/robot_dog_app.dir/src/dog_mode/welcome_mode.cpp.o"
   "CMakeFiles/robot_dog_app.dir/src/factory/factory_mode.cpp.o"
   "CMakeFiles/robot_dog_app.dir/src/manager/robot_dog_state_machine.cpp.o"
-  "CMakeFiles/robot_dog_app.dir/src/manager/robot_dog_state_manager.cpp.o"
+  "CMakeFiles/robot_dog_app.dir/src/manager/ros_service_manager.cpp.o"
   "CMakeFiles/robot_dog_app.dir/src/untl_test/test_main.cpp.o"
 )
 

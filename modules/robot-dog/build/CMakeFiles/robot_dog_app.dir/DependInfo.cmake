@@ -150,7 +150,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/dog_mode/welcome_mode.cpp" "/home/meizan/workspace/athena-robot-dog/modules/robot-dog/build/CMakeFiles/robot_dog_app.dir/src/dog_mode/welcome_mode.cpp.o"
   "/home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/factory/factory_mode.cpp" "/home/meizan/workspace/athena-robot-dog/modules/robot-dog/build/CMakeFiles/robot_dog_app.dir/src/factory/factory_mode.cpp.o"
   "/home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/manager/robot_dog_state_machine.cpp" "/home/meizan/workspace/athena-robot-dog/modules/robot-dog/build/CMakeFiles/robot_dog_app.dir/src/manager/robot_dog_state_machine.cpp.o"
-  "/home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/manager/robot_dog_state_manager.cpp" "/home/meizan/workspace/athena-robot-dog/modules/robot-dog/build/CMakeFiles/robot_dog_app.dir/src/manager/robot_dog_state_manager.cpp.o"
+  "/home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/manager/ros_service_manager.cpp" "/home/meizan/workspace/athena-robot-dog/modules/robot-dog/build/CMakeFiles/robot_dog_app.dir/src/manager/ros_service_manager.cpp.o"
   "/home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/untl_test/test_main.cpp" "/home/meizan/workspace/athena-robot-dog/modules/robot-dog/build/CMakeFiles/robot_dog_app.dir/src/untl_test/test_main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

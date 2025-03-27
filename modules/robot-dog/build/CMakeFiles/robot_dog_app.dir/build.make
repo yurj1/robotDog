@@ -1461,18 +1461,18 @@ CMakeFiles/robot_dog_app.dir/src/manager/robot_dog_state_machine.cpp.s: cmake_fo
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/robot_dog_app.dir/src/manager/robot_dog_state_machine.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/manager/robot_dog_state_machine.cpp -o CMakeFiles/robot_dog_app.dir/src/manager/robot_dog_state_machine.cpp.s
 
-CMakeFiles/robot_dog_app.dir/src/manager/robot_dog_state_manager.cpp.o: CMakeFiles/robot_dog_app.dir/flags.make
-CMakeFiles/robot_dog_app.dir/src/manager/robot_dog_state_manager.cpp.o: ../src/manager/robot_dog_state_manager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/meizan/workspace/athena-robot-dog/modules/robot-dog/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_109) "Building CXX object CMakeFiles/robot_dog_app.dir/src/manager/robot_dog_state_manager.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/robot_dog_app.dir/src/manager/robot_dog_state_manager.cpp.o -c /home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/manager/robot_dog_state_manager.cpp
+CMakeFiles/robot_dog_app.dir/src/manager/ros_service_manager.cpp.o: CMakeFiles/robot_dog_app.dir/flags.make
+CMakeFiles/robot_dog_app.dir/src/manager/ros_service_manager.cpp.o: ../src/manager/ros_service_manager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/meizan/workspace/athena-robot-dog/modules/robot-dog/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_109) "Building CXX object CMakeFiles/robot_dog_app.dir/src/manager/ros_service_manager.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/robot_dog_app.dir/src/manager/ros_service_manager.cpp.o -c /home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/manager/ros_service_manager.cpp
 
-CMakeFiles/robot_dog_app.dir/src/manager/robot_dog_state_manager.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/robot_dog_app.dir/src/manager/robot_dog_state_manager.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/manager/robot_dog_state_manager.cpp > CMakeFiles/robot_dog_app.dir/src/manager/robot_dog_state_manager.cpp.i
+CMakeFiles/robot_dog_app.dir/src/manager/ros_service_manager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/robot_dog_app.dir/src/manager/ros_service_manager.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/manager/ros_service_manager.cpp > CMakeFiles/robot_dog_app.dir/src/manager/ros_service_manager.cpp.i
 
-CMakeFiles/robot_dog_app.dir/src/manager/robot_dog_state_manager.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/robot_dog_app.dir/src/manager/robot_dog_state_manager.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/manager/robot_dog_state_manager.cpp -o CMakeFiles/robot_dog_app.dir/src/manager/robot_dog_state_manager.cpp.s
+CMakeFiles/robot_dog_app.dir/src/manager/ros_service_manager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/robot_dog_app.dir/src/manager/ros_service_manager.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/manager/ros_service_manager.cpp -o CMakeFiles/robot_dog_app.dir/src/manager/ros_service_manager.cpp.s
 
 CMakeFiles/robot_dog_app.dir/src/untl_test/test_main.cpp.o: CMakeFiles/robot_dog_app.dir/flags.make
 CMakeFiles/robot_dog_app.dir/src/untl_test/test_main.cpp.o: ../src/untl_test/test_main.cpp
@@ -1597,7 +1597,7 @@ robot_dog_app_OBJECTS = \
 "CMakeFiles/robot_dog_app.dir/src/dog_mode/welcome_mode.cpp.o" \
 "CMakeFiles/robot_dog_app.dir/src/factory/factory_mode.cpp.o" \
 "CMakeFiles/robot_dog_app.dir/src/manager/robot_dog_state_machine.cpp.o" \
-"CMakeFiles/robot_dog_app.dir/src/manager/robot_dog_state_manager.cpp.o" \
+"CMakeFiles/robot_dog_app.dir/src/manager/ros_service_manager.cpp.o" \
 "CMakeFiles/robot_dog_app.dir/src/untl_test/test_main.cpp.o"
 
 # External object files for target robot_dog_app
@@ -1711,7 +1711,7 @@ robot_dog_app_EXTERNAL_OBJECTS =
 ../bin/robot_dog_app: CMakeFiles/robot_dog_app.dir/src/dog_mode/welcome_mode.cpp.o
 ../bin/robot_dog_app: CMakeFiles/robot_dog_app.dir/src/factory/factory_mode.cpp.o
 ../bin/robot_dog_app: CMakeFiles/robot_dog_app.dir/src/manager/robot_dog_state_machine.cpp.o
-../bin/robot_dog_app: CMakeFiles/robot_dog_app.dir/src/manager/robot_dog_state_manager.cpp.o
+../bin/robot_dog_app: CMakeFiles/robot_dog_app.dir/src/manager/ros_service_manager.cpp.o
 ../bin/robot_dog_app: CMakeFiles/robot_dog_app.dir/src/untl_test/test_main.cpp.o
 ../bin/robot_dog_app: CMakeFiles/robot_dog_app.dir/build.make
 ../bin/robot_dog_app: /opt/ros/noetic/lib/libroscpp.so

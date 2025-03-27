@@ -3234,32 +3234,32 @@ src/manager/robot_dog_state_machine.cpp.s:
 	$(MAKE) -f CMakeFiles/robot_dog_app.dir/build.make CMakeFiles/robot_dog_app.dir/src/manager/robot_dog_state_machine.cpp.s
 .PHONY : src/manager/robot_dog_state_machine.cpp.s
 
-src/manager/robot_dog_state_manager.o: src/manager/robot_dog_state_manager.cpp.o
+src/manager/ros_service_manager.o: src/manager/ros_service_manager.cpp.o
 
-.PHONY : src/manager/robot_dog_state_manager.o
+.PHONY : src/manager/ros_service_manager.o
 
 # target to build an object file
-src/manager/robot_dog_state_manager.cpp.o:
-	$(MAKE) -f CMakeFiles/robot_dog_app.dir/build.make CMakeFiles/robot_dog_app.dir/src/manager/robot_dog_state_manager.cpp.o
-.PHONY : src/manager/robot_dog_state_manager.cpp.o
+src/manager/ros_service_manager.cpp.o:
+	$(MAKE) -f CMakeFiles/robot_dog_app.dir/build.make CMakeFiles/robot_dog_app.dir/src/manager/ros_service_manager.cpp.o
+.PHONY : src/manager/ros_service_manager.cpp.o
 
-src/manager/robot_dog_state_manager.i: src/manager/robot_dog_state_manager.cpp.i
+src/manager/ros_service_manager.i: src/manager/ros_service_manager.cpp.i
 
-.PHONY : src/manager/robot_dog_state_manager.i
+.PHONY : src/manager/ros_service_manager.i
 
 # target to preprocess a source file
-src/manager/robot_dog_state_manager.cpp.i:
-	$(MAKE) -f CMakeFiles/robot_dog_app.dir/build.make CMakeFiles/robot_dog_app.dir/src/manager/robot_dog_state_manager.cpp.i
-.PHONY : src/manager/robot_dog_state_manager.cpp.i
+src/manager/ros_service_manager.cpp.i:
+	$(MAKE) -f CMakeFiles/robot_dog_app.dir/build.make CMakeFiles/robot_dog_app.dir/src/manager/ros_service_manager.cpp.i
+.PHONY : src/manager/ros_service_manager.cpp.i
 
-src/manager/robot_dog_state_manager.s: src/manager/robot_dog_state_manager.cpp.s
+src/manager/ros_service_manager.s: src/manager/ros_service_manager.cpp.s
 
-.PHONY : src/manager/robot_dog_state_manager.s
+.PHONY : src/manager/ros_service_manager.s
 
 # target to generate assembly for a file
-src/manager/robot_dog_state_manager.cpp.s:
-	$(MAKE) -f CMakeFiles/robot_dog_app.dir/build.make CMakeFiles/robot_dog_app.dir/src/manager/robot_dog_state_manager.cpp.s
-.PHONY : src/manager/robot_dog_state_manager.cpp.s
+src/manager/ros_service_manager.cpp.s:
+	$(MAKE) -f CMakeFiles/robot_dog_app.dir/build.make CMakeFiles/robot_dog_app.dir/src/manager/ros_service_manager.cpp.s
+.PHONY : src/manager/ros_service_manager.cpp.s
 
 src/untl_test/test_main.o: src/untl_test/test_main.cpp.o
 
@@ -3636,9 +3636,9 @@ help:
 	@echo "... src/manager/robot_dog_state_machine.o"
 	@echo "... src/manager/robot_dog_state_machine.i"
 	@echo "... src/manager/robot_dog_state_machine.s"
-	@echo "... src/manager/robot_dog_state_manager.o"
-	@echo "... src/manager/robot_dog_state_manager.i"
-	@echo "... src/manager/robot_dog_state_manager.s"
+	@echo "... src/manager/ros_service_manager.o"
+	@echo "... src/manager/ros_service_manager.i"
+	@echo "... src/manager/ros_service_manager.s"
 	@echo "... src/untl_test/test_main.o"
 	@echo "... src/untl_test/test_main.i"
 	@echo "... src/untl_test/test_main.s"

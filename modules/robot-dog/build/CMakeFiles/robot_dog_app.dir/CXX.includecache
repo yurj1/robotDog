@@ -1057,7 +1057,7 @@ ros/message_operations.h
 ../src/apps/robot_dog_main.h
 ros/ros.h
 -
-manager/robot_dog_state_manager.h
+manager/ros_service_manager.h
 -
 mutex
 -
@@ -1101,8 +1101,8 @@ conf/robot_dog_conf.hpp
 ../src/common/enum.h
 
 ../src/common/global_project.h
-robot_dog_main.h
-../src/common/robot_dog_main.h
+memory
+-
 
 ../src/conf/robot_dog_conf.hpp
 modules/common/base_message/message.h
@@ -1115,8 +1115,8 @@ mutex
 -
 
 ../src/dog_mode/mode_base.h
-manager/robot_dog_state_manager.h
-../src/dog_mode/manager/robot_dog_state_manager.h
+manager/ros_service_manager.h
+../src/dog_mode/manager/ros_service_manager.h
 
 ../src/factory/factory.h
 perception_msgs/PercCmd.h
@@ -1124,7 +1124,7 @@ perception_msgs/PercCmd.h
 dog_mode/mode_base.h
 ../src/factory/dog_mode/mode_base.h
 
-../src/manager/robot_dog_state_manager.h
+../src/manager/ros_service_manager.h
 mutex
 -
 common/enum.h
@@ -1263,16 +1263,12 @@ ros_message_manager.hpp
 ../src/message_manager/ros/ros_message_manager.hpp
 ros_message_manager.h
 ../src/message_manager/ros/ros_message_manager.h
+common/global_project.h
+../src/message_manager/ros/common/global_project.h
 modules/common/macros/macros.h
 ../src/message_manager/ros/modules/common/macros/macros.h
 modules/common/logging/logging.h
 ../src/message_manager/ros/modules/common/logging/logging.h
-sys/types.h
--
-signal.h
--
-unistd.h
--
 
 ../src/message_manager/ros2/ros2_message_manager.h
 thread
@@ -1311,6 +1307,8 @@ signal.h
 -
 common/global_project.h
 /home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/apps/common/global_project.h
+robot_dog_main.h
+/home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/apps/robot_dog_main.h
 glog/logging.h
 -
 ara/log/logging.h
@@ -1328,19 +1326,67 @@ version/version.h
 csignal
 -
 
+/home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/apps/robot_dog_main.h
+ros/ros.h
+-
+manager/ros_service_manager.h
+-
+mutex
+-
+thread
+-
+iomanip
+-
+modules/common/json/json.hpp
+/home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/apps/modules/common/json/json.hpp
+modules/common/status/status.h
+/home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/apps/modules/common/status/status.h
+modules/common/logging/logging.h
+/home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/apps/modules/common/logging/logging.h
+modules/common/state_machine/state_context.hpp
+/home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/apps/modules/common/state_machine/state_context.hpp
+modules/common/state_machine/state_flags.hpp
+/home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/apps/modules/common/state_machine/state_flags.hpp
+modules/common/state_machine/state.hpp
+/home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/apps/modules/common/state_machine/state.hpp
+modules/common/timer/timer_manager.h
+/home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/apps/modules/common/timer/timer_manager.h
+modules/common/fault/fault_client.hpp
+/home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/apps/modules/common/fault/fault_client.hpp
+modules/common/timer/ad_timer_manager.h
+/home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/apps/modules/common/timer/ad_timer_manager.h
+modules/common/base_message/message_status.hpp
+/home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/apps/modules/common/base_message/message_status.hpp
+modules/common/base_message/message_status.hpp
+/home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/apps/modules/common/base_message/message_status.hpp
+message_manager/lcm/lcm_message_manager.h
+/home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/apps/message_manager/lcm/lcm_message_manager.h
+message_manager/dds/dds_message_manager.h
+/home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/apps/message_manager/dds/dds_message_manager.h
+message_manager/ros/ros_message_manager.h
+/home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/apps/message_manager/ros/ros_message_manager.h
+message_manager/ros2/ros2_message_manager.h
+/home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/apps/message_manager/ros2/ros2_message_manager.h
+conf/robot_dog_conf.hpp
+/home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/apps/conf/robot_dog_conf.hpp
+
 /home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/common/global_project.cpp
 global_project.h
 /home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/common/global_project.h
-
-/home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/common/global_project.h
 robot_dog_main.h
 /home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/common/robot_dog_main.h
+
+/home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/common/global_project.h
+memory
+-
 
 /home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/dog_mode/cancel_mode.cpp
 cancel_mode.h
 /home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/dog_mode/cancel_mode.h
 common/global_project.h
 /home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/dog_mode/common/global_project.h
+robot_dog_main.h
+/home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/dog_mode/robot_dog_main.h
 
 /home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/dog_mode/cancel_mode.h
 mode_base.h
@@ -1351,6 +1397,8 @@ dest_mode.h
 /home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/dog_mode/dest_mode.h
 common/global_project.h
 /home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/dog_mode/common/global_project.h
+robot_dog_main.h
+/home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/dog_mode/robot_dog_main.h
 
 /home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/dog_mode/dest_mode.h
 mode_base.h
@@ -1361,6 +1409,8 @@ follow_mode.h
 /home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/dog_mode/follow_mode.h
 common/global_project.h
 /home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/dog_mode/common/global_project.h
+robot_dog_main.h
+/home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/dog_mode/robot_dog_main.h
 
 /home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/dog_mode/follow_mode.h
 mode_base.h
@@ -1371,20 +1421,24 @@ lobby_mode.h
 /home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/dog_mode/lobby_mode.h
 common/global_project.h
 /home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/dog_mode/common/global_project.h
+robot_dog_main.h
+/home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/dog_mode/robot_dog_main.h
 
 /home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/dog_mode/lobby_mode.h
 mode_base.h
 /home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/dog_mode/mode_base.h
 
 /home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/dog_mode/mode_base.h
-manager/robot_dog_state_manager.h
-/home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/dog_mode/manager/robot_dog_state_manager.h
+manager/ros_service_manager.h
+/home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/dog_mode/manager/ros_service_manager.h
 
 /home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/dog_mode/node_manager_mode.cpp
 node_manager_mode.h
 /home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/dog_mode/node_manager_mode.h
 common/global_project.h
 /home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/dog_mode/common/global_project.h
+robot_dog_main.h
+/home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/dog_mode/robot_dog_main.h
 
 /home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/dog_mode/node_manager_mode.h
 mode_base.h
@@ -1395,6 +1449,8 @@ welcome_mode.h
 /home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/dog_mode/welcome_mode.h
 common/global_project.h
 /home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/dog_mode/common/global_project.h
+robot_dog_main.h
+/home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/dog_mode/robot_dog_main.h
 
 /home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/dog_mode/welcome_mode.h
 mode_base.h
@@ -1410,17 +1466,25 @@ fstream
 robot_dog_main.h
 /home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/manager/robot_dog_main.h
 
-/home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/manager/robot_dog_state_manager.cpp
+/home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/manager/ros_service_manager.cpp
 ros/ros.h
+-
+sys/types.h
+-
+signal.h
+-
+unistd.h
 -
 common/global_project.h
 /home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/manager/common/global_project.h
-robot_dog_state_manager.h
-/home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/manager/robot_dog_state_manager.h
+robot_dog_main.h
+/home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/manager/robot_dog_main.h
+ros_service_manager.h
+/home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/manager/ros_service_manager.h
 factory/factory.h
 /home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/manager/factory/factory.h
 
-/home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/manager/robot_dog_state_manager.h
+/home/meizan/workspace/athena-robot-dog/modules/robot-dog/src/manager/ros_service_manager.h
 mutex
 -
 common/enum.h
