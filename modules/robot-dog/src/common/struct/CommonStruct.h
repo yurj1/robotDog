@@ -4,6 +4,7 @@
 #include <cstring>
 #include <string>
 #include <cstring>
+#include <vector>
 
 namespace robot_dog {
 
@@ -57,7 +58,7 @@ typedef struct tagPoint {
 }Point, ppoint;
 
 typedef struct tagPercCmd {
-    uint32_t action_id;
+    uint64_t action_id;
     float angle;
     std::string follow_name;
     int on_off;
@@ -67,6 +68,26 @@ typedef struct tagPercCmd {
     int req_id;
 
 }PercCmd, PPercCmd;
+
+typedef struct tagRecordBag
+{
+    uint8_t bag_mode;
+    std::string bag_name;
+    std::vector<std::string> topics;
+    std::string bash_name;
+
+    tagRecordBag()
+    :bag_mode(0), bag_name(""), bash_name(""){}
+}RecordBag, PRecordBag;
+
+typedef struct tagCallbackInfo
+{
+    bool success;
+    std::string info;
+
+    tagCallbackInfo()
+    :success(false), info(""){}
+}CallbackInfo, PCallbackInfo;
 
 namespace operations {
     enum TaskType

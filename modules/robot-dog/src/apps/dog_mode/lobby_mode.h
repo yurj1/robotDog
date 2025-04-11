@@ -9,7 +9,7 @@ namespace athena {
             {
             public:
                 LobbyMode(TaskType type);
-                void Handle(const robot_dog::PercCmd& msg, RosServiceManager* data_manager) override;
+                void Handle(const robot_dog::PercCmd& msg, MessageHandleManager* data_manager) override;
             private:
                 void Init()override{}
             };

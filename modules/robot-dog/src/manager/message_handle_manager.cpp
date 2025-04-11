@@ -8,12 +8,12 @@
 
 #include "common/public_fun.h"
 #include "robot_dog_main.h"
-#include "ros_service_manager.h"
+#include "message_handle_manager.h"
 #include "factory/factory.h"
 
 using namespace athena::function::action;
 
-RosServiceManager::RosServiceManager()
+MessageHandleManager::MessageHandleManager()
     : m_can_finish(true)
     ,start_record_(false)
     ,recorder_pid_(-1)
@@ -22,17 +22,17 @@ RosServiceManager::RosServiceManager()
     Init();
 }
 
-TaskState RosServiceManager::GetState()
+TaskState MessageHandleManager::GetState()
 {
     return (TaskState)perc_state_.exe_state;
 }
 
-TaskResult RosServiceManager::GetResult()
+TaskResult MessageHandleManager::GetResult()
 {
     return (TaskResult)perc_state_.exe_result;
 }
 
-void RosServiceManager::Init()
+void MessageHandleManager::Init()
 {
     //状态反馈初始化
     perc_state_.action_id = 0;
@@ -59,50 +59,35 @@ void RosServiceManager::Init()
     m_can_finish = true;
 }
 
-void RosServiceManager::SetCanFinish(const bool& enable)
+void MessageHandleManager::SetCanFinish(const bool& enable)
 {
     if(m_can_finish != enable)
         m_can_finish = enable;
 }
 
-bool RosServiceManager::GetCanFinish()
+bool MessageHandleManager::GetCanFinish()
 {
     return m_can_finish;
 }
 
-const perception_msgs::TaskList& RosServiceManager::GetOutputPlanning()
+const perception_msgs::TaskList& MessageHandleManager::GetOutputPlanning()
 {
     return task_list_planning_;
 }
 
-const perception_msgs::PercState& RosServiceManager::GetConstStateMsg()
+const perception_msgs::PercState& MessageHandleManager::GetConstStateMsg()
 {
     std::lock_guard<std::mutex> lock(m_mutex);
     return perc_state_;
 }
 
-perception_msgs::PercState& RosServiceManager::GetStateMsg()
+perception_msgs::PercState& MessageHandleManager::GetStateMsg()
 {
     //std::lock_guard<std::mutex> lock(m_mutex);
     return perc_state_;
 }
 
-void RosServiceManager::handleTaskEvent(const robot_dog::PercCmd& msg)
-{
-    ROS_INFO("Received PercCmd: action_id=%lu, perc_kind=%u", msg.action_id, msg.perc_kind);
-    //recv_cmd_msg_info_ = *msg;
-    Init();
-    
-    std::shared_ptr<ModeBase> m_task = Factory::CreateModeFactory(msg.perc_kind);
-        if(m_task == nullptr)
-        {
-            AERROR << "Not find mode";
-            return;
-        }
-        m_task->Handle(msg, this);
-}
-
-void RosServiceManager::handlePerceptionEvent(const perception_msgs::TaskList::ConstPtr& msg)
+void MessageHandleManager::handlePerceptionEvent(const perception_msgs::TaskList::ConstPtr& msg)
 {
     ROS_INFO("Received TaskPt: task_type=%u, x=%f, y=%f, z=%f target_object=%s task_state=%u",
                   msg->task_type, msg->target_position.position.x,  msg->target_position.position.y,  msg->target_position.position.z, msg->target_object.c_str(), msg->task_state);
@@ -181,7 +166,7 @@ void RosServiceManager::handlePerceptionEvent(const perception_msgs::TaskList::C
     }
 }
 
-void RosServiceManager::handleStateEvent(const perception_msgs::TaskList::ConstPtr& msg)
+void MessageHandleManager::handleStateEvent(const perception_msgs::TaskList::ConstPtr& msg)
 {
     //特殊状态下不切换为完成状态
     if(!m_can_finish && (uint8_t)msg->task_state == TaskState::STATE_COMPLETED){
@@ -198,9 +183,24 @@ void RosServiceManager::handleStateEvent(const perception_msgs::TaskList::ConstP
     }
 }
 
-bool RosServiceManager::recordBagCallback(perception_msgs::DogRecordBag::Request &req, perception_msgs::DogRecordBag::Response &rsp)
+void MessageHandleManager::handleTaskEvent(const robot_dog::PercCmd& msg)
 {
-  if(req.bagMode == 0)//结束录包
+    ROS_INFO("Received PercCmd: action_id=%lu, perc_kind=%u", msg.action_id, msg.perc_kind);
+    //recv_cmd_msg_info_ = *msg;
+    Init();
+    
+    std::shared_ptr<ModeBase> m_task = Factory::CreateModeFactory(msg.perc_kind);
+        if(m_task == nullptr)
+        {
+            AERROR << "Not find mode";
+            return;
+        }
+        m_task->Handle(msg, this);
+}
+
+bool MessageHandleManager::recordBagCallback(robot_dog::RecordBag &req, robot_dog::CallbackInfo &rsp)
+{
+  if(req.bag_mode == 0)//结束录包
   {
     if(start_record_)
     {
@@ -214,15 +214,15 @@ bool RosServiceManager::recordBagCallback(perception_msgs::DogRecordBag::Request
         start_record_ = false;
     }
     rsp.success = true;
-    rsp.errorInfo = "已停止";
+    rsp.info = "已停止";
   }
-  else if(req.bagMode == 1 || req.bagMode == 2) {
+  else if(req.bag_mode == 1 || req.bag_mode == 2) {
     if(start_record_ != -1)//没有正常点击停止，或双击
     {
         if(_isRunningChildren())//0代表仍在运行
         {
             rsp.success = false;
-            rsp.errorInfo = "请先停止录包";
+            rsp.info = "请先停止录包";
             return true;
         }
     }
@@ -231,11 +231,11 @@ bool RosServiceManager::recordBagCallback(perception_msgs::DogRecordBag::Request
     if(pipe(pipe_fd) == -1)
     {
         rsp.success = false;
-        rsp.errorInfo = "create pipe failed";
+        rsp.info = "create pipe failed";
         return true;
     }
 
-    if(req.bagMode == 1)//自定义录包
+    if(req.bag_mode == 1)//自定义录包
     {
         pid_t pid = fork();
         if (pid == 0) { // 子进程
@@ -247,7 +247,7 @@ bool RosServiceManager::recordBagCallback(perception_msgs::DogRecordBag::Request
             args.push_back("rosbag");
             args.push_back("record");
             args.push_back("-O");
-            args.push_back(req.bagName);
+            args.push_back(req.bag_name);
             for (const auto& topic : req.topics) {
                 args.push_back(topic);
             }
@@ -283,7 +283,7 @@ bool RosServiceManager::recordBagCallback(perception_msgs::DogRecordBag::Request
             struct timeval tv;
             FD_ZERO(&fds);
             FD_SET(pipe_fd[0],&fds);
-            tv.tv_sec = 2;//超时2s
+            tv.tv_sec = 1;//超时1s
             tv.tv_usec = 0;
             //监听套接字
             int ret = select(pipe_fd[0] + 1, &fds, NULL, NULL, &tv);
@@ -296,7 +296,7 @@ bool RosServiceManager::recordBagCallback(perception_msgs::DogRecordBag::Request
                 if(n > 0) {
                     error[n] = '\0';
                     rsp.success = false;
-                    rsp.errorInfo = error;
+                    rsp.info = error;
 
                     if(_isRunningChildren())
                     {
@@ -311,22 +311,22 @@ bool RosServiceManager::recordBagCallback(perception_msgs::DogRecordBag::Request
             start_record_ = true;
             ROS_INFO("Rosbag recording started (PID: %d)", pid);
             rsp.success = true;
-            rsp.errorInfo = "开始录包";
+            rsp.info = "开始录包";
         }
         else {//进程创建失败
             close(pipe_fd[0]);
             close(pipe_fd[1]);
             rsp.success = false;
-            rsp.errorInfo = "create fork failed";
+            rsp.info = "create fork failed";
         }
     }
-    else if(req.bagMode == 2) // 执行脚本
+    else if(req.bag_mode == 2) // 执行脚本
     {
-        // 1. 检查脚本是否存在
-        if (access(req.bashName.c_str(), F_OK) == -1) {
+        // 检查脚本是否存在
+        if (access(req.bash_name.c_str(), F_OK) == -1) {
             std::string error = "Script not found: " + std::string(strerror(errno));
             rsp.success = false;
-            rsp.errorInfo = error;
+            rsp.info = error;
             return true;
         }
 
@@ -338,7 +338,7 @@ bool RosServiceManager::recordBagCallback(perception_msgs::DogRecordBag::Request
             
             std::vector<std::string> args;
             args.push_back("/bin/bash");
-            args.push_back(req.bashName);
+            args.push_back(req.bash_name);
             
             // 构造参数数组
             std::vector<char*> argv;
@@ -369,7 +369,7 @@ bool RosServiceManager::recordBagCallback(perception_msgs::DogRecordBag::Request
             struct timeval tv;
             FD_ZERO(&fds);
             FD_SET(pipe_fd[0],&fds);
-            tv.tv_sec = 3;
+            tv.tv_sec = 1;
             tv.tv_usec = 0;
 
             int ret = select(pipe_fd[0] + 1, &fds, NULL, NULL, &tv);
@@ -382,7 +382,7 @@ bool RosServiceManager::recordBagCallback(perception_msgs::DogRecordBag::Request
                 if(n > 0) {
                     error[n] = '\0';
                     rsp.success = false;
-                    rsp.errorInfo = error;
+                    rsp.info = error;
 
                     return true;
                 }
@@ -392,13 +392,13 @@ bool RosServiceManager::recordBagCallback(perception_msgs::DogRecordBag::Request
             start_record_ = true;
             ROS_INFO("Rosbag recording started (PID: %d)", pid);
             rsp.success = true;
-            rsp.errorInfo = "开始执行脚本";
+            rsp.info = "开始执行脚本";
         }
         else {
             close(pipe_fd[0]);
             close(pipe_fd[1]);
             rsp.success = false;
-            rsp.errorInfo = "create fork failed";
+            rsp.info = "create fork failed";
         }
     }
 
@@ -407,7 +407,7 @@ bool RosServiceManager::recordBagCallback(perception_msgs::DogRecordBag::Request
   return true;
 }
 
-bool RosServiceManager::_isRunningChildren()
+bool MessageHandleManager::_isRunningChildren()
 {
     return !waitpid(recorder_pid_, NULL, WNOHANG); //0 为运行;
 }

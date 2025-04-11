@@ -9,7 +9,7 @@ LobbyMode::LobbyMode(TaskType type)
 {
 }
 
-void LobbyMode::Handle(const robot_dog::PercCmd& msg, RosServiceManager* data_manager)
+void LobbyMode::Handle(const robot_dog::PercCmd& msg, MessageHandleManager* data_manager)
 {
     perception_msgs::TaskList task_list_perception_;
     perception_msgs::TaskList task_list_planning_;

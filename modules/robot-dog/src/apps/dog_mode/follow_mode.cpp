@@ -10,7 +10,7 @@ FollowMode::FollowMode(TaskType type)
 {
 }
 
-void FollowMode::Handle(const robot_dog::PercCmd& msg, RosServiceManager* data_manager)
+void FollowMode::Handle(const robot_dog::PercCmd& msg, MessageHandleManager* data_manager)
 {
     //状态更新
     {

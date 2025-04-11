@@ -47,7 +47,7 @@ using  Json = nlohmann::json;
               //clientID = VIN;
  
        // client = std::make_shared<mqtt::async_client>(address, CLIENT_ID);
-       client = std::make_shared<mqtt::async_client>(messages["MQTT"].url, "robot_dog_q1");
+       client = std::make_shared<mqtt::async_client>(messages["MQTT"].url, "robot_dog_app");
        // auto sslopts = mqtt::ssl_options_builder()
        //                    .trust_store("/home/ywb/Documents/c++project/SLS/mqtt_certs/ca.crt")
        //                    .key_store("/home/ywb/Documents/c++project/SLS/mqtt_certs/client.crt")
@@ -63,8 +63,8 @@ using  Json = nlohmann::json;
                            .mqtt_version(MQTTVERSION_3_1_1) // 指定协议版本为 3.1.1
                            .finalize();
  
-       auto TOPICS = mqtt::string_collection::create({"jsx_remote_controller/#", sub_callback_to_cmd});
-       const vector<int> QOS{1, 1};
+       auto TOPICS = mqtt::string_collection::create({"jsx_remote_controller/#", sub_callback_to_cmd, "/robot_dog/record_bag/request"});
+       const vector<int> QOS{0, 1, 1};
  
        client->start_consuming();
  
@@ -165,6 +165,19 @@ using  Json = nlohmann::json;
      void MqttMessageManager<T>::PublishAction(perception_msgs::ActionEntry msg) {
        //_pubscriber[pub_action_info_to_cmd].publish(msg);
      }
+
+     template <typename T>
+     void MqttMessageManager<T>::PublishRecordBagCallbackInfo(const robot_dog::CallbackInfo& rsp)
+     {
+      if ( !client->is_connected()) return;
+
+      Json msg;
+      msg["success"] = rsp.success;
+      msg["info"] = rsp.info;
+
+      //client->publish("/robot_dog/record_bag/callback_msg",rsp, rsp.size(), 2); 
+      client->publish(mqtt::make_message("/robot_dog/record_bag/callback_msg", msg.dump(), 2, false));//采用qos ==2 否则网络不稳定时多发会导致多次弹窗
+     }
     //  template <typename T>
     //  void MqttMessageManager<T>::HandleJoyMsg(JoyMessage msg)
     //  {
@@ -172,10 +185,10 @@ using  Json = nlohmann::json;
     //    instance_->HandleMqttJoyMsgInput(msg);
     //  }
     template <typename T>
-    void MqttMessageManager<T>::HandleTaskMsg(std::string msg)
+    void MqttMessageManager<T>::HandleTaskMsg(const std::string& msg)
     {
       try {
-        std::cout << "recv sub_callback_to_cmd message: " << std::endl << msg << std::endl;
+        AINFO << "recv sub_callback_to_cmd message:\n" << msg;
         Json info = Json::parse(msg);
         robot_dog::PercCmd cmd;
         cmd.action_id = info["action_id"];
@@ -189,16 +202,42 @@ using  Json = nlohmann::json;
         cmd.point_name = info["point_name"];
         cmd.req_id = info["req_id"];
 
-        if(_AppIsRosServiceNotNull)
+        if(_AppIsMessageHandManagerNotNull)
         {
-          _AppGetRosService->handleTaskEvent(cmd);
+          _AppIGetMessageHandManager->handleTaskEvent(cmd);
         }
       }
       catch (const nlohmann::json::exception& e) {
         // 捕获解析错误
-        std::cerr << "Error parsing JSON: " << e.what() << std::endl;
+        AERROR << "Error parsing JSON: " << e.what() << std::endl;
       }
     }
+
+    template <typename T>
+    void MqttMessageManager<T>::HandRecordBagMsg(const std::string& msg)
+    {
+      try {
+        std::cout << "recv sub_callback_to_cmd message: " << std::endl << msg << std::endl;
+        Json info = Json::parse(msg);
+        robot_dog::RecordBag req;
+        robot_dog::CallbackInfo rsp;
+        req.bag_mode = info["bag_mode"];
+        req.bag_name = info["bag_name"];
+        req.topics = info["topics"].get<std::vector<std::string>>();
+        req.bash_name = info["bash_name"];
+
+        if(_AppIsMessageHandManagerNotNull)
+        {
+          _AppIGetMessageHandManager->recordBagCallback(req,rsp);
+          PublishRecordBagCallbackInfo(rsp);
+        }
+      }
+      catch (const nlohmann::json::exception& e) {
+        // 捕获解析错误
+        AERROR << "Error parsing JSON: " << e.what();
+      }
+    }
+
      template <typename T>
      string MqttMessageManager<T>::GetTopic(string topic)
      {
@@ -236,7 +275,7 @@ using  Json = nlohmann::json;
      {
        while (true)
        {
-        std::cout << "listenTopic" << std::endl;
+        AINFO << "listenTopic";
          auto msg = client->consume_message();
  
          if (!msg)
@@ -252,6 +291,11 @@ using  Json = nlohmann::json;
          if (msg->get_topic() == sub_callback_to_cmd)
          {
           HandleTaskMsg(msg->get_payload_str());
+         }
+         //录包请求 会阻塞1s
+         else if (msg->get_topic() == "/robot_dog/record_bag/request")
+         {
+          HandRecordBagMsg(msg->get_payload_str());
          }
          //std::cout << "recv mqtt message: " << msg->get_payload_str() <<  std::endl << "topic: " << msg->get_topic() <<  std::endl;
        }

@@ -143,9 +143,23 @@ void RosMessageManager<T>::stateCallback(const perception_msgs::TaskList::ConstP
 template <typename T>
 bool RosMessageManager<T>::recordBagCallback(perception_msgs::DogRecordBag::Request &req, perception_msgs::DogRecordBag::Response &rsp)
 {
-  if(_AppIsRosServiceNotNull)
+  robot_dog::RecordBag tReq;
+  robot_dog::CallbackInfo tRsp;
+
+  tReq.bag_mode = req.bagMode;
+  tReq.bag_name = req.bagName;
+  for(const auto& topic : req.topics)
   {
-    return _AppGetRosService->recordBagCallback(req, rsp);
+    tReq.topics.push_back(topic);
+  }
+  tReq.bash_name = req.bashName;
+
+  if(_AppIsMessageHandManagerNotNull)
+  {
+    bool success = _AppIGetMessageHandManager->recordBagCallback(tReq, tRsp);
+    rsp.success = tRsp.success;
+    rsp.errorInfo = tRsp.info;
+    return success;
   }
   return false;
 }

@@ -10,7 +10,7 @@ WelcomeMode::WelcomeMode(TaskType type)
 {
 }
 
-void WelcomeMode::Handle(const robot_dog::PercCmd& msg, RosServiceManager* data_manager)
+void WelcomeMode::Handle(const robot_dog::PercCmd& msg, MessageHandleManager* data_manager)
 {
     data_manager->SetCanFinish(true);
     

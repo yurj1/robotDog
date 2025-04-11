@@ -2,7 +2,7 @@
 #define __PERCEPTION_BRIDGE_H__
 
 #include <ros/ros.h>
-#include <manager/ros_service_manager.h>
+#include <manager/message_handle_manager.h>
 
 #include <mutex>
 #include <thread>
@@ -104,7 +104,7 @@ namespace athena
       std::map<std::string, std::shared_ptr<MessageManager<RobotDogMain>>>
           message_manager_;
       // ros消息管理器
-      RosServiceManager* ros_message_service_;
+      MessageHandleManager* message_handle_manager_;
     #if LCM_ENABLE
       std::shared_ptr<LcmMessageManager<RobotDogMain>> lcm_message_manager_;
     #endif
@@ -208,7 +208,11 @@ namespace athena
         if (message_manager_.count("ROS") > 0)
           message_manager_["ROS"]->PublishAction(msg);
       }
-      RosServiceManager* GetRosServiceManager(){ return ros_message_service_; }
+      MessageHandleManager* GetMessageHandleManager(){ return message_handle_manager_; }
+
+#if MQTT_ENABLE
+      std::shared_ptr<MqttMessageManager<RobotDogMain>> GetMqttMessageManager(){ return mqtt_message_manager_; };
+#endif
 
     protected:
       /**

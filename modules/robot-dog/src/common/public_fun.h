@@ -11,9 +11,16 @@ namespace athena {
 
 #define AppIsNotNull AfxGetApp() != nullptr
 
-#define _AppGetRosService (AfxGetApp()->GetRosServiceManager())
-#define _AppIsRosServiceNotNull (AppIsNotNull && _AppGetRosService != nullptr)
-#define AppGetRosService() (_AppIsRosServiceNotNull ? _AppGetRosService : nullptr)
+#define _AppIGetMessageHandManager (AfxGetApp()->GetMessageHandleManager())
+#define _AppIsMessageHandManagerNotNull (AppIsNotNull && _AppIGetMessageHandManager != nullptr)
+#define AppGetRosService() (_AppIsMessageHandManagerNotNull ? _AppIGetMessageHandManager : nullptr)
+
+#if MQTT_ENABLE
+#define _AppGetMqttService (AfxGetApp()->GetMqttMessageManager())
+#define _AppIsMqttServiceNotNull (AppIsNotNull && _AppGetMqttService != nullptr)
+#define AppGetMqttService() (_AppIsMqttServiceNotNull ? _AppGetMqttService : nullptr)
+#endif
+
 
 athena::function::RobotDogMain*& AfxGetApp();
 

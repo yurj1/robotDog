@@ -48,7 +48,7 @@ namespace athena
     void RobotDogMain::IdleStateUpdate(const std::string &state_name, int state)
     {
       //std::cout << "state_machine : Idle " << std::endl;
-      if (ros_message_service_->GetState() == robot_dog::operations::STATE_RUNNING)
+      if (message_handle_manager_->GetState() == robot_dog::operations::STATE_RUNNING)
       {
         AINFO << "change : RobotDogMainRun ";
         robot_dog_conf_sm->NextState("Run");
@@ -60,13 +60,13 @@ namespace athena
     void RobotDogMain::RunningStateUpdate(const std::string &state_name, int state)
     {
       AINFO << "state_machine : Run";
-      if (ros_message_service_->GetState() == robot_dog::operations::STATE_COMPLETED)
+      if (message_handle_manager_->GetState() == robot_dog::operations::STATE_COMPLETED)
       {
         AINFO << "change : RobotDogMainComplete ";
         robot_dog_conf_sm->NextState("complete");
         return;
       }
-      else if (ros_message_service_->GetState() == robot_dog::operations::STATE_IDLE)
+      else if (message_handle_manager_->GetState() == robot_dog::operations::STATE_IDLE)
       {
         AINFO << "change : RobotDogMainIdle ";
         robot_dog_conf_sm->NextState("Idle");
@@ -78,7 +78,7 @@ namespace athena
     void RobotDogMain::FinishStateUpdate(const std::string &state_name, int state)
     {
       //std::cout << "state_machine : Complete " << std::endl;
-      if (ros_message_service_->GetState() == robot_dog::operations::STATE_IDLE)
+      if (message_handle_manager_->GetState() == robot_dog::operations::STATE_IDLE)
       {
         AINFO << "change : RobotDogMainIdle ";
         robot_dog_conf_sm->NextState("Idle");

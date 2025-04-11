@@ -11,7 +11,7 @@ NodeManagerMode::NodeManagerMode(TaskType t_type, NodeType n_type)
 {
 }
 
-void NodeManagerMode::Handle(const robot_dog::PercCmd& msg, RosServiceManager* data_manager)
+void NodeManagerMode::Handle(const robot_dog::PercCmd& msg, MessageHandleManager* data_manager)
 {
     
     //状态更新

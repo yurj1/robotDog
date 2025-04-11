@@ -10,7 +10,7 @@ CancelMode::CancelMode(TaskType type)
 {
 }
 
-void CancelMode::Handle(const robot_dog::PercCmd& msg, RosServiceManager* data_manager)
+void CancelMode::Handle(const robot_dog::PercCmd& msg, MessageHandleManager* data_manager)
 {
     //可直接完成
     data_manager->SetCanFinish(true);

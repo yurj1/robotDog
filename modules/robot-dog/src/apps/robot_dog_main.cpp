@@ -13,7 +13,7 @@ namespace athena
   {
     RobotDogMain::RobotDogMain(std::string file_path)
       : config_file_path_(file_path)
-      ,ros_message_service_(nullptr)
+      ,message_handle_manager_(nullptr)
     {
     }
       
@@ -66,7 +66,7 @@ namespace athena
       }
       //step7.5 ros消息管理初始化
       {
-        ros_message_service_ = new RosServiceManager();
+        message_handle_manager_ = new MessageHandleManager();
       }
       
 
@@ -203,103 +203,14 @@ namespace athena
     //按周期发布状态
     void RobotDogMain::StateCallback(void *param)
     {
-      PublishState(ros_message_service_->GetConstStateMsg()); // 发布状态
+      PublishState(message_handle_manager_->GetConstStateMsg()); // 发布状态
     }
 
     std::shared_ptr<RobotDogConf> RobotDogMain::GetConf() const
     {
       return robot_dog_conf_;
     }
-/*
-    void RobotDogMain::HandleChassis(athena::interface::Chassis chassis)
-    {
-      if (is_init_ == false)
-      {
-        return;
-      }
-      if (function_activation_ == false)
-      {
-        return;
-      }
-      {
-        std::lock_guard<std::mutex> lock(mutex_);
-        if (robot_dog_conf_->use_system_timestamp() == true)
-        {
-          athena::interface::Header header = chassis.header();
-          header.set_stamp(TimeTool::Now2TmeStruct());
-          chassis.set_header(header);
-        }
-        chassis_ = chassis;
-      }
-    }
 
-    void RobotDogMain::HandleEvents(athena::interface::Events events)
-    {
-      if (is_init_ == false)
-      {
-        return;
-      }
-      if (function_activation_ == false)
-      {
-        return;
-      }
-      {
-        std::lock_guard<std::mutex> lock(mutex_);
-        if (robot_dog_conf_->use_system_timestamp() == true)
-        {
-          athena::interface::Header header = events.header();
-          header.set_stamp(TimeTool::Now2TmeStruct());
-          events.set_header(header);
-        }
-        events_ = events;
-      }
-    }
-
-    void RobotDogMain::HandleObuCmdMsgInput(
-        athena::interface::ObuCmdMsg obu_cmd_msg_input)
-    {
-      if (is_init_ == false)
-      {
-        return;
-      }
-      if (function_activation_ == false)
-      {
-        return;
-      }
-      {
-        std::lock_guard<std::mutex> lock(mutex_);
-        if (robot_dog_conf_->use_system_timestamp() == true)
-        {
-          athena::interface::Header header = obu_cmd_msg_input.header();
-          header.set_stamp(TimeTool::Now2TmeStruct());
-          obu_cmd_msg_input.set_header(header);
-        }
-        obu_cmd_msg_input_ = obu_cmd_msg_input;
-      }
-      for (auto cmd : obu_cmd_msg_input_.obu_cmd_list())
-      {
-        std::cout << "code : " << cmd.code() << " val : " << cmd.val() << std::endl;
-        // 急停按钮
-        if (cmd.code() == (int)EmergencyModeCMD::CODE)
-        {
-          switch (cmd.val())
-          {
-          case (int)EmergencyModeCMD::VAL_ACTIVATE:
-            // 急停按下
-            emergency_stop_activation_ = true;
-            break;
-          case (int)EmergencyModeCMD::VAL_DEACTIVATE:
-            // 急停解除
-            emergency_stop_activation_ = false;
-            break;
-          default:
-            emergency_stop_activation_ = false;
-            break;
-          }
-        }
-      }
-    }
-*/
     void RobotDogMain::PublishTaskList(perception_msgs::TaskList msg) {
 #if LCM_ENABLE
       if (message_manager_.count("LCM") > 0)
@@ -529,20 +440,20 @@ namespace athena
         }
 
     void RobotDogMain::clear() {
-      if(ros_message_service_) ros_message_service_->Init();
+      if(message_handle_manager_) message_handle_manager_->Init();
     }
       
     //处理集成消息
     void RobotDogMain::cmdCallback(const robot_dog::PercCmd& msg) {
-        ros_message_service_->handleTaskEvent(msg);
+        message_handle_manager_->handleTaskEvent(msg);
     }
     //处理感知反馈消息
     void RobotDogMain::ptCallback(const perception_msgs::TaskList::ConstPtr& msg) {
-        ros_message_service_->handlePerceptionEvent(msg);
+        message_handle_manager_->handlePerceptionEvent(msg);
     }
     //处理规划状态反馈消息
     void RobotDogMain::stateCallback(const perception_msgs::TaskList::ConstPtr& msg) {
-        ros_message_service_->handleStateEvent(msg);
+        message_handle_manager_->handleStateEvent(msg);
     }
 
   }
