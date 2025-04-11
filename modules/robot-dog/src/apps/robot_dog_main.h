@@ -100,8 +100,8 @@ namespace athena
       // 消息控制器
       std::map<std::string, std::shared_ptr<MessageManager<RobotDogMain>>>
           message_manager_;
-      // 状态管理器
-      RosServiceManager state_manager_;
+      // ros消息管理器
+      RosServiceManager* ros_message_service_;
     #if LCM_ENABLE
       std::shared_ptr<LcmMessageManager<RobotDogMain>> lcm_message_manager_;
     #endif
@@ -202,7 +202,7 @@ namespace athena
         if (message_manager_.count("ROS") > 0)
           message_manager_["ROS"]->PublishAction(msg);
       }
-      const RosServiceManager& GetRosServiceManager(){ return state_manager_; }
+      RosServiceManager* GetRosServiceManager(){ return ros_message_service_; }
 
     protected:
       /**

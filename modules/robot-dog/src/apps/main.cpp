@@ -10,7 +10,7 @@
 #include <iostream>
 #include <signal.h>
 
-#include "common/global_project.h"
+#include "common/public_fun.h"
 #include "robot_dog_main.h"
 
 #if GLOG_ENABLE
@@ -29,7 +29,11 @@
 
 using namespace std;
 using namespace athena::function;
+
 #ifndef G_TEST
+
+athena::function::RobotDogMain *theApp = nullptr;
+
 int main(int argc, char** argv) {
   //std::string file_path = "./conf/function/robot-dog/robot_dog.json";
   system("mkdir -p log");
@@ -46,13 +50,25 @@ int main(int argc, char** argv) {
 #endif
 
   // 创建 RobotDogMain 对象
-    auto robotDog = AfjGetMain();
-    if(robotDog != nullptr)
+  if(nullptr == AfxGetApp())
+  {
+    AfxGetApp() = new athena::function::RobotDogMain();
+    assert(AfxGetApp() != nullptr);
+
+    if(nullptr != AfxGetApp())
     {
-      robotDog->Start();
-      robotDog->Loop();
-      robotDog->Close();
+      AfxGetApp()->Start();
+      AfxGetApp()->Loop();
+      AfxGetApp()->Close();
     }
+
+    if(AfxGetApp() != nullptr)
+    {
+      delete AfxGetApp();
+      AfxGetApp() = nullptr;
+    }
+  }
+    
     
   return 1;
 }

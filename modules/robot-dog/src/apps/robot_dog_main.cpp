@@ -7,21 +7,13 @@ namespace global {
   sig_atomic_t appRun = 1;
 }
 
-void signal_handler(int signal) {
-    if (signal == SIGINT) { // 检查是否为 Ctrl+C 信号(SIGINT)
-        AINFO << "Caught SIGINT, initiating graceful shutdown...";
-        global::appRun = 0; // 设置标志位以退出程序循环
-        // 终止程序
-        std::exit(EXIT_SUCCESS);
-    }
-}
-
 namespace athena
 {
   namespace function 
   {
     RobotDogMain::RobotDogMain(std::string file_path)
-      : config_file_path_(file_path) 
+      : config_file_path_(file_path)
+      ,ros_message_service_(nullptr)
     {
     }
       
@@ -72,6 +64,11 @@ namespace athena
       {
         RobotDogMainStateMachineInit();
       }
+      //step7.5 ros消息管理初始化
+      {
+        ros_message_service_ = new RosServiceManager();
+      }
+      
 
       // step8 定时器和线程初始化
       {
@@ -100,7 +97,7 @@ namespace athena
 
     void RobotDogMain::Loop()
     {
-      while (global::appRun)
+      while (true)
       {
         std::cout << "\033[32m" << Version::GetVersion() <<  "\tDate: " << Version::GetCurrentDateTime() << std::endl;
         std::this_thread::sleep_for(std::chrono::seconds(30));
@@ -206,7 +203,7 @@ namespace athena
     //按周期发布状态
     void RobotDogMain::StateCallback(void *param)
     {
-      PublishState(state_manager_.GetConstStateMsg()); // 发布状态
+      PublishState(ros_message_service_->GetConstStateMsg()); // 发布状态
     }
 
     std::shared_ptr<RobotDogConf> RobotDogMain::GetConf() const
@@ -505,7 +502,7 @@ namespace athena
 
     void RobotDogMain::Spin()
         {
-          while (global::appRun)
+          while (true)
           {
             if (function_activation_)
             {
@@ -518,20 +515,20 @@ namespace athena
         }
 
     void RobotDogMain::clear() {
-      state_manager_.Init();
+      ros_message_service_->Init();
     }
       
     //处理集成消息
     void RobotDogMain::cmdCallback(const perception_msgs::PercCmd::ConstPtr& msg) {
-        state_manager_.handleTaskEvent(msg);
+        ros_message_service_->handleTaskEvent(msg);
     }
     //处理感知反馈消息
     void RobotDogMain::ptCallback(const perception_msgs::TaskList::ConstPtr& msg) {
-        state_manager_.handlePerceptionEvent(msg);
+        ros_message_service_->handlePerceptionEvent(msg);
     }
     //处理规划状态反馈消息
     void RobotDogMain::stateCallback(const perception_msgs::TaskList::ConstPtr& msg) {
-        state_manager_.handleStateEvent(msg);
+        ros_message_service_->handleStateEvent(msg);
     }
 
   }
