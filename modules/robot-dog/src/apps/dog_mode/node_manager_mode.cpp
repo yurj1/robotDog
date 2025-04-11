@@ -11,14 +11,14 @@ NodeManagerMode::NodeManagerMode(TaskType t_type, NodeType n_type)
 {
 }
 
-void NodeManagerMode::Handle(const perception_msgs::PercCmd::ConstPtr& msg, RosServiceManager* data_manager)
+void NodeManagerMode::Handle(const robot_dog::PercCmd& msg, RosServiceManager* data_manager)
 {
     
     //状态更新
     auto& stateResult = data_manager->GetStateMsg();
-    stateResult.action_id = msg->action_id;
+    stateResult.action_id = msg.action_id;
     data_manager->SetCanFinish(true);
-    pubData_.task_id = msg->action_id;
+    pubData_.task_id = msg.action_id;
 
     switch (n_type_)
     {

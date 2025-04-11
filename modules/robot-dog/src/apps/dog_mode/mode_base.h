@@ -1,5 +1,6 @@
 #ifndef __BASE__H__
 #define __BASE__H__
+#include "common/struct/CommonStruct.h"
 #include "manager/ros_service_manager.h"
 
 namespace athena {
@@ -13,7 +14,7 @@ namespace athena {
 
                 ModeBase(TaskType type)
                 : type_(type){}
-                virtual void Handle(const perception_msgs::PercCmd::ConstPtr& msg, RosServiceManager* data_manager) = 0;
+                virtual void Handle(const robot_dog::PercCmd& msg, RosServiceManager* data_manager) = 0;
                 TaskType GetType(){return type_;}
             protected:
                 virtual void Init() = 0;

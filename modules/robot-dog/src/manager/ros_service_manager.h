@@ -3,7 +3,6 @@
 
 #include <mutex>
 
-#include <common/enum.h>
 #include "message_manager/message_manager.h"
 
 using namespace robot_dog::operations;
@@ -26,7 +25,7 @@ public:
     void SetCanFinish(const bool& enable);
     void SetStateMsg(const perception_msgs::PercState& result){perc_state_ = result;}
     //处理订阅集成发过来的任务信息
-    void handleTaskEvent(const perception_msgs::PercCmd::ConstPtr& msg);
+    void handleTaskEvent(const robot_dog::PercCmd& msg);
     //处理规划集成发过来的状态信息
     void handleStateEvent(const perception_msgs::TaskList::ConstPtr& msg);
     //处理感知发送过来的反馈信息

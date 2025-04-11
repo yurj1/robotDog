@@ -16,7 +16,7 @@
 #include <perception_msgs/ActionEntry.h>
 #include <perception_msgs/DogRecordBag.h>
 #include <geometry_msgs/Pose.h>
-#include <common/enum.h>
+#include "common/struct/CommonStruct.h"
 
 //发布反馈消息给集成模块
 #ifndef pub_feedback_to_cmd

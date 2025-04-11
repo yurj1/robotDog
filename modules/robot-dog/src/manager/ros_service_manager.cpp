@@ -87,13 +87,13 @@ perception_msgs::PercState& RosServiceManager::GetStateMsg()
     return perc_state_;
 }
 
-void RosServiceManager::handleTaskEvent(const perception_msgs::PercCmd::ConstPtr& msg)
+void RosServiceManager::handleTaskEvent(const robot_dog::PercCmd& msg)
 {
-    ROS_INFO("Received PercCmd: action_id=%lu, perc_kind=%u", msg->action_id, msg->perc_kind);
-    recv_cmd_msg_info_ = *msg;
+    ROS_INFO("Received PercCmd: action_id=%lu, perc_kind=%u", msg.action_id, msg.perc_kind);
+    //recv_cmd_msg_info_ = *msg;
     Init();
     
-    std::shared_ptr<ModeBase> m_task = Factory::CreateModeFactory(msg->perc_kind);
+    std::shared_ptr<ModeBase> m_task = Factory::CreateModeFactory(msg.perc_kind);
         if(m_task == nullptr)
         {
             AERROR << "Not find mode";

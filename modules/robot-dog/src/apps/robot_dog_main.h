@@ -32,6 +32,9 @@
 #if ROS2_ENABLE
 #include "message_manager/ros2/ros2_message_manager.h"
 #endif
+#if MQTT_ENABLE
+#include "message_manager/mqtt/mqtt_message_manager.h"
+#endif
 
 #include "conf/robot_dog_conf.hpp"
 
@@ -118,6 +121,9 @@ namespace athena
     #if ADSFI_ENABLE
           std::shared_ptr<AdsfiMessageManager<RobotDogMain>> adsfi_message_manager_;
     #endif
+    #if MQTT_ENABLE
+          std::shared_ptr<MqttMessageManager<RobotDogMain>> mqtt_message_manager_;
+    #endif
 
     protected:
       /**
@@ -188,7 +194,7 @@ namespace athena
 
     public:
       // 处理集成消息
-      void cmdCallback(const perception_msgs::PercCmd::ConstPtr& msg);
+      void cmdCallback(const robot_dog::PercCmd& msg);
       // 处理感知反馈消息
       void ptCallback(const perception_msgs::TaskList::ConstPtr& msg);
       // 处理规划状态反馈消息

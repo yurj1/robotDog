@@ -10,7 +10,7 @@ WelcomeMode::WelcomeMode(TaskType type)
 {
 }
 
-void WelcomeMode::Handle(const perception_msgs::PercCmd::ConstPtr& msg, RosServiceManager* data_manager)
+void WelcomeMode::Handle(const robot_dog::PercCmd& msg, RosServiceManager* data_manager)
 {
     data_manager->SetCanFinish(true);
     
@@ -18,14 +18,14 @@ void WelcomeMode::Handle(const perception_msgs::PercCmd::ConstPtr& msg, RosServi
     {
         auto& stateResult = data_manager->GetStateMsg();
         stateResult.perc_kind = perception_msgs::PercCmd::PERC_WELCOME_DEMO;
-        stateResult.action_id = msg->action_id;
+        stateResult.action_id = msg.action_id;
     }
     
     
-    pubData_.task_id = msg->action_id;
+    pubData_.task_id = msg.action_id;
     pubData_.task_type = robot_dog::operations::TaskType::TASK_WELCOME;
-    pubData_.target_object = msg->follow_name;
+    pubData_.target_object = msg.follow_name;
     
-    ROS_INFO("Welcome %s:", msg->follow_name.c_str());
+    ROS_INFO("Welcome %s:", msg.follow_name.c_str());
     AfxGetApp()->PublishTaskList(pubData_);
 }

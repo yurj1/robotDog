@@ -117,7 +117,19 @@ void RosMessageManager<T>::PublishAction(perception_msgs::ActionEntry msg) {
 
 template <typename T>
 void RosMessageManager<T>::cmdCallback(const perception_msgs::PercCmd::ConstPtr& msg) {
-  instance_->cmdCallback(msg);
+  robot_dog::PercCmd cmd;
+  cmd.action_id = msg->action_id;
+  cmd.angle = msg->angle;
+  cmd.follow_name = msg->follow_name;
+  cmd.on_off = msg->on_off;
+  cmd.perc_kind = msg->perc_kind;
+  cmd.point.x = msg->point.x;
+  cmd.point.y = msg->point.y;
+  cmd.point.z = msg->point.z;
+  cmd.point_name = msg->point_name;
+  cmd.req_id = msg->req_id;
+
+  instance_->cmdCallback(cmd);
 }
 template <typename T>
 void RosMessageManager<T>::ptCallback(const perception_msgs::TaskList::ConstPtr& msg) {

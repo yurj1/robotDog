@@ -57,7 +57,7 @@ public:
 
   const std::map<std::string, geometry_msgs::Pose>& GetPointMap() override{
     return point_map_;
-  } 
+  }
 protected:
   void loadPointMap();
   // 处理集成消息

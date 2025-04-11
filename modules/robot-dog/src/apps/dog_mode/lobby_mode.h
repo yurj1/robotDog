@@ -9,12 +9,9 @@ namespace athena {
             {
             public:
                 LobbyMode(TaskType type);
-                void Handle(const perception_msgs::PercCmd::ConstPtr& msg, RosServiceManager* data_manager) override;
+                void Handle(const robot_dog::PercCmd& msg, RosServiceManager* data_manager) override;
             private:
                 void Init()override{}
-            private:
-                perception_msgs::TaskList task_list_perception_;
-                perception_msgs::TaskList task_list_planning_;
             };
         }
     }

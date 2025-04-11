@@ -14,7 +14,7 @@ void DestMode::Init()
 {
 }
 
-void DestMode::Handle(const perception_msgs::PercCmd::ConstPtr& msg, RosServiceManager* data_manager)
+void DestMode::Handle(const robot_dog::PercCmd& msg, RosServiceManager* data_manager)
 {
     //可直接完成
     data_manager->SetCanFinish(true);
@@ -24,7 +24,7 @@ void DestMode::Handle(const perception_msgs::PercCmd::ConstPtr& msg, RosServiceM
     geometry_msgs::Pose pose;
     //状态更新
     auto& stateResult = data_manager->GetStateMsg();
-    stateResult.action_id = msg->action_id;
+    stateResult.action_id = msg.action_id;
     stateResult.perc_kind = perception_msgs::PercState::PERC_DEST;
 
     auto getPose = [](const std::string& point_name, geometry_msgs::Pose& pose){
@@ -39,9 +39,9 @@ void DestMode::Handle(const perception_msgs::PercCmd::ConstPtr& msg, RosServiceM
     };
 
     //类型赋值
-    pubData_.task_id = msg->action_id;
+    pubData_.task_id = msg.action_id;
     pubData_.task_type = robot_dog::operations::TaskType::TASK_PRECISE_DOCKING;
-    std::string point_name = msg->point_name;
+    std::string point_name = msg.point_name;
     
     //获取坐标
     if (getPose(point_name, pose)) {

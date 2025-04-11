@@ -465,6 +465,20 @@ namespace athena
         }
         break;
 #endif
+
+#if MQTT_ENABLE
+        case athena::common::MessageType::MQTT:
+        {
+          AINFO << "message type:MQTT";
+
+          mqtt_message_manager_ =
+              std::make_shared<MqttMessageManager<RobotDogMain>>();
+          ResigerMessageManager(message.name, mqtt_message_manager_);
+
+          mqtt_message_manager_->Init(this);
+        }
+        break;
+#endif
         default:
         {
           AERROR << "unknown message type";
@@ -515,11 +529,11 @@ namespace athena
         }
 
     void RobotDogMain::clear() {
-      ros_message_service_->Init();
+      if(ros_message_service_) ros_message_service_->Init();
     }
       
     //处理集成消息
-    void RobotDogMain::cmdCallback(const perception_msgs::PercCmd::ConstPtr& msg) {
+    void RobotDogMain::cmdCallback(const robot_dog::PercCmd& msg) {
         ros_message_service_->handleTaskEvent(msg);
     }
     //处理感知反馈消息

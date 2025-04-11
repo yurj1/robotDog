@@ -6,22 +6,22 @@ using namespace athena::function::action;
 
 LobbyMode::LobbyMode(TaskType type)
   : ModeBase(type)
-  , task_list_perception_()
-  , task_list_planning_()
 {
 }
 
-void LobbyMode::Handle(const perception_msgs::PercCmd::ConstPtr& msg, RosServiceManager* data_manager)
+void LobbyMode::Handle(const robot_dog::PercCmd& msg, RosServiceManager* data_manager)
 {
+    perception_msgs::TaskList task_list_perception_;
+    perception_msgs::TaskList task_list_planning_;
     //状态更新
     {
         auto& stateResult = data_manager->GetStateMsg();
         stateResult.perc_kind = perception_msgs::PercCmd::PERC_LOBBY_DEMO;
-        stateResult.action_id = msg->action_id;
+        stateResult.action_id = msg.action_id;
     }//赋值完立马释放锁
     //id更新,目标名称赋值
-    task_list_perception_.task_id = task_list_planning_.task_id = msg->action_id;
-    task_list_perception_.target_object = msg->follow_name;
+    task_list_perception_.task_id = task_list_planning_.task_id = msg.action_id;
+    task_list_perception_.target_object = msg.follow_name;
 
     //特殊模式，不能直接完成
     data_manager->SetCanFinish(false);
@@ -32,7 +32,7 @@ void LobbyMode::Handle(const perception_msgs::PercCmd::ConstPtr& msg, RosService
     task_list_planning_.isInPlaceRotation = true;
     
     //获取固定点坐标
-    std::string point_name = msg->point_name;
+    std::string point_name = msg.point_name;
     auto getPose = [](const std::string& point_name, geometry_msgs::Pose& pose){
         const auto& point_map = AfxGetApp()->GetPointMap();
         auto it = point_map.find(point_name);
@@ -56,9 +56,9 @@ void LobbyMode::Handle(const perception_msgs::PercCmd::ConstPtr& msg, RosService
         AfxGetApp()->PublishPose(pose);
     } else {
         ROS_INFO("Point %s not found! Get Point value", point_name.c_str());
-        pose.position.x = msg->point.x;
-        pose.position.y = msg->point.y;
-        pose.position.z = msg->point.z;
+        pose.position.x = msg.point.x;
+        pose.position.y = msg.point.y;
+        pose.position.z = msg.point.z;
     }
 
     task_list_planning_.target_position = pose;
@@ -69,5 +69,5 @@ void LobbyMode::Handle(const perception_msgs::PercCmd::ConstPtr& msg, RosService
     }
     else
         AERROR << "main is nullptr";
-    ROS_INFO("Find %s:", msg->follow_name.c_str());
+    ROS_INFO("Find %s:", msg.follow_name.c_str());
 }
