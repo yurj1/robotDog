@@ -53,6 +53,11 @@ if(DDS_ENABLE)
 	)
 endif()
 
+option(MQTT_ENABLE "option for mqtt enable" OFF)
+if(MQTT_ENABLE)
+	add_definitions(-DMQTT_ENABLE)
+endif()
+
 option(MDCLOG_ENABLE "option for dds enable" OFF)
 option(GLOG_ENABLE "option for dds enable" OFF)
 if(MDCLOG_ENABLE)
@@ -128,6 +133,11 @@ endif()
 if(DDS_ENABLE)
 target_link_libraries(${APP_NAME}  fastrtps fastcdr)
 endif()
+
+if(MQTT_ENABLE)
+target_link_libraries(${APP_NAME}  paho-mqtt3a paho-mqtt3as paho-mqtt3c paho-mqtt3cs paho-mqttpp3)
+endif()
+
 target_link_libraries(${APP_NAME}  pthread gflags glog protobuf z dl ${BOOST_LINK_LIBS} )
 target_link_libraries(${APP_NAME}  pthread gflags glog z protobuf dl ${BOOST_LINK_LIBS} )
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)

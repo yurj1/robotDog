@@ -7,9 +7,11 @@
     "use_system_timestamp": true,
     "produce_emergency_stop_command_duration": 20,
     "publish_emergency_stop_command_duration": 10,
+    "VIN": "robot_dog",
     "message": {
         "active_message": [
-            2
+            2,
+            5
         ],
         "message_info": [
             {
@@ -36,6 +38,11 @@
                 "type": 4,
                 "name": "ROS2",
                 "url": "null"
+            },
+            {
+                "type": 5,
+                "name": "MQTT",
+                "url": "mqtt://localhost:1883"
             }
         ]
     },

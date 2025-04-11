@@ -44,6 +44,11 @@ if(DDS_ENABLE)
 	)
 endif()
 
+option(MQTT_ENABLE "option for mqtt enable" OFF)
+if(MQTT_ENABLE)
+	add_definitions(-DMQTT_ENABLE)
+endif()
+
 option(MDCLOG_ENABLE "option for dds enable" OFF)
 option(GLOG_ENABLE "option for dds enable" OFF)
 if(MDCLOG_ENABLE)
@@ -89,6 +94,8 @@ include_directories(
 link_directories(
 	${THIRD_PATH_HOME_PATH}/x64/lib/boost
     ${THIRD_PATH_HOME_PATH}/x64/lib/lcm
+	${THIRD_PATH_HOME_PATH}/x64/lib/mqtt_c
+    ${THIRD_PATH_HOME_PATH}/x64/lib/mqtt
 	${THIRD_PATH_HOME_PATH}/x64/lib/glog
 	${THIRD_PATH_HOME_PATH}/x64/lib/gflags
 	${THIRD_PATH_HOME_PATH}/x64/lib/zlib
@@ -117,6 +124,9 @@ if(LCM_ENABLE)
 endif()
 if(DDS_ENABLE)
 target_link_libraries(${APP_NAME}  fastrtps fastcdr)
+endif()
+if(MQTT_ENABLE)
+target_link_libraries(${APP_NAME}  paho-mqtt3a paho-mqtt3as paho-mqtt3c paho-mqtt3cs paho-mqttpp3)
 endif()
 target_link_libraries(${APP_NAME}  pthread gflags glog protobuf z dl ${BOOST_LINK_LIBS} )
 target_link_libraries(${APP_NAME}  pthread gflags glog z protobuf dl ${BOOST_LINK_LIBS} )
