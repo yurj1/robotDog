@@ -7,7 +7,7 @@
     "use_system_timestamp": true,
     "produce_emergency_stop_command_duration": 20,
     "publish_emergency_stop_command_duration": 10,
-    "VIN": "robot_dog",
+    "ClientId": "robot_dog_app",
     "message": {
         "active_message": [
             2,
