@@ -58,6 +58,22 @@
 #define dog_ros_service_record_bag "/dog/record_bag"
 #endif
 
+/************************** MQTT *******************************/ 
+
+//订阅客户端的任务消息
+#ifndef mqtt_task_list_sub
+#define mqtt_task_list_sub "robot_dog/task_list"
+#endif
+
+//订阅客户端的功能操作请求（录包、执行脚本）
+#ifndef mqtt_function_request_sub
+#define mqtt_function_request_sub "robot_dog/function/request"
+#endif
+
+//发布给客户端的功能操作结果的回复
+#ifndef mqtt_function_response_pub
+#define mqtt_function_response_pub "robot_dog/function/response"
+#endif
 
 /**
  * @namespace athena::function

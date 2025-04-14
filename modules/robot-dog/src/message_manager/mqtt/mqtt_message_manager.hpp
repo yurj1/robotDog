@@ -47,7 +47,7 @@ using  Json = nlohmann::json;
               //clientID = VIN;
  
        // client = std::make_shared<mqtt::async_client>(address, CLIENT_ID);
-       client = std::make_shared<mqtt::async_client>(messages["MQTT"].url, "robot_dog_app");
+       client = std::make_shared<mqtt::async_client>(messages["MQTT"].url, instance_->GetJsonConfig()["ClientId"]);
        // auto sslopts = mqtt::ssl_options_builder()
        //                    .trust_store("/home/ywb/Documents/c++project/SLS/mqtt_certs/ca.crt")
        //                    .key_store("/home/ywb/Documents/c++project/SLS/mqtt_certs/client.crt")
@@ -60,10 +60,9 @@ using  Json = nlohmann::json;
        auto connOpts = mqtt::connect_options_builder()
                            .user_name("hy")
                            .password("123")
-                           .mqtt_version(MQTTVERSION_3_1_1) // 指定协议版本为 3.1.1
                            .finalize();
  
-       auto TOPICS = mqtt::string_collection::create({"jsx_remote_controller/#", sub_callback_to_cmd, "/robot_dog/record_bag/request"});
+       auto TOPICS = mqtt::string_collection::create({"jsx_remote_controller/#", mqtt_task_list_sub, mqtt_function_request_sub});
        const vector<int> QOS{0, 1, 1};
  
        client->start_consuming();
@@ -176,7 +175,7 @@ using  Json = nlohmann::json;
       msg["info"] = rsp.info;
 
       //client->publish("/robot_dog/record_bag/callback_msg",rsp, rsp.size(), 2); 
-      client->publish(mqtt::make_message("/robot_dog/record_bag/callback_msg", msg.dump(), 2, false));//采用qos ==2 否则网络不稳定时多发会导致多次弹窗
+      client->publish(mqtt::make_message(mqtt_function_response_pub, msg.dump(), 2, false));//采用qos ==2 否则网络不稳定时多发会导致多次弹窗
      }
     //  template <typename T>
     //  void MqttMessageManager<T>::HandleJoyMsg(JoyMessage msg)
@@ -222,9 +221,18 @@ using  Json = nlohmann::json;
         robot_dog::RecordBag req;
         robot_dog::CallbackInfo rsp;
         req.bag_mode = info["bag_mode"];
-        req.bag_name = info["bag_name"];
-        req.topics = info["topics"].get<std::vector<std::string>>();
-        req.bash_name = info["bash_name"];
+        switch (req.bag_mode)
+        {
+          case 1 :
+            req.bag_name =  info["bag_name"];
+            req.topics = info["topics"].get<std::vector<std::string>>();
+            break;
+          case 2 :
+            req.bash_name =  info["bash_name"];
+            break;
+          default:
+            break;
+        }
 
         if(_AppIsMessageHandManagerNotNull)
         {
@@ -235,6 +243,7 @@ using  Json = nlohmann::json;
       catch (const nlohmann::json::exception& e) {
         // 捕获解析错误
         AERROR << "Error parsing JSON: " << e.what();
+        AERROR << "msg json : " << msg;
       }
     }
 
@@ -288,12 +297,12 @@ using  Json = nlohmann::json;
         //    HandleJoyMsg(joymsg);
         //  }
          //任务消息接受
-         if (msg->get_topic() == sub_callback_to_cmd)
+         if (msg->get_topic() == mqtt_task_list_sub)
          {
           HandleTaskMsg(msg->get_payload_str());
          }
          //录包请求 会阻塞1s
-         else if (msg->get_topic() == "/robot_dog/record_bag/request")
+         else if (msg->get_topic() == mqtt_function_request_sub)
          {
           HandRecordBagMsg(msg->get_payload_str());
          }

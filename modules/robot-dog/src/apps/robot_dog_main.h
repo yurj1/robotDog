@@ -88,6 +88,7 @@ namespace athena
        * @return std::shared_ptr<RobotDogConf>
        */
       std::shared_ptr<RobotDogConf> GetConf() const;
+      const json& GetJsonConfig()const{return roobt_dog_json_;}
       // 初始化待传参数
       void clear();
 
