@@ -2,9 +2,9 @@ digraph state_machine_graph {
 dpi = "192";
  node [style=filled];
 0[label="Start", group = 1];
-1[label="IdleDog", group = 1];
+1[label="IdleDog",color = "crimson", group = 1];
 2[label="RunningDog", group = 1];
-3[label="FinishDog",color = "crimson", group = 1];
+3[label="FinishDog", group = 1];
 subgraph cluster_0{
 label = "Start";
 group = 1;
