@@ -177,12 +177,35 @@ using  Json = nlohmann::json;
       //client->publish("/robot_dog/record_bag/callback_msg",rsp, rsp.size(), 2); 
       client->publish(mqtt::make_message(mqtt_function_response_pub, msg.dump(), 2, false));//采用qos ==2 否则网络不稳定时多发会导致多次弹窗
      }
-    //  template <typename T>
-    //  void MqttMessageManager<T>::HandleJoyMsg(JoyMessage msg)
-    //  {
-    //    //std::cout << "HandleJoyMsg " << std::endl;
-    //    instance_->HandleMqttJoyMsgInput(msg);
-    //  }
+
+    template <typename T>
+    void MqttMessageManager<T>::PublishCurrentPoint(const std::string& data)
+    {
+      if ( !client->is_connected()) return;
+      client->publish(mqtt::make_message(mqtt_current_point_pub, data, 0, false));//采用qos ==2 否则网络不稳定时多发会导致多次弹窗
+    }
+
+    template <typename T>
+    void MqttMessageManager<T>::PublishGlobalCloud(const std::string& data)
+    {
+      if ( !client->is_connected()) return;
+      client->publish(mqtt::make_message(mqtt_global_cloud_pub, data, 0, false));//采用qos ==2 否则网络不稳定时多发会导致多次弹窗
+    }
+
+    template <typename T>
+    void MqttMessageManager<T>::PublishPlanningPlan(const std::string& data)
+    {
+      if ( !client->is_connected()) return;
+      client->publish(mqtt::make_message(mqtt_planning_plan_pub, data, 0, false));//采用qos ==2 否则网络不稳定时多发会导致多次弹窗
+    }
+
+    template <typename T>
+    void MqttMessageManager<T>::PublishTaskPoint(const std::string& data)
+    {
+      if ( !client->is_connected()) return;
+      client->publish(mqtt::make_message(mqtt_task_point_pub, data, 0, false));//采用qos ==2 否则网络不稳定时多发会导致多次弹窗
+    }
+
     template <typename T>
     void MqttMessageManager<T>::HandleTaskMsg(const std::string& msg)
     {

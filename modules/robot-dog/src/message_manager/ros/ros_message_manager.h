@@ -67,6 +67,11 @@ protected:
   // 处理规划状态反馈消息
   void stateCallback(const perception_msgs::TaskList::ConstPtr& msg);
   
+  void handleCurrentPoint(const nav_msgs::Odometry& msg);
+  void handleCurrentPlan(const quad_msgs::RobotPlan& msg);
+  void handleCurrentglobalCloud(const visualization_msgs::MarkerArray& msg);
+  void handleCurrentTaskPoint(const geometry_msgs::Pose& msg);
+  
 protected:
   T* instance_;
   bool is_init_;

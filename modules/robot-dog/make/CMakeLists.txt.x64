@@ -22,9 +22,11 @@ option(ROS_ENABLE "option for ros enable" ON)
 if(ROS_ENABLE)
 	add_definitions(-DROS_ENABLE)
 	find_package(roscpp REQUIRED)
+	find_package(quad_msgs REQUIRED)
 	include_directories(
 	${roscpp_INCLUDE_DIRS}
 	${PROJECT_SOURCE_DIR}/../message/ros/devel/include
+	${quad_msgs_INCLUDE_DIRS}
 	)
 endif()
 

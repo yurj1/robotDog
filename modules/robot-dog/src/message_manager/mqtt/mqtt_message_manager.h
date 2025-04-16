@@ -60,6 +60,11 @@
 
       void PublishRecordBagCallbackInfo(const robot_dog::CallbackInfo& rsp);
 
+      void PublishCurrentPoint(const std::string& data);
+      void PublishGlobalCloud(const std::string& data);
+      void PublishPlanningPlan(const std::string& data);
+      void PublishTaskPoint(const std::string& data);
+
     //    void PublishJoyMsgLoad(std_msgs::Float32 data)override;
     //    void PublishJoyMsgStandup(std_msgs::Float32 data)override;
     //    void PublishJoyMsgGetdown(std_msgs::Float32 data)override;

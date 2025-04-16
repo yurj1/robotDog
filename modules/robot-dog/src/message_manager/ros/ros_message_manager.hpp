@@ -12,6 +12,8 @@
 #include "modules/common/macros/macros.h"
 #include "modules/common/logging/logging.h"
 
+#include "modules/common/json/json.hpp"
+using Json = nlohmann::json;
 #if ROS_ENABLE
 /**
  * @namespace athena::function
@@ -27,34 +29,33 @@ template <typename T> void RosMessageManager<T>::Init(T* t)
   is_init_ = false;
   instance_ = t;
 
-  // 订阅集成模块的消息
-  _subscriber.insert(std::make_pair<std::string, ros::Subscriber>(sub_callback_to_cmd, nh_.subscribe(sub_callback_to_cmd, 10, &RosMessageManager::cmdCallback, this)));
-  //cmd_sub_ = nh.subscribe(sub_callback_to_cmd, 10, &RobotDogMain::cmdCallback, this);
-
-  // 发布消息给感知规划模块
+  // 发布任务给感知规划模块
   _pubscriber.insert(std::make_pair<std::string, ros::Publisher>(pub_perception_mode, nh_.advertise<perception_msgs::TaskList>(pub_perception_mode, 10)));
-  //cmd_pub_ = nh.advertise<perception_msgs::TaskList>(pub_perception_mode, 10);
-
-  // 订阅感知模块的反馈消息
-  _subscriber.insert(std::make_pair<std::string, ros::Subscriber>(sub_recv_callback_perception, nh_.subscribe(sub_recv_callback_perception, 10, &RosMessageManager::ptCallback, this)));
-  //pt_sub_ = nh.subscribe(sub_recv_callback_perception, 10, &RobotDogMain::ptCallback, this);
-
   // 发布点消息给可视化
   _pubscriber.insert(std::make_pair<std::string, ros::Publisher>(pub_goal_state_extern, nh_.advertise<geometry_msgs::Pose>(pub_goal_state_extern, 10)));
-  //pt_pub_ = nh.advertise<geometry_msgs::Pose>(pub_goal_state_extern, 10);
-
-  // 订阅规划模块的反馈消息
-  _subscriber.insert(std::make_pair<std::string, ros::Subscriber>(sub_planning_feedback, nh_.subscribe(sub_planning_feedback, 10, &RosMessageManager::stateCallback, this)));
-  //state_sub_ = nh.subscribe(sub_planning_feedback, 10, &RobotDogMain::stateCallback, this);
-
   // 发布反馈消息给集成
   _pubscriber.insert(std::make_pair<std::string, ros::Publisher>(pub_feedback_to_cmd, nh_.advertise<perception_msgs::PercState>(pub_feedback_to_cmd, 10)));
-  //state_pub_ = nh.advertise<perception_msgs::PercState>(pub_feedback_to_cmd, 10);
-  
-  //发布动作信息给集成
+  // 发布动作信息给集成
   _pubscriber.insert(std::make_pair<std::string, ros::Publisher>(pub_action_info_to_cmd, nh_.advertise<perception_msgs::ActionEntry>(pub_action_info_to_cmd, 10)));
+
+  // 订阅任务消息
+  _subscriber.insert(std::make_pair<std::string, ros::Subscriber>(sub_callback_to_cmd, nh_.subscribe(sub_callback_to_cmd, 10, &RosMessageManager::cmdCallback, this)));
+  // 订阅感知模块的反馈消息
+  _subscriber.insert(std::make_pair<std::string, ros::Subscriber>(sub_recv_callback_perception, nh_.subscribe(sub_recv_callback_perception, 10, &RosMessageManager::ptCallback, this)));
   
-// dog作为server端的服务
+  #if MQTT_ENABLE
+  // 订阅狗当前坐标
+  _subscriber.insert(std::make_pair<std::string, ros::Subscriber>(sub_current_point, nh_.subscribe(sub_current_point, 10, &RosMessageManager::handleCurrentPoint, this)));
+  // 订阅狗当前的规划路径
+  _subscriber.insert(std::make_pair<std::string, ros::Subscriber>(sub_current_plan, nh_.subscribe(sub_current_plan, 10, &RosMessageManager::handleCurrentPlan, this)));
+  // 订阅狗局部点云
+  _subscriber.insert(std::make_pair<std::string, ros::Subscriber>(sub_current_global_cloud, nh_.subscribe(sub_current_global_cloud, 10, &RosMessageManager::handleCurrentglobalCloud, this)));
+  // 订阅当前任务点
+  _subscriber.insert(std::make_pair<std::string, ros::Subscriber>(sub_current_task_point, nh_.subscribe(sub_current_task_point, 10, &RosMessageManager::handleCurrentTaskPoint, this)));
+  #endif
+
+  // dog作为server端的服务
+  // 功能操作请求
   ros::ServiceServer record_bag_service = nh_.advertiseService(dog_ros_service_record_bag,
                               &RosMessageManager::recordBagCallback, this);
   map_service_server_.insert(std::pair<std::string, ros::ServiceServer>(dog_ros_service_record_bag, record_bag_service));
@@ -134,11 +135,89 @@ void RosMessageManager<T>::cmdCallback(const perception_msgs::PercCmd::ConstPtr&
 template <typename T>
 void RosMessageManager<T>::ptCallback(const perception_msgs::TaskList::ConstPtr& msg) {
   instance_->ptCallback(msg);
-}   
+}
 template <typename T>
 void RosMessageManager<T>::stateCallback(const perception_msgs::TaskList::ConstPtr& msg) {
     instance_->stateCallback(msg);
 }
+
+template <typename T>
+void RosMessageManager<T>::handleCurrentPoint(const nav_msgs::Odometry& msg) {
+  #if MQTT_ENABLE
+    Json info;
+    info["position"]["x"] = msg.pose.pose.position.x;
+    info["position"]["y"] = msg.pose.pose.position.y;
+    info["position"]["z"] = msg.pose.pose.position.z;
+
+    info["orientation"]["x"] = msg.pose.pose.orientation.x;
+    info["orientation"]["y"] = msg.pose.pose.orientation.y;
+    info["orientation"]["z"] = msg.pose.pose.orientation.z;
+    info["orientation"]["w"] = msg.pose.pose.orientation.w;
+
+    _AppGetMqttService->PublishCurrentPoint(info.dump());
+#endif
+}
+
+template <typename T>
+void RosMessageManager<T>::handleCurrentPlan(const quad_msgs::RobotPlan& msg) {
+  #if MQTT_ENABLE
+    //instance_->stateCallback(msg);
+    Json route_points;
+    json r_point;
+    for(const auto &state : msg.states)
+    {
+      r_point["position"]["x"] = state.body.pose.position.x;
+      r_point["position"]["y"] = state.body.pose.position.y;
+      r_point["position"]["z"] = state.body.pose.position.z;
+      
+      r_point["orientation"]["x"] = state.body.pose.orientation.x;
+      r_point["orientation"]["y"] = state.body.pose.orientation.y;
+      r_point["orientation"]["z"] = state.body.pose.orientation.z;
+      r_point["orientation"]["w"] = state.body.pose.orientation.w;
+      
+      route_points.push_back(r_point);
+    }
+    _AppGetMqttService->PublishPlanningPlan(route_points.dump());
+#endif
+}
+
+template <typename T>
+void RosMessageManager<T>::handleCurrentglobalCloud(const visualization_msgs::MarkerArray& msg) {
+#if MQTT_ENABLE
+    //instance_->stateCallback(msg);
+    Json cloud_points;
+    json cloud_point;
+    for(const auto &marker : msg.markers)
+    {
+      for(const auto& point : marker.points)
+      {
+        cloud_point["x"] = point.x;
+        cloud_point["y"] = point.y;
+        cloud_point["z"] = point.z;
+        cloud_points.push_back(cloud_point);
+      }
+    }
+    _AppGetMqttService->PublishGlobalCloud(cloud_points.dump());
+#endif
+}
+
+template <typename T>
+void RosMessageManager<T>::handleCurrentTaskPoint(const geometry_msgs::Pose& msg) {
+#if MQTT_ENABLE
+    Json info;
+    info["position"]["x"] = msg.position.x;
+    info["position"]["y"] = msg.position.y;
+    info["position"]["z"] = msg.position.z;
+
+    info["orientation"]["x"] = msg.orientation.x;
+    info["orientation"]["y"] = msg.orientation.y;
+    info["orientation"]["z"] = msg.orientation.z;
+    info["orientation"]["w"] = msg.orientation.w;
+
+    _AppGetMqttService->PublishTaskPoint(info.dump());
+#endif
+}
+
 //处理录包服务响应
 template <typename T>
 bool RosMessageManager<T>::recordBagCallback(perception_msgs::DogRecordBag::Request &req, perception_msgs::DogRecordBag::Response &rsp)

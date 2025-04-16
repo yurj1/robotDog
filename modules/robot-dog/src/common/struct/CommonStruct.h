@@ -12,27 +12,31 @@ typedef struct tagPosistion
 {
     float x;
     float y;
-    float theta;
+    float z;
+    float q_x;
+    float q_y;
+    float q_z;
+    float q_w;
 
     tagPosistion() { memset(this, 0, sizeof(*this)); };
-    tagPosistion(float x, float y, float theta = 0)
-        : x(x), y(y), theta(theta) {  }
-    tagPosistion operator+(const tagPosistion &other) const
-    {
-        return tagPosistion(x + other.x, y + other.y, theta + other.theta);
-    }
-    tagPosistion operator-(const tagPosistion &other) const
-    {
-        return tagPosistion(x - other.x, y - other.y, theta - other.theta);
-    }
-    tagPosistion operator*(float value) const
-    {
-        return tagPosistion(x * value, y * value, theta);
-    }
-    tagPosistion operator/(float value) const
-    {
-        return tagPosistion(x / value, y / value, theta);
-    }
+    tagPosistion(float x, float y, float z, float q_x= 0, float q_y= 0, float q_z= 0, float q_w = 0)
+        : x(x), y(y), z(z), q_x(q_x), q_y(q_y), q_z(q_z), q_w(q_w) {  }
+    // tagPosistion operator+(const tagPosistion &other) const
+    // {
+    //     return tagPosistion(x + other.x, y + other.y, theta + other.theta);
+    // }
+    // tagPosistion operator-(const tagPosistion &other) const
+    // {
+    //     return tagPosistion(x - other.x, y - other.y, theta - other.theta);
+    // }
+    // tagPosistion operator*(float value) const
+    // {
+    //     return tagPosistion(x * value, y * value, theta);
+    // }
+    // tagPosistion operator/(float value) const
+    // {
+    //     return tagPosistion(x / value, y / value, theta);
+    // }
 }Position, *PPOSITION;
 
 typedef struct tagPoint {
@@ -88,6 +92,9 @@ typedef struct tagCallbackInfo
     tagCallbackInfo()
     :success(false), info(""){}
 }CallbackInfo, PCallbackInfo;
+
+
+
 
 namespace operations {
     enum TaskType

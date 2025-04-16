@@ -9,14 +9,17 @@
 
 #pragma once
 #include "modules/common/enum/enum.h"
+#include "common/struct/CommonStruct.h"
 
 #include <perception_msgs/PercCmd.h>
 #include <perception_msgs/PercState.h>
 #include <perception_msgs/TaskList.h>
 #include <perception_msgs/ActionEntry.h>
 #include <perception_msgs/DogRecordBag.h>
+#include <quad_msgs/RobotPlan.h>
 #include <geometry_msgs/Pose.h>
-#include "common/struct/CommonStruct.h"
+#include <nav_msgs/Odometry.h> 
+#include <visualization_msgs/MarkerArray.h>
 
 //发布反馈消息给集成模块
 #ifndef pub_feedback_to_cmd
@@ -53,6 +56,26 @@
  #define sub_planning_feedback "/planning/task_list_feedback"
 #endif
 
+//订阅狗当前坐标
+#ifndef sub_current_point
+ #define sub_current_point "/map/global_odom"
+#endif
+
+//订阅狗当前的规划路径
+#ifndef sub_current_plan
+ #define sub_current_plan "/global_plan"
+#endif
+
+//订阅狗局部点云
+#ifndef sub_current_global_cloud
+ #define sub_current_global_cloud "/map/occ_obstacle_list"
+#endif
+
+//订阅当前任务点
+#ifndef sub_current_task_point
+ #define sub_current_task_point "/goal_state_extern"
+#endif
+
 //集成界面向应用层申请录包（服务端）
 #ifndef dog_ros_service_record_bag
 #define dog_ros_service_record_bag "/dog/record_bag"
@@ -73,6 +96,26 @@
 //发布给客户端的功能操作结果的回复
 #ifndef mqtt_function_response_pub
 #define mqtt_function_response_pub "robot_dog/function/response"
+#endif
+
+//发布狗当前位置
+#ifndef mqtt_current_point_pub
+ #define mqtt_current_point_pub "robot_dog/current/point"
+#endif
+
+//发布规划路径
+#ifndef mqtt_planning_plan_pub
+ #define mqtt_planning_plan_pub "robot_dog/current/route_plan"
+#endif
+
+//发布狗局部点云
+#ifndef mqtt_global_cloud_pub
+#define mqtt_global_cloud_pub "robot_dog/current/local_point_cloud"
+#endif
+
+//发布任务点
+#ifndef mqtt_task_point_pub
+ #define mqtt_task_point_pub "robot_dog/task_point"
 #endif
 
 /**
