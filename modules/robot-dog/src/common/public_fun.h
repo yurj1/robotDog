@@ -11,9 +11,9 @@ namespace athena {
 
 #define AppIsNotNull AfxGetApp() != nullptr
 
-#define _AppIGetMessageHandManager (AfxGetApp()->GetMessageHandleManager())
-#define _AppIsMessageHandManagerNotNull (AppIsNotNull && _AppIGetMessageHandManager != nullptr)
-#define AppGetRosService() (_AppIsMessageHandManagerNotNull ? _AppIGetMessageHandManager : nullptr)
+#define _AppGetMessageHandManager (AfxGetApp()->GetMessageHandleManager())
+#define _AppIsMessageHandManagerNotNull (AppIsNotNull && _AppGetMessageHandManager != nullptr)
+#define AppGetRosService() (_AppIsMessageHandManagerNotNull ? _AppGetMessageHandManager : nullptr)
 
 #if MQTT_ENABLE
 #define _AppGetMqttService (AfxGetApp()->GetMqttMessageManager())

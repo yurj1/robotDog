@@ -17,7 +17,7 @@ MessageHandleManager::MessageHandleManager()
     : m_can_finish(true)
     ,start_record_(false)
     ,recorder_pid_(-1)
-    , m_mutex()
+    , mutex_()
 {
     Init();
 }
@@ -77,13 +77,13 @@ const perception_msgs::TaskList& MessageHandleManager::GetOutputPlanning()
 
 const perception_msgs::PercState& MessageHandleManager::GetConstStateMsg()
 {
-    std::lock_guard<std::mutex> lock(m_mutex);
+    std::lock_guard<std::mutex> lock(mutex_);
     return perc_state_;
 }
 
 perception_msgs::PercState& MessageHandleManager::GetStateMsg()
 {
-    //std::lock_guard<std::mutex> lock(m_mutex);
+    std::lock_guard<std::mutex> lock(mutex_);
     return perc_state_;
 }
 
@@ -175,12 +175,86 @@ void MessageHandleManager::handleStateEvent(const perception_msgs::TaskList::Con
     }
 
     if(perc_state_.exe_state != (uint8_t)msg->task_state || perc_state_.exe_result != (uint8_t)msg->task_result) {
-        std::lock_guard<std::mutex> lock(m_mutex);
+        std::lock_guard<std::mutex> lock(mutex_);
         ROS_INFO("Recv  change state: [%d]-> [%d], result: [%d] -> [%d]", perc_state_.exe_state, (uint8_t)msg->task_state , perc_state_.exe_result, (uint8_t)msg->task_result);
 
         perc_state_.exe_state = static_cast<uint8_t>(msg->task_state);
         perc_state_.exe_result = static_cast<uint8_t>(msg->task_result);
     }
+}
+
+void MessageHandleManager::HandleJoyMsg(const robot_dog::JoyInfo& joy_msg)
+{
+    if(joy_msg_mqtt_input_ != joy_msg)
+    {
+        joy_msg_mqtt_input_ = joy_msg;
+    }
+    //   std::cout << joy_msg_mqtt_input_.axes(0) << std::endl;
+       std::cout << "速度摇杆_a0[左右]: " << joy_msg_mqtt_input_.axes[0] << std::endl;//MA 左摇杆
+       std::cout << "速度摇杆_a1:[上下]: " << joy_msg_mqtt_input_.axes[1] << std::endl;
+    //   std::cout << "joy_msg_axes2_:" << joy_msg_mqtt_input_.axes(2) << std::endl;
+       std::cout << "转弯摇杆_a3[左右]: " << joy_msg_mqtt_input_.axes[3] << std::endl;//MB 右摇杆 LEFT :1  RIGHT : -1
+    //   std::cout << "joy_msg_axes4_:" << joy_msg_mqtt_input_.axes(4) << std::endl;
+    //   std::cout << "joy_msg_axes5_:" << joy_msg_mqtt_input_.axes(5) << std::endl;
+    //   std::cout << "joy_msg_axes6_:" << joy_msg_mqtt_input_.axes(6) << std::endl;
+    //   std::cout << "joy_msg_axes7_:" << joy_msg_mqtt_input_.axes(7) << std::endl;
+    //   std::cout << "joy_msg_buttons0_:" << joy_msg_mqtt_input_.buttons(0) << std::endl;
+       std::cout << "B按键_b1: " << joy_msg_mqtt_input_.buttons[1] << std::endl;//B
+    //   std::cout << "joy_msg_buttons2_:" << joy_msg_mqtt_input_.buttons(2) << std::endl;
+    //   std::cout << "joy_msg_buttons3_:" << joy_msg_mqtt_input_.buttons(3) << std::endl;
+       std::cout << "LB按键_b4: " << joy_msg_mqtt_input_.buttons[4] << std::endl;//LB
+       std::cout << "RB按键_b5: " << joy_msg_mqtt_input_.buttons[5] << std::endl;//RB
+    //   std::cout << "joy_msg_buttons6_:" << joy_msg_mqtt_input_.buttons(6) << std::endl;
+       std::cout << "START按键: " << joy_msg_mqtt_input_.buttons[7] << std::endl;//START
+    //   std::cout << "joy_msg_buttons8_:" << joy_msg_mqtt_input_.buttons(8) << std::endl;
+       std::cout << "速度摇杆按下_b9:" << joy_msg_mqtt_input_.buttons[9] << std::endl;
+       std::cout << "转弯摇杆按下_b10:" << joy_msg_mqtt_input_.buttons[10] << std::endl;
+      if (joy_msg_mqtt_input_.buttons[7] == 1)//加载数据
+      {
+        //Joyload();
+        std_msgs::Float32 msg;
+        msg.data =  1.0;
+        AfxGetApp()->PublishJoyMsgLoad(msg);
+        return;
+      }
+      if(joy_msg_mqtt_input_.buttons[5] == 1&&joy_msg_mqtt_input_.buttons[9] == 1)// 站立
+      {
+        //Joystandup();
+        std_msgs::Float32 msg;
+        msg.data =  1.0;
+        AfxGetApp()->PublishJoyMsgStandup(msg);
+        return;
+      }
+      if(joy_msg_mqtt_input_.buttons[5] == 1&&joy_msg_mqtt_input_.buttons[10] == 1) // 趴下
+      {
+        //Joygetdown();
+        std_msgs::Float32 msg;
+        msg.data =  1.0;
+        AfxGetApp()->PublishJoyMsgGetdown(msg);
+        return;
+      }
+      if(joy_msg_mqtt_input_.buttons[5] == 1&&joy_msg_mqtt_input_.buttons[1] == 1) // 急停
+      {
+        //Joystop();
+        std_msgs::Float32 msg;
+        msg.data =  1.0;
+        AfxGetApp()->PublishJoyMsgStop(msg);
+        return;
+      }
+
+      if(joy_msg_mqtt_input_.buttons[4]==1) // 遥控机器狗
+      {
+        twist_.linear.x=joy_msg_mqtt_input_.axes[1];// VX
+        twist_.linear.y=joy_msg_mqtt_input_.axes[0];// Vy
+        twist_.angular.z=joy_msg_mqtt_input_.axes[3] * 2;//Vw   -2 ~ 2
+      }
+      else
+      {
+        twist_.linear.x=0;
+        twist_.linear.y=0;
+        twist_.angular.z=0.0;
+      }
+      AfxGetApp()->PublishJoyMsgTwist(twist_);
 }
 
 void MessageHandleManager::handleTaskEvent(const robot_dog::PercCmd& msg)

@@ -18,8 +18,11 @@
 #include <perception_msgs/DogRecordBag.h>
 #include <quad_msgs/RobotPlan.h>
 #include <geometry_msgs/Pose.h>
+#include <geometry_msgs/Twist.h>
 #include <nav_msgs/Odometry.h> 
 #include <visualization_msgs/MarkerArray.h>
+#include <std_msgs/Float32.h>
+
 
 //发布反馈消息给集成模块
 #ifndef pub_feedback_to_cmd
@@ -41,6 +44,34 @@
  #define pub_goal_state_extern "/goal_state_extern"
 #endif
 
+/*************  joy ****************/
+
+//发布速度
+#ifndef pub_joy_speed
+ #define pub_joy_speed "/cmd_vel"
+#endif
+
+//启动控制器
+#ifndef pub_joy_load_controller
+ #define pub_joy_load_controller "/load_controller"
+#endif
+
+//机器狗站立
+#ifndef pub_joy_to_standup
+ #define pub_joy_to_standup "/joyToStandup"
+#endif
+
+//机器狗趴下
+#ifndef pub_joy_load_to_getdown
+ #define pub_joy_load_to_getdown "/joyToGetdown"
+#endif
+
+//机器狗紧急停止
+#ifndef pub_joy_load_emergency_stop
+ #define pub_joy_load_emergency_stop "/emergency_stop"
+#endif
+
+/**************** End ****************/
 //订阅集成模块给到的任务消息
 #ifndef sub_callback_to_cmd
  #define sub_callback_to_cmd "/planning/perc_cmd"
@@ -93,6 +124,11 @@
 #define mqtt_function_request_sub "robot_dog/function/request"
 #endif
 
+//订阅手柄消息
+#ifndef mqtt_joy_msg_sub
+ #define mqtt_joy_msg_sub "robot_dog/joy_msg"
+#endif
+
 //发布给客户端的功能操作结果的回复
 #ifndef mqtt_function_response_pub
 #define mqtt_function_response_pub "robot_dog/function/response"
@@ -137,6 +173,13 @@ public:
   virtual void PublishPose(geometry_msgs::Pose msg) = 0;
   virtual void PublishState(perception_msgs::PercState msg) = 0;
   virtual void PublishAction(perception_msgs::ActionEntry msg) = 0;
+  //joy
+  virtual void PublishJoyMsgTwist(geometry_msgs::Twist msg) = 0;
+  virtual void PublishJoyMsgLoad(std_msgs::Float32 data) = 0;
+  virtual void PublishJoyMsgStandup(std_msgs::Float32 data) = 0;
+  virtual void PublishJoyMsgGetdown(std_msgs::Float32 data) = 0;
+  virtual void PublishJoyMsgStop(std_msgs::Float32 data) = 0;
+  //rosparse data
   virtual const std::map<std::string, geometry_msgs::Pose>& GetPointMap() = 0;
   
 };

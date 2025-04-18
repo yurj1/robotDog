@@ -52,6 +52,12 @@ public:
   void PublishPose(geometry_msgs::Pose msg)override;
   void PublishState(perception_msgs::PercState msg)override;
   void PublishAction(perception_msgs::ActionEntry msg)override;
+  //joy
+  void PublishJoyMsgTwist(geometry_msgs::Twist msg) override;
+  void PublishJoyMsgLoad(std_msgs::Float32 data) override;
+  void PublishJoyMsgStandup(std_msgs::Float32 data) override;
+  void PublishJoyMsgGetdown(std_msgs::Float32 data) override;
+  void PublishJoyMsgStop(std_msgs::Float32 data) override;
   //录包服务
   bool recordBagCallback(perception_msgs::DogRecordBag::Request &req, perception_msgs::DogRecordBag::Response &rsp);
 

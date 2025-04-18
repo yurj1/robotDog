@@ -274,6 +274,138 @@ namespace athena
         message_manager_["ROS2"]->PublishState(msg);
 #endif
     }
+
+    void RobotDogMain::PublishAction(perception_msgs::ActionEntry&msg) {
+#if LCM_ENABLE
+      if (message_manager_.count("LCM") > 0)
+        message_manager_["LCM"]->PublishAction(msg);
+#endif
+
+#if DDS_ENABLE
+      if (message_manager_.count("DDS") > 0)
+        message_manager_["DDS"]->PublishAction(msg);
+#endif
+
+#if ROS_ENABLE
+      if (message_manager_.count("ROS") > 0)
+        message_manager_["ROS"]->PublishAction(msg);
+#endif
+
+#if ROS2_ENABLE
+      if (message_manager_.count("ROS2") > 0)
+        message_manager_["ROS2"]->PublishAction(msg);
+#endif
+    }
+
+    void RobotDogMain::PublishJoyMsgTwist(geometry_msgs::Twist& msg) {
+#if LCM_ENABLE
+      if (message_manager_.count("LCM") > 0)
+        message_manager_["LCM"]->PublishJoyMsgTwist(msg);
+#endif
+
+#if DDS_ENABLE
+      if (message_manager_.count("DDS") > 0)
+        message_manager_["DDS"]->PublishJoyMsgTwist(msg);
+#endif
+
+#if ROS_ENABLE
+      if (message_manager_.count("ROS") > 0)
+        message_manager_["ROS"]->PublishJoyMsgTwist(msg);
+#endif
+
+#if ROS2_ENABLE
+      if (message_manager_.count("ROS2") > 0)
+        message_manager_["ROS2"]->PublishJoyMsgTwist(msg);
+#endif
+    }
+
+    void RobotDogMain::PublishJoyMsgLoad(std_msgs::Float32& msg) {
+#if LCM_ENABLE
+      if (message_manager_.count("LCM") > 0)
+        message_manager_["LCM"]->PublishJoyMsgLoad(msg);
+#endif
+
+#if DDS_ENABLE
+      if (message_manager_.count("DDS") > 0)
+        message_manager_["DDS"]->PublishJoyMsgLoad(msg);
+#endif
+
+#if ROS_ENABLE
+      if (message_manager_.count("ROS") > 0)
+        message_manager_["ROS"]->PublishJoyMsgLoad(msg);
+#endif
+
+#if ROS2_ENABLE
+      if (message_manager_.count("ROS2") > 0)
+        message_manager_["ROS2"]->PublishJoyMsgLoad(msg);
+#endif
+    }
+
+    void RobotDogMain::PublishJoyMsgStandup(std_msgs::Float32& msg) {
+#if LCM_ENABLE
+      if (message_manager_.count("LCM") > 0)
+        message_manager_["LCM"]->PublishJoyMsgStandup(msg);
+#endif
+
+#if DDS_ENABLE
+      if (message_manager_.count("DDS") > 0)
+        message_manager_["DDS"]->PublishJoyMsgStandup(msg);
+#endif
+
+#if ROS_ENABLE
+      if (message_manager_.count("ROS") > 0)
+        message_manager_["ROS"]->PublishJoyMsgStandup(msg);
+#endif
+
+#if ROS2_ENABLE
+      if (message_manager_.count("ROS2") > 0)
+        message_manager_["ROS2"]->PublishJoyMsgStandup(msg);
+#endif
+    }
+
+    void RobotDogMain::PublishJoyMsgGetdown(std_msgs::Float32& msg) {
+#if LCM_ENABLE
+      if (message_manager_.count("LCM") > 0)
+        message_manager_["LCM"]->PublishJoyMsgGetdown(msg);
+#endif
+
+#if DDS_ENABLE
+      if (message_manager_.count("DDS") > 0)
+        message_manager_["DDS"]->PublishJoyMsgGetdown(msg);
+#endif
+
+#if ROS_ENABLE
+      if (message_manager_.count("ROS") > 0)
+        message_manager_["ROS"]->PublishJoyMsgGetdown(msg);
+#endif
+
+#if ROS2_ENABLE
+      if (message_manager_.count("ROS2") > 0)
+        message_manager_["ROS2"]->PublishJoyMsgGetdown(msg);
+#endif
+    }
+
+    void RobotDogMain::PublishJoyMsgStop(std_msgs::Float32& msg) {
+      #if LCM_ENABLE
+            if (message_manager_.count("LCM") > 0)
+              message_manager_["LCM"]->PublishJoyMsgStop(msg);
+      #endif
+      
+      #if DDS_ENABLE
+            if (message_manager_.count("DDS") > 0)
+              message_manager_["DDS"]->PublishJoyMsgStop(msg);
+      #endif
+      
+      #if ROS_ENABLE
+            if (message_manager_.count("ROS") > 0)
+              message_manager_["ROS"]->PublishJoyMsgStop(msg);
+      #endif
+      
+      #if ROS2_ENABLE
+            if (message_manager_.count("ROS2") > 0)
+              message_manager_["ROS2"]->PublishJoyMsgStop(msg);
+      #endif
+          }
     
     const std::map<std::string, geometry_msgs::Pose>& RobotDogMain::GetPointMap()
     {

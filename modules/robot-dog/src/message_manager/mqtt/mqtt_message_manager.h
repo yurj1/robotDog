@@ -20,7 +20,7 @@
  #include <thread>
  #include "mqtt/async_client.h"
  
- //#include "interface/MSG_V_1_0_0.pb.h"
+ #include "interface/MSG_V_1_0_0.pb.h"
  
  #include "message_manager/message_manager.h"
  
@@ -56,7 +56,15 @@
        void PublishPose(geometry_msgs::Pose msg)override;
        void PublishState(perception_msgs::PercState msg)override;
        void PublishAction(perception_msgs::ActionEntry msg)override;
-      const std::map<std::string, geometry_msgs::Pose>& GetPointMap() override {return point_map_;};
+
+       //joy
+      void PublishJoyMsgTwist(geometry_msgs::Twist msg) override{};
+      void PublishJoyMsgLoad(std_msgs::Float32 data) override{};
+      void PublishJoyMsgStandup(std_msgs::Float32 data) override{};
+      void PublishJoyMsgGetdown(std_msgs::Float32 data) override{};
+      void PublishJoyMsgStop(std_msgs::Float32 data) override{};
+
+       const std::map<std::string, geometry_msgs::Pose>& GetPointMap() override {return point_map_;};
 
       void PublishRecordBagCallbackInfo(const robot_dog::CallbackInfo& rsp);
 
@@ -97,7 +105,7 @@
         * @return    void.
         */
        void Run();
-       //void HandleJoyMsg(JoyMessage msg);
+       void HandleJoyMsg(const std::string& msg);
        void HandleTaskMsg(const std::string& msg);
        void HandRecordBagMsg(const std::string& msg);
        /**
@@ -107,7 +115,7 @@
        void Stop();
  
      };
-   } // namespace jsx_remote_bridge
+   } // namespace function
  } // namespace athena
  #include "mqtt_message_manager.hpp"
  #endif

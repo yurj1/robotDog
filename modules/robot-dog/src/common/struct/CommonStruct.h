@@ -93,7 +93,46 @@ typedef struct tagCallbackInfo
     :success(false), info(""){}
 }CallbackInfo, PCallbackInfo;
 
+typedef struct tagJoyInfo
+{
+    std::vector<int> buttons;
+    std::vector<float> axes;
 
+    tagJoyInfo():buttons(),axes(){}
+    tagJoyInfo(std::vector<int> v, std::vector<float> a):buttons(v),axes(a){
+    }
+    tagJoyInfo& operator=(const tagJoyInfo& other) {
+        if (this == &other) {
+            return *this;  // 防止自赋值
+        }
+        // 释放当前对象的资源
+        buttons = other.buttons;
+        axes = other.axes;
+
+        return *this;
+    }
+
+    bool operator==(const tagJoyInfo& other) {
+        if (this == &other) {
+            return true;
+        }
+        if(buttons == other.buttons && axes == other.axes)
+            return true;
+
+        return false;
+    }
+    bool operator!=(const tagJoyInfo& other) {
+
+        return ! operator==(other);
+    }
+    bool isEmpty()
+    {
+        if(buttons.empty() && axes.empty())
+            return true;
+        return false;
+    }
+
+}JoyInfo, PJoyInfo;
 
 
 namespace operations {
@@ -140,8 +179,6 @@ namespace operations {
     };
 }
 
-}
-
-
+}//namespaces robot_dog
 
 #endif // !COMMON_STRUCT_H

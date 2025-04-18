@@ -205,10 +205,13 @@ namespace athena
       void PublishTaskList(perception_msgs::TaskList msg);
       void PublishPose(geometry_msgs::Pose msg);
       void PublishState(perception_msgs::PercState msg);
-      void PublishAction(perception_msgs::ActionEntry&msg){
-        if (message_manager_.count("ROS") > 0)
-          message_manager_["ROS"]->PublishAction(msg);
-      }
+      void PublishAction(perception_msgs::ActionEntry& msg);
+      void PublishJoyMsgTwist(geometry_msgs::Twist& msg);
+      void PublishJoyMsgLoad(std_msgs::Float32& msg);
+      void PublishJoyMsgStandup(std_msgs::Float32& msg);
+      void PublishJoyMsgGetdown(std_msgs::Float32& msg);
+      void PublishJoyMsgStop(std_msgs::Float32& msg);
+
       MessageHandleManager* GetMessageHandleManager(){ return message_handle_manager_; }
 
 #if MQTT_ENABLE

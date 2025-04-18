@@ -37,6 +37,12 @@ template <typename T> void RosMessageManager<T>::Init(T* t)
   _pubscriber.insert(std::make_pair<std::string, ros::Publisher>(pub_feedback_to_cmd, nh_.advertise<perception_msgs::PercState>(pub_feedback_to_cmd, 10)));
   // 发布动作信息给集成
   _pubscriber.insert(std::make_pair<std::string, ros::Publisher>(pub_action_info_to_cmd, nh_.advertise<perception_msgs::ActionEntry>(pub_action_info_to_cmd, 10)));
+  //joy
+  _pubscriber.insert(std::make_pair<std::string, ros::Publisher>(pub_joy_speed, nh_.advertise<::geometry_msgs::Twist>("/cmd_vel", 10)));
+  _pubscriber.insert(std::make_pair<std::string, ros::Publisher>(pub_joy_load_controller, nh_.advertise<std_msgs::Float32>("/load_controller", 1)));
+  _pubscriber.insert(std::make_pair<std::string, ros::Publisher>(pub_joy_to_standup, nh_.advertise<std_msgs::Float32>("/joyToStandup", 1)));
+  _pubscriber.insert(std::make_pair<std::string, ros::Publisher>(pub_joy_load_to_getdown, nh_.advertise<std_msgs::Float32>("/joyToGetdown", 1)));
+  _pubscriber.insert(std::make_pair<std::string, ros::Publisher>(pub_joy_load_emergency_stop, nh_.advertise<std_msgs::Float32>("/emergency_stop", 1)));
 
   // 订阅任务消息
   _subscriber.insert(std::make_pair<std::string, ros::Subscriber>(sub_callback_to_cmd, nh_.subscribe(sub_callback_to_cmd, 10, &RosMessageManager::cmdCallback, this)));
@@ -114,6 +120,38 @@ void RosMessageManager<T>::PublishState(perception_msgs::PercState msg) {
 template <typename T>
 void RosMessageManager<T>::PublishAction(perception_msgs::ActionEntry msg) {
   _pubscriber[pub_action_info_to_cmd].publish(msg);
+}
+
+template <typename T>
+void RosMessageManager<T>::PublishJoyMsgTwist(geometry_msgs::Twist msg) {
+  if (is_init_ == false) return;
+  _pubscriber[pub_joy_speed].publish(msg);
+}
+template <typename T>
+void RosMessageManager<T>::PublishJoyMsgLoad(std_msgs::Float32 data)
+{
+  if (is_init_ == false) return;
+  _pubscriber[pub_joy_load_controller].publish(data);
+}
+
+template <typename T>
+void RosMessageManager<T>::PublishJoyMsgStandup(std_msgs::Float32 data)
+{
+  if (is_init_ == false) return;
+  _pubscriber[pub_joy_to_standup].publish(data);
+}
+
+template <typename T>
+void RosMessageManager<T>::PublishJoyMsgGetdown(std_msgs::Float32 data)
+{
+  if (is_init_ == false) return;
+  _pubscriber[pub_joy_load_to_getdown].publish(data);
+}
+template <typename T>
+void RosMessageManager<T>::PublishJoyMsgStop(std_msgs::Float32 data)
+{
+  if (is_init_ == false) return;
+  _pubscriber[pub_joy_load_emergency_stop].publish(data);
 }
 
 template <typename T>
@@ -235,7 +273,7 @@ bool RosMessageManager<T>::recordBagCallback(perception_msgs::DogRecordBag::Requ
 
   if(_AppIsMessageHandManagerNotNull)
   {
-    bool success = _AppIGetMessageHandManager->recordBagCallback(tReq, tRsp);
+    bool success = _AppGetMessageHandManager->recordBagCallback(tReq, tRsp);
     rsp.success = tRsp.success;
     rsp.errorInfo = tRsp.info;
     return success;

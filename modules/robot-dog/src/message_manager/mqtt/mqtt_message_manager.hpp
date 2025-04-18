@@ -62,7 +62,7 @@ using  Json = nlohmann::json;
                            .password("123")
                            .finalize();
  
-       auto TOPICS = mqtt::string_collection::create({"jsx_remote_controller/#", mqtt_task_list_sub, mqtt_function_request_sub});
+       auto TOPICS = mqtt::string_collection::create({mqtt_joy_msg_sub, mqtt_task_list_sub, mqtt_function_request_sub});
        const vector<int> QOS{0, 1, 1};
  
        client->start_consuming();
@@ -226,7 +226,7 @@ using  Json = nlohmann::json;
 
         if(_AppIsMessageHandManagerNotNull)
         {
-          _AppIGetMessageHandManager->handleTaskEvent(cmd);
+          _AppGetMessageHandManager->handleTaskEvent(cmd);
         }
       }
       catch (const nlohmann::json::exception& e) {
@@ -259,7 +259,7 @@ using  Json = nlohmann::json;
 
         if(_AppIsMessageHandManagerNotNull)
         {
-          _AppIGetMessageHandManager->recordBagCallback(req,rsp);
+          _AppGetMessageHandManager->recordBagCallback(req,rsp);
           PublishRecordBagCallbackInfo(rsp);
         }
       }
@@ -268,6 +268,33 @@ using  Json = nlohmann::json;
         AERROR << "Error parsing JSON: " << e.what();
         AERROR << "msg json : " << msg;
       }
+    }
+
+    template <typename T>
+    void MqttMessageManager<T>::HandleJoyMsg(const std::string& msg)
+    {
+      Json joy = Json::parse(msg);
+      robot_dog::JoyInfo result;
+      try {
+
+        for(auto btn : joy["buttons"])
+        {
+            //AINFO << btn.get<int>();
+            result.buttons.push_back(btn.get<int>());
+        }
+
+        for(auto axe : joy["axes"])
+        {
+            result.axes.push_back(axe.get<double>());
+        }
+      } catch (std::exception ex) {
+        AINFO << " parse error: " <<ex.what();
+          return false;
+      }
+
+      if(_AppIsMessageHandManagerNotNull)
+        _AppGetMessageHandManager->HandleJoyMsg(result);
+        
     }
 
      template <typename T>
@@ -312,13 +339,7 @@ using  Json = nlohmann::json;
  
          if (!msg)
            continue;
-        //  if (msg->get_topic() == GetTopic("jsx_remote_controller/joymsg"))
-        //  {
-        //    JoyMessage joymsg;
-        //    // std::cout << "sub" << std::endl;
-        //    joymsg.ParseFromString(msg->get_payload_str());
-        //    HandleJoyMsg(joymsg);
-        //  }
+
          //任务消息接受
          if (msg->get_topic() == mqtt_task_list_sub)
          {
@@ -328,6 +349,14 @@ using  Json = nlohmann::json;
          else if (msg->get_topic() == mqtt_function_request_sub)
          {
           HandRecordBagMsg(msg->get_payload_str());
+         }
+         //手柄信息
+         else if(msg->get_topic() == mqtt_joy_msg_sub)
+         {
+          // JoyMessage joymsg;
+          // joymsg.ParseFromString(msg->get_payload_str());
+          // HandleJoyMsg(joymsg);
+          HandleJoyMsg(msg->get_payload_str());
          }
          //std::cout << "recv mqtt message: " << msg->get_payload_str() <<  std::endl << "topic: " << msg->get_topic() <<  std::endl;
        }
