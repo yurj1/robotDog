@@ -12,6 +12,7 @@
  #include "modules/common/macros/macros.h"
  #include "modules/common/logging/logging.h"
  #include "modules/common/base_message/message.h"
+
  #include <common/json/json.hpp>
  //#include "modules/common/math/euler_angles_zxy.h"
  
@@ -31,7 +32,7 @@ using  Json = nlohmann::json;
        is_init_ = false;
        is_active_ = false;
        instance_ = t;
- 
+
        // const string DFLT_SERVER_ADDRESS{"mqtt://localhost:1883"};
        // const string CLIENT_ID{"paho_cpp_async_publish"};
        const string PERSIST_DIR{"./persist"};
@@ -48,6 +49,12 @@ using  Json = nlohmann::json;
  
        // client = std::make_shared<mqtt::async_client>(address, CLIENT_ID);
        client = std::make_shared<mqtt::async_client>(messages["MQTT"].url, instance_->GetJsonConfig()["ClientId"]);
+
+       m_eventHandlerPtr = std::make_shared<robot_dog::MqttClientEventHandler>(*client);
+       m_eventHandlerPtr->setConnectCompletedEvent(std::bind(&MqttMessageManager::_onConnectCompleted, this));
+       m_eventHandlerPtr->setMessageArrivedEvent(std::bind(&MqttMessageManager::_onMessageArrived, this, std::placeholders::_1));
+       // 设置断线重连处理
+       client->set_callback(*m_eventHandlerPtr);
        // auto sslopts = mqtt::ssl_options_builder()
        //                    .trust_store("/home/ywb/Documents/c++project/SLS/mqtt_certs/ca.crt")
        //                    .key_store("/home/ywb/Documents/c++project/SLS/mqtt_certs/client.crt")
@@ -62,27 +69,39 @@ using  Json = nlohmann::json;
                            .password("123")
                            .finalize();
  
-       auto TOPICS = mqtt::string_collection::create({mqtt_joy_msg_sub, mqtt_task_list_sub, mqtt_function_request_sub});
-       const vector<int> QOS{0, 1, 1};
+      //  auto TOPICS = mqtt::string_collection::create({mqtt_joy_msg_sub, mqtt_task_list_sub, mqtt_function_request_sub});
+      //  const vector<int> QOS{0, 1, 1};
  
        client->start_consuming();
- 
-       cout << "Connecting to the MQTT server at " << address << "..." << flush;
-       auto rsp = client->connect(connOpts)->get_connect_response();
-       cout << "OK!\n"
-            << endl;
- 
-       if (!rsp.is_session_present())
-         client->subscribe(TOPICS, QOS);
- 
-       // 线程执行开始
-       handle_message_thread_.reset(new std::thread([this]
-                                                    { Run(); }));
-       if (handle_message_thread_ == nullptr)
+       try 
        {
-         AERROR << "Unable to create handle_message_thread thread.";
+          AINFO << "connect to mqtt server: " <<messages["MQTT"].url << "...";
+
+          m_eventHandlerPtr->setConnectOptions(connOpts);
+          //m_clientPtr->connect(connOpts, nullptr, *m_eventHandlerPtr);
+          client->connect(connOpts, nullptr, *m_eventHandlerPtr);
+
+          // cout << "OK!\n"
+          //       << endl;
+    
+          //if (!rsp.is_session_present())
+            // client->subscribe(TOPICS, QOS);
+       }
+       catch (const std::exception &ex)
+       {
+         AERROR << "unable to connect to mqtt server, exception [ "<< ex.what() << "]";
          return;
        }
+       //cout << "Connecting to the MQTT server at " << address << "..." << flush;
+       
+       // 线程执行开始
+      //  handle_message_thread_.reset(new std::thread([this]
+      //                                               { Run(); }));
+      //  if (handle_message_thread_ == nullptr)
+      //  {
+      //    AERROR << "Unable to create handle_message_thread thread.";
+      //    return;
+      //  }
        is_init_ = true;
      }
  
@@ -372,6 +391,38 @@ using  Json = nlohmann::json;
          AINFO << "handle_message_thread stopped [ok].";
        }
      }
+     template <typename T>
+     void MqttMessageManager<T>::_onConnectCompleted()
+    {
+      auto TOPICS = mqtt::string_collection::create({mqtt_joy_msg_sub, mqtt_task_list_sub, mqtt_function_request_sub});
+      const vector<int> QOS{0, 1, 1};
+      client->subscribe(TOPICS, QOS);
+    }
+    template <typename T>
+    void MqttMessageManager<T>::_onMessageArrived(MessageCPtr message)
+    {
+      //m_subscibeHandlerPtr->MessageArrived(message->get_topic(), message->get_payload_str());
+      AINFO << "Recv topic: " << message->get_topic();
+      //任务消息接受
+      if (message->get_topic() == mqtt_task_list_sub)
+      {
+       HandleTaskMsg(message->get_payload_str());
+      }
+      //录包请求 会阻塞1s
+      else if (message->get_topic() == mqtt_function_request_sub)
+      {
+       HandRecordBagMsg(message->get_payload_str());
+      }
+      //手柄信息
+      else if(message->get_topic() == mqtt_joy_msg_sub)
+      {
+       // JoyMessage joymsg;
+       // joymsg.ParseFromString(msg->get_payload_str());
+       // HandleJoyMsg(joymsg);
+       HandleJoyMsg(message->get_payload_str());
+      }
+    }
+
     }//namespace function
  } // namespace athena
  #endif

@@ -23,6 +23,7 @@
  #include "interface/MSG_V_1_0_0.pb.h"
  
  #include "message_manager/message_manager.h"
+#include "MqttClientEventHandler.h"
  
  /**
   * @namespace athena::jsx_remote_bridge
@@ -40,6 +41,7 @@
      template <typename T>
      class MqttMessageManager : public MessageManager<T>
      {
+      using MessageCPtr = std::shared_ptr<const mqtt::message>;
      public:
        MqttMessageManager() = default;
        ~MqttMessageManager() = default;
@@ -113,6 +115,12 @@
         * @return    void.
         */
        void Stop();
+      private:
+        virtual void _onConnectCompleted();
+        virtual void _onMessageArrived(MessageCPtr message);
+        using EventHandlerPtr = std::shared_ptr<robot_dog::MqttClientEventHandler>;
+        EventHandlerPtr		m_eventHandlerPtr;
+
  
      };
    } // namespace function
