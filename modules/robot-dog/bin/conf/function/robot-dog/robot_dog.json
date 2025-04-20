@@ -42,7 +42,7 @@
             {
                 "type": 5,
                 "name": "MQTT",
-                "url": "mqtt://localhost:1883"
+                "url": "mqtt://192.168.2.57:1883"
             }
         ]
     },

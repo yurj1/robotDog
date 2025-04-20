@@ -3,8 +3,8 @@ cmake_minimum_required(VERSION 3.5)
 project(robot_dog_app)
 
 set(APP_NAME robot_dog_app)
-set(THIRD_PATH_HOME_PATH /usr/local/athena/third_party)
-set(ATHENA_ALGORITHM_PATH_HOME_PATH /usr/local/athena/athena_algorithm)
+set(THIRD_PATH_HOME_PATH /home/meizan/workspace/athena/third_party)
+set(ATHENA_ALGORITHM_PATH_HOME_PATH /home/meizan/workspace/athena/athena_algorithm)
 
 option(ROS2_ENABLE "option for ros2 enable" OFF)
 if(ROS2_ENABLE)
