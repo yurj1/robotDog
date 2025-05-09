@@ -1,0 +1,4 @@
+[0.000000] (-) TimerEvent: {}
+[0.000145] (-) JobUnselected: {'identifier': 'perception_msg'}
+[0.000244] (-) JobUnselected: {'identifier': 'ros2_interface'}
+[0.000517] (-) EventReactorShutdown: {}

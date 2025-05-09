@@ -11,17 +11,33 @@
 #include "modules/common/enum/enum.h"
 #include "common/struct/CommonStruct.h"
 
+#if ROS_ENABLE
 #include <perception_msgs/PercCmd.h>
 #include <perception_msgs/PercState.h>
 #include <perception_msgs/TaskList.h>
 #include <perception_msgs/ActionEntry.h>
 #include <perception_msgs/DogRecordBag.h>
 #include <quad_msgs/RobotPlan.h>
+
 #include <geometry_msgs/Pose.h>
 #include <geometry_msgs/Twist.h>
 #include <nav_msgs/Odometry.h> 
 #include <visualization_msgs/MarkerArray.h>
 #include <std_msgs/Float32.h>
+#elif ROS2_ENABLE
+#include <perception_msgs/msg/perc_cmd.hpp>
+#include <perception_msgs/msg/perc_state.hpp>
+#include <perception_msgs/msg/task_list.h>
+#include <perception_msgs/msg/action_entry.h>
+#include <perception_msgs/srv/dog_record_bag.h>
+
+#include <geometry_msgs/msg/pose.hpp>
+#include <geometry_msgs/msg/twist.hpp>
+#include <nav_msgs/msg/odometry.hpp>
+#include <visualization_msgs/msg/marker_array.hpp>
+#include <std_msgs/msg/float32.hpp>
+#endif
+
 
 
 //发布反馈消息给集成模块

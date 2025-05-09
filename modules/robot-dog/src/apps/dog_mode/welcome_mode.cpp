@@ -26,6 +26,6 @@ void WelcomeMode::Handle(const robot_dog::PercCmd& msg, MessageHandleManager* da
     pubData_.task_type = robot_dog::operations::TaskType::TASK_WELCOME;
     pubData_.target_object = msg.follow_name;
     
-    ROS_INFO("Welcome %s:", msg.follow_name.c_str());
+    printf("Welcome %s:", msg.follow_name.c_str());
     AfxGetApp()->PublishTaskList(pubData_);
 }

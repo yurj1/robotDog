@@ -89,7 +89,7 @@ perception_msgs::PercState& MessageHandleManager::GetStateMsg()
 
 void MessageHandleManager::handlePerceptionEvent(const perception_msgs::TaskList::ConstPtr& msg)
 {
-    ROS_INFO("Received TaskPt: task_type=%u, x=%f, y=%f, z=%f target_object=%s task_state=%u",
+    printf("Received TaskPt: task_type=%u, x=%f, y=%f, z=%f target_object=%s task_state=%u",
                   msg->task_type, msg->target_position.position.x,  msg->target_position.position.y,  msg->target_position.position.z, msg->target_object.c_str(), msg->task_state);
 
     static bool is_perception_error = false;
@@ -143,9 +143,9 @@ void MessageHandleManager::handlePerceptionEvent(const perception_msgs::TaskList
     case robot_dog::operations::TaskType::TASK_LOBBY://找人任务
         
         if(recv_cmd_msg_info_.follow_name == msg->target_object)
-            ROS_INFO("Find target suceess!");
+            printf("Find target suceess!");
         else
-            ROS_INFO("Find target fail target: [%s] -> recv: [%s]", recv_cmd_msg_info_.follow_name.c_str(), msg->target_object.c_str());
+            printf("Find target fail target: [%s] -> recv: [%s]", recv_cmd_msg_info_.follow_name.c_str(), msg->target_object.c_str());
         
         SetCanFinish(true);
 
@@ -170,13 +170,13 @@ void MessageHandleManager::handleStateEvent(const perception_msgs::TaskList::Con
 {
     //特殊状态下不切换为完成状态
     if(!m_can_finish && (uint8_t)msg->task_state == TaskState::STATE_COMPLETED){
-        ROS_INFO("Special task not Done");
+        printf("Special task not Done");
         return;
     }
 
     if(perc_state_.exe_state != (uint8_t)msg->task_state || perc_state_.exe_result != (uint8_t)msg->task_result) {
         std::lock_guard<std::mutex> lock(mutex_);
-        ROS_INFO("Recv  change state: [%d]-> [%d], result: [%d] -> [%d]", perc_state_.exe_state, (uint8_t)msg->task_state , perc_state_.exe_result, (uint8_t)msg->task_result);
+        printf("Recv  change state: [%d]-> [%d], result: [%d] -> [%d]", perc_state_.exe_state, (uint8_t)msg->task_state , perc_state_.exe_result, (uint8_t)msg->task_result);
 
         perc_state_.exe_state = static_cast<uint8_t>(msg->task_state);
         perc_state_.exe_result = static_cast<uint8_t>(msg->task_result);
@@ -259,7 +259,7 @@ void MessageHandleManager::HandleJoyMsg(const robot_dog::JoyInfo& joy_msg)
 
 void MessageHandleManager::handleTaskEvent(const robot_dog::PercCmd& msg)
 {
-    ROS_INFO("Received PercCmd: action_id=%lu, perc_kind=%u", msg.action_id, msg.perc_kind);
+    printf("Received PercCmd: action_id=%lu, perc_kind=%u", msg.action_id, msg.perc_kind);
     //recv_cmd_msg_info_ = *msg;
     Init();
     
@@ -281,7 +281,7 @@ bool MessageHandleManager::recordBagCallback(robot_dog::RecordBag &req, robot_do
         // 停止录制
         if (recorder_pid_ != -1) {
             kill(recorder_pid_, SIGINT); // 安全终止信号
-            ROS_INFO("Sent SIGINT to rosbag process (PID: %d)", recorder_pid_);
+            printf("Sent SIGINT to rosbag process (PID: %d)", recorder_pid_);
             recorder_pid_ = -1;
         }
 
@@ -334,7 +334,7 @@ bool MessageHandleManager::recordBagCallback(robot_dog::RecordBag &req, robot_do
             argv.push_back(nullptr); // 参数数组以 nullptr 结尾
 
             // 使用 execvp 启动 rosbag
-            //ROS_INFO("Rosbag recording cmd: %s", argv;
+            //printf("Rosbag recording cmd: %s", argv;
             if(execvp("rosbag", argv.data()) == -1)
             {
                 std::string error = "record failed: " + std::string(strerror(errno));
@@ -375,7 +375,7 @@ bool MessageHandleManager::recordBagCallback(robot_dog::RecordBag &req, robot_do
                     if(_isRunningChildren())
                     {
                         kill(pid, SIGINT); // 安全终止信号
-                        ROS_INFO("Sent SIGINT to rosbag process (PID: %d)", recorder_pid_);
+                        printf("Sent SIGINT to rosbag process (PID: %d)", recorder_pid_);
                     }
                     recorder_pid_ = -1;
                     return true;
@@ -383,7 +383,7 @@ bool MessageHandleManager::recordBagCallback(robot_dog::RecordBag &req, robot_do
             }
 
             start_record_ = true;
-            ROS_INFO("Rosbag recording started (PID: %d)", pid);
+            printf("Rosbag recording started (PID: %d)", pid);
             rsp.success = true;
             rsp.info = "开始录包";
         }
@@ -422,10 +422,10 @@ bool MessageHandleManager::recordBagCallback(robot_dog::RecordBag &req, robot_do
             argv.push_back(nullptr); // 参数数组以 nullptr 结尾
 
             // 使用 execvp 启动脚本
-            ROS_INFO("children start sh");
+            printf("children start sh");
             if(execvp("/bin/bash", argv.data()) == -1)
             {
-                ROS_INFO("error start sh");
+                printf("error start sh");
                 std::string error = "record failed: " + std::string(strerror(errno));
                 write(pipe_fd[1], error.c_str(), error.length());
                 close(pipe_fd[1]);
@@ -464,7 +464,7 @@ bool MessageHandleManager::recordBagCallback(robot_dog::RecordBag &req, robot_do
 
             recorder_pid_ = pid;
             start_record_ = true;
-            ROS_INFO("Rosbag recording started (PID: %d)", pid);
+            printf("Rosbag recording started (PID: %d)", pid);
             rsp.success = true;
             rsp.info = "开始执行脚本";
         }

@@ -1,0 +1,585 @@
+[0.000000] (-) TimerEvent: {}
+[0.000098] (-) JobUnselected: {'identifier': 'ros2_interface'}
+[0.000126] (perception_msgs) JobQueued: {'identifier': 'perception_msgs', 'dependencies': OrderedDict()}
+[0.000420] (perception_msgs) JobStarted: {'identifier': 'perception_msgs'}
+[0.007504] (perception_msgs) JobProgress: {'identifier': 'perception_msgs', 'progress': 'cmake'}
+[0.007835] (perception_msgs) Command: {'cmd': ['/home/meizan/Qt/Tools/CMake/bin/cmake', '/home/meizan/workspace/athena-robot-dog/modules/message/ros2/src/athena/perception_msgs', '-DCMAKE_INSTALL_PREFIX=/home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs'], 'cwd': '/home/meizan/workspace/athena-robot-dog/modules/message/ros2/build/perception_msgs', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'zh_CN:en_US:en'), ('USER', 'meizan'), ('SSH_CLIENT', '192.168.2.173 58589 22'), ('LC_TIME', 'zh_CN.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/meizan/.vscode-server/cli/servers/Stable-4949701c880d4bdb949e3c0e6b400288da7f474b/server/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/lib:/home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msg/lib:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib:/home/zzy/third_party/x64/lib/boost:/home/zzy/third_party/x64/lib/boost:'), ('BROWSER', '/home/meizan/.vscode-server/cli/servers/Stable-4949701c880d4bdb949e3c0e6b400288da7f474b/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/meizan'), ('OLDPWD', '/home/meizan/workspace/athena-robot-dog/modules'), ('TERM_PROGRAM_VERSION', '1.99.2'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-fb8fced2-2ee6-42f9-a705-72755f633a03.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/meizan/.vscode-server/cli/servers/Stable-4949701c880d4bdb949e3c0e6b400288da7f474b/server/extensions/git/dist/askpass-main.js'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('VSCODE_GIT_ASKPASS_NODE', '/home/meizan/.vscode-server/cli/servers/Stable-4949701c880d4bdb949e3c0e6b400288da7f474b/server/node'), ('SSL_CERT_FILE', '/usr/lib/ssl/certs/ca-certificates.crt'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('COLCON_PREFIX_PATH', '/home/meizan/workspace/athena-robot-dog/modules/message/ros2/install'), ('ROS_DISTRO', 'foxy'), ('LOGNAME', 'meizan'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '902'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/foxy/bin:/home/meizan/Qt/6.5.3/gcc_64/bin:/home/meizan/Qt/Tools/CMake/bin:/home/meizan/.vscode-server/cli/servers/Stable-4949701c880d4bdb949e3c0e6b400288da7f474b/server/bin/remote-cli:/home/meizan/.local/bin:/home/meizan/bin:/home/meizan/Qt/6.5.3/gcc_64/bin:/home/meizan/Qt/Tools/CMake/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/zzy/.fishros/bin/:/opt/nodejs/node-v18.12.1-linux-x64/bin/:/home/zzy/.fishros/bin/:/opt/nodejs/node-v18.12.1-linux-x64/bin/'), ('PAPERSIZE', 'a4'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('SSL_CERT_DIR', '/usr/lib/ssl/certs'), ('LANG', 'zh_CN.UTF-8'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-1fd6bdd323.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs:/home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msg:/opt/ros/foxy'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('ROS_MASTER_URI', 'http://localhost:11311'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/meizan/workspace/athena-robot-dog/modules/message/ros2/build/perception_msgs'), ('LC_ALL', 'en_US.UTF-8'), ('GEMINI_API_KEY', 'AIzaSyBkdyupdpVhL7Dd9iWMim7KX0N3CkFMDio'), ('SSH_CONNECTION', '192.168.2.173 58589 192.168.2.181 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/lib/python3.8/site-packages:/home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msg/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages'), ('ROS_HOSTNAME', 'localhost'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs:/home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msg:/opt/ros/foxy')]), 'shell': False}
+[0.047028] (perception_msgs) StdoutLine: {'line': b'-- The C compiler identification is GNU 9.4.0\n'}
+[0.088643] (perception_msgs) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 9.4.0\n'}
+[0.096503] (perception_msgs) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.099795] (-) TimerEvent: {}
+[0.135931] (perception_msgs) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.151298] (perception_msgs) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.151518] (perception_msgs) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.151866] (perception_msgs) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.155211] (perception_msgs) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.199983] (-) TimerEvent: {}
+[0.204651] (perception_msgs) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.217887] (perception_msgs) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.218196] (perception_msgs) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.218782] (perception_msgs) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.220490] (perception_msgs) StdoutLine: {'line': b'-- Found ament_cmake: 0.9.12 (/opt/ros/foxy/share/ament_cmake/cmake)\n'}
+[0.222950] (perception_msgs) StderrLine: {'line': b'\x1b[33mCMake Warning (dev) at /opt/ros/foxy/share/ament_cmake_core/cmake/core/python.cmake:22 (find_package):\n'}
+[0.223112] (perception_msgs) StderrLine: {'line': b'  Policy CMP0148 is not set: The FindPythonInterp and FindPythonLibs modules\n'}
+[0.223192] (perception_msgs) StderrLine: {'line': b'  are removed.  Run "cmake --help-policy CMP0148" for policy details.  Use\n'}
+[0.223269] (perception_msgs) StderrLine: {'line': b'  the cmake_policy command to set the policy and suppress this warning.\n'}
+[0.223337] (perception_msgs) StderrLine: {'line': b'\n'}
+[0.223396] (perception_msgs) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[0.223458] (perception_msgs) StderrLine: {'line': b'  /opt/ros/foxy/share/ament_cmake_core/cmake/core/all.cmake:53 (include)\n'}
+[0.223507] (perception_msgs) StderrLine: {'line': b'  /opt/ros/foxy/share/ament_cmake_core/cmake/ament_cmake_core-extras.cmake:17 (include)\n'}
+[0.223551] (perception_msgs) StderrLine: {'line': b'  /opt/ros/foxy/share/ament_cmake_core/cmake/ament_cmake_coreConfig.cmake:41 (include)\n'}
+[0.223594] (perception_msgs) StderrLine: {'line': b'  /opt/ros/foxy/share/ament_cmake/cmake/ament_cmake_export_dependencies-extras.cmake:15 (find_package)\n'}
+[0.223637] (perception_msgs) StderrLine: {'line': b'  /opt/ros/foxy/share/ament_cmake/cmake/ament_cmakeConfig.cmake:41 (include)\n'}
+[0.223680] (perception_msgs) StderrLine: {'line': b'  CMakeLists.txt:19 (find_package)\n'}
+[0.223722] (perception_msgs) StderrLine: {'line': b'This warning is for project developers.  Use -Wno-dev to suppress it.\n'}
+[0.223764] (perception_msgs) StderrLine: {'line': b'\x1b[0m\n'}
+[0.238346] (perception_msgs) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3")\n'}
+[0.238553] (perception_msgs) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[0.300171] (-) TimerEvent: {}
+[0.378874] (perception_msgs) StdoutLine: {'line': b'-- Found geometry_msgs: 2.0.5 (/opt/ros/foxy/share/geometry_msgs/cmake)\n'}
+[0.400286] (-) TimerEvent: {}
+[0.401672] (perception_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.406091] (perception_msgs) StdoutLine: {'line': b'-- Found rosidl_adapter: 1.3.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)\n'}
+[0.457812] (perception_msgs) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "1.1.1f")\n'}
+[0.481990] (perception_msgs) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/foxy/include\n'}
+[0.500379] (-) TimerEvent: {}
+[0.540456] (perception_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.595928] (perception_msgs) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.0.1 (/opt/ros/foxy/share/rosidl_default_generators/cmake)\n'}
+[0.600459] (-) TimerEvent: {}
+[0.604447] (perception_msgs) StderrLine: {'line': b'\x1b[33mCMake Warning (dev) at /opt/ros/foxy/share/rosidl_adapter/cmake/rosidl_adapt_interfaces.cmake:40 (find_package):\n'}
+[0.604649] (perception_msgs) StderrLine: {'line': b'  Policy CMP0148 is not set: The FindPythonInterp and FindPythonLibs modules\n'}
+[0.604714] (perception_msgs) StderrLine: {'line': b'  are removed.  Run "cmake --help-policy CMP0148" for policy details.  Use\n'}
+[0.604763] (perception_msgs) StderrLine: {'line': b'  the cmake_policy command to set the policy and suppress this warning.\n'}
+[0.604808] (perception_msgs) StderrLine: {'line': b'\n'}
+[0.604851] (perception_msgs) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[0.604895] (perception_msgs) StderrLine: {'line': b'  /opt/ros/foxy/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:130 (rosidl_adapt_interfaces)\n'}
+[0.604938] (perception_msgs) StderrLine: {'line': b'  CMakeLists.txt:24 (rosidl_generate_interfaces)\n'}
+[0.604981] (perception_msgs) StderrLine: {'line': b'This warning is for project developers.  Use -Wno-dev to suppress it.\n'}
+[0.605024] (perception_msgs) StderrLine: {'line': b'\x1b[0m\n'}
+[0.621054] (perception_msgs) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found version "3.8.10")\n'}
+[0.700641] (-) TimerEvent: {}
+[0.735082] (perception_msgs) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.9.2 (/opt/ros/foxy/share/ament_cmake_ros/cmake)\n'}
+[0.800830] (-) TimerEvent: {}
+[0.818530] (perception_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.824230] (perception_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.825913] (perception_msgs) StderrLine: {'line': b'\x1b[33mCMake Warning (dev) at /opt/ros/foxy/share/rosidl_generator_py/cmake/rosidl_generator_py_generate_interfaces.cmake:20 (find_package):\n'}
+[0.825998] (perception_msgs) StderrLine: {'line': b'  Policy CMP0148 is not set: The FindPythonInterp and FindPythonLibs modules\n'}
+[0.826046] (perception_msgs) StderrLine: {'line': b'  are removed.  Run "cmake --help-policy CMP0148" for policy details.  Use\n'}
+[0.826089] (perception_msgs) StderrLine: {'line': b'  the cmake_policy command to set the policy and suppress this warning.\n'}
+[0.826133] (perception_msgs) StderrLine: {'line': b'\n'}
+[0.826176] (perception_msgs) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[0.826220] (perception_msgs) StderrLine: {'line': b'  /opt/ros/foxy/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)\n'}
+[0.826263] (perception_msgs) StderrLine: {'line': b'  /opt/ros/foxy/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:286 (ament_execute_extensions)\n'}
+[0.826306] (perception_msgs) StderrLine: {'line': b'  CMakeLists.txt:24 (rosidl_generate_interfaces)\n'}
+[0.826363] (perception_msgs) StderrLine: {'line': b'This warning is for project developers.  Use -Wno-dev to suppress it.\n'}
+[0.826406] (perception_msgs) StderrLine: {'line': b'\x1b[0m\n'}
+[0.841539] (perception_msgs) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3.5")\n'}
+[0.842511] (perception_msgs) StdoutLine: {'line': b'-- Found python_cmake_module: 0.8.1 (/opt/ros/foxy/share/python_cmake_module/cmake)\n'}
+[0.842772] (perception_msgs) StderrLine: {'line': b'\x1b[33mCMake Warning (dev) at /opt/ros/foxy/share/python_cmake_module/cmake/Modules/FindPythonExtra.cmake:45 (find_package):\n'}
+[0.842857] (perception_msgs) StderrLine: {'line': b'  Policy CMP0148 is not set: The FindPythonInterp and FindPythonLibs modules\n'}
+[0.842906] (perception_msgs) StderrLine: {'line': b'  are removed.  Run "cmake --help-policy CMP0148" for policy details.  Use\n'}
+[0.842951] (perception_msgs) StderrLine: {'line': b'  the cmake_policy command to set the policy and suppress this warning.\n'}
+[0.842995] (perception_msgs) StderrLine: {'line': b'\n'}
+[0.843037] (perception_msgs) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[0.843083] (perception_msgs) StderrLine: {'line': b'  /opt/ros/foxy/share/rosidl_generator_py/cmake/rosidl_generator_py_generate_interfaces.cmake:23 (find_package)\n'}
+[0.843125] (perception_msgs) StderrLine: {'line': b'  /opt/ros/foxy/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)\n'}
+[0.843168] (perception_msgs) StderrLine: {'line': b'  /opt/ros/foxy/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:286 (ament_execute_extensions)\n'}
+[0.843210] (perception_msgs) StderrLine: {'line': b'  CMakeLists.txt:24 (rosidl_generate_interfaces)\n'}
+[0.843252] (perception_msgs) StderrLine: {'line': b'This warning is for project developers.  Use -Wno-dev to suppress it.\n'}
+[0.843294] (perception_msgs) StderrLine: {'line': b'\x1b[0m\n'}
+[0.858483] (perception_msgs) StderrLine: {'line': b'\x1b[33mCMake Warning (dev) at /opt/ros/foxy/share/python_cmake_module/cmake/Modules/FindPythonExtra.cmake:133 (find_package):\n'}
+[0.858650] (perception_msgs) StderrLine: {'line': b'  Policy CMP0148 is not set: The FindPythonInterp and FindPythonLibs modules\n'}
+[0.858701] (perception_msgs) StderrLine: {'line': b'  are removed.  Run "cmake --help-policy CMP0148" for policy details.  Use\n'}
+[0.858746] (perception_msgs) StderrLine: {'line': b'  the cmake_policy command to set the policy and suppress this warning.\n'}
+[0.858796] (perception_msgs) StderrLine: {'line': b'\n'}
+[0.858838] (perception_msgs) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[0.858881] (perception_msgs) StderrLine: {'line': b'  /opt/ros/foxy/share/rosidl_generator_py/cmake/rosidl_generator_py_generate_interfaces.cmake:23 (find_package)\n'}
+[0.858923] (perception_msgs) StderrLine: {'line': b'  /opt/ros/foxy/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)\n'}
+[0.858964] (perception_msgs) StderrLine: {'line': b'  /opt/ros/foxy/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:286 (ament_execute_extensions)\n'}
+[0.859006] (perception_msgs) StderrLine: {'line': b'  CMakeLists.txt:24 (rosidl_generate_interfaces)\n'}
+[0.859047] (perception_msgs) StderrLine: {'line': b'This warning is for project developers.  Use -Wno-dev to suppress it.\n'}
+[0.859089] (perception_msgs) StderrLine: {'line': b'\x1b[0m\n'}
+[0.863391] (perception_msgs) StdoutLine: {'line': b'-- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.8.so (found suitable version "3.8.10", minimum required is "3.5")\n'}
+[0.863618] (perception_msgs) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[0.863678] (perception_msgs) StdoutLine: {'line': b'-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.8\n'}
+[0.863725] (perception_msgs) StdoutLine: {'line': b'-- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.8.so\n'}
+[0.879324] (perception_msgs) StdoutLine: {'line': b'-- Found PythonExtra: .so\n'}
+[0.901019] (-) TimerEvent: {}
+[0.907058] (perception_msgs) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.9.8 (/opt/ros/foxy/share/ament_lint_auto/cmake)\n'}
+[0.919757] (perception_msgs) StdoutLine: {'line': b"-- Added test 'copyright' to check source files copyright and LICENSE\n"}
+[0.921528] (perception_msgs) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[0.922559] (perception_msgs) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[0.924503] (perception_msgs) StdoutLine: {'line': b'-- Configuring done (0.9s)\n'}
+[0.959380] (perception_msgs) StdoutLine: {'line': b'-- Generating done (0.0s)\n'}
+[0.965859] (perception_msgs) StdoutLine: {'line': b'-- Build files have been written to: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/build/perception_msgs\n'}
+[0.971806] (perception_msgs) CommandEnded: {'returncode': 0}
+[0.972334] (perception_msgs) JobProgress: {'identifier': 'perception_msgs', 'progress': 'build'}
+[0.973017] (perception_msgs) Command: {'cmd': ['/home/meizan/Qt/Tools/CMake/bin/cmake', '--build', '/home/meizan/workspace/athena-robot-dog/modules/message/ros2/build/perception_msgs', '--', '-j8', '-l8'], 'cwd': '/home/meizan/workspace/athena-robot-dog/modules/message/ros2/build/perception_msgs', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'zh_CN:en_US:en'), ('USER', 'meizan'), ('SSH_CLIENT', '192.168.2.173 58589 22'), ('LC_TIME', 'zh_CN.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/meizan/.vscode-server/cli/servers/Stable-4949701c880d4bdb949e3c0e6b400288da7f474b/server/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/lib:/home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msg/lib:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib:/home/zzy/third_party/x64/lib/boost:/home/zzy/third_party/x64/lib/boost:'), ('BROWSER', '/home/meizan/.vscode-server/cli/servers/Stable-4949701c880d4bdb949e3c0e6b400288da7f474b/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/meizan'), ('OLDPWD', '/home/meizan/workspace/athena-robot-dog/modules'), ('TERM_PROGRAM_VERSION', '1.99.2'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-fb8fced2-2ee6-42f9-a705-72755f633a03.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/meizan/.vscode-server/cli/servers/Stable-4949701c880d4bdb949e3c0e6b400288da7f474b/server/extensions/git/dist/askpass-main.js'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('VSCODE_GIT_ASKPASS_NODE', '/home/meizan/.vscode-server/cli/servers/Stable-4949701c880d4bdb949e3c0e6b400288da7f474b/server/node'), ('SSL_CERT_FILE', '/usr/lib/ssl/certs/ca-certificates.crt'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('COLCON_PREFIX_PATH', '/home/meizan/workspace/athena-robot-dog/modules/message/ros2/install'), ('ROS_DISTRO', 'foxy'), ('LOGNAME', 'meizan'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '902'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/foxy/bin:/home/meizan/Qt/6.5.3/gcc_64/bin:/home/meizan/Qt/Tools/CMake/bin:/home/meizan/.vscode-server/cli/servers/Stable-4949701c880d4bdb949e3c0e6b400288da7f474b/server/bin/remote-cli:/home/meizan/.local/bin:/home/meizan/bin:/home/meizan/Qt/6.5.3/gcc_64/bin:/home/meizan/Qt/Tools/CMake/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/zzy/.fishros/bin/:/opt/nodejs/node-v18.12.1-linux-x64/bin/:/home/zzy/.fishros/bin/:/opt/nodejs/node-v18.12.1-linux-x64/bin/'), ('PAPERSIZE', 'a4'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('SSL_CERT_DIR', '/usr/lib/ssl/certs'), ('LANG', 'zh_CN.UTF-8'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-1fd6bdd323.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs:/home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msg:/opt/ros/foxy'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('ROS_MASTER_URI', 'http://localhost:11311'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/meizan/workspace/athena-robot-dog/modules/message/ros2/build/perception_msgs'), ('LC_ALL', 'en_US.UTF-8'), ('GEMINI_API_KEY', 'AIzaSyBkdyupdpVhL7Dd9iWMim7KX0N3CkFMDio'), ('SSH_CONNECTION', '192.168.2.173 58589 192.168.2.181 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/lib/python3.8/site-packages:/home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msg/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages'), ('ROS_HOSTNAME', 'localhost'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs:/home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msg:/opt/ros/foxy')]), 'shell': False}
+[0.987716] (perception_msgs) StdoutLine: {'line': b'[  1%] \x1b[34m\x1b[1mGenerating C code for ROS interfaces\x1b[0m\n'}
+[0.990616] (perception_msgs) StdoutLine: {'line': b'[  2%] \x1b[34m\x1b[1mGenerating C++ code for ROS interfaces\x1b[0m\n'}
+[1.001127] (-) TimerEvent: {}
+[1.101571] (-) TimerEvent: {}
+[1.201914] (-) TimerEvent: {}
+[1.302267] (-) TimerEvent: {}
+[1.402611] (-) TimerEvent: {}
+[1.502957] (-) TimerEvent: {}
+[1.603275] (-) TimerEvent: {}
+[1.703670] (-) TimerEvent: {}
+[1.804027] (-) TimerEvent: {}
+[1.892150] (perception_msgs) StdoutLine: {'line': b'[  2%] Built target perception_msgs__cpp\n'}
+[1.895365] (perception_msgs) StdoutLine: {'line': b'[  5%] \x1b[34m\x1b[1mGenerating C++ introspection for ROS interfaces\x1b[0m\n'}
+[1.895612] (perception_msgs) StdoutLine: {'line': b'[  5%] \x1b[34m\x1b[1mGenerating C++ type support dispatch for ROS interfaces\x1b[0m\n'}
+[1.895717] (perception_msgs) StdoutLine: {'line': b'[  5%] \x1b[34m\x1b[1mGenerating C++ type support for eProsima Fast-RTPS\x1b[0m\n'}
+[1.904134] (-) TimerEvent: {}
+[1.929051] (perception_msgs) StdoutLine: {'line': b'[  6%] \x1b[32mBuilding C object CMakeFiles/perception_msgs__rosidl_generator_c.dir/rosidl_generator_c/perception_msgs/msg/detail/alarm_entry__functions.c.o\x1b[0m\n'}
+[1.929275] (perception_msgs) StdoutLine: {'line': b'[  8%] \x1b[32mBuilding C object CMakeFiles/perception_msgs__rosidl_generator_c.dir/rosidl_generator_c/perception_msgs/msg/detail/action_entry__functions.c.o\x1b[0m\n'}
+[1.929431] (perception_msgs) StdoutLine: {'line': b'[  9%] \x1b[32mBuilding C object CMakeFiles/perception_msgs__rosidl_generator_c.dir/rosidl_generator_c/perception_msgs/msg/detail/perc_cmd__functions.c.o\x1b[0m\n'}
+[1.929532] (perception_msgs) StdoutLine: {'line': b'[ 10%] \x1b[32mBuilding C object CMakeFiles/perception_msgs__rosidl_generator_c.dir/rosidl_generator_c/perception_msgs/msg/detail/perc_state__functions.c.o\x1b[0m\n'}
+[1.933405] (perception_msgs) StdoutLine: {'line': b'[ 11%] \x1b[32mBuilding C object CMakeFiles/perception_msgs__rosidl_generator_c.dir/rosidl_generator_c/perception_msgs/msg/detail/perc_req__functions.c.o\x1b[0m\n'}
+[1.976601] (perception_msgs) StdoutLine: {'line': b'[ 12%] \x1b[32mBuilding C object CMakeFiles/perception_msgs__rosidl_generator_c.dir/rosidl_generator_c/perception_msgs/msg/detail/task_list__functions.c.o\x1b[0m\n'}
+[1.979538] (perception_msgs) StdoutLine: {'line': b'[ 13%] \x1b[32mBuilding C object CMakeFiles/perception_msgs__rosidl_generator_c.dir/rosidl_generator_c/perception_msgs/msg/detail/dog_state__functions.c.o\x1b[0m\n'}
+[1.980650] (perception_msgs) StdoutLine: {'line': b'[ 14%] \x1b[32mBuilding C object CMakeFiles/perception_msgs__rosidl_generator_c.dir/rosidl_generator_c/perception_msgs/srv/detail/dog_record_bag__functions.c.o\x1b[0m\n'}
+[2.004306] (-) TimerEvent: {}
+[2.038872] (perception_msgs) StdoutLine: {'line': b'[ 16%] \x1b[32m\x1b[1mLinking C shared library libperception_msgs__rosidl_generator_c.so\x1b[0m\n'}
+[2.057125] (perception_msgs) StdoutLine: {'line': b'[ 16%] Built target perception_msgs__rosidl_generator_c\n'}
+[2.060178] (perception_msgs) StdoutLine: {'line': b'[ 17%] \x1b[34m\x1b[1mGenerating C introspection for ROS interfaces\x1b[0m\n'}
+[2.060510] (perception_msgs) StdoutLine: {'line': b'[ 18%] \x1b[34m\x1b[1mGenerating C type support dispatch for ROS interfaces\x1b[0m\n'}
+[2.104399] (-) TimerEvent: {}
+[2.204830] (-) TimerEvent: {}
+[2.305162] (-) TimerEvent: {}
+[2.405488] (-) TimerEvent: {}
+[2.505852] (-) TimerEvent: {}
+[2.606202] (-) TimerEvent: {}
+[2.706579] (-) TimerEvent: {}
+[2.806891] (-) TimerEvent: {}
+[2.835264] (perception_msgs) StdoutLine: {'line': b'[ 19%] \x1b[32mBuilding CXX object CMakeFiles/perception_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/perception_msgs/msg/detail/action_entry__type_support.cpp.o\x1b[0m\n'}
+[2.836639] (perception_msgs) StdoutLine: {'line': b'[ 20%] \x1b[32mBuilding CXX object CMakeFiles/perception_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/perception_msgs/msg/detail/alarm_entry__type_support.cpp.o\x1b[0m\n'}
+[2.836877] (perception_msgs) StdoutLine: {'line': b'[ 22%] \x1b[32mBuilding CXX object CMakeFiles/perception_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/perception_msgs/msg/detail/perc_state__type_support.cpp.o\x1b[0m\n'}
+[2.836974] (perception_msgs) StdoutLine: {'line': b'[ 22%] \x1b[32mBuilding CXX object CMakeFiles/perception_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/perception_msgs/msg/detail/perc_cmd__type_support.cpp.o\x1b[0m\n'}
+[2.906996] (-) TimerEvent: {}
+[3.007338] (-) TimerEvent: {}
+[3.103775] (perception_msgs) StdoutLine: {'line': b'[ 24%] \x1b[32mBuilding CXX object CMakeFiles/perception_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/perception_msgs/msg/action_entry__type_support.cpp.o\x1b[0m\n'}
+[3.107439] (-) TimerEvent: {}
+[3.143511] (perception_msgs) StdoutLine: {'line': b'[ 25%] \x1b[32mBuilding CXX object CMakeFiles/perception_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/perception_msgs/msg/alarm_entry__type_support.cpp.o\x1b[0m\n'}
+[3.172629] (perception_msgs) StdoutLine: {'line': b'[ 26%] \x1b[32mBuilding CXX object CMakeFiles/perception_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/perception_msgs/msg/perc_cmd__type_support.cpp.o\x1b[0m\n'}
+[3.183836] (perception_msgs) StdoutLine: {'line': b'[ 27%] \x1b[32mBuilding CXX object CMakeFiles/perception_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/perception_msgs/msg/detail/perc_req__type_support.cpp.o\x1b[0m\n'}
+[3.191787] (perception_msgs) StdoutLine: {'line': b'[ 28%] \x1b[32mBuilding CXX object CMakeFiles/perception_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/perception_msgs/msg/detail/task_list__type_support.cpp.o\x1b[0m\n'}
+[3.193817] (perception_msgs) StdoutLine: {'line': b'[ 29%] \x1b[32mBuilding CXX object CMakeFiles/perception_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/perception_msgs/msg/detail/dog_state__type_support.cpp.o\x1b[0m\n'}
+[3.200070] (perception_msgs) StdoutLine: {'line': b'[ 31%] \x1b[32mBuilding CXX object CMakeFiles/perception_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/perception_msgs/srv/detail/dog_record_bag__type_support.cpp.o\x1b[0m\n'}
+[3.201205] (perception_msgs) StdoutLine: {'line': b'[ 32%] \x1b[32mBuilding CXX object CMakeFiles/perception_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/perception_msgs/msg/perc_state__type_support.cpp.o\x1b[0m\n'}
+[3.207560] (-) TimerEvent: {}
+[3.231734] (perception_msgs) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/perception_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/perception_msgs/msg/perc_req__type_support.cpp.o\x1b[0m\n'}
+[3.261407] (perception_msgs) StdoutLine: {'line': b'[ 34%] \x1b[32mBuilding CXX object CMakeFiles/perception_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/perception_msgs/msg/task_list__type_support.cpp.o\x1b[0m\n'}
+[3.277886] (perception_msgs) StdoutLine: {'line': b'[ 35%] \x1b[32mBuilding C object CMakeFiles/perception_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/perception_msgs/msg/detail/action_entry__type_support.c.o\x1b[0m\n'}
+[3.295174] (perception_msgs) StdoutLine: {'line': b'[ 36%] \x1b[32mBuilding CXX object CMakeFiles/perception_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/perception_msgs/msg/dog_state__type_support.cpp.o\x1b[0m\n'}
+[3.307669] (-) TimerEvent: {}
+[3.315207] (perception_msgs) StdoutLine: {'line': b'[ 37%] \x1b[32mBuilding C object CMakeFiles/perception_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/perception_msgs/msg/detail/alarm_entry__type_support.c.o\x1b[0m\n'}
+[3.330708] (perception_msgs) StdoutLine: {'line': b'[ 39%] \x1b[32mBuilding CXX object CMakeFiles/perception_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/perception_msgs/srv/dog_record_bag__type_support.cpp.o\x1b[0m\n'}
+[3.348990] (perception_msgs) StdoutLine: {'line': b'[ 40%] \x1b[32mBuilding C object CMakeFiles/perception_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/perception_msgs/msg/detail/perc_cmd__type_support.c.o\x1b[0m\n'}
+[3.363375] (perception_msgs) StdoutLine: {'line': b'[ 41%] \x1b[32m\x1b[1mLinking CXX shared library libperception_msgs__rosidl_typesupport_c.so\x1b[0m\n'}
+[3.396117] (perception_msgs) StdoutLine: {'line': b'[ 42%] \x1b[32mBuilding C object CMakeFiles/perception_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/perception_msgs/msg/detail/perc_state__type_support.c.o\x1b[0m\n'}
+[3.406406] (perception_msgs) StdoutLine: {'line': b'[ 42%] Built target perception_msgs__rosidl_typesupport_c\n'}
+[3.406666] (perception_msgs) StdoutLine: {'line': b'[ 43%] \x1b[32mBuilding C object CMakeFiles/perception_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/perception_msgs/msg/detail/perc_req__type_support.c.o\x1b[0m\n'}
+[3.407746] (-) TimerEvent: {}
+[3.440528] (perception_msgs) StdoutLine: {'line': b'[ 44%] \x1b[32mBuilding C object CMakeFiles/perception_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/perception_msgs/msg/detail/task_list__type_support.c.o\x1b[0m\n'}
+[3.468916] (perception_msgs) StdoutLine: {'line': b'[ 45%] \x1b[32mBuilding C object CMakeFiles/perception_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/perception_msgs/msg/detail/dog_state__type_support.c.o\x1b[0m\n'}
+[3.493591] (perception_msgs) StdoutLine: {'line': b'[ 47%] \x1b[32mBuilding C object CMakeFiles/perception_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/perception_msgs/srv/detail/dog_record_bag__type_support.c.o\x1b[0m\n'}
+[3.507858] (-) TimerEvent: {}
+[3.519006] (perception_msgs) StdoutLine: {'line': b'[ 48%] \x1b[32mBuilding CXX object CMakeFiles/perception_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/perception_msgs/msg/alarm_entry__type_support.cpp.o\x1b[0m\n'}
+[3.520278] (perception_msgs) StdoutLine: {'line': b'[ 49%] \x1b[32mBuilding CXX object CMakeFiles/perception_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/perception_msgs/msg/action_entry__type_support.cpp.o\x1b[0m\n'}
+[3.533330] (perception_msgs) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/perception_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/perception_msgs/msg/perc_cmd__type_support.cpp.o\x1b[0m\n'}
+[3.534495] (perception_msgs) StdoutLine: {'line': b'[ 51%] \x1b[32mBuilding CXX object CMakeFiles/perception_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/perception_msgs/msg/perc_state__type_support.cpp.o\x1b[0m\n'}
+[3.537419] (perception_msgs) StdoutLine: {'line': b'[ 52%] \x1b[32m\x1b[1mLinking C shared library libperception_msgs__rosidl_typesupport_introspection_c.so\x1b[0m\n'}
+[3.607981] (-) TimerEvent: {}
+[3.631543] (perception_msgs) StdoutLine: {'line': b'[ 52%] Built target perception_msgs__rosidl_typesupport_introspection_c\n'}
+[3.635767] (perception_msgs) StdoutLine: {'line': b'[ 54%] \x1b[32mBuilding CXX object CMakeFiles/perception_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/perception_msgs/msg/perc_req__type_support.cpp.o\x1b[0m\n'}
+[3.648940] (perception_msgs) StdoutLine: {'line': b'[ 55%] \x1b[32m\x1b[1mLinking CXX shared library libperception_msgs__rosidl_typesupport_introspection_cpp.so\x1b[0m\n'}
+[3.655892] (perception_msgs) StdoutLine: {'line': b'[ 56%] \x1b[32mBuilding CXX object CMakeFiles/perception_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/perception_msgs/msg/task_list__type_support.cpp.o\x1b[0m\n'}
+[3.710418] (-) TimerEvent: {}
+[3.759096] (perception_msgs) StdoutLine: {'line': b'[ 56%] Built target perception_msgs__rosidl_typesupport_introspection_cpp\n'}
+[3.765025] (perception_msgs) StdoutLine: {'line': b'[ 57%] \x1b[32mBuilding CXX object CMakeFiles/perception_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/perception_msgs/msg/dog_state__type_support.cpp.o\x1b[0m\n'}
+[3.785259] (perception_msgs) StdoutLine: {'line': b'[ 58%] \x1b[32mBuilding CXX object CMakeFiles/perception_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/perception_msgs/msg/detail/dds_fastrtps/action_entry__type_support.cpp.o\x1b[0m\n'}
+[3.810528] (-) TimerEvent: {}
+[3.870628] (perception_msgs) StdoutLine: {'line': b'[ 59%] \x1b[32mBuilding CXX object CMakeFiles/perception_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/perception_msgs/srv/dog_record_bag__type_support.cpp.o\x1b[0m\n'}
+[3.878721] (perception_msgs) StdoutLine: {'line': b'[ 60%] \x1b[32mBuilding CXX object CMakeFiles/perception_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/perception_msgs/msg/detail/dds_fastrtps/alarm_entry__type_support.cpp.o\x1b[0m\n'}
+[3.879070] (perception_msgs) StdoutLine: {'line': b'[ 62%] \x1b[32mBuilding CXX object CMakeFiles/perception_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/perception_msgs/msg/detail/dds_fastrtps/perc_state__type_support.cpp.o\x1b[0m\n'}
+[3.881116] (perception_msgs) StdoutLine: {'line': b'[ 63%] \x1b[32mBuilding CXX object CMakeFiles/perception_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/perception_msgs/msg/detail/dds_fastrtps/perc_cmd__type_support.cpp.o\x1b[0m\n'}
+[3.910640] (-) TimerEvent: {}
+[3.996254] (perception_msgs) StdoutLine: {'line': b'[ 64%] \x1b[32mBuilding CXX object CMakeFiles/perception_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/perception_msgs/msg/detail/dds_fastrtps/perc_req__type_support.cpp.o\x1b[0m\n'}
+[4.010756] (-) TimerEvent: {}
+[4.099306] (perception_msgs) StdoutLine: {'line': b'[ 65%] \x1b[32mBuilding CXX object CMakeFiles/perception_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/perception_msgs/msg/detail/dds_fastrtps/task_list__type_support.cpp.o\x1b[0m\n'}
+[4.105690] (perception_msgs) StdoutLine: {'line': b'[ 66%] \x1b[32mBuilding CXX object CMakeFiles/perception_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/perception_msgs/msg/detail/dds_fastrtps/dog_state__type_support.cpp.o\x1b[0m\n'}
+[4.110876] (-) TimerEvent: {}
+[4.211259] (-) TimerEvent: {}
+[4.311639] (-) TimerEvent: {}
+[4.412057] (-) TimerEvent: {}
+[4.413225] (perception_msgs) StdoutLine: {'line': b'[ 67%] \x1b[32m\x1b[1mLinking CXX shared library libperception_msgs__rosidl_typesupport_cpp.so\x1b[0m\n'}
+[4.423923] (perception_msgs) StdoutLine: {'line': b'[ 68%] \x1b[32mBuilding CXX object CMakeFiles/perception_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/perception_msgs/srv/detail/dds_fastrtps/dog_record_bag__type_support.cpp.o\x1b[0m\n'}
+[4.490117] (perception_msgs) StdoutLine: {'line': b'[ 68%] Built target perception_msgs__rosidl_typesupport_cpp\n'}
+[4.512180] (-) TimerEvent: {}
+[4.612617] (-) TimerEvent: {}
+[4.713072] (-) TimerEvent: {}
+[4.813519] (-) TimerEvent: {}
+[4.913980] (-) TimerEvent: {}
+[5.014415] (-) TimerEvent: {}
+[5.063420] (perception_msgs) StdoutLine: {'line': b'[ 70%] \x1b[32m\x1b[1mLinking CXX shared library libperception_msgs__rosidl_typesupport_fastrtps_cpp.so\x1b[0m\n'}
+[5.114527] (-) TimerEvent: {}
+[5.161760] (perception_msgs) StdoutLine: {'line': b'[ 70%] Built target perception_msgs__rosidl_typesupport_fastrtps_cpp\n'}
+[5.167328] (perception_msgs) StdoutLine: {'line': b'[ 71%] \x1b[34m\x1b[1mGenerating C type support for eProsima Fast-RTPS\x1b[0m\n'}
+[5.214627] (-) TimerEvent: {}
+[5.314999] (-) TimerEvent: {}
+[5.415394] (-) TimerEvent: {}
+[5.515771] (-) TimerEvent: {}
+[5.616164] (-) TimerEvent: {}
+[5.716549] (-) TimerEvent: {}
+[5.816917] (-) TimerEvent: {}
+[5.917308] (-) TimerEvent: {}
+[6.017813] (-) TimerEvent: {}
+[6.118251] (-) TimerEvent: {}
+[6.218587] (-) TimerEvent: {}
+[6.318983] (-) TimerEvent: {}
+[6.419381] (-) TimerEvent: {}
+[6.519705] (-) TimerEvent: {}
+[6.620097] (-) TimerEvent: {}
+[6.644591] (perception_msgs) StdoutLine: {'line': b'[ 73%] \x1b[32mBuilding CXX object CMakeFiles/perception_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/perception_msgs/msg/detail/action_entry__type_support_c.cpp.o\x1b[0m\n'}
+[6.644892] (perception_msgs) StdoutLine: {'line': b'[ 74%] \x1b[32mBuilding CXX object CMakeFiles/perception_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/perception_msgs/msg/detail/perc_cmd__type_support_c.cpp.o\x1b[0m\n'}
+[6.645010] (perception_msgs) StdoutLine: {'line': b'[ 77%] \x1b[32mBuilding CXX object CMakeFiles/perception_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/perception_msgs/msg/detail/alarm_entry__type_support_c.cpp.o\x1b[0m\n'}
+[6.645176] (perception_msgs) StdoutLine: {'line': b'[ 79%] \x1b[32mBuilding CXX object CMakeFiles/perception_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/perception_msgs/srv/detail/dog_record_bag__type_support_c.cpp.o\x1b[0m\n'}
+[6.645279] (perception_msgs) StdoutLine: {'line': b'[ 80%] \x1b[32mBuilding CXX object CMakeFiles/perception_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/perception_msgs/msg/detail/perc_state__type_support_c.cpp.o\x1b[0m\n'}
+[6.645376] (perception_msgs) StdoutLine: {'line': b'[ 80%] \x1b[32mBuilding CXX object CMakeFiles/perception_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/perception_msgs/msg/detail/dog_state__type_support_c.cpp.o\x1b[0m\n'}
+[6.645513] (perception_msgs) StdoutLine: {'line': b'[ 80%] \x1b[32mBuilding CXX object CMakeFiles/perception_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/perception_msgs/msg/detail/perc_req__type_support_c.cpp.o\x1b[0m\n'}
+[6.645788] (perception_msgs) StdoutLine: {'line': b'[ 80%] \x1b[32mBuilding CXX object CMakeFiles/perception_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/perception_msgs/msg/detail/task_list__type_support_c.cpp.o\x1b[0m\n'}
+[6.720233] (-) TimerEvent: {}
+[6.820662] (-) TimerEvent: {}
+[6.921125] (-) TimerEvent: {}
+[7.021585] (-) TimerEvent: {}
+[7.122072] (-) TimerEvent: {}
+[7.222578] (-) TimerEvent: {}
+[7.323063] (-) TimerEvent: {}
+[7.423583] (-) TimerEvent: {}
+[7.440598] (perception_msgs) StdoutLine: {'line': b'[ 81%] \x1b[32m\x1b[1mLinking CXX shared library libperception_msgs__rosidl_typesupport_fastrtps_c.so\x1b[0m\n'}
+[7.523707] (-) TimerEvent: {}
+[7.562169] (perception_msgs) StdoutLine: {'line': b'[ 81%] Built target perception_msgs__rosidl_typesupport_fastrtps_c\n'}
+[7.572911] (perception_msgs) StdoutLine: {'line': b'[ 81%] Built target perception_msgs\n'}
+[7.584537] (perception_msgs) StdoutLine: {'line': b'[ 82%] \x1b[34m\x1b[1mGenerating Python code for ROS interfaces\x1b[0m\n'}
+[7.623896] (-) TimerEvent: {}
+[7.724357] (-) TimerEvent: {}
+[7.824836] (-) TimerEvent: {}
+[7.925270] (-) TimerEvent: {}
+[8.025669] (-) TimerEvent: {}
+[8.126084] (-) TimerEvent: {}
+[8.226486] (-) TimerEvent: {}
+[8.326843] (-) TimerEvent: {}
+[8.427247] (-) TimerEvent: {}
+[8.527586] (-) TimerEvent: {}
+[8.627959] (-) TimerEvent: {}
+[8.728373] (-) TimerEvent: {}
+[8.828765] (-) TimerEvent: {}
+[8.929092] (-) TimerEvent: {}
+[9.029461] (-) TimerEvent: {}
+[9.129859] (-) TimerEvent: {}
+[9.230265] (-) TimerEvent: {}
+[9.330661] (-) TimerEvent: {}
+[9.431015] (-) TimerEvent: {}
+[9.531418] (-) TimerEvent: {}
+[9.631801] (-) TimerEvent: {}
+[9.732166] (-) TimerEvent: {}
+[9.832495] (-) TimerEvent: {}
+[9.932880] (-) TimerEvent: {}
+[9.996250] (perception_msgs) StdoutLine: {'line': b'[ 82%] Built target perception_msgs__py\n'}
+[10.004333] (perception_msgs) StdoutLine: {'line': b'[ 85%] \x1b[32mBuilding C object CMakeFiles/perception_msgs__python.dir/rosidl_generator_py/perception_msgs/msg/_alarm_entry_s.c.o\x1b[0m\n'}
+[10.004683] (perception_msgs) StdoutLine: {'line': b'[ 86%] \x1b[32mBuilding C object CMakeFiles/perception_msgs__python.dir/rosidl_generator_py/perception_msgs/msg/_perc_cmd_s.c.o\x1b[0m\n'}
+[10.004835] (perception_msgs) StdoutLine: {'line': b'[ 87%] \x1b[32mBuilding C object CMakeFiles/perception_msgs__python.dir/rosidl_generator_py/perception_msgs/msg/_perc_req_s.c.o\x1b[0m\n'}
+[10.005056] (perception_msgs) StdoutLine: {'line': b'[ 88%] \x1b[32mBuilding C object CMakeFiles/perception_msgs__python.dir/rosidl_generator_py/perception_msgs/msg/_task_list_s.c.o\x1b[0m\n'}
+[10.005236] (perception_msgs) StdoutLine: {'line': b'[ 88%] \x1b[32mBuilding C object CMakeFiles/perception_msgs__python.dir/rosidl_generator_py/perception_msgs/msg/_action_entry_s.c.o\x1b[0m\n'}
+[10.005385] (perception_msgs) StdoutLine: {'line': b'[ 89%] \x1b[32mBuilding C object CMakeFiles/perception_msgs__python.dir/rosidl_generator_py/perception_msgs/msg/_perc_state_s.c.o\x1b[0m\n'}
+[10.005974] (perception_msgs) StdoutLine: {'line': b'[ 90%] \x1b[32mBuilding C object CMakeFiles/perception_msgs__python.dir/rosidl_generator_py/perception_msgs/msg/_dog_state_s.c.o\x1b[0m\n'}
+[10.006923] (perception_msgs) StdoutLine: {'line': b'[ 91%] \x1b[32mBuilding C object CMakeFiles/perception_msgs__python.dir/rosidl_generator_py/perception_msgs/srv/_dog_record_bag_s.c.o\x1b[0m\n'}
+[10.033018] (-) TimerEvent: {}
+[10.134501] (-) TimerEvent: {}
+[10.166535] (perception_msgs) StdoutLine: {'line': b'[ 93%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/perception_msgs/libperception_msgs__python.so\x1b[0m\n'}
+[10.198105] (perception_msgs) StdoutLine: {'line': b'[ 93%] Built target perception_msgs__python\n'}
+[10.206721] (perception_msgs) StdoutLine: {'line': b'[ 94%] \x1b[32mBuilding C object CMakeFiles/perception_msgs__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/perception_msgs/_perception_msgs_s.ep.rosidl_typesupport_fastrtps_c.c.o\x1b[0m\n'}
+[10.207030] (perception_msgs) StdoutLine: {'line': b'[ 95%] \x1b[32mBuilding C object CMakeFiles/perception_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/perception_msgs/_perception_msgs_s.ep.rosidl_typesupport_introspection_c.c.o\x1b[0m\n'}
+[10.207168] (perception_msgs) StdoutLine: {'line': b'[ 96%] \x1b[32mBuilding C object CMakeFiles/perception_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/perception_msgs/_perception_msgs_s.ep.rosidl_typesupport_c.c.o\x1b[0m\n'}
+[10.234626] (-) TimerEvent: {}
+[10.319592] (perception_msgs) StdoutLine: {'line': b'[ 97%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/perception_msgs/perception_msgs_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so\x1b[0m\n'}
+[10.319997] (perception_msgs) StdoutLine: {'line': b'[ 98%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/perception_msgs/perception_msgs_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so\x1b[0m\n'}
+[10.323895] (perception_msgs) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX shared library rosidl_generator_py/perception_msgs/perception_msgs_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so\x1b[0m\n'}
+[10.334754] (-) TimerEvent: {}
+[10.344263] (perception_msgs) StdoutLine: {'line': b'[100%] Built target perception_msgs__rosidl_typesupport_c__pyext\n'}
+[10.345009] (perception_msgs) StdoutLine: {'line': b'[100%] Built target perception_msgs__rosidl_typesupport_introspection_c__pyext\n'}
+[10.382165] (perception_msgs) StdoutLine: {'line': b'[100%] Built target perception_msgs__rosidl_typesupport_fastrtps_c__pyext\n'}
+[10.388003] (perception_msgs) CommandEnded: {'returncode': 0}
+[10.388859] (perception_msgs) JobProgress: {'identifier': 'perception_msgs', 'progress': 'install'}
+[10.393565] (perception_msgs) Command: {'cmd': ['/home/meizan/Qt/Tools/CMake/bin/cmake', '--install', '/home/meizan/workspace/athena-robot-dog/modules/message/ros2/build/perception_msgs'], 'cwd': '/home/meizan/workspace/athena-robot-dog/modules/message/ros2/build/perception_msgs', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'zh_CN:en_US:en'), ('USER', 'meizan'), ('SSH_CLIENT', '192.168.2.173 58589 22'), ('LC_TIME', 'zh_CN.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/meizan/.vscode-server/cli/servers/Stable-4949701c880d4bdb949e3c0e6b400288da7f474b/server/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/lib:/home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msg/lib:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib:/home/zzy/third_party/x64/lib/boost:/home/zzy/third_party/x64/lib/boost:'), ('BROWSER', '/home/meizan/.vscode-server/cli/servers/Stable-4949701c880d4bdb949e3c0e6b400288da7f474b/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/meizan'), ('OLDPWD', '/home/meizan/workspace/athena-robot-dog/modules'), ('TERM_PROGRAM_VERSION', '1.99.2'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-fb8fced2-2ee6-42f9-a705-72755f633a03.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/meizan/.vscode-server/cli/servers/Stable-4949701c880d4bdb949e3c0e6b400288da7f474b/server/extensions/git/dist/askpass-main.js'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('VSCODE_GIT_ASKPASS_NODE', '/home/meizan/.vscode-server/cli/servers/Stable-4949701c880d4bdb949e3c0e6b400288da7f474b/server/node'), ('SSL_CERT_FILE', '/usr/lib/ssl/certs/ca-certificates.crt'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('COLCON_PREFIX_PATH', '/home/meizan/workspace/athena-robot-dog/modules/message/ros2/install'), ('ROS_DISTRO', 'foxy'), ('LOGNAME', 'meizan'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '902'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/foxy/bin:/home/meizan/Qt/6.5.3/gcc_64/bin:/home/meizan/Qt/Tools/CMake/bin:/home/meizan/.vscode-server/cli/servers/Stable-4949701c880d4bdb949e3c0e6b400288da7f474b/server/bin/remote-cli:/home/meizan/.local/bin:/home/meizan/bin:/home/meizan/Qt/6.5.3/gcc_64/bin:/home/meizan/Qt/Tools/CMake/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/zzy/.fishros/bin/:/opt/nodejs/node-v18.12.1-linux-x64/bin/:/home/zzy/.fishros/bin/:/opt/nodejs/node-v18.12.1-linux-x64/bin/'), ('PAPERSIZE', 'a4'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('SSL_CERT_DIR', '/usr/lib/ssl/certs'), ('LANG', 'zh_CN.UTF-8'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-1fd6bdd323.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs:/home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msg:/opt/ros/foxy'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('ROS_MASTER_URI', 'http://localhost:11311'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/meizan/workspace/athena-robot-dog/modules/message/ros2/build/perception_msgs'), ('LC_ALL', 'en_US.UTF-8'), ('GEMINI_API_KEY', 'AIzaSyBkdyupdpVhL7Dd9iWMim7KX0N3CkFMDio'), ('SSH_CONNECTION', '192.168.2.173 58589 192.168.2.181 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/lib/python3.8/site-packages:/home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msg/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages'), ('ROS_HOSTNAME', 'localhost'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs:/home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msg:/opt/ros/foxy')]), 'shell': False}
+[10.398702] (perception_msgs) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[10.398941] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/ament_index/resource_index/rosidl_interfaces/perception_msgs\n'}
+[10.399074] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs\n'}
+[10.399179] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg\n'}
+[10.399279] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/action_entry.h\n'}
+[10.399392] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/perc_req.h\n'}
+[10.399509] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail\n'}
+[10.399609] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/action_entry__functions.h\n'}
+[10.399709] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/action_entry__functions.c\n'}
+[10.399824] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/perc_cmd__functions.h\n'}
+[10.399926] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/dog_state__type_support.h\n'}
+[10.400028] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/alarm_entry__functions.c\n'}
+[10.400145] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/perc_cmd__functions.c\n'}
+[10.400246] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/dog_state__functions.h\n'}
+[10.400365] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/task_list__functions.h\n'}
+[10.400468] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/perc_cmd__type_support.h\n'}
+[10.400583] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/dog_state__struct.h\n'}
+[10.400686] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/action_entry__type_support.h\n'}
+[10.400787] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/dog_state__functions.c\n'}
+[10.400888] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/perc_req__functions.c\n'}
+[10.401006] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/perc_state__type_support.h\n'}
+[10.401105] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/task_list__struct.h\n'}
+[10.401220] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/perc_req__struct.h\n'}
+[10.401321] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/alarm_entry__struct.h\n'}
+[10.401428] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/perc_req__functions.h\n'}
+[10.401534] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/action_entry__struct.h\n'}
+[10.401651] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/perc_req__type_support.h\n'}
+[10.401760] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/perc_state__functions.h\n'}
+[10.401864] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/alarm_entry__type_support.h\n'}
+[10.401979] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/perc_state__struct.h\n'}
+[10.402083] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/perc_state__functions.c\n'}
+[10.402199] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/perc_cmd__struct.h\n'}
+[10.402298] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/alarm_entry__functions.h\n'}
+[10.402427] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/task_list__functions.c\n'}
+[10.402541] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/task_list__type_support.h\n'}
+[10.402624] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/dog_state.h\n'}
+[10.402721] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/perc_cmd.h\n'}
+[10.402800] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/perc_state.h\n'}
+[10.402898] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/task_list.h\n'}
+[10.402976] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/rosidl_generator_c__visibility_control.h\n'}
+[10.403073] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/alarm_entry.h\n'}
+[10.403148] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/srv\n'}
+[10.403219] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/srv/detail\n'}
+[10.403293] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/srv/detail/dog_record_bag__functions.h\n'}
+[10.403427] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/srv/detail/dog_record_bag__functions.c\n'}
+[10.403527] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/srv/detail/dog_record_bag__type_support.h\n'}
+[10.403645] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/srv/detail/dog_record_bag__struct.h\n'}
+[10.403746] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/srv/dog_record_bag.h\n'}
+[10.403845] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/perception_msgs/environment/library_path.sh\n'}
+[10.403958] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/perception_msgs/environment/library_path.dsv\n'}
+[10.404059] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/lib/libperception_msgs__rosidl_generator_c.so\n'}
+[10.404161] (perception_msgs) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/lib/libperception_msgs__rosidl_generator_c.so" to ""\n'}
+[10.404300] (perception_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs\n'}
+[10.404380] (perception_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg\n'}
+[10.404477] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[10.404550] (perception_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail\n'}
+[10.404624] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/perc_state__rosidl_typesupport_fastrtps_c.h\n'}
+[10.404700] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/alarm_entry__rosidl_typesupport_fastrtps_c.h\n'}
+[10.404861] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/perc_req__rosidl_typesupport_fastrtps_c.h\n'}
+[10.404961] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/task_list__rosidl_typesupport_fastrtps_c.h\n'}
+[10.405075] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/dog_state__rosidl_typesupport_fastrtps_c.h\n'}
+[10.405175] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/action_entry__rosidl_typesupport_fastrtps_c.h\n'}
+[10.405277] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/perc_cmd__rosidl_typesupport_fastrtps_c.h\n'}
+[10.405377] (perception_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/srv\n'}
+[10.405493] (perception_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/srv/detail\n'}
+[10.405595] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/srv/detail/dog_record_bag__rosidl_typesupport_fastrtps_c.h\n'}
+[10.405723] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/lib/libperception_msgs__rosidl_typesupport_fastrtps_c.so\n'}
+[10.405820] (perception_msgs) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/lib/libperception_msgs__rosidl_typesupport_fastrtps_c.so" to ""\n'}
+[10.405920] (perception_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs\n'}
+[10.405996] (perception_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg\n'}
+[10.406070] (perception_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail\n'}
+[10.406143] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/alarm_entry__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[10.406219] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/action_entry__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[10.406347] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/perc_state__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[10.406484] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/dog_state__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[10.406588] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/perc_cmd__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[10.406689] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/task_list__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[10.406787] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/dds_fastrtps\n'}
+[10.406889] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/perc_req__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[10.407006] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[10.407104] (perception_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/srv\n'}
+[10.407201] (perception_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/srv/detail\n'}
+[10.407299] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/srv/detail/dds_fastrtps\n'}
+[10.407396] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/srv/detail/dog_record_bag__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[10.407494] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/lib/libperception_msgs__rosidl_typesupport_fastrtps_cpp.so\n'}
+[10.407608] (perception_msgs) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/lib/libperception_msgs__rosidl_typesupport_fastrtps_cpp.so" to ""\n'}
+[10.407710] (perception_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs\n'}
+[10.407840] (perception_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg\n'}
+[10.407922] (perception_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail\n'}
+[10.408018] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/task_list__rosidl_typesupport_introspection_c.h\n'}
+[10.408096] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/action_entry__type_support.c\n'}
+[10.408195] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/action_entry__rosidl_typesupport_introspection_c.h\n'}
+[10.408270] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/dog_state__type_support.c\n'}
+[10.408342] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/alarm_entry__type_support.c\n'}
+[10.408416] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/perc_req__rosidl_typesupport_introspection_c.h\n'}
+[10.408525] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/perc_cmd__type_support.c\n'}
+[10.408598] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/dog_state__rosidl_typesupport_introspection_c.h\n'}
+[10.408737] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/alarm_entry__rosidl_typesupport_introspection_c.h\n'}
+[10.408866] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/perc_req__type_support.c\n'}
+[10.408990] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/perc_state__type_support.c\n'}
+[10.409091] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/task_list__type_support.c\n'}
+[10.409193] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/perc_state__rosidl_typesupport_introspection_c.h\n'}
+[10.409293] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/perc_cmd__rosidl_typesupport_introspection_c.h\n'}
+[10.409410] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[10.409505] (perception_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/srv\n'}
+[10.409607] (perception_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/srv/detail\n'}
+[10.409722] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/srv/detail/dog_record_bag__type_support.c\n'}
+[10.409819] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/srv/detail/dog_record_bag__rosidl_typesupport_introspection_c.h\n'}
+[10.409926] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/lib/libperception_msgs__rosidl_typesupport_introspection_c.so\n'}
+[10.410040] (perception_msgs) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/lib/libperception_msgs__rosidl_typesupport_introspection_c.so" to ""\n'}
+[10.410140] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/lib/libperception_msgs__rosidl_typesupport_c.so\n'}
+[10.410242] (perception_msgs) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/lib/libperception_msgs__rosidl_typesupport_c.so" to ""\n'}
+[10.410356] (perception_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs\n'}
+[10.410475] (perception_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg\n'}
+[10.410571] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/perc_req.hpp\n'}
+[10.410672] (perception_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail\n'}
+[10.410768] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/alarm_entry__builder.hpp\n'}
+[10.410862] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/task_list__struct.hpp\n'}
+[10.410966] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/action_entry__struct.hpp\n'}
+[10.411066] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/task_list__type_support.hpp\n'}
+[10.411166] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/perc_state__struct.hpp\n'}
+[10.411262] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/perc_req__builder.hpp\n'}
+[10.411362] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/task_list__traits.hpp\n'}
+[10.411480] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/action_entry__type_support.hpp\n'}
+[10.411580] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/perc_cmd__traits.hpp\n'}
+[10.411714] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/action_entry__traits.hpp\n'}
+[10.411954] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/perc_req__traits.hpp\n'}
+[10.412172] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/alarm_entry__traits.hpp\n'}
+[10.412331] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/perc_cmd__type_support.hpp\n'}
+[10.412481] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/perc_state__builder.hpp\n'}
+[10.412627] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/dog_state__traits.hpp\n'}
+[10.412841] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/perc_cmd__builder.hpp\n'}
+[10.412990] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/dog_state__struct.hpp\n'}
+[10.413092] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/perc_req__type_support.hpp\n'}
+[10.413188] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/perc_state__traits.hpp\n'}
+[10.413285] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/action_entry__builder.hpp\n'}
+[10.413392] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/dog_state__type_support.hpp\n'}
+[10.413486] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/perc_req__struct.hpp\n'}
+[10.413580] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/alarm_entry__type_support.hpp\n'}
+[10.413674] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/task_list__builder.hpp\n'}
+[10.413767] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/dog_state__builder.hpp\n'}
+[10.413862] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/perc_state__type_support.hpp\n'}
+[10.413957] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/perc_cmd__struct.hpp\n'}
+[10.414063] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/alarm_entry__struct.hpp\n'}
+[10.414181] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/alarm_entry.hpp\n'}
+[10.414289] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/action_entry.hpp\n'}
+[10.414454] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/task_list.hpp\n'}
+[10.414546] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/dog_state.hpp\n'}
+[10.414642] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/perc_cmd.hpp\n'}
+[10.414715] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[10.414788] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/perc_state.hpp\n'}
+[10.414859] (perception_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/srv\n'}
+[10.414934] (perception_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/srv/detail\n'}
+[10.415032] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/srv/detail/dog_record_bag__type_support.hpp\n'}
+[10.415126] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/srv/detail/dog_record_bag__builder.hpp\n'}
+[10.415199] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/srv/detail/dog_record_bag__struct.hpp\n'}
+[10.415270] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/srv/detail/dog_record_bag__traits.hpp\n'}
+[10.415375] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/srv/dog_record_bag.hpp\n'}
+[10.415453] (perception_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs\n'}
+[10.415545] (perception_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg\n'}
+[10.415621] (perception_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail\n'}
+[10.415711] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/perc_state__type_support.cpp\n'}
+[10.415783] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/alarm_entry__rosidl_typesupport_introspection_cpp.hpp\n'}
+[10.415857] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/perc_req__rosidl_typesupport_introspection_cpp.hpp\n'}
+[10.415930] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/task_list__rosidl_typesupport_introspection_cpp.hpp\n'}
+[10.416003] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/perc_cmd__rosidl_typesupport_introspection_cpp.hpp\n'}
+[10.416079] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/dog_state__type_support.cpp\n'}
+[10.416152] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/perc_cmd__type_support.cpp\n'}
+[10.416224] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/perc_req__type_support.cpp\n'}
+[10.416296] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/action_entry__rosidl_typesupport_introspection_cpp.hpp\n'}
+[10.416367] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/action_entry__type_support.cpp\n'}
+[10.416438] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/dog_state__rosidl_typesupport_introspection_cpp.hpp\n'}
+[10.416511] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/task_list__type_support.cpp\n'}
+[10.416583] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/alarm_entry__type_support.cpp\n'}
+[10.416657] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/msg/detail/perc_state__rosidl_typesupport_introspection_cpp.hpp\n'}
+[10.416729] (perception_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/srv\n'}
+[10.416802] (perception_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/srv/detail\n'}
+[10.416875] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/srv/detail/dog_record_bag__type_support.cpp\n'}
+[10.416952] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/include/perception_msgs/srv/detail/dog_record_bag__rosidl_typesupport_introspection_cpp.hpp\n'}
+[10.417028] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/lib/libperception_msgs__rosidl_typesupport_introspection_cpp.so\n'}
+[10.417101] (perception_msgs) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/lib/libperception_msgs__rosidl_typesupport_introspection_cpp.so" to ""\n'}
+[10.417176] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/lib/libperception_msgs__rosidl_typesupport_cpp.so\n'}
+[10.417248] (perception_msgs) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/lib/libperception_msgs__rosidl_typesupport_cpp.so" to ""\n'}
+[10.417323] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/perception_msgs/environment/pythonpath.sh\n'}
+[10.417398] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/perception_msgs/environment/pythonpath.dsv\n'}
+[10.417471] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/lib/python3.8/site-packages/perception_msgs/__init__.py\n'}
+[10.434852] (-) TimerEvent: {}
+[10.453492] (perception_msgs) StdoutLine: {'line': b"Compiling '/home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/lib/python3.8/site-packages/perception_msgs/__init__.py'...\n"}
+[10.458138] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/lib/python3.8/site-packages/perception_msgs/msg\n'}
+[10.458375] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/lib/python3.8/site-packages/perception_msgs/msg/_task_list.py\n'}
+[10.458513] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/lib/python3.8/site-packages/perception_msgs/msg/_perc_req.py\n'}
+[10.458671] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/lib/python3.8/site-packages/perception_msgs/msg/_action_entry_s.c\n'}
+[10.458767] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/lib/python3.8/site-packages/perception_msgs/msg/_dog_state.py\n'}
+[10.458864] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/lib/python3.8/site-packages/perception_msgs/msg/_perc_cmd_s.c\n'}
+[10.458957] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/lib/python3.8/site-packages/perception_msgs/msg/_alarm_entry.py\n'}
+[10.459065] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/lib/python3.8/site-packages/perception_msgs/msg/__init__.py\n'}
+[10.459157] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/lib/python3.8/site-packages/perception_msgs/msg/_perc_state_s.c\n'}
+[10.459252] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/lib/python3.8/site-packages/perception_msgs/msg/_alarm_entry_s.c\n'}
+[10.459345] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/lib/python3.8/site-packages/perception_msgs/msg/_perc_req_s.c\n'}
+[10.459417] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/lib/python3.8/site-packages/perception_msgs/msg/_dog_state_s.c\n'}
+[10.459528] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/lib/python3.8/site-packages/perception_msgs/msg/_perc_state.py\n'}
+[10.459623] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/lib/python3.8/site-packages/perception_msgs/msg/_task_list_s.c\n'}
+[10.459754] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/lib/python3.8/site-packages/perception_msgs/msg/_perc_cmd.py\n'}
+[10.459827] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/lib/python3.8/site-packages/perception_msgs/msg/_action_entry.py\n'}
+[10.459925] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/lib/python3.8/site-packages/perception_msgs/srv\n'}
+[10.460000] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/lib/python3.8/site-packages/perception_msgs/srv/_dog_record_bag.py\n'}
+[10.460072] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/lib/python3.8/site-packages/perception_msgs/srv/__init__.py\n'}
+[10.460146] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/lib/python3.8/site-packages/perception_msgs/srv/_dog_record_bag_s.c\n'}
+[10.460256] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/lib/python3.8/site-packages/perception_msgs/perception_msgs_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so\n'}
+[10.460347] (perception_msgs) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/lib/python3.8/site-packages/perception_msgs/perception_msgs_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so" to ""\n'}
+[10.460427] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/lib/python3.8/site-packages/perception_msgs/perception_msgs_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so\n'}
+[10.460686] (perception_msgs) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/lib/python3.8/site-packages/perception_msgs/perception_msgs_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so" to ""\n'}
+[10.460783] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/lib/python3.8/site-packages/perception_msgs/perception_msgs_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so\n'}
+[10.461016] (perception_msgs) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/lib/python3.8/site-packages/perception_msgs/perception_msgs_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so" to ""\n'}
+[10.461116] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/lib/libperception_msgs__python.so\n'}
+[10.461378] (perception_msgs) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/lib/libperception_msgs__python.so" to ""\n'}
+[10.461473] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/perception_msgs/msg/ActionEntry.idl\n'}
+[10.461578] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/perception_msgs/msg/AlarmEntry.idl\n'}
+[10.461683] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/perception_msgs/msg/PercCmd.idl\n'}
+[10.461784] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/perception_msgs/msg/PercState.idl\n'}
+[10.461887] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/perception_msgs/msg/PercReq.idl\n'}
+[10.461990] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/perception_msgs/msg/TaskList.idl\n'}
+[10.462096] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/perception_msgs/msg/DogState.idl\n'}
+[10.462231] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/perception_msgs/srv/DogRecordBag.idl\n'}
+[10.462353] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/perception_msgs/msg/ActionEntry.msg\n'}
+[10.462511] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/perception_msgs/msg/AlarmEntry.msg\n'}
+[10.462642] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/perception_msgs/msg/PercCmd.msg\n'}
+[10.462760] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/perception_msgs/msg/PercState.msg\n'}
+[10.462872] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/perception_msgs/msg/PercReq.msg\n'}
+[10.462996] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/perception_msgs/msg/TaskList.msg\n'}
+[10.463105] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/perception_msgs/msg/DogState.msg\n'}
+[10.463205] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/perception_msgs/srv/DogRecordBag.srv\n'}
+[10.463308] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/perception_msgs/srv/DogRecordBag_Request.msg\n'}
+[10.463411] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/perception_msgs/srv/DogRecordBag_Response.msg\n'}
+[10.463572] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/ament_index/resource_index/package_run_dependencies/perception_msgs\n'}
+[10.463710] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/ament_index/resource_index/parent_prefix_path/perception_msgs\n'}
+[10.463826] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/perception_msgs/environment/ament_prefix_path.sh\n'}
+[10.463929] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/perception_msgs/environment/ament_prefix_path.dsv\n'}
+[10.464040] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/perception_msgs/environment/path.sh\n'}
+[10.464148] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/perception_msgs/environment/path.dsv\n'}
+[10.464303] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/perception_msgs/local_setup.bash\n'}
+[10.464492] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/perception_msgs/local_setup.sh\n'}
+[10.464595] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/perception_msgs/local_setup.zsh\n'}
+[10.464699] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/perception_msgs/local_setup.dsv\n'}
+[10.464803] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/perception_msgs/package.dsv\n'}
+[10.464901] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/ament_index/resource_index/packages/perception_msgs\n'}
+[10.465045] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/perception_msgs/cmake/perception_msgs__rosidl_generator_cExport.cmake\n'}
+[10.465177] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/perception_msgs/cmake/perception_msgs__rosidl_generator_cExport-noconfig.cmake\n'}
+[10.465302] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/perception_msgs/cmake/perception_msgs__rosidl_typesupport_introspection_cExport.cmake\n'}
+[10.465415] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/perception_msgs/cmake/perception_msgs__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[10.465548] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/perception_msgs/cmake/perception_msgs__rosidl_typesupport_cExport.cmake\n'}
+[10.465664] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/perception_msgs/cmake/perception_msgs__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[10.465792] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/perception_msgs/cmake/perception_msgs__rosidl_generator_cppExport.cmake\n'}
+[10.465923] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/perception_msgs/cmake/perception_msgs__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[10.466049] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/perception_msgs/cmake/perception_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[10.466177] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/perception_msgs/cmake/perception_msgs__rosidl_typesupport_cppExport.cmake\n'}
+[10.466294] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/perception_msgs/cmake/perception_msgs__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[10.466420] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/perception_msgs/cmake/rosidl_cmake-extras.cmake\n'}
+[10.466541] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/perception_msgs/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[10.466654] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/perception_msgs/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[10.466775] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/perception_msgs/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[10.466881] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/perception_msgs/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[10.467000] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/perception_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[10.467109] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/perception_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[10.467227] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/perception_msgs/cmake/perception_msgsConfig.cmake\n'}
+[10.467324] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/perception_msgs/cmake/perception_msgsConfig-version.cmake\n'}
+[10.467425] (perception_msgs) StdoutLine: {'line': b'-- Installing: /home/meizan/workspace/athena-robot-dog/modules/message/ros2/install/perception_msgs/share/perception_msgs/package.xml\n'}
+[10.469337] (perception_msgs) CommandEnded: {'returncode': 0}
+[10.494880] (perception_msgs) JobEnded: {'identifier': 'perception_msgs', 'rc': 0}
+[10.495661] (-) EventReactorShutdown: {}

@@ -15,9 +15,9 @@
 #include "rclcpp/rclcpp.hpp"
 #undef nanosec nsec
 
-#include "ros2_interface/msg/chassis.hpp"
-#include "ros2_interface/msg/events.hpp"
-#include "ros2_interface/msg/obu_cmd_msg.hpp"
+// #include "ros2_interface/msg/chassis.hpp"
+// #include "ros2_interface/msg/events.hpp"
+// #include "ros2_interface/msg/obu_cmd_msg.hpp"
 
 #include "message_manager/message_manager.h"
 
@@ -98,23 +98,42 @@ protected:
 
 protected:
   std::mutex mutex_;
-  rclcpp::Publisher<::ros2_interface::msg::ObuCmdMsg>::SharedPtr
-      obu_cmd_msg_output_pub_;
-  rclcpp::Publisher<::ros2_interface::msg::Events>::SharedPtr
-      events_output_pub_;
+  // rclcpp::Publisher<::ros2_interface::msg::ObuCmdMsg>::SharedPtr
+  //     obu_cmd_msg_output_pub_;
+  // rclcpp::Publisher<::ros2_interface::msg::Events>::SharedPtr
+  //     events_output_pub_;
+  rclcpp::Publisher<perception_msgs::TaskList>::SharedPtr task_msg_output_pub_;
+  rclcpp::Publisher<geometry_msgs::Pose>::SharedPtr rviz_target_point_msg_output_pub_;
+  rclcpp::Publisher<perception_msgs::PercState>::SharedPtr feedback_to_cmd_output_pub_;
+  rclcpp::Publisher<perception_msgs::ActionEntry>::SharedPtr action_to_cmd_output_pub_;
 
-  rclcpp::Subscription<::ros2_interface::msg::Chassis>::SharedPtr chassis_sub_;
-  rclcpp::Subscription<::ros2_interface::msg::Events>::SharedPtr events_sub_;
-  rclcpp::Subscription<::ros2_interface::msg::ObuCmdMsg>::SharedPtr
-      obu_cmd_msg_input_sub_;
+  // rclcpp::Subscription<::ros2_interface::msg::Chassis>::SharedPtr chassis_sub_;
+  // rclcpp::Subscription<::ros2_interface::msg::Events>::SharedPtr events_sub_;
+  // rclcpp::Subscription<::ros2_interface::msg::ObuCmdMsg>::SharedPtr
+  //     obu_cmd_msg_input_sub_;
+  rclcpp::Subscription<perception_msgs::PercCmd>::sharedPtr task_sub_;
+  rclcpp::Subscription<perception_msgs::TaskList>::sharedPtr callback_perception_sub_;
+  rclcpp::Subscription<perception_msgs::TaskList>::sharedPtr callback_planning_sub_;
 
-  void
-  HandleChassisMessage(const ros2_interface::msg::Chassis::SharedPtr msg_obj);
-  void
-  HandleEventsMessage(const ros2_interface::msg::Events::SharedPtr msg_obj);
+  void PublishTaskList(perception_msgs::TaskList msg)override;
+  void PublishPose(geometry_msgs::Pose msg)override;
+  void PublishState(perception_msgs::PercState msg)override;
+  void PublishAction(perception_msgs::ActionEntry msg)override;
 
-  void HandleObuCmdMsgMessage(
-      const ros2_interface::msg::ObuCmdMsg::SharedPtr msg_obj);
+  // 处理集成消息
+  void cmdCallback(const perception_msgs::PercCmd::SharedPtr msg);
+  // 处理感知反馈消息
+  void ptCallback(const perception_msgs::TaskList::SharedPtr msg);
+  // 处理规划状态反馈消息
+  void stateCallback(const perception_msgs::TaskList::SharedPtr msg);
+
+  // void
+  // HandleChassisMessage(const ros2_interface::msg::Chassis::SharedPtr msg_obj);
+  // void
+  // HandleEventsMessage(const ros2_interface::msg::Events::SharedPtr msg_obj);
+
+  // void HandleObuCmdMsgMessage(
+  //     const ros2_interface::msg::ObuCmdMsg::SharedPtr msg_obj);
 };
 } // namespace function
 } // namespace athena

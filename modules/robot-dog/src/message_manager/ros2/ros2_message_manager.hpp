@@ -42,19 +42,55 @@ namespace athena
           rclcpp::SubscriptionOptionsWithAllocator<std::allocator<void>>;
       using PubAllocT = rclcpp::PublisherOptionsWithAllocator<std::allocator<void>>;
 
-      obu_cmd_msg_output_pub_ = create_publisher<::ros2_interface::msg::ObuCmdMsg>(
-          "/function/emergency_stop/ObuCmdMsg", QoS{10}, PubAllocT{});
+      // obu_cmd_msg_output_pub_ = create_publisher<::ros2_interface::msg::ObuCmdMsg>(
+      //     "/function/emergency_stop/ObuCmdMsg", QoS{10}, PubAllocT{});
 
-      events_output_pub_ = create_publisher<::ros2_interface::msg::Events>(
-          "/function/emergency_stop/Events", QoS{10}, PubAllocT{});
+      // events_output_pub_ = create_publisher<::ros2_interface::msg::Events>(
+      //     "/function/emergency_stop/Events", QoS{10}, PubAllocT{});
 
-      obu_cmd_msg_input_sub_ = create_subscription<ObuCmdMsg>(
-          "/state_manager/ObuCmdMsg", QoS{30},
-          [this](const ros2_interface::msg::ObuCmdMsg::SharedPtr msg)
-          {
-            Ros2MessageManager::HandleObuCmdMsgMessage(msg);
-          },
-          SubAllocT{});
+      // obu_cmd_msg_input_sub_ = create_subscription<ObuCmdMsg>(
+      //     "/state_manager/ObuCmdMsg", QoS{30},
+      //     [this](const ros2_interface::msg::ObuCmdMsg::SharedPtr msg)
+      //     {
+      //       Ros2MessageManager::HandleObuCmdMsgMessage(msg);
+      //     },
+      //     SubAllocT{});
+
+      task_msg_output_pub_ = create_publisher<perception_msgs::TaskList>(
+        pub_perception_mode, QoS{10}, PubAllocT{});
+      rviz_target_point_msg_output_pub_ = create_publisher<geometry_msgs::Pose>(
+        pub_goal_state_extern, QoS{10}, PubAllocT{});
+      feedback_to_cmd_output_pub_ = create_publisher<perception_msgs::PercState>(
+        pub_feedback_to_cmd, QoS{10}, PubAllocT{});
+      action_to_cmd_output_pub_ = create_publisher<perception_msgs::ActionEntry>(
+        pub_action_info_to_cmd, QoS{10}, PubAllocT{});
+
+      task_sub_ = create_subscription<perception_msgs::PercCmd>(
+        sub_callback_to_cmd, QoS{10},
+        [this](const perception_msgs::PercCmd::SharedPtr msg)
+        {
+          //Ros2MessageManager::HandleObuCmdMsgMessage(msg);
+          cmdCallback(msg);
+        },
+        SubAllocT{});
+
+      callback_perception_sub_ = create_subscription<perception_msgs::TaskList>(
+        sub_recv_callback_perception, QoS{10},
+        [this](const perception_msgs::TaskList::SharedPtr msg)
+        {
+          //Ros2MessageManager::HandleObuCmdMsgMessage(msg);
+          ptCallback(msg);
+        },
+        SubAllocT{});
+
+      callback_planning_sub_ = create_subscription<perception_msgs::TaskList>(
+        sub_planning_feedback, QoS{10},
+        [this](const perception_msgs::TaskList::SharedPtr msg)
+        {
+          //Ros2MessageManager::HandleObuCmdMsgMessage(msg);
+          stateCallback(msg);
+        },
+        SubAllocT{});
 
       // 线程执行开始
       handle_message_thread_.reset(new std::thread([this]
@@ -212,170 +248,195 @@ namespace athena
       events_output_pub_->publish(events);
     }
 
+    // template <typename T>
+    // void Ros2MessageManager<T>::HandleChassisMessage(
+    //     const ros2_interface::msg::Chassis::SharedPtr msg_obj_ptr)
+    // {
+    //   if (is_active_ == false)
+    //     return;
+    //   std::shared_ptr<ros2_interface::msg::Chassis> msg =
+    //       std::const_pointer_cast<ros2_interface::msg::Chassis>(msg_obj_ptr);
+
+    //   athena::interface::Chassis chassis;
+    //   MESSAGE_HEADER_PARSER(chassis)
+    //   chassis.set_moving_status((athena::common::MovingStatus)msg->moving_status);
+    //   chassis.set_driving_mode((athena::common::DrivingMode)msg->driving_mode);
+    //   chassis.set_steer_driving_mode(
+    //       (athena::common::DrivingMode)msg->steer_driving_mode);
+    //   chassis.set_steering_status(
+    //       (athena::common::ControlStatus)msg->steering_status);
+    //   chassis.set_front_steering_value(msg->front_steering_value);
+    //   chassis.set_rear_steering_value(msg->rear_steering_value);
+    //   chassis.set_steering_torque_nm(msg->steering_torque_nm);
+    //   chassis.set_front_steering_rate_dps(msg->front_steering_rate_dps);
+    //   chassis.set_rear_steering_rate_dps(msg->rear_steering_rate_dps);
+    //   chassis.set_accel_driving_mode(
+    //       (athena::common::DrivingMode)msg->accel_driving_mode);
+    //   chassis.set_accel_status((athena::common::ControlStatus)msg->accel_status);
+    //   chassis.set_accel_value(msg->accel_value);
+    //   chassis.set_brake_driving_mode(
+    //       (athena::common::DrivingMode)msg->brake_driving_mode);
+    //   chassis.set_brake_status((athena::common::ControlStatus)msg->brake_status);
+    //   chassis.set_brake_value(msg->brake_value);
+    //   chassis.set_backup_brake_driving_mode(
+    //       (athena::common::DrivingMode)msg->backup_brake_driving_mode);
+    //   chassis.set_backup_brake_status(
+    //       (athena::common::ControlStatus)msg->backup_brake_status);
+    //   chassis.set_backup_brake_value(msg->backup_brake_value);
+    //   chassis.set_epb_driving_mode(
+    //       (athena::common::DrivingMode)msg->epb_driving_mode);
+    //   chassis.set_epb_status((athena::common::ControlStatus)msg->epb_status);
+    //   chassis.set_epb_level((athena::common::EPBLevel)msg->epb_level);
+    //   chassis.set_engine_status((athena::common::EngineStauts)msg->engine_status);
+    //   chassis.set_engine_rpm(msg->engine_rpm);
+    //   chassis.set_engine_torque(msg->engine_torque);
+    //   chassis.set_speed_mps(msg->speed_mps);
+    //   chassis.set_odometer_m(msg->odometer_m);
+    //   chassis.set_fuel_range_m(msg->fuel_range_m);
+    //   chassis.set_gear_driving_mode(
+    //       (athena::common::DrivingMode)msg->gear_driving_mode);
+    //   chassis.set_gear_status((athena::common::ControlStatus)msg->gear_status);
+    //   chassis.set_gear_location((athena::common::GearPosition)msg->gear_location);
+    //   chassis.set_driver_seat_belt(
+    //       (athena::common::SwitchStatus)msg->driver_seat_belt);
+    //   chassis.set_high_beam_status(
+    //       (athena::common::SwitchStatus)msg->high_beam_status);
+    //   chassis.set_low_beam_status(
+    //       (athena::common::SwitchStatus)msg->low_beam_status);
+    //   chassis.set_horn_status((athena::common::SwitchStatus)msg->horn_status);
+    //   chassis.set_turn_lamp_status(
+    //       (athena::common::TurnSignal)msg->turn_lamp_status);
+    //   chassis.set_front_wiper_status(
+    //       (athena::common::SwitchStatus)msg->front_wiper_status);
+    //   chassis.set_rear_wiper_status(
+    //       (athena::common::SwitchStatus)msg->rear_wiper_status);
+    //   chassis.set_position_lamp_status(
+    //       (athena::common::SwitchStatus)msg->position_lamp_status);
+    //   chassis.set_front_fog_lamp_status(
+    //       (athena::common::SwitchStatus)msg->front_fog_lamp_status);
+    //   chassis.set_rear_fog_lamp_status(
+    //       (athena::common::SwitchStatus)msg->rear_fog_lamp_status);
+    //   chassis.set_brake_lamp_status(
+    //       (athena::common::SwitchStatus)msg->brake_lamp_status);
+    //   chassis.set_alarm_lamp_status(
+    //       (athena::common::SwitchStatus)msg->alarm_lamp_status);
+    //   chassis.set_lf_door_status((athena::common::DoorStatus)msg->lf_door_status);
+    //   chassis.set_rf_door_status((athena::common::DoorStatus)msg->rf_door_status);
+    //   chassis.set_lr_door_status((athena::common::DoorStatus)msg->lr_door_status);
+    //   chassis.set_rr_door_status((athena::common::DoorStatus)msg->rr_door_status);
+    //   chassis.set_rearview_mirror_status(
+    //       (athena::common::FoldUnfoldStatus)msg->rearview_mirror_status);
+    //   chassis.set_trunk_status((athena::common::DoorStatus)msg->trunk_status);
+    //   chassis.set_engine_bay_door_status(
+    //       (athena::common::DoorStatus)msg->engine_bay_door_status);
+    //   chassis.set_wheel_direction_rr(
+    //       (athena::common::WheelSpeedType)msg->wheel_direction_rr);
+    //   chassis.set_wheel_spd_rr(msg->wheel_spd_rr);
+    //   chassis.set_wheel_direction_rl(
+    //       (athena::common::WheelSpeedType)msg->wheel_direction_rl);
+    //   chassis.set_wheel_spd_rl(msg->wheel_spd_rl);
+    //   chassis.set_wheel_direction_fr(
+    //       (athena::common::WheelSpeedType)msg->wheel_direction_fr);
+    //   chassis.set_wheel_spd_fr(msg->wheel_spd_fr);
+    //   chassis.set_wheel_direction_fl(
+    //       (athena::common::WheelSpeedType)msg->wheel_direction_fl);
+    //   chassis.set_wheel_spd_fl(msg->wheel_spd_fl);
+    //   chassis.set_is_tire_pressure_ok(
+    //       (athena::common::FailureStatus)msg->is_tire_pressure_ok);
+    //   chassis.set_is_tire_pressure_lf_valid(
+    //       (athena::common::IsValid)msg->is_tire_pressure_lf_valid);
+    //   chassis.set_tire_pressure_lf(msg->tire_pressure_lf);
+    //   chassis.set_is_tire_pressure_rf_valid(
+    //       (athena::common::IsValid)msg->is_tire_pressure_rf_valid);
+    //   chassis.set_tire_pressure_rf(msg->tire_pressure_rf);
+    //   chassis.set_is_tire_pressure_lr_valid(
+    //       (athena::common::IsValid)msg->is_tire_pressure_lr_valid);
+    //   chassis.set_tire_pressure_lr(msg->tire_pressure_lr);
+    //   chassis.set_is_tire_pressure_rr_valid(
+    //       (athena::common::IsValid)msg->is_tire_pressure_rr_valid);
+    //   chassis.set_tire_pressure_rr(msg->tire_pressure_rr);
+    //   chassis.set_battery_power_percentage(msg->battery_power_percentage);
+    //   chassis.set_air_bag_status(
+    //       (athena::common::FailureStatus)msg->air_bag_status);
+    //   chassis.set_charging_gun_status(
+    //       (athena::common::PlugStatus)msg->charging_gun_status);
+    //   chassis.set_vehicle_power_status(
+    //       (athena::common::FailureStatus)msg->vehicle_power_status);
+    //   std::vector<athena::interface::Chassis::ErrorCode> chassis_error_code;
+    //   for (auto it_chassis_error_code : msg->chassis_error_code)
+    //   {
+    //     athena::interface::Chassis::ErrorCode error_code;
+    //     error_code = (athena::interface::Chassis::ErrorCode)it_chassis_error_code;
+    //     chassis_error_code.emplace_back(error_code);
+    //   }
+    //   chassis.set_chassis_error_code(&chassis_error_code);
+
+    //   instance_->HandleChassis(chassis);
+    // }
+
+    // template <typename T>
+    // void Ros2MessageManager<T>::HandleEventsMessage(
+    //     const ros2_interface::msg::Events::SharedPtr msg_obj_ptr)
+    // {
+    //   if (is_active_ == false)
+    //     return;
+    //   std::shared_ptr<ros2_interface::msg::Events> msg =
+    //       std::const_pointer_cast<ros2_interface::msg::Events>(msg_obj_ptr);
+
+    //   athena::interface::Events events;
+
+    //   instance_->HandleEvents(events);
+    // }
+
+    // template <typename T>
+    // void Ros2MessageManager<T>::HandleObuCmdMsgMessage(
+    //     const ros2_interface::msg::ObuCmdMsg::SharedPtr msg_obj_ptr)
+    // {
+    //   if (is_init_ == false)
+    //     return;
+    //   std::shared_ptr<ros2_interface::msg::ObuCmdMsg> msg =
+    //       std::const_pointer_cast<ros2_interface::msg::ObuCmdMsg>(msg_obj_ptr);
+
+    //   athena::interface::ObuCmdMsg obu_cmd_msg;
+    //   MESSAGE_HEADER_PARSER(obu_cmd_msg)
+    //   obu_cmd_msg.set_id(msg->id);
+    //   obu_cmd_msg.set_name(msg->name);
+    //   std::vector<athena::interface::ObuCmd> obu_cmd_list;
+    //   for (auto it_obu_cmd_list : msg->obu_cmd_list)
+    //   {
+    //     athena::interface::ObuCmd obu_cmd_msg_obu_cmd;
+    //     obu_cmd_msg_obu_cmd.set_code(it_obu_cmd_list.code);
+    //     obu_cmd_msg_obu_cmd.set_val(it_obu_cmd_list.val);
+    //     obu_cmd_list.emplace_back(obu_cmd_msg_obu_cmd);
+    //   }
+    //   obu_cmd_msg.set_obu_cmd_list(&obu_cmd_list);
+
+    //   instance_->HandleObuCmdMsgInput(obu_cmd_msg);
+    // }
+
     template <typename T>
-    void Ros2MessageManager<T>::HandleChassisMessage(
-        const ros2_interface::msg::Chassis::SharedPtr msg_obj_ptr)
-    {
-      if (is_active_ == false)
-        return;
-      std::shared_ptr<ros2_interface::msg::Chassis> msg =
-          std::const_pointer_cast<ros2_interface::msg::Chassis>(msg_obj_ptr);
+    void RosMessageManager<T>::cmdCallback(const perception_msgs::PercCmd::SharedPtr msg) {
+      robot_dog::PercCmd cmd;
+      cmd.action_id = msg->action_id;
+      cmd.angle = msg->angle;
+      cmd.follow_name = msg->follow_name;
+      cmd.on_off = msg->on_off;
+      cmd.perc_kind = msg->perc_kind;
+      cmd.point.x = msg->point.x;
+      cmd.point.y = msg->point.y;
+      cmd.point.z = msg->point.z;
+      cmd.point_name = msg->point_name;
+      cmd.req_id = msg->req_id;
 
-      athena::interface::Chassis chassis;
-      MESSAGE_HEADER_PARSER(chassis)
-      chassis.set_moving_status((athena::common::MovingStatus)msg->moving_status);
-      chassis.set_driving_mode((athena::common::DrivingMode)msg->driving_mode);
-      chassis.set_steer_driving_mode(
-          (athena::common::DrivingMode)msg->steer_driving_mode);
-      chassis.set_steering_status(
-          (athena::common::ControlStatus)msg->steering_status);
-      chassis.set_front_steering_value(msg->front_steering_value);
-      chassis.set_rear_steering_value(msg->rear_steering_value);
-      chassis.set_steering_torque_nm(msg->steering_torque_nm);
-      chassis.set_front_steering_rate_dps(msg->front_steering_rate_dps);
-      chassis.set_rear_steering_rate_dps(msg->rear_steering_rate_dps);
-      chassis.set_accel_driving_mode(
-          (athena::common::DrivingMode)msg->accel_driving_mode);
-      chassis.set_accel_status((athena::common::ControlStatus)msg->accel_status);
-      chassis.set_accel_value(msg->accel_value);
-      chassis.set_brake_driving_mode(
-          (athena::common::DrivingMode)msg->brake_driving_mode);
-      chassis.set_brake_status((athena::common::ControlStatus)msg->brake_status);
-      chassis.set_brake_value(msg->brake_value);
-      chassis.set_backup_brake_driving_mode(
-          (athena::common::DrivingMode)msg->backup_brake_driving_mode);
-      chassis.set_backup_brake_status(
-          (athena::common::ControlStatus)msg->backup_brake_status);
-      chassis.set_backup_brake_value(msg->backup_brake_value);
-      chassis.set_epb_driving_mode(
-          (athena::common::DrivingMode)msg->epb_driving_mode);
-      chassis.set_epb_status((athena::common::ControlStatus)msg->epb_status);
-      chassis.set_epb_level((athena::common::EPBLevel)msg->epb_level);
-      chassis.set_engine_status((athena::common::EngineStauts)msg->engine_status);
-      chassis.set_engine_rpm(msg->engine_rpm);
-      chassis.set_engine_torque(msg->engine_torque);
-      chassis.set_speed_mps(msg->speed_mps);
-      chassis.set_odometer_m(msg->odometer_m);
-      chassis.set_fuel_range_m(msg->fuel_range_m);
-      chassis.set_gear_driving_mode(
-          (athena::common::DrivingMode)msg->gear_driving_mode);
-      chassis.set_gear_status((athena::common::ControlStatus)msg->gear_status);
-      chassis.set_gear_location((athena::common::GearPosition)msg->gear_location);
-      chassis.set_driver_seat_belt(
-          (athena::common::SwitchStatus)msg->driver_seat_belt);
-      chassis.set_high_beam_status(
-          (athena::common::SwitchStatus)msg->high_beam_status);
-      chassis.set_low_beam_status(
-          (athena::common::SwitchStatus)msg->low_beam_status);
-      chassis.set_horn_status((athena::common::SwitchStatus)msg->horn_status);
-      chassis.set_turn_lamp_status(
-          (athena::common::TurnSignal)msg->turn_lamp_status);
-      chassis.set_front_wiper_status(
-          (athena::common::SwitchStatus)msg->front_wiper_status);
-      chassis.set_rear_wiper_status(
-          (athena::common::SwitchStatus)msg->rear_wiper_status);
-      chassis.set_position_lamp_status(
-          (athena::common::SwitchStatus)msg->position_lamp_status);
-      chassis.set_front_fog_lamp_status(
-          (athena::common::SwitchStatus)msg->front_fog_lamp_status);
-      chassis.set_rear_fog_lamp_status(
-          (athena::common::SwitchStatus)msg->rear_fog_lamp_status);
-      chassis.set_brake_lamp_status(
-          (athena::common::SwitchStatus)msg->brake_lamp_status);
-      chassis.set_alarm_lamp_status(
-          (athena::common::SwitchStatus)msg->alarm_lamp_status);
-      chassis.set_lf_door_status((athena::common::DoorStatus)msg->lf_door_status);
-      chassis.set_rf_door_status((athena::common::DoorStatus)msg->rf_door_status);
-      chassis.set_lr_door_status((athena::common::DoorStatus)msg->lr_door_status);
-      chassis.set_rr_door_status((athena::common::DoorStatus)msg->rr_door_status);
-      chassis.set_rearview_mirror_status(
-          (athena::common::FoldUnfoldStatus)msg->rearview_mirror_status);
-      chassis.set_trunk_status((athena::common::DoorStatus)msg->trunk_status);
-      chassis.set_engine_bay_door_status(
-          (athena::common::DoorStatus)msg->engine_bay_door_status);
-      chassis.set_wheel_direction_rr(
-          (athena::common::WheelSpeedType)msg->wheel_direction_rr);
-      chassis.set_wheel_spd_rr(msg->wheel_spd_rr);
-      chassis.set_wheel_direction_rl(
-          (athena::common::WheelSpeedType)msg->wheel_direction_rl);
-      chassis.set_wheel_spd_rl(msg->wheel_spd_rl);
-      chassis.set_wheel_direction_fr(
-          (athena::common::WheelSpeedType)msg->wheel_direction_fr);
-      chassis.set_wheel_spd_fr(msg->wheel_spd_fr);
-      chassis.set_wheel_direction_fl(
-          (athena::common::WheelSpeedType)msg->wheel_direction_fl);
-      chassis.set_wheel_spd_fl(msg->wheel_spd_fl);
-      chassis.set_is_tire_pressure_ok(
-          (athena::common::FailureStatus)msg->is_tire_pressure_ok);
-      chassis.set_is_tire_pressure_lf_valid(
-          (athena::common::IsValid)msg->is_tire_pressure_lf_valid);
-      chassis.set_tire_pressure_lf(msg->tire_pressure_lf);
-      chassis.set_is_tire_pressure_rf_valid(
-          (athena::common::IsValid)msg->is_tire_pressure_rf_valid);
-      chassis.set_tire_pressure_rf(msg->tire_pressure_rf);
-      chassis.set_is_tire_pressure_lr_valid(
-          (athena::common::IsValid)msg->is_tire_pressure_lr_valid);
-      chassis.set_tire_pressure_lr(msg->tire_pressure_lr);
-      chassis.set_is_tire_pressure_rr_valid(
-          (athena::common::IsValid)msg->is_tire_pressure_rr_valid);
-      chassis.set_tire_pressure_rr(msg->tire_pressure_rr);
-      chassis.set_battery_power_percentage(msg->battery_power_percentage);
-      chassis.set_air_bag_status(
-          (athena::common::FailureStatus)msg->air_bag_status);
-      chassis.set_charging_gun_status(
-          (athena::common::PlugStatus)msg->charging_gun_status);
-      chassis.set_vehicle_power_status(
-          (athena::common::FailureStatus)msg->vehicle_power_status);
-      std::vector<athena::interface::Chassis::ErrorCode> chassis_error_code;
-      for (auto it_chassis_error_code : msg->chassis_error_code)
-      {
-        athena::interface::Chassis::ErrorCode error_code;
-        error_code = (athena::interface::Chassis::ErrorCode)it_chassis_error_code;
-        chassis_error_code.emplace_back(error_code);
-      }
-      chassis.set_chassis_error_code(&chassis_error_code);
-
-      instance_->HandleChassis(chassis);
+      instance_->cmdCallback(cmd);
     }
-
     template <typename T>
-    void Ros2MessageManager<T>::HandleEventsMessage(
-        const ros2_interface::msg::Events::SharedPtr msg_obj_ptr)
-    {
-      if (is_active_ == false)
-        return;
-      std::shared_ptr<ros2_interface::msg::Events> msg =
-          std::const_pointer_cast<ros2_interface::msg::Events>(msg_obj_ptr);
-
-      athena::interface::Events events;
-
-      instance_->HandleEvents(events);
+    void RosMessageManager<T>::ptCallback(const perception_msgs::TaskList::SharedPtr msg) {
+      instance_->ptCallback(msg);
     }
-
     template <typename T>
-    void Ros2MessageManager<T>::HandleObuCmdMsgMessage(
-        const ros2_interface::msg::ObuCmdMsg::SharedPtr msg_obj_ptr)
-    {
-      if (is_init_ == false)
-        return;
-      std::shared_ptr<ros2_interface::msg::ObuCmdMsg> msg =
-          std::const_pointer_cast<ros2_interface::msg::ObuCmdMsg>(msg_obj_ptr);
-
-      athena::interface::ObuCmdMsg obu_cmd_msg;
-      MESSAGE_HEADER_PARSER(obu_cmd_msg)
-      obu_cmd_msg.set_id(msg->id);
-      obu_cmd_msg.set_name(msg->name);
-      std::vector<athena::interface::ObuCmd> obu_cmd_list;
-      for (auto it_obu_cmd_list : msg->obu_cmd_list)
-      {
-        athena::interface::ObuCmd obu_cmd_msg_obu_cmd;
-        obu_cmd_msg_obu_cmd.set_code(it_obu_cmd_list.code);
-        obu_cmd_msg_obu_cmd.set_val(it_obu_cmd_list.val);
-        obu_cmd_list.emplace_back(obu_cmd_msg_obu_cmd);
-      }
-      obu_cmd_msg.set_obu_cmd_list(&obu_cmd_list);
-
-      instance_->HandleObuCmdMsgInput(obu_cmd_msg);
+    void RosMessageManager<T>::stateCallback(const perception_msgs::TaskList::SharedPtr msg) {
+        instance_->stateCallback(msg);
     }
 
     template <typename T>

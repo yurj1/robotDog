@@ -46,16 +46,16 @@ void LobbyMode::Handle(const robot_dog::PercCmd& msg, MessageHandleManager* data
     geometry_msgs::Pose pose;
     //固定点坐标赋值,不是固定点则坐标赋值
     if (getPose(point_name, pose)) {
-        ROS_INFO("Pose for %s:", point_name.c_str());
-        ROS_INFO("  Position: x=%f, y=%f, z=%f", 
+        printf("Pose for %s:", point_name.c_str());
+        printf("  Position: x=%f, y=%f, z=%f", 
                 pose.position.x, pose.position.y, pose.position.z);
-        ROS_INFO("  Orientation: x=%f, y=%f, z=%f, w=%f", 
+        printf("  Orientation: x=%f, y=%f, z=%f, w=%f", 
                 pose.orientation.x, pose.orientation.y, 
                 pose.orientation.z, pose.orientation.w);
         
         AfxGetApp()->PublishPose(pose);
     } else {
-        ROS_INFO("Point %s not found! Get Point value", point_name.c_str());
+        printf("Point %s not found! Get Point value", point_name.c_str());
         pose.position.x = msg.point.x;
         pose.position.y = msg.point.y;
         pose.position.z = msg.point.z;
@@ -69,5 +69,5 @@ void LobbyMode::Handle(const robot_dog::PercCmd& msg, MessageHandleManager* data
     }
     else
         AERROR << "main is nullptr";
-    ROS_INFO("Find %s:", msg.follow_name.c_str());
+    printf("Find %s:", msg.follow_name.c_str());
 }

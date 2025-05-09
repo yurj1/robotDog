@@ -1,0 +1,41 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/perception_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/perception_msgs/msg/detail/action_entry__type_support_c.cpp.o"
+  "CMakeFiles/perception_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/perception_msgs/msg/detail/action_entry__type_support_c.cpp.o.d"
+  "CMakeFiles/perception_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/perception_msgs/msg/detail/alarm_entry__type_support_c.cpp.o"
+  "CMakeFiles/perception_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/perception_msgs/msg/detail/alarm_entry__type_support_c.cpp.o.d"
+  "CMakeFiles/perception_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/perception_msgs/msg/detail/dog_state__type_support_c.cpp.o"
+  "CMakeFiles/perception_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/perception_msgs/msg/detail/dog_state__type_support_c.cpp.o.d"
+  "CMakeFiles/perception_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/perception_msgs/msg/detail/perc_cmd__type_support_c.cpp.o"
+  "CMakeFiles/perception_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/perception_msgs/msg/detail/perc_cmd__type_support_c.cpp.o.d"
+  "CMakeFiles/perception_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/perception_msgs/msg/detail/perc_req__type_support_c.cpp.o"
+  "CMakeFiles/perception_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/perception_msgs/msg/detail/perc_req__type_support_c.cpp.o.d"
+  "CMakeFiles/perception_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/perception_msgs/msg/detail/perc_state__type_support_c.cpp.o"
+  "CMakeFiles/perception_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/perception_msgs/msg/detail/perc_state__type_support_c.cpp.o.d"
+  "CMakeFiles/perception_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/perception_msgs/msg/detail/task_list__type_support_c.cpp.o"
+  "CMakeFiles/perception_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/perception_msgs/msg/detail/task_list__type_support_c.cpp.o.d"
+  "CMakeFiles/perception_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/perception_msgs/srv/detail/dog_record_bag__type_support_c.cpp.o"
+  "CMakeFiles/perception_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/perception_msgs/srv/detail/dog_record_bag__type_support_c.cpp.o.d"
+  "libperception_msgs__rosidl_typesupport_fastrtps_c.pdb"
+  "libperception_msgs__rosidl_typesupport_fastrtps_c.so"
+  "rosidl_typesupport_fastrtps_c/perception_msgs/msg/detail/action_entry__rosidl_typesupport_fastrtps_c.h"
+  "rosidl_typesupport_fastrtps_c/perception_msgs/msg/detail/action_entry__type_support_c.cpp"
+  "rosidl_typesupport_fastrtps_c/perception_msgs/msg/detail/alarm_entry__rosidl_typesupport_fastrtps_c.h"
+  "rosidl_typesupport_fastrtps_c/perception_msgs/msg/detail/alarm_entry__type_support_c.cpp"
+  "rosidl_typesupport_fastrtps_c/perception_msgs/msg/detail/dog_state__rosidl_typesupport_fastrtps_c.h"
+  "rosidl_typesupport_fastrtps_c/perception_msgs/msg/detail/dog_state__type_support_c.cpp"
+  "rosidl_typesupport_fastrtps_c/perception_msgs/msg/detail/perc_cmd__rosidl_typesupport_fastrtps_c.h"
+  "rosidl_typesupport_fastrtps_c/perception_msgs/msg/detail/perc_cmd__type_support_c.cpp"
+  "rosidl_typesupport_fastrtps_c/perception_msgs/msg/detail/perc_req__rosidl_typesupport_fastrtps_c.h"
+  "rosidl_typesupport_fastrtps_c/perception_msgs/msg/detail/perc_req__type_support_c.cpp"
+  "rosidl_typesupport_fastrtps_c/perception_msgs/msg/detail/perc_state__rosidl_typesupport_fastrtps_c.h"
+  "rosidl_typesupport_fastrtps_c/perception_msgs/msg/detail/perc_state__type_support_c.cpp"
+  "rosidl_typesupport_fastrtps_c/perception_msgs/msg/detail/task_list__rosidl_typesupport_fastrtps_c.h"
+  "rosidl_typesupport_fastrtps_c/perception_msgs/msg/detail/task_list__type_support_c.cpp"
+  "rosidl_typesupport_fastrtps_c/perception_msgs/srv/detail/dog_record_bag__rosidl_typesupport_fastrtps_c.h"
+  "rosidl_typesupport_fastrtps_c/perception_msgs/srv/detail/dog_record_bag__type_support_c.cpp"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/perception_msgs__rosidl_typesupport_fastrtps_c.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

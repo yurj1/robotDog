@@ -1,0 +1,25 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from perception_msgs/srv/DogRecordBag.srv
+// generated code does not contain a copyright notice
+
+
+module perception_msgs {
+  module srv {
+    @verbatim (language="comment", text=
+      " 0:结束；1：话题录包；2：执行脚本录包")
+    struct DogRecordBag_Request {
+      uint8 bag_mode;
+
+      string bag_name;
+
+      sequence<string> topics;
+
+      string bash_name;
+    };
+    struct DogRecordBag_Response {
+      boolean success;
+
+      string error_info;
+    };
+  };
+};

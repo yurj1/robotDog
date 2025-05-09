@@ -22,6 +22,6 @@ void CancelMode::Handle(const robot_dog::PercCmd& msg, MessageHandleManager* dat
     pubData_.task_id = msg.action_id;
     pubData_.task_type = robot_dog::operations::TaskType::TASK_CANCEL;
     
-    ROS_INFO("Cancel Task");
+    printf("Cancel Task");
     AfxGetApp()->PublishTaskList(pubData_);
 }

@@ -45,10 +45,10 @@ void DestMode::Handle(const robot_dog::PercCmd& msg, MessageHandleManager* data_
     
     //获取坐标
     if (getPose(point_name, pose)) {
-    ROS_INFO("Pose for %s:", point_name.c_str());
-    ROS_INFO("  Position: x=%f, y=%f, z=%f", 
+    printf("Pose for %s:", point_name.c_str());
+    printf("  Position: x=%f, y=%f, z=%f", 
             pose.position.x, pose.position.y, pose.position.z);
-    ROS_INFO("  Orientation: x=%f, y=%f, z=%f, w=%f", 
+    printf("  Orientation: x=%f, y=%f, z=%f, w=%f", 
             pose.orientation.x, pose.orientation.y, 
             pose.orientation.z, pose.orientation.w);
     pubData_.target_position = pose;

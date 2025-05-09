@@ -1,0 +1,79 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from perception_msgs/msg/PercCmd.msg
+// generated code does not contain a copyright notice
+
+#include "geometry_msgs/msg/Point.idl"
+#include "std_msgs/msg/Header.idl"
+
+module perception_msgs {
+  module msg {
+    module PercCmd_Constants {
+      const uint32 PERC_DEST = 1;
+      const uint32 PERC_ABS = 2;
+      const uint32 PERC_REL = 3;
+      const uint32 PERC_AUTO_CHARGING = 20;
+      const uint32 PERC_CHECK_ENV = 21;
+      const uint32 PERC_AUTO_MAPPING = 22;
+      const uint32 PERC_FOLLOW = 30;
+      const uint32 PERC_STRANGER_WELCOME = 31;
+      const uint32 PERC_OWNER_WELCOME = 32;
+      const uint32 PERC_BEHAVIOR_INTERACTION = 33;
+      const uint32 PERC_HANDSHAKE = 34;
+      const uint32 PERC_STANDBY_ACCOMPANY = 35;
+      const uint32 PERC_HAPPY_ACCOMPANY = 36;
+      const uint32 PERC_WORK_ACCOMPANY = 37;
+      const uint32 PERC_POSITIVE_ACCOMPANY = 38;
+      const uint32 PERC_NEGATIVE_ACCOMPANY = 39;
+      const uint32 PERC_CHILD_WATCH = 40;
+      const uint32 PERC_OLDER_WATCH = 41;
+      const uint32 PERC_DANGER_REMINDER = 42;
+      const uint32 PERC_EVENT_REMINDER = 43;
+      const uint32 PERC_CATWALK_START = 44;
+      const uint32 PERC_CATWALK_ACT = 45;
+      const uint32 PERC_CATWALK_SHOW = 46;
+      const uint32 PERC_CATWALK_BACK = 47;
+      const uint32 PERC_FREE_TIME = 50;
+      const uint32 PERC_SOCIALIZE = 51;
+      const uint32 PERC_SPECT_PERFORM = 55;
+      const uint32 PERC_FACE_DETCTION = 56;
+      const uint32 PERC_DANGER_INFO = 60;
+      const uint32 PERC_WELCOME_DEMO = 61;
+      const uint32 PERC_LOBBY_DEMO = 62;
+      const uint32 PERC_CANCEL = 100;
+      const uint32 PERC_NODE_CLOSE = 200;
+      const uint32 PERC_NODE_START = 201;
+      const uint32 PERC_NODE_RESET = 202;
+      const uint32 FOLLOW_ON = 1;
+      const uint32 FOLLOW_OFF = 2;
+    };
+    struct PercCmd {
+      std_msgs::msg::Header header;
+
+      @verbatim (language="comment", text=
+        "动作执行id,增加含义：时间+序号")
+      uint64 action_id;
+
+      @verbatim (language="comment", text=
+        " 感知命令类型")
+      uint32 perc_kind;
+
+      uint64 req_id;
+
+      uint32 on_off;
+
+      string follow_name;
+
+      @verbatim (language="comment", text=
+        " 目标角度")
+      double angle;
+
+      @verbatim (language="comment", text=
+        " 字符串表示某个位置")
+      string point_name;
+
+      @verbatim (language="comment", text=
+        " Point表示某个位置")
+      geometry_msgs::msg::Point point;
+    };
+  };
+};

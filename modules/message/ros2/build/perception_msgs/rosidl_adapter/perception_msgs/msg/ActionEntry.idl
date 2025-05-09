@@ -1,0 +1,26 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from perception_msgs/msg/ActionEntry.msg
+// generated code does not contain a copyright notice
+
+
+module perception_msgs {
+  module msg {
+    @verbatim (language="comment", text=
+      "动作id")
+    struct ActionEntry {
+      int32 id;
+
+      @verbatim (language="comment", text=
+        "动作参数")
+      int32 param1;
+
+      int32 param2;
+
+      string param3;
+
+      @verbatim (language="comment", text=
+        "消息")
+      string info;
+    };
+  };
+};

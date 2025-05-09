@@ -1,7 +1,6 @@
 #ifndef __PERCEPTION_BRIDGE_H__
 #define __PERCEPTION_BRIDGE_H__
 
-#include <ros/ros.h>
 #include <manager/message_handle_manager.h>
 
 #include <mutex>
@@ -37,7 +36,7 @@
 #endif
 
 #include "conf/robot_dog_conf.hpp"
-
+class UnitreeSdkService;
 namespace athena
 {
   namespace function {
@@ -106,6 +105,8 @@ namespace athena
           message_manager_;
       // ros消息管理器
       MessageHandleManager* message_handle_manager_;
+      //unitree sdk 消息获取
+      UnitreeSdkService* unitree_sdk_service_;
     #if LCM_ENABLE
       std::shared_ptr<LcmMessageManager<RobotDogMain>> lcm_message_manager_;
     #endif

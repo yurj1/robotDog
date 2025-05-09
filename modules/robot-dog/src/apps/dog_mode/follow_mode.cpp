@@ -24,6 +24,6 @@ void FollowMode::Handle(const robot_dog::PercCmd& msg, MessageHandleManager* dat
     pubData_.target_object = msg.follow_name;
     pubData_.task_type = robot_dog::operations::TaskType::TASK_FOLLOW;
     
-    ROS_INFO("Follow %s:", msg.follow_name.c_str());
+    printf("Follow %s:", msg.follow_name.c_str());
     AfxGetApp()->PublishTaskList(pubData_);
 }

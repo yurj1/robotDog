@@ -1,0 +1,5 @@
+# 0:结束；1：话题录包；2：执行脚本录包
+uint8 bag_mode
+string bag_name
+string[] topics
+string bash_name
