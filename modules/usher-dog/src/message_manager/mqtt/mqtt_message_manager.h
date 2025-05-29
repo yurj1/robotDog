@@ -1,0 +1,118 @@
+/*
+ * @Author: wqf 2549058524@qq.com
+ * @Date: 2025-04-07 13:58:07
+ * @LastEditors: wqf 2549058524@qq.com
+ * @LastEditTime: 2025-04-07 18:36:27
+ * @FilePath: /reboot_dog_remote/modules/jsx_remote_bridge/src/message_manager/mqtt/mqtt_message_manager.h
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
+/**
+ * @file    lcm_message_manager.h
+ * @author  hyzx
+ * @date    2022-05-06
+ * @version 1.0.0
+ * @par     Copyright(c)
+ * @license GNU General Public License (GPL)
+ */
+
+ #pragma once
+ #if MQTT_ENABLE
+ #include <thread>
+ #include "mqtt/async_client.h"
+ 
+ #include "interface/MSG_V_1_0_0.pb.h"
+ 
+ #include "message_manager/message_manager.h"
+#include "MqttClientEventHandler.h"
+ 
+ /**
+  * @namespace athena::jsx_remote_bridge
+  * @brief athena::jsx_remote_bridge
+  */
+ 
+ namespace athena
+ {
+   namespace function
+   {
+     /**
+      * @class MqttMessageManager
+      * @brief  Mqtt消息管理器.
+      */
+     template <typename T>
+     class MqttMessageManager : public MessageManager<T>
+     {
+      using MessageCPtr = std::shared_ptr<const mqtt::message>;
+     public:
+       MqttMessageManager() = default;
+       ~MqttMessageManager() = default;
+ 
+       /**
+        * @brief     初始化。
+        * @param[in] obu_url LCM组播信息.
+        * @return    void.
+        */
+       void Init(T *t) override;
+ 
+       //void PublishJoyMsgOutput(athena::interface::JoyMsg msg) override;
+       void PublishTaskList(robot_dog::TaskList msg)override;
+       void PublishPose(robot_dog::Position msg)override;
+       void PublishState(robot_dog::PercState msg)override;
+       void PublishAction(robot_dog::ActionEntry msg)override;
+       void PublishVideoOnInt(const std::vector<robot_dog::ObuCmd>& msg)override{};
+       void PublishVideoOnString(const std::vector<robot_dog::Event>& msg)override{};
+
+      void PublishRecordBagCallbackInfo(const robot_dog::CallbackInfo& rsp);
+
+      void PublishCurrentPoint(const std::string& data);
+      void PublishGlobalCloud(const std::string& data);
+      void PublishPlanningPlan(const std::string& data);
+      void PublishTaskPoint(const std::string& data);
+       
+       bool Activate();
+       bool DeActivate();
+ 
+       string GetTopic(string topic);
+       bool CheckTopic(string topic);
+ 
+     protected:
+       T *instance_;
+       bool is_init_;
+       bool is_active_;
+       std::mutex mutex_;
+ 
+       mqtt::async_client_ptr client;
+       std::string VIN;
+       
+       std::unique_ptr<std::thread>
+           handle_message_thread_;
+
+       // 固定点映射表
+       //std::map<std::string, robot_dog::Position> point_map_;
+ 
+       /**
+        * @brief     线程运行函数.
+        * @return    void.
+        */
+       void Run();
+       void HandleJoyMsg(const std::string& msg);
+       void HandleTaskMsg(const std::string& msg);
+       void HandRecordBagMsg(const std::string& msg);
+       /**
+        * @brief     线程结束函数.
+        * @return    void.
+        */
+       void Stop();
+      private:
+        std::string GenerateClientId(const std::string& baseName);
+        virtual void _onConnectCompleted();
+        virtual void _onMessageArrived(MessageCPtr message);
+        using EventHandlerPtr = std::shared_ptr<robot_dog::MqttClientEventHandler>;
+        EventHandlerPtr		m_eventHandlerPtr;
+
+ 
+     };
+   } // namespace function
+ } // namespace athena
+ #include "mqtt_message_manager.hpp"
+ #endif
+ 

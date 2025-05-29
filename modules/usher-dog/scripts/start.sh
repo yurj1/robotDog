@@ -1,0 +1,6 @@
+#!/bin/bash
+work_path=/home/meizan/workspace/athena-robot-dog/modules/usher-dog
+source ${work_path}/../message/ros/devel/setup.bash
+roslaunch perception_msgs perception_bridge_msg.launch
+cd ${work_path}/bin;
+./usher_dog;
