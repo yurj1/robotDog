@@ -1,0 +1,1 @@
+/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/quad_msgs/share/roseus/ros/quad_msgs/msg/MultiFootPlanDiscrete.l

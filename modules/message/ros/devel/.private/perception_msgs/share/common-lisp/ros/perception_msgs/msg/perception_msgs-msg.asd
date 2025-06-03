@@ -12,6 +12,8 @@
     (:file "_package_AlarmEntry" :depends-on ("_package"))
     (:file "DogState" :depends-on ("_package_DogState"))
     (:file "_package_DogState" :depends-on ("_package"))
+    (:file "GestureReq" :depends-on ("_package_GestureReq"))
+    (:file "_package_GestureReq" :depends-on ("_package"))
     (:file "PercCmd" :depends-on ("_package_PercCmd"))
     (:file "_package_PercCmd" :depends-on ("_package"))
     (:file "PercReq" :depends-on ("_package_PercReq"))

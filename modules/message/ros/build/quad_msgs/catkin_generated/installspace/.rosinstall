@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/meizan/workspace/athena-robot-dog/modules/message/ros/install/setup.sh

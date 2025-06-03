@@ -1933,6 +1933,8 @@ usher_dog_EXTERNAL_OBJECTS =
 /home/meizan/workspace/athena-robot-dog/modules/usher-dog/bin/usher_dog: /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0
 /home/meizan/workspace/athena-robot-dog/modules/usher-dog/bin/usher_dog: /usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0
 /home/meizan/workspace/athena-robot-dog/modules/usher-dog/bin/usher_dog: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
+/home/meizan/workspace/athena-robot-dog/modules/usher-dog/bin/usher_dog: /usr/lib/x86_64-linux-gnu/libssl.so
+/home/meizan/workspace/athena-robot-dog/modules/usher-dog/bin/usher_dog: /usr/lib/x86_64-linux-gnu/libcrypto.so
 /home/meizan/workspace/athena-robot-dog/modules/usher-dog/bin/usher_dog: CMakeFiles/usher_dog.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/meizan/workspace/athena-robot-dog/modules/usher-dog/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_116) "Linking CXX executable /home/meizan/workspace/athena-robot-dog/modules/usher-dog/bin/usher_dog"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/usher_dog.dir/link.txt --verbose=$(VERBOSE)

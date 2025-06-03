@@ -11,7 +11,8 @@ class DogRecordBagRequest(genpy.Message):
   _md5sum = "435df60b084d02339cae3ad06a32a529"
   _type = "perception_msgs/DogRecordBagRequest"
   _has_header = False  # flag to mark the presence of a Header object
-  _full_text = """uint8 bagMode
+  _full_text = """# 0:结束；1：话题录包；2：执行脚本录包
+uint8 bagMode
 string bagName
 string[] topics
 string bashName

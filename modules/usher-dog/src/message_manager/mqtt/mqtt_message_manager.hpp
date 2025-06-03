@@ -13,11 +13,14 @@
  #include "modules/common/logging/logging.h"
  #include "modules/common/base_message/message.h"
  #include "services/joy_handle_service.h"
-
  #include <common/json/json.hpp>
  //#include "modules/common/math/euler_angles_zxy.h"
  
  #if MQTT_ENABLE
+
+#include "mqtt/ssl_options.h"
+//#include <mqtt/version_info.h>
+
  /**
   * @namespace athena::jsx_remote_bridge
   * @brief athena::jsx_remote_bridge
@@ -30,63 +33,51 @@ using  Json = nlohmann::json;
      template <typename T>
      void MqttMessageManager<T>::Init(T *t)
      {
-       is_init_ = false;
-       is_active_ = false;
-       instance_ = t;
-
-       // const string DFLT_SERVER_ADDRESS{"mqtt://localhost:1883"};
-       // const string CLIENT_ID{"paho_cpp_async_publish"};
-       const string PERSIST_DIR{"./persist"};
- 
-       // string address = DFLT_SERVER_ADDRESS,
-       //        clientID = CLIENT_ID;
- 
-       std::map<std::string, athena::common::Message> messages =
-           instance_->GetConf()->messages();
-       //VIN = instance_->GetVIN();
- 
-       string address = messages["MQTT"].url;
-              //clientID = VIN;
- 
-       // client = std::make_shared<mqtt::async_client>(address, CLIENT_ID);
-       client = std::make_shared<mqtt::async_client>(messages["MQTT"].url, GenerateClientId(instance_->GetJsonConfig()["ClientId"]));
-
-       m_eventHandlerPtr = std::make_shared<robot_dog::MqttClientEventHandler>(*client);
-       m_eventHandlerPtr->setConnectCompletedEvent(std::bind(&MqttMessageManager::_onConnectCompleted, this));
-       m_eventHandlerPtr->setMessageArrivedEvent(std::bind(&MqttMessageManager::_onMessageArrived, this, std::placeholders::_1));
-       // 设置断线重连处理
-       client->set_callback(*m_eventHandlerPtr);
-       // auto sslopts = mqtt::ssl_options_builder()
-       //                    .trust_store("/home/ywb/Documents/c++project/SLS/mqtt_certs/ca.crt")
-       //                    .key_store("/home/ywb/Documents/c++project/SLS/mqtt_certs/client.crt")
-       //                    .private_key("/home/ywb/Documents/c++project/SLS/mqtt_certs/client.key")
-       //                    .verify(false)
-       //                    .error_handler([](const std::string &msg)
-       //                                   { std::cerr << "SSL Error: " << msg << std::endl; })
-       //                    .finalize();
- 
-       auto connOpts = mqtt::connect_options_builder()
-                           .user_name("hy")
-                           .password("123")
-                           .finalize();
- 
-      //  auto TOPICS = mqtt::string_collection::create({mqtt_joy_msg_sub, mqtt_task_list_sub, mqtt_function_request_sub});
-      //  const vector<int> QOS{0, 1, 1};
- 
-       client->start_consuming();
-       try 
+      try 
        {
-          AINFO << "connect to mqtt server: " <<messages["MQTT"].url << "...";
+        is_init_ = false;
+        is_active_ = false;
+        instance_ = t;
+  
+        std::map<std::string, athena::common::Message> messages =
+            instance_->GetConf()->messages();
+  
+        string address = /*"ssl://broker.emqx.io:8883";*/messages["MQTT"].url;
 
+        AINFO << "std::make_shared<mqtt::async_client>..." << address << ": " << GenerateClientId(instance_->GetJsonConfig()["ClientId"]);
+        client = std::make_shared<mqtt::async_client>(address, GenerateClientId(instance_->GetJsonConfig()["ClientId"]));
+
+        m_eventHandlerPtr = std::make_shared<robot_dog::MqttClientEventHandler>(*client);
+        m_eventHandlerPtr->setConnectCompletedEvent(std::bind(&MqttMessageManager::_onConnectCompleted, this));
+        m_eventHandlerPtr->setMessageArrivedEvent(std::bind(&MqttMessageManager::_onMessageArrived, this, std::placeholders::_1));
+        // 设置断线重连处理
+        client->set_callback(*m_eventHandlerPtr);
+        auto sslopts = mqtt::ssl_options_builder()
+                            .trust_store("/home/meizan/workspace/athena-robot-dog/modules/usher-dog/bin/conf/ca.crt")
+                            //.key_store("/home/ywb/Documents/c++project/SLS/mqtt_certs/client.crt")
+                            //.private_key("/home/ywb/Documents/c++project/SLS/mqtt_certs/client.key")
+                            .verify(true)
+                            .error_handler([](const std::string &msg)
+                                          { std::cerr << "SSL Error: " << msg << std::endl; })
+                            .finalize();
+      // 启用 SSL/TLS
+      sslopts.set_enable_server_cert_auth(true); // 验证服务器证书`
+
+      auto connOpts = mqtt::connect_options_builder()
+                          .clean_session(true)
+                          .user_name("hy")
+                          .password("123")
+                          .ssl(sslopts)
+                          .finalize();
+        AINFO << "start_consuming...";
+        client->start_consuming();
+       
+          AINFO << "connect to mqtt server: " <<address << "...";
           m_eventHandlerPtr->setConnectOptions(connOpts);
+          AINFO << 1;
           //m_clientPtr->connect(connOpts, nullptr, *m_eventHandlerPtr);
           client->connect(connOpts, nullptr, *m_eventHandlerPtr);
-
-          // cout << "OK!\n"
-          //       << endl;
-    
-          //if (!rsp.is_session_present())
-            // client->subscribe(TOPICS, QOS);
+          AINFO << 2;
        }
        catch (const std::exception &ex)
        {

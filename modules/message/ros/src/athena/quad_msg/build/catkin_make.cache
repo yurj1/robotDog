@@ -1,0 +1,2 @@
+.
+-DCATKIN_DEVEL_PREFIX=/home/ys/Documents/dog/vis_flashocc1220_ys/vis_flashocc_bak/quad_msg/devel -DCMAKE_INSTALL_PREFIX=/home/ys/Documents/dog/vis_flashocc1220_ys/vis_flashocc_bak/quad_msg/install -G Unix Makefiles

@@ -159,7 +159,8 @@
 (setf (get perception_msgs::DogRecordBagRequest :md5sum-) "0e3c6c8f89a4078d1c2279ef76b31bf7")
 (setf (get perception_msgs::DogRecordBagRequest :datatype-) "perception_msgs/DogRecordBagRequest")
 (setf (get perception_msgs::DogRecordBagRequest :definition-)
-      "uint8 bagMode
+      "# 0:结束；1：话题录包；2：执行脚本录包
+uint8 bagMode
 string bagName
 string[] topics
 string bashName
@@ -172,7 +173,8 @@ string errorInfo
 (setf (get perception_msgs::DogRecordBagResponse :md5sum-) "0e3c6c8f89a4078d1c2279ef76b31bf7")
 (setf (get perception_msgs::DogRecordBagResponse :datatype-) "perception_msgs/DogRecordBagResponse")
 (setf (get perception_msgs::DogRecordBagResponse :definition-)
-      "uint8 bagMode
+      "# 0:结束；1：话题录包；2：执行脚本录包
+uint8 bagMode
 string bagName
 string[] topics
 string bashName

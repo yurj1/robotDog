@@ -1,0 +1,1 @@
+/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/quad_msgs/lib/python3/dist-packages/quad_msgs/msg/_BodyState.py

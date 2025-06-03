@@ -105,6 +105,7 @@ class DogRecordBagRequest {
   static messageDefinition() {
     // Returns full string definition for message
     return `
+    # 0:结束；1：话题录包；2：执行脚本录包
     uint8 bagMode
     string bagName
     string[] topics

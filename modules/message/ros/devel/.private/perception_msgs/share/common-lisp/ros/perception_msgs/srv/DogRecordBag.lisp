@@ -135,10 +135,10 @@
   "0e3c6c8f89a4078d1c2279ef76b31bf7")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<DogRecordBag-request>)))
   "Returns full string definition for message of type '<DogRecordBag-request>"
-  (cl:format cl:nil "uint8 bagMode~%string bagName~%string[] topics~%string bashName~%~%~%"))
+  (cl:format cl:nil "# 0:结束；1：话题录包；2：执行脚本录包~%uint8 bagMode~%string bagName~%string[] topics~%string bashName~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'DogRecordBag-request)))
   "Returns full string definition for message of type 'DogRecordBag-request"
-  (cl:format cl:nil "uint8 bagMode~%string bagName~%string[] topics~%string bashName~%~%~%"))
+  (cl:format cl:nil "# 0:结束；1：话题录包；2：执行脚本录包~%uint8 bagMode~%string bagName~%string[] topics~%string bashName~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <DogRecordBag-request>))
   (cl:+ 0
      1

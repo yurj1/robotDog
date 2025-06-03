@@ -1809,38 +1809,31 @@ CMakeFiles/usher_dog.dir/src/apps/dog_mode/cancel_mode.cpp.o: \
  /home/meizan/workspace/athena-robot-dog/modules/usher-dog/src/message_manager/ros/ros_message_manager.hpp \
  /home/meizan/workspace/athena-robot-dog/modules/usher-dog/src/services/voice_service.h \
  /home/meizan/workspace/athena-robot-dog/modules/usher-dog/src/message_manager/mqtt/mqtt_message_manager.h \
- /home/meizan/workspace/athena/third_party/x64/include/mqtt/async_client.h \
- /usr/local/include/MQTTAsync.h \
+ /usr/local/include/mqtt/async_client.h /usr/local/include/MQTTAsync.h \
  /usr/local/include/MQTTExportDeclarations.h \
  /usr/local/include/MQTTProperties.h /usr/local/include/MQTTReasonCodes.h \
  /usr/local/include/MQTTSubscribeOpts.h \
  /usr/local/include/MQTTClientPersistence.h \
- /home/meizan/workspace/athena/third_party/x64/include/mqtt/types.h \
- /home/meizan/workspace/athena/third_party/x64/include/mqtt/token.h \
- /home/meizan/workspace/athena/third_party/x64/include/mqtt/iaction_listener.h \
- /home/meizan/workspace/athena/third_party/x64/include/mqtt/exception.h \
- /home/meizan/workspace/athena/third_party/x64/include/mqtt/properties.h \
- /usr/local/include/MQTTProperties.h \
- /home/meizan/workspace/athena/third_party/x64/include/mqtt/buffer_ref.h \
- /home/meizan/workspace/athena/third_party/x64/include/mqtt/platform.h \
- /home/meizan/workspace/athena/third_party/x64/include/mqtt/export.h \
- /home/meizan/workspace/athena/third_party/x64/include/mqtt/string_collection.h \
- /home/meizan/workspace/athena/third_party/x64/include/mqtt/server_response.h \
- /home/meizan/workspace/athena/third_party/x64/include/mqtt/create_options.h \
- /home/meizan/workspace/athena/third_party/x64/include/mqtt/delivery_token.h \
- /home/meizan/workspace/athena/third_party/x64/include/mqtt/message.h \
- /home/meizan/workspace/athena/third_party/x64/include/mqtt/iclient_persistence.h \
- /home/meizan/workspace/athena/third_party/x64/include/mqtt/buffer_view.h \
- /home/meizan/workspace/athena/third_party/x64/include/mqtt/callback.h \
- /home/meizan/workspace/athena/third_party/x64/include/mqtt/thread_queue.h \
- /home/meizan/workspace/athena/third_party/x64/include/mqtt/iasync_client.h \
- /home/meizan/workspace/athena/third_party/x64/include/mqtt/connect_options.h \
- /home/meizan/workspace/athena/third_party/x64/include/mqtt/topic.h \
- /home/meizan/workspace/athena/third_party/x64/include/mqtt/subscribe_options.h \
+ /usr/local/include/mqtt/types.h /usr/local/include/mqtt/token.h \
+ /usr/local/include/mqtt/iaction_listener.h \
+ /usr/local/include/mqtt/exception.h /usr/local/include/mqtt/properties.h \
+ /usr/local/include/MQTTProperties.h /usr/local/include/mqtt/buffer_ref.h \
+ /usr/local/include/mqtt/string_collection.h \
+ /usr/local/include/mqtt/server_response.h \
+ /usr/local/include/mqtt/create_options.h \
+ /usr/local/include/mqtt/delivery_token.h \
+ /usr/local/include/mqtt/message.h \
+ /usr/local/include/mqtt/iclient_persistence.h \
+ /usr/local/include/mqtt/buffer_view.h /usr/local/include/mqtt/callback.h \
+ /usr/local/include/mqtt/thread_queue.h \
+ /usr/local/include/mqtt/iasync_client.h \
+ /usr/local/include/mqtt/connect_options.h \
+ /usr/local/include/mqtt/topic.h \
+ /usr/local/include/mqtt/subscribe_options.h \
  /usr/local/include/MQTTSubscribeOpts.h \
- /home/meizan/workspace/athena/third_party/x64/include/mqtt/will_options.h \
- /home/meizan/workspace/athena/third_party/x64/include/mqtt/ssl_options.h \
- /home/meizan/workspace/athena/third_party/x64/include/mqtt/disconnect_options.h \
+ /usr/local/include/mqtt/will_options.h \
+ /usr/local/include/mqtt/ssl_options.h \
+ /usr/local/include/mqtt/disconnect_options.h \
  /home/meizan/workspace/athena-robot-dog/modules/usher-dog/src/message_manager/mqtt/MqttClientEventHandler.h \
  /home/meizan/workspace/athena-robot-dog/modules/usher-dog/src/message_manager/mqtt/mqtt_message_manager.hpp \
  /home/meizan/workspace/athena-robot-dog/modules/usher-dog/../../modules/common/base_message/message.h \

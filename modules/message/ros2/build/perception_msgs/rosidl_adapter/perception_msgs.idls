@@ -1,8 +1,0 @@
-/home/meizan/workspace/athena-robot-dog/modules/message/ros2/build/perception_msgs/rosidl_adapter/perception_msgs:msg/ActionEntry.idl
-/home/meizan/workspace/athena-robot-dog/modules/message/ros2/build/perception_msgs/rosidl_adapter/perception_msgs:msg/AlarmEntry.idl
-/home/meizan/workspace/athena-robot-dog/modules/message/ros2/build/perception_msgs/rosidl_adapter/perception_msgs:msg/PercCmd.idl
-/home/meizan/workspace/athena-robot-dog/modules/message/ros2/build/perception_msgs/rosidl_adapter/perception_msgs:msg/PercState.idl
-/home/meizan/workspace/athena-robot-dog/modules/message/ros2/build/perception_msgs/rosidl_adapter/perception_msgs:msg/PercReq.idl
-/home/meizan/workspace/athena-robot-dog/modules/message/ros2/build/perception_msgs/rosidl_adapter/perception_msgs:msg/TaskList.idl
-/home/meizan/workspace/athena-robot-dog/modules/message/ros2/build/perception_msgs/rosidl_adapter/perception_msgs:msg/DogState.idl
-/home/meizan/workspace/athena-robot-dog/modules/message/ros2/build/perception_msgs/rosidl_adapter/perception_msgs:srv/DogRecordBag.idl

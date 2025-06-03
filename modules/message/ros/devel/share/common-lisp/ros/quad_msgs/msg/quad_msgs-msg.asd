@@ -1,0 +1,1 @@
+/home/meizan/workspace/athena-robot-dog/modules/message/ros/devel/.private/quad_msgs/share/common-lisp/ros/quad_msgs/msg/quad_msgs-msg.asd

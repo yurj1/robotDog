@@ -7,6 +7,8 @@
    "ALARMENTRY"
    "<DOGSTATE>"
    "DOGSTATE"
+   "<GESTUREREQ>"
+   "GESTUREREQ"
    "<PERCCMD>"
    "PERCCMD"
    "<PERCREQ>"

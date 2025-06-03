@@ -164,7 +164,8 @@ struct Definition< ::perception_msgs::DogRecordBagRequest_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "uint8 bagMode\n"
+    return "# 0:结束；1：话题录包；2：执行脚本录包\n"
+"uint8 bagMode\n"
 "string bagName\n"
 "string[] topics\n"
 "string bashName\n"

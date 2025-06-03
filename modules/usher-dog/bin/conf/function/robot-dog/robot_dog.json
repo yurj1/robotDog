@@ -43,7 +43,7 @@
             {
                 "type": 5,
                 "name": "MQTT",
-                "url": "mqtt://192.168.2.181:1883"
+                "url": "ssl://c2b33530.ala.cn-hangzhou.emqxsl.cn:8883"
             }
         ]
     },

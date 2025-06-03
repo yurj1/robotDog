@@ -1,0 +1,2 @@
+set(quad_msgs_MESSAGE_FILES "msg/BodyForceEstimate.msg;msg/RobotState.msg;msg/BodyState.msg;msg/GRFArray.msg;msg/RobotPlan.msg;msg/RobotPlanDiagnostics.msg;msg/FootState.msg;msg/MultiFootState.msg;msg/MultiFootPlanContinuous.msg;msg/FootPlanDiscrete.msg;msg/MultiFootPlanDiscrete.msg;msg/LegContactMode.msg;msg/ContactMode.msg;msg/MotorCommand.msg;msg/LegCommand.msg;msg/LegCommandArray.msg")
+set(quad_msgs_SERVICE_FILES "")

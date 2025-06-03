@@ -1,0 +1,11 @@
+# generated from genmsg/cmake/pkg-genmsg.context.in
+
+messages_str = "/home/ys/Documents/dog/vis_flashocc1220_ys/vis_flashocc_bak/quad_msg/src/msg/BodyForceEstimate.msg;/home/ys/Documents/dog/vis_flashocc1220_ys/vis_flashocc_bak/quad_msg/src/msg/RobotState.msg;/home/ys/Documents/dog/vis_flashocc1220_ys/vis_flashocc_bak/quad_msg/src/msg/BodyState.msg;/home/ys/Documents/dog/vis_flashocc1220_ys/vis_flashocc_bak/quad_msg/src/msg/GRFArray.msg;/home/ys/Documents/dog/vis_flashocc1220_ys/vis_flashocc_bak/quad_msg/src/msg/RobotPlan.msg;/home/ys/Documents/dog/vis_flashocc1220_ys/vis_flashocc_bak/quad_msg/src/msg/RobotPlanDiagnostics.msg;/home/ys/Documents/dog/vis_flashocc1220_ys/vis_flashocc_bak/quad_msg/src/msg/FootState.msg;/home/ys/Documents/dog/vis_flashocc1220_ys/vis_flashocc_bak/quad_msg/src/msg/MultiFootState.msg;/home/ys/Documents/dog/vis_flashocc1220_ys/vis_flashocc_bak/quad_msg/src/msg/MultiFootPlanContinuous.msg;/home/ys/Documents/dog/vis_flashocc1220_ys/vis_flashocc_bak/quad_msg/src/msg/FootPlanDiscrete.msg;/home/ys/Documents/dog/vis_flashocc1220_ys/vis_flashocc_bak/quad_msg/src/msg/MultiFootPlanDiscrete.msg;/home/ys/Documents/dog/vis_flashocc1220_ys/vis_flashocc_bak/quad_msg/src/msg/LegContactMode.msg;/home/ys/Documents/dog/vis_flashocc1220_ys/vis_flashocc_bak/quad_msg/src/msg/ContactMode.msg;/home/ys/Documents/dog/vis_flashocc1220_ys/vis_flashocc_bak/quad_msg/src/msg/MotorCommand.msg;/home/ys/Documents/dog/vis_flashocc1220_ys/vis_flashocc_bak/quad_msg/src/msg/LegCommand.msg;/home/ys/Documents/dog/vis_flashocc1220_ys/vis_flashocc_bak/quad_msg/src/msg/LegCommandArray.msg"
+services_str = ""
+pkg_name = "quad_msgs"
+dependencies_str = "sensor_msgs;std_msgs;nav_msgs;geometry_msgs"
+langs = "gencpp;geneus;genlisp;gennodejs;genpy"
+dep_include_paths_str = "quad_msgs;/home/ys/Documents/dog/vis_flashocc1220_ys/vis_flashocc_bak/quad_msg/src/msg;sensor_msgs;/opt/ros/noetic/share/sensor_msgs/cmake/../msg;std_msgs;/opt/ros/noetic/share/std_msgs/cmake/../msg;nav_msgs;/opt/ros/noetic/share/nav_msgs/cmake/../msg;geometry_msgs;/opt/ros/noetic/share/geometry_msgs/cmake/../msg;actionlib_msgs;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg"
+PYTHON_EXECUTABLE = "/usr/bin/python3"
+package_has_static_sources = '' == 'TRUE'
+genmsg_check_deps_script = "/opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py"

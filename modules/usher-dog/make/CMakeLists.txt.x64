@@ -52,6 +52,7 @@ endif()
 option(MQTT_ENABLE "option for mqtt enable" OFF)
 if(MQTT_ENABLE)
 	add_definitions(-DMQTT_ENABLE)
+	find_package(OpenSSL REQUIRED)
 endif()
 
 option(MDCLOG_ENABLE "option for dds enable" OFF)
@@ -93,6 +94,7 @@ include_directories(
 
 include_directories(
 	${THIRD_PATH_HOME_PATH}/x64/include
+	${THIRD_PATH_HOME_PATH}/x64/include/mqtt
 	${THIRD_PATH_HOME_PATH}/x64/include/eigen3
 	${THIRD_PATH_HOME_PATH}/x64/include/unitree_go2
 	${THIRD_PATH_HOME_PATH}/x64/include/unitree_go2/ddscxx
@@ -134,9 +136,9 @@ if(DDS_ENABLE)
 target_link_libraries(${APP_NAME}  fastrtps fastcdr)
 endif()
 if(MQTT_ENABLE)
-target_link_libraries(${APP_NAME}  paho-mqtt3a paho-mqtt3as paho-mqtt3c paho-mqtt3cs paho-mqttpp3)
+target_link_libraries(${APP_NAME}  paho-mqtt3as paho-mqtt3c paho-mqtt3cs paho-mqttpp3 OpenSSL::SSL OpenSSL::Crypto)
 endif()
-target_link_libraries(${APP_NAME}  pthread gflags glog protobuf z dl ${BOOST_LINK_LIBS} unitree_sdk2 ddsc ddscxx rt unitree_ros2_idl_cpp)
-target_link_libraries(${APP_NAME}  pthread gflags glog z protobuf dl ${BOOST_LINK_LIBS} unitree_sdk2 ddsc ddscxx rt unitree_ros2_idl_cpp)
+target_link_libraries(${APP_NAME}  pthread gflags glog protobuf z dl ${BOOST_LINK_LIBS} unitree_sdk2 ddsc ddscxx rt unitree_ros2_idl_cpp ssl)
+target_link_libraries(${APP_NAME}  pthread gflags glog z protobuf dl ${BOOST_LINK_LIBS} unitree_sdk2 ddsc ddscxx rt unitree_ros2_idl_cpp ssl)
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 

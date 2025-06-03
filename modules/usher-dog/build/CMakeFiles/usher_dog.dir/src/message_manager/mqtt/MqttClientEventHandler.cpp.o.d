@@ -132,14 +132,13 @@ CMakeFiles/usher_dog.dir/src/message_manager/mqtt/MqttClientEventHandler.cpp.o: 
  /usr/include/c++/9/bits/uses_allocator.h \
  /usr/include/c++/9/bits/invoke.h /usr/include/c++/9/bits/refwrap.h \
  /usr/include/c++/9/bits/std_function.h \
- /home/meizan/workspace/athena/third_party/x64/include/mqtt/async_client.h \
- /usr/local/include/MQTTAsync.h \
+ /usr/local/include/mqtt/async_client.h /usr/local/include/MQTTAsync.h \
  /usr/local/include/MQTTExportDeclarations.h \
  /usr/local/include/MQTTProperties.h /usr/local/include/MQTTReasonCodes.h \
  /usr/local/include/MQTTSubscribeOpts.h \
  /usr/local/include/MQTTClientPersistence.h \
- /home/meizan/workspace/athena/third_party/x64/include/mqtt/types.h \
- /usr/include/c++/9/vector /usr/include/c++/9/bits/stl_construct.h \
+ /usr/local/include/mqtt/types.h /usr/include/c++/9/vector \
+ /usr/include/c++/9/bits/stl_construct.h \
  /usr/include/c++/9/bits/stl_uninitialized.h \
  /usr/include/c++/9/bits/stl_vector.h \
  /usr/include/c++/9/bits/stl_bvector.h /usr/include/c++/9/bits/vector.tcc \
@@ -157,11 +156,11 @@ CMakeFiles/usher_dog.dir/src/message_manager/mqtt/MqttClientEventHandler.cpp.o: 
  /usr/include/c++/9/backward/auto_ptr.h /usr/include/c++/9/chrono \
  /usr/include/c++/9/ratio /usr/include/c++/9/limits \
  /usr/include/c++/9/ctime /usr/include/c++/9/bits/parse_numbers.h \
- /home/meizan/workspace/athena/third_party/x64/include/mqtt/token.h \
- /home/meizan/workspace/athena/third_party/x64/include/mqtt/iaction_listener.h \
- /home/meizan/workspace/athena/third_party/x64/include/mqtt/exception.h \
- /usr/include/c++/9/iostream /usr/include/c++/9/ostream \
- /usr/include/c++/9/ios /usr/include/c++/9/bits/ios_base.h \
+ /usr/local/include/mqtt/token.h \
+ /usr/local/include/mqtt/iaction_listener.h \
+ /usr/local/include/mqtt/exception.h /usr/include/c++/9/iostream \
+ /usr/include/c++/9/ostream /usr/include/c++/9/ios \
+ /usr/include/c++/9/bits/ios_base.h \
  /usr/include/c++/9/bits/locale_classes.h \
  /usr/include/c++/9/bits/locale_classes.tcc \
  /usr/include/c++/9/system_error \
@@ -176,44 +175,37 @@ CMakeFiles/usher_dog.dir/src/message_manager/mqtt/MqttClientEventHandler.cpp.o: 
  /usr/include/c++/9/bits/locale_facets.tcc \
  /usr/include/c++/9/bits/basic_ios.tcc \
  /usr/include/c++/9/bits/ostream.tcc /usr/include/c++/9/istream \
- /usr/include/c++/9/bits/istream.tcc \
- /home/meizan/workspace/athena/third_party/x64/include/mqtt/properties.h \
- /usr/local/include/MQTTProperties.h \
- /home/meizan/workspace/athena/third_party/x64/include/mqtt/buffer_ref.h \
+ /usr/include/c++/9/bits/istream.tcc /usr/local/include/mqtt/properties.h \
+ /usr/local/include/MQTTProperties.h /usr/local/include/mqtt/buffer_ref.h \
  /usr/include/c++/9/cstring /usr/include/string.h /usr/include/strings.h \
  /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
  /usr/include/x86_64-linux-gnu/bits/string_fortified.h \
- /home/meizan/workspace/athena/third_party/x64/include/mqtt/platform.h \
- /home/meizan/workspace/athena/third_party/x64/include/mqtt/export.h \
- /home/meizan/workspace/athena/third_party/x64/include/mqtt/string_collection.h \
- /usr/include/c++/9/map /usr/include/c++/9/bits/stl_tree.h \
- /usr/include/c++/9/bits/stl_map.h /usr/include/c++/9/bits/stl_multimap.h \
+ /usr/local/include/mqtt/string_collection.h /usr/include/c++/9/map \
+ /usr/include/c++/9/bits/stl_tree.h /usr/include/c++/9/bits/stl_map.h \
+ /usr/include/c++/9/bits/stl_multimap.h \
  /usr/include/c++/9/bits/erase_if.h \
- /home/meizan/workspace/athena/third_party/x64/include/mqtt/server_response.h \
- /usr/include/c++/9/thread /usr/include/c++/9/mutex \
- /usr/include/c++/9/bits/std_mutex.h \
+ /usr/local/include/mqtt/server_response.h /usr/include/c++/9/thread \
+ /usr/include/c++/9/mutex /usr/include/c++/9/bits/std_mutex.h \
  /usr/include/c++/9/bits/unique_lock.h \
  /usr/include/c++/9/condition_variable \
- /home/meizan/workspace/athena/third_party/x64/include/mqtt/create_options.h \
- /home/meizan/workspace/athena/third_party/x64/include/mqtt/delivery_token.h \
- /home/meizan/workspace/athena/third_party/x64/include/mqtt/message.h \
- /home/meizan/workspace/athena/third_party/x64/include/mqtt/iclient_persistence.h \
- /home/meizan/workspace/athena/third_party/x64/include/mqtt/buffer_view.h \
- /home/meizan/workspace/athena/third_party/x64/include/mqtt/callback.h \
- /home/meizan/workspace/athena/third_party/x64/include/mqtt/thread_queue.h \
- /usr/include/c++/9/deque /usr/include/c++/9/bits/stl_deque.h \
- /usr/include/c++/9/bits/deque.tcc /usr/include/c++/9/queue \
- /usr/include/c++/9/bits/stl_heap.h /usr/include/c++/9/bits/stl_queue.h \
- /usr/include/c++/9/algorithm /usr/include/c++/9/bits/stl_algo.h \
+ /usr/local/include/mqtt/create_options.h \
+ /usr/local/include/mqtt/delivery_token.h \
+ /usr/local/include/mqtt/message.h \
+ /usr/local/include/mqtt/iclient_persistence.h \
+ /usr/local/include/mqtt/buffer_view.h /usr/local/include/mqtt/callback.h \
+ /usr/local/include/mqtt/thread_queue.h /usr/include/c++/9/deque \
+ /usr/include/c++/9/bits/stl_deque.h /usr/include/c++/9/bits/deque.tcc \
+ /usr/include/c++/9/queue /usr/include/c++/9/bits/stl_heap.h \
+ /usr/include/c++/9/bits/stl_queue.h /usr/include/c++/9/algorithm \
+ /usr/include/c++/9/bits/stl_algo.h \
  /usr/include/c++/9/bits/algorithmfwd.h \
  /usr/include/c++/9/bits/uniform_int_dist.h \
- /home/meizan/workspace/athena/third_party/x64/include/mqtt/iasync_client.h \
- /home/meizan/workspace/athena/third_party/x64/include/mqtt/connect_options.h \
- /home/meizan/workspace/athena/third_party/x64/include/mqtt/topic.h \
- /home/meizan/workspace/athena/third_party/x64/include/mqtt/subscribe_options.h \
+ /usr/local/include/mqtt/iasync_client.h \
+ /usr/local/include/mqtt/connect_options.h \
+ /usr/local/include/mqtt/topic.h \
+ /usr/local/include/mqtt/subscribe_options.h \
  /usr/local/include/MQTTSubscribeOpts.h \
- /home/meizan/workspace/athena/third_party/x64/include/mqtt/will_options.h \
- /home/meizan/workspace/athena/third_party/x64/include/mqtt/ssl_options.h \
- /home/meizan/workspace/athena/third_party/x64/include/mqtt/disconnect_options.h \
- /usr/include/c++/9/list /usr/include/c++/9/bits/stl_list.h \
- /usr/include/c++/9/bits/list.tcc
+ /usr/local/include/mqtt/will_options.h \
+ /usr/local/include/mqtt/ssl_options.h \
+ /usr/local/include/mqtt/disconnect_options.h /usr/include/c++/9/list \
+ /usr/include/c++/9/bits/stl_list.h /usr/include/c++/9/bits/list.tcc
