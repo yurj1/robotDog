@@ -68,6 +68,7 @@ using  Json = nlohmann::json;
                           .user_name("hy")
                           .password("123")
                           .ssl(sslopts)
+                          .keep_alive_interval(std::chrono::seconds(5))
                           .finalize();
         AINFO << "start_consuming...";
         client->start_consuming();

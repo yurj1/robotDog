@@ -105,7 +105,7 @@ namespace robot_dog {
         uint8_t task_result;
         bool is_in_place_rotation;
 
-        tagTaskList():task_id(0),task_type(0.0),target_position(),target_object(""),task_state(0),task_result(),is_in_place_rotation(false){}
+        tagTaskList():task_id(0),task_type(0.0),target_position(),target_object(""),task_state(-1),task_result(),is_in_place_rotation(false){}
 
     }TaskList, *PTaskList;
 
@@ -344,6 +344,8 @@ namespace robot_dog {
             FRONT_JUMP,             //前跳
             FRONT_POUNCE,           //向前仆人
             HELLO,                  //打招呼
+            Dance1,                 //舞蹈1
+            Dance2,                  //舞蹈2
 
             STOP_MOVE = 999         //停止运动
         };
@@ -359,7 +361,8 @@ namespace robot_dog {
         enum VoiceActionCommand
         {
             ACTION_STOP = 0,
-            ACTION_HELLO
+            ACTION_HELLO,
+            ACTION_SCRAPE
         };
 
         enum VoiceDestCommand

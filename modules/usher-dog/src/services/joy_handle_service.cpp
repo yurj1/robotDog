@@ -47,19 +47,19 @@ void JoyHandleService::HandleJoyMsg(const robot_dog::JoyInfo& joy_msg)
        std::cout << "速度摇杆_a1:[上下]: " << joy_msg.axes[1] << std::endl;
        std::cout << "joy_msg_axes2_:" << joy_msg.axes[2] << std::endl;
        std::cout << "转弯摇杆_a3[左右]: " << joy_msg.axes[3] << std::endl;//MB 右摇杆 LEFT :1  RIGHT : -1
-      std::cout << "joy_msg_axes4_:" << joy_msg.axes[4] << std::endl;
-      std::cout << "joy_msg_axes5_:" << joy_msg.axes[5] << std::endl;
-      std::cout << "joy_msg_axes6_:" << joy_msg.axes[6] << std::endl;
-      std::cout << "joy_msg_axes7_:" << joy_msg.axes[7] << std::endl;
-      std::cout << "joy_msg_buttons0_:" << joy_msg.buttons[0] << std::endl;
+       std::cout << "joy_msg_axes4_:" << joy_msg.axes[4] << std::endl;
+       std::cout << "joy_msg_axes5_:" << joy_msg.axes[5] << std::endl;
+       std::cout << "joy_msg_axes6_:" << joy_msg.axes[6] << std::endl;
+       std::cout << "joy_msg_axes7_:" << joy_msg.axes[7] << std::endl;
+       std::cout << "joy_msg_buttons0_:" << joy_msg.buttons[0] << std::endl;
        std::cout << "B按键_b1: " << joy_msg.buttons[1] << std::endl;//B
-      std::cout << "joy_msg_buttons2_:" << joy_msg.buttons[2] << std::endl;
-      std::cout << "joy_msg_buttons3_:" << joy_msg.buttons[3] << std::endl;
+       std::cout << "joy_msg_buttons2_:" << joy_msg.buttons[2] << std::endl;
+       std::cout << "joy_msg_buttons3_:" << joy_msg.buttons[3] << std::endl;
        std::cout << "LB按键_b4: " << joy_msg.buttons[4] << std::endl;//LB
        std::cout << "RB按键_b5: " << joy_msg.buttons[5] << std::endl;//RB
-      std::cout << "减速_BACK_b6:" << joy_msg.buttons[6] << std::endl;
+       std::cout << "减速_BACK_b6:" << joy_msg.buttons[6] << std::endl;
        std::cout << "加速_START_b7: " << joy_msg.buttons[7] << std::endl;//START
-      std::cout << "joy_msg_buttons8_:" << joy_msg.buttons[8] << std::endl;
+       std::cout << "joy_msg_buttons8_:" << joy_msg.buttons[8] << std::endl;
        std::cout << "速度摇杆按下_b9:" << joy_msg.buttons[9] << std::endl;
        std::cout << "转弯摇杆按下_b10:" << joy_msg.buttons[10] << std::endl;
        std::cout << "=============================" << std::endl << std::endl;
@@ -110,6 +110,18 @@ void JoyHandleService::HandleJoyMsg(const robot_dog::JoyInfo& joy_msg)
 
         printf("打招呼\n");
         action_queue_.push(DogMition::HELLO);
+        action_cv_.notify_one();
+        //AppGetUnitreeService()->PerformingAcrtion(robot_dog::operations::DogMition::STOP_MOVE);
+        //return;
+    }
+    else if(joy_msg.buttons[5] == 1 && joy_msg.buttons[3] == 1) // 拜年作揖
+    {
+        std::unique_lock<std::mutex> lock(action_mtx_, std::try_to_lock);
+        if (! lock.owns_lock())
+            return ;
+
+        printf("拜年\n");
+        action_queue_.push(DogMition::SCRAPE);
         action_cv_.notify_one();
         //AppGetUnitreeService()->PerformingAcrtion(robot_dog::operations::DogMition::STOP_MOVE);
         //return;

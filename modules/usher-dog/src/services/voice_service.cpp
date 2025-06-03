@@ -83,6 +83,11 @@ int VideoService::parseAction(VoiceActionCommand val)
                 code = AppGetUnitreeService()->PerformingAcrtion(
                     DogMition::HELLO);
             break;
+        case VoiceActionCommand::ACTION_SCRAPE:
+        if(AppGetUnitreeService())
+            code = AppGetUnitreeService()->PerformingAcrtion(
+                DogMition::SCRAPE);
+        break;
             
         default:
             AERROR << "Unsupported action value: " << val;
