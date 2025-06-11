@@ -58,7 +58,7 @@
        void PublishPose(robot_dog::Position msg)override;
        void PublishState(robot_dog::PercState msg)override;
        void PublishAction(robot_dog::ActionEntry msg)override;
-       void PublishVideoOnInt(const std::vector<robot_dog::ObuCmd>& msg)override{};
+       void PublishVideoOnInt(const robot_dog::ObuCmdMsg& msg)override{};
        void PublishVideoOnString(const std::vector<robot_dog::Event>& msg)override{};
 
       void PublishRecordBagCallbackInfo(const robot_dog::CallbackInfo& rsp);
@@ -67,6 +67,8 @@
       void PublishGlobalCloud(const std::string& data);
       void PublishPlanningPlan(const std::string& data);
       void PublishTaskPoint(const std::string& data);
+      void PublishDooroutPosition(const std::string& data);
+      void PublishOutdoorRecommendedRoute(const std::string& data);
        
        bool Activate();
        bool DeActivate();

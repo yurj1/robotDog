@@ -8,6 +8,7 @@
     "produce_emergency_stop_command_duration": 20,
     "publish_emergency_stop_command_duration": 10,
     "ClientId": "usher_dog",
+    "dog_id" : "#dog_10086",
     "message": {
         "active_message": [
             2,
@@ -43,7 +44,7 @@
             {
                 "type": 5,
                 "name": "MQTT",
-                "url": "ssl://c2b33530.ala.cn-hangzhou.emqxsl.cn:8883"
+                "url": "mqtt://192.168.2.181:1883"
             }
         ]
     },
@@ -138,5 +139,19 @@
             },
             "arrival_voice_code" : 7
         }
-    }
+    },
+    "pointsTude" : [{
+        "pointName": "华中中交城",
+        "targetLat": 30.50501,
+        "targetLng": 114.20399
+    },{
+        "pointName": "奥林连锁超市",
+        "targetLat": 30.50801,
+        "targetLng": 114.20399
+    },{
+        "pointName": "新城璟悦城",
+        "targetLat": 30.51811,
+        "targetLng": 114.20399
+    }],
+    "recommendedRoute": [ {"indexs":[0,2]}, {"indexs":[1,2]} ]
 }

@@ -192,6 +192,16 @@
  #define mqtt_task_point_pub "robot_dog/task_point"
 #endif
 
+//发布狗的经纬度坐标
+#ifndef mqtt_doorout_position
+ #define mqtt_doorout_position "/robot/outdoor/current_position"
+#endif
+
+//发布景点坐标和推荐路线
+#ifndef mqtt_outdoor_recommended_route
+ #define mqtt_outdoor_recommended_route "/robot/outdoor/recommended_route"
+#endif
+
 /**
  * @namespace athena::function
  * @brief athena::function
@@ -211,8 +221,8 @@ public:
   virtual void PublishPose(robot_dog::Position msg) = 0;
   virtual void PublishState(robot_dog::PercState msg) = 0;
   virtual void PublishAction(robot_dog::ActionEntry msg) = 0;
-  virtual void PublishVideoOnInt(const std::vector<robot_dog::ObuCmd>& msg);
-  virtual void PublishVideoOnString(const std::vector<robot_dog::Event>& msg);
+  virtual void PublishVideoOnInt(const robot_dog::ObuCmdMsg& msg) = 0;
+  virtual void PublishVideoOnString(const std::vector<robot_dog::Event>& msg) = 0;
   //joy
   // virtual void PublishJoyMsgTwist(geometry_msgs::Twist msg) = 0;
   // virtual void PublishJoyMsgLoad(std_msgs::Float32 data) = 0;

@@ -9,6 +9,7 @@
 namespace robot_dog::services {
     class JoyHandleService;
     class VideoService;
+    class HttpServer;
 }
 
 class MessageHandleManager
@@ -34,7 +35,7 @@ public:
     //处理感知发送过来的反馈信息
     void handlePerceptionEvent(const robot_dog::TaskList& msg);
     //处理语音指令消息
-    void HandleObuCmdMsg(const std::vector<robot_dog::ObuCmd>& obu_cmd_msg);
+    void HandleObuCmdMsg(const robot_dog::ObuCmdMsg& obu_cmd_msg);
     //处理任务事件
     void handleTaskEvent(const robot_dog::PercCmd& msg);
     //处理录包服务的反馈处理
@@ -66,6 +67,7 @@ private:
 
     robot_dog::services::JoyHandleService* joy_services_ptr_;
     robot_dog::services::VideoService* voice_services_ptr_;
+    robot_dog::services::HttpServer*   http_server_ptr_;
 };
 
 #endif //__message_handle_manager_H__

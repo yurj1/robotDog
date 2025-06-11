@@ -63,8 +63,8 @@ public:
   void PublishPose(robot_dog::Position msg)override;
   void PublishState(robot_dog::PercState msg)override;
   void PublishAction(robot_dog::ActionEntry msg)override;
-  void PublishVideoOnInt(std::vector<robot_dog::ObuCmd> msg)override;
-  void PublishVideoOnString(std::vector<robot_dog::Event> msg)override;
+  void PublishVideoOnInt(const robot_dog::ObuCmdMsg& msg){}override;
+  void PublishVideoOnString(const std::vector<robot_dog::Event>& msg){}override;
 
   // const std::map<std::string, robot_dog::Position>& GetPointMap() override{
   //   return point_map_;

@@ -2314,4 +2314,13 @@ CMakeFiles/usher_dog.dir/src/manager/message_handle_manager.cpp.o: \
  /home/meizan/workspace/athena/third_party/x64/include/unitree_go2/unitree/ros2_idl/String_.hpp \
  /home/meizan/workspace/athena-robot-dog/modules/usher-dog/src/apps/factory/factory.h \
  /home/meizan/workspace/athena-robot-dog/modules/usher-dog/src/apps/dog_mode/mode_base.h \
- /home/meizan/workspace/athena-robot-dog/modules/usher-dog/src/manager/message_handle_manager.h
+ /home/meizan/workspace/athena-robot-dog/modules/usher-dog/src/manager/message_handle_manager.h \
+ /home/meizan/workspace/athena-robot-dog/modules/usher-dog/src/services/http_service.h \
+ /home/meizan/workspace/athena-robot-dog/modules/usher-dog/../common/httplib/httplib.h \
+ /usr/include/resolv.h /usr/include/arpa/nameser.h \
+ /usr/include/arpa/nameser_compat.h \
+ /usr/include/x86_64-linux-gnu/bits/types/res_state.h \
+ /usr/include/c++/9/csignal /usr/include/netinet/tcp.h \
+ /usr/include/c++/9/random /usr/include/c++/9/bits/random.h \
+ /usr/include/x86_64-linux-gnu/c++/9/bits/opt_random.h \
+ /usr/include/c++/9/bits/random.tcc

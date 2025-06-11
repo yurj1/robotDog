@@ -1623,10 +1623,24 @@ CMakeFiles/usher_dog.dir/src/message_manager/mqtt/MqttClientEventHandler.cpp.s: 
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/usher_dog.dir/src/message_manager/mqtt/MqttClientEventHandler.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/meizan/workspace/athena-robot-dog/modules/usher-dog/src/message_manager/mqtt/MqttClientEventHandler.cpp -o CMakeFiles/usher_dog.dir/src/message_manager/mqtt/MqttClientEventHandler.cpp.s
 
+CMakeFiles/usher_dog.dir/src/services/http_service.cpp.o: CMakeFiles/usher_dog.dir/flags.make
+CMakeFiles/usher_dog.dir/src/services/http_service.cpp.o: /home/meizan/workspace/athena-robot-dog/modules/usher-dog/src/services/http_service.cpp
+CMakeFiles/usher_dog.dir/src/services/http_service.cpp.o: CMakeFiles/usher_dog.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/meizan/workspace/athena-robot-dog/modules/usher-dog/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_112) "Building CXX object CMakeFiles/usher_dog.dir/src/services/http_service.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/usher_dog.dir/src/services/http_service.cpp.o -MF CMakeFiles/usher_dog.dir/src/services/http_service.cpp.o.d -o CMakeFiles/usher_dog.dir/src/services/http_service.cpp.o -c /home/meizan/workspace/athena-robot-dog/modules/usher-dog/src/services/http_service.cpp
+
+CMakeFiles/usher_dog.dir/src/services/http_service.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/usher_dog.dir/src/services/http_service.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/meizan/workspace/athena-robot-dog/modules/usher-dog/src/services/http_service.cpp > CMakeFiles/usher_dog.dir/src/services/http_service.cpp.i
+
+CMakeFiles/usher_dog.dir/src/services/http_service.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/usher_dog.dir/src/services/http_service.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/meizan/workspace/athena-robot-dog/modules/usher-dog/src/services/http_service.cpp -o CMakeFiles/usher_dog.dir/src/services/http_service.cpp.s
+
 CMakeFiles/usher_dog.dir/src/services/joy_handle_service.cpp.o: CMakeFiles/usher_dog.dir/flags.make
 CMakeFiles/usher_dog.dir/src/services/joy_handle_service.cpp.o: /home/meizan/workspace/athena-robot-dog/modules/usher-dog/src/services/joy_handle_service.cpp
 CMakeFiles/usher_dog.dir/src/services/joy_handle_service.cpp.o: CMakeFiles/usher_dog.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/meizan/workspace/athena-robot-dog/modules/usher-dog/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_112) "Building CXX object CMakeFiles/usher_dog.dir/src/services/joy_handle_service.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/meizan/workspace/athena-robot-dog/modules/usher-dog/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_113) "Building CXX object CMakeFiles/usher_dog.dir/src/services/joy_handle_service.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/usher_dog.dir/src/services/joy_handle_service.cpp.o -MF CMakeFiles/usher_dog.dir/src/services/joy_handle_service.cpp.o.d -o CMakeFiles/usher_dog.dir/src/services/joy_handle_service.cpp.o -c /home/meizan/workspace/athena-robot-dog/modules/usher-dog/src/services/joy_handle_service.cpp
 
 CMakeFiles/usher_dog.dir/src/services/joy_handle_service.cpp.i: cmake_force
@@ -1640,7 +1654,7 @@ CMakeFiles/usher_dog.dir/src/services/joy_handle_service.cpp.s: cmake_force
 CMakeFiles/usher_dog.dir/src/services/unitree_sdk_service.cpp.o: CMakeFiles/usher_dog.dir/flags.make
 CMakeFiles/usher_dog.dir/src/services/unitree_sdk_service.cpp.o: /home/meizan/workspace/athena-robot-dog/modules/usher-dog/src/services/unitree_sdk_service.cpp
 CMakeFiles/usher_dog.dir/src/services/unitree_sdk_service.cpp.o: CMakeFiles/usher_dog.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/meizan/workspace/athena-robot-dog/modules/usher-dog/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_113) "Building CXX object CMakeFiles/usher_dog.dir/src/services/unitree_sdk_service.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/meizan/workspace/athena-robot-dog/modules/usher-dog/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_114) "Building CXX object CMakeFiles/usher_dog.dir/src/services/unitree_sdk_service.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/usher_dog.dir/src/services/unitree_sdk_service.cpp.o -MF CMakeFiles/usher_dog.dir/src/services/unitree_sdk_service.cpp.o.d -o CMakeFiles/usher_dog.dir/src/services/unitree_sdk_service.cpp.o -c /home/meizan/workspace/athena-robot-dog/modules/usher-dog/src/services/unitree_sdk_service.cpp
 
 CMakeFiles/usher_dog.dir/src/services/unitree_sdk_service.cpp.i: cmake_force
@@ -1654,7 +1668,7 @@ CMakeFiles/usher_dog.dir/src/services/unitree_sdk_service.cpp.s: cmake_force
 CMakeFiles/usher_dog.dir/src/services/voice_service.cpp.o: CMakeFiles/usher_dog.dir/flags.make
 CMakeFiles/usher_dog.dir/src/services/voice_service.cpp.o: /home/meizan/workspace/athena-robot-dog/modules/usher-dog/src/services/voice_service.cpp
 CMakeFiles/usher_dog.dir/src/services/voice_service.cpp.o: CMakeFiles/usher_dog.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/meizan/workspace/athena-robot-dog/modules/usher-dog/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_114) "Building CXX object CMakeFiles/usher_dog.dir/src/services/voice_service.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/meizan/workspace/athena-robot-dog/modules/usher-dog/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_115) "Building CXX object CMakeFiles/usher_dog.dir/src/services/voice_service.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/usher_dog.dir/src/services/voice_service.cpp.o -MF CMakeFiles/usher_dog.dir/src/services/voice_service.cpp.o.d -o CMakeFiles/usher_dog.dir/src/services/voice_service.cpp.o -c /home/meizan/workspace/athena-robot-dog/modules/usher-dog/src/services/voice_service.cpp
 
 CMakeFiles/usher_dog.dir/src/services/voice_service.cpp.i: cmake_force
@@ -1668,7 +1682,7 @@ CMakeFiles/usher_dog.dir/src/services/voice_service.cpp.s: cmake_force
 CMakeFiles/usher_dog.dir/src/untl_test/test_main.cpp.o: CMakeFiles/usher_dog.dir/flags.make
 CMakeFiles/usher_dog.dir/src/untl_test/test_main.cpp.o: /home/meizan/workspace/athena-robot-dog/modules/usher-dog/src/untl_test/test_main.cpp
 CMakeFiles/usher_dog.dir/src/untl_test/test_main.cpp.o: CMakeFiles/usher_dog.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/meizan/workspace/athena-robot-dog/modules/usher-dog/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_115) "Building CXX object CMakeFiles/usher_dog.dir/src/untl_test/test_main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/meizan/workspace/athena-robot-dog/modules/usher-dog/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_116) "Building CXX object CMakeFiles/usher_dog.dir/src/untl_test/test_main.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/usher_dog.dir/src/untl_test/test_main.cpp.o -MF CMakeFiles/usher_dog.dir/src/untl_test/test_main.cpp.o.d -o CMakeFiles/usher_dog.dir/src/untl_test/test_main.cpp.o -c /home/meizan/workspace/athena-robot-dog/modules/usher-dog/src/untl_test/test_main.cpp
 
 CMakeFiles/usher_dog.dir/src/untl_test/test_main.cpp.i: cmake_force
@@ -1792,6 +1806,7 @@ usher_dog_OBJECTS = \
 "CMakeFiles/usher_dog.dir/src/manager/message_handle_manager.cpp.o" \
 "CMakeFiles/usher_dog.dir/src/manager/robot_dog_state_machine.cpp.o" \
 "CMakeFiles/usher_dog.dir/src/message_manager/mqtt/MqttClientEventHandler.cpp.o" \
+"CMakeFiles/usher_dog.dir/src/services/http_service.cpp.o" \
 "CMakeFiles/usher_dog.dir/src/services/joy_handle_service.cpp.o" \
 "CMakeFiles/usher_dog.dir/src/services/unitree_sdk_service.cpp.o" \
 "CMakeFiles/usher_dog.dir/src/services/voice_service.cpp.o" \
@@ -1911,6 +1926,7 @@ usher_dog_EXTERNAL_OBJECTS =
 /home/meizan/workspace/athena-robot-dog/modules/usher-dog/bin/usher_dog: CMakeFiles/usher_dog.dir/src/manager/message_handle_manager.cpp.o
 /home/meizan/workspace/athena-robot-dog/modules/usher-dog/bin/usher_dog: CMakeFiles/usher_dog.dir/src/manager/robot_dog_state_machine.cpp.o
 /home/meizan/workspace/athena-robot-dog/modules/usher-dog/bin/usher_dog: CMakeFiles/usher_dog.dir/src/message_manager/mqtt/MqttClientEventHandler.cpp.o
+/home/meizan/workspace/athena-robot-dog/modules/usher-dog/bin/usher_dog: CMakeFiles/usher_dog.dir/src/services/http_service.cpp.o
 /home/meizan/workspace/athena-robot-dog/modules/usher-dog/bin/usher_dog: CMakeFiles/usher_dog.dir/src/services/joy_handle_service.cpp.o
 /home/meizan/workspace/athena-robot-dog/modules/usher-dog/bin/usher_dog: CMakeFiles/usher_dog.dir/src/services/unitree_sdk_service.cpp.o
 /home/meizan/workspace/athena-robot-dog/modules/usher-dog/bin/usher_dog: CMakeFiles/usher_dog.dir/src/services/voice_service.cpp.o
@@ -1936,7 +1952,7 @@ usher_dog_EXTERNAL_OBJECTS =
 /home/meizan/workspace/athena-robot-dog/modules/usher-dog/bin/usher_dog: /usr/lib/x86_64-linux-gnu/libssl.so
 /home/meizan/workspace/athena-robot-dog/modules/usher-dog/bin/usher_dog: /usr/lib/x86_64-linux-gnu/libcrypto.so
 /home/meizan/workspace/athena-robot-dog/modules/usher-dog/bin/usher_dog: CMakeFiles/usher_dog.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/meizan/workspace/athena-robot-dog/modules/usher-dog/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_116) "Linking CXX executable /home/meizan/workspace/athena-robot-dog/modules/usher-dog/bin/usher_dog"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/meizan/workspace/athena-robot-dog/modules/usher-dog/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_117) "Linking CXX executable /home/meizan/workspace/athena-robot-dog/modules/usher-dog/bin/usher_dog"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/usher_dog.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

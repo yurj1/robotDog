@@ -17,7 +17,7 @@ namespace robot_dog {
             ~VideoService();
             void Init();
 
-            void HandleVideoCode(const std::vector<robot_dog::ObuCmd>& obu_cmd_msg);
+            void HandleVideoCode(const robot_dog::ObuCmdMsg& obu_cmd_msg);
             void PlayAudio(const int& voice_val);
         private:
             int parseAction(robot_dog::operations::VoiceActionCommand val);

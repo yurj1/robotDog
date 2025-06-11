@@ -294,6 +294,15 @@ int UnitreeSdkService::PerformingAcrtion(const robot_dog::operations::DogMition&
     case HELLO:
         code = sport_client_->Hello();
         break;
+    case HEART:
+        code = sport_client_->Heart();
+        break;
+    case Dance1:
+        code = sport_client_->Dance1();
+        break;
+    case Dance2:
+        code = sport_client_->Dance2();
+        break;
     case STOP_MOVE:
         code = sport_client_->StopMove();
         break;

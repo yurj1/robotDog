@@ -73,10 +73,6 @@ void JoyHandleService::HandleJoyMsg(const robot_dog::JoyInfo& joy_msg)
         printf("站立\n");
         action_queue_.push(DogMition::RECOVERY_STAND);
         action_cv_.notify_one();
-    //AppGetUnitreeService()->PerformingAcrtion(robot_dog::operations::DogMition::MORMAL_STAND); //正常站立
-    //AppGetUnitreeService()->PerformingAcrtion(robot_dog::operations::DogMition::BLANCE_STAND);//平衡站立
-    //AppGetUnitreeService()->PerformingAcrtion(robot_dog::operations::DogMition::RECOVERY_STAND);//恢复站立
-    //return;
     }
     else if(joy_msg.buttons[5] == 1 && joy_msg.buttons[10] == 1) // 趴下
     {
@@ -87,8 +83,6 @@ void JoyHandleService::HandleJoyMsg(const robot_dog::JoyInfo& joy_msg)
         printf("趴下\n");
         action_queue_.push(DogMition::STAND_DOWN);
         action_cv_.notify_one();
-        //AppGetUnitreeService()->PerformingAcrtion(robot_dog::operations::DogMition::STAND_DOWN);
-        //return;
     }
     else if(joy_msg.buttons[5] == 1 && joy_msg.buttons[1] == 1) // 阻尼
     {
@@ -99,8 +93,6 @@ void JoyHandleService::HandleJoyMsg(const robot_dog::JoyInfo& joy_msg)
         printf("阻尼\n");
         action_queue_.push(DogMition::DAMP);
         action_cv_.notify_one();
-        //AppGetUnitreeService()->PerformingAcrtion(robot_dog::operations::DogMition::STOP_MOVE);
-        //return;
     }
     else if(joy_msg.buttons[5] == 1 && joy_msg.buttons[0] == 1) // 打招呼
     {
@@ -111,8 +103,6 @@ void JoyHandleService::HandleJoyMsg(const robot_dog::JoyInfo& joy_msg)
         printf("打招呼\n");
         action_queue_.push(DogMition::HELLO);
         action_cv_.notify_one();
-        //AppGetUnitreeService()->PerformingAcrtion(robot_dog::operations::DogMition::STOP_MOVE);
-        //return;
     }
     else if(joy_msg.buttons[5] == 1 && joy_msg.buttons[3] == 1) // 拜年作揖
     {
@@ -123,8 +113,36 @@ void JoyHandleService::HandleJoyMsg(const robot_dog::JoyInfo& joy_msg)
         printf("拜年\n");
         action_queue_.push(DogMition::SCRAPE);
         action_cv_.notify_one();
-        //AppGetUnitreeService()->PerformingAcrtion(robot_dog::operations::DogMition::STOP_MOVE);
-        //return;
+    }
+    else if(joy_msg.buttons[5] == 1 && joy_msg.buttons[2] == 1) // 比心
+    {
+        std::unique_lock<std::mutex> lock(action_mtx_, std::try_to_lock);
+        if (! lock.owns_lock())
+            return ;
+
+        printf("比心\n");
+        action_queue_.push(DogMition::HEART);
+        action_cv_.notify_one();
+    }
+    else if(joy_msg.buttons[5] == 1 && joy_msg.buttons[2] == 11) // 舞蹈1
+    {
+        std::unique_lock<std::mutex> lock(action_mtx_, std::try_to_lock);
+        if (! lock.owns_lock())
+            return ;
+
+        printf("舞蹈1\n");
+        action_queue_.push(DogMition::Dance1);
+        action_cv_.notify_one();
+    }
+    else if(joy_msg.buttons[5] == 1 && joy_msg.buttons[2] == 12) // 舞蹈2
+    {
+        std::unique_lock<std::mutex> lock(action_mtx_, std::try_to_lock);
+        if (! lock.owns_lock())
+            return ;
+
+        printf("舞蹈2\n");
+        action_queue_.push(DogMition::Dance2);
+        action_cv_.notify_one();
     }
     else if(joy_msg.buttons[6] && joy_msg_mqtt_input_.buttons[6] != joy_msg.buttons[6]) //减速档位
     {

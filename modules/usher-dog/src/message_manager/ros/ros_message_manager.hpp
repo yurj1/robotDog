@@ -171,12 +171,14 @@ void RosMessageManager<T>::PublishAction(robot_dog::ActionEntry msg) {
 }
 
 template <typename T>
-void RosMessageManager<T>::PublishVideoOnInt(const std::vector<robot_dog::ObuCmd>& msg) {
+void RosMessageManager<T>::PublishVideoOnInt(const robot_dog::ObuCmdMsg& msg) {
   ros_interface::ObuCmdMsg obu_msg;
   // 设置 header（自动填充时间戳）
   obu_msg.header.stamp = ros::Time::now();
+  obu_msg.id = msg.id;
+  obu_msg.name = obu_msg.name;
   ros_interface::ObuCmd obu_cmd;
-  for(const auto& m : msg)
+  for(const auto& m : msg.obu_cmd_list)
   {
     obu_cmd.code = m.code;
     obu_cmd.val = m.val;
@@ -266,7 +268,7 @@ template <typename T>
 void RosMessageManager<T>::obuCallback(const ros_interface::ObuCmdMsg& msg_obj) {
   if(! AppGetVoiceService()) return;
 
-  std::vector<robot_dog::ObuCmd> v_obu;
+  robot_dog::ObuCmdMsg v_obu;
 
   const ros_interface::ObuCmdMsg* msg_obj_ptr = &msg_obj;
   ros_interface::ObuCmdMsg* msg =
@@ -277,9 +279,9 @@ void RosMessageManager<T>::obuCallback(const ros_interface::ObuCmdMsg& msg_obj) 
     robot_dog::ObuCmd obu_cmd_msg_obu_cmd;
     obu_cmd_msg_obu_cmd.code = it_obu_cmd_list.code;
     obu_cmd_msg_obu_cmd.val = it_obu_cmd_list.val;
-    v_obu.emplace_back(obu_cmd_msg_obu_cmd);
+    v_obu.obu_cmd_list.emplace_back(obu_cmd_msg_obu_cmd);
   }
-  //instance_->HandleObuCmdMsg(v_obu);
+
   AppGetVoiceService()->HandleVideoCode(v_obu);
 }
 

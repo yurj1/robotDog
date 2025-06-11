@@ -74,6 +74,8 @@ public:
    * @return    void.
    */
   void PublishObuCmdMsgOutput(athena::interface::ObuCmdMsg msg) override;
+  void PublishVideoOnInt(const robot_dog::ObuCmdMsg& msg)override{};
+  void PublishVideoOnString(const std::vector<robot_dog::Event>& msg)override{};
 
 protected:
   T* instance_;

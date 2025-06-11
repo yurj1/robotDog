@@ -13,6 +13,7 @@
 #include "factory/factory.h"
 #include "services/joy_handle_service.h"
 #include "services/voice_service.h"
+#include "services/http_service.h"
 
 using namespace athena::function::action;
 using namespace robot_dog::operations;
@@ -32,6 +33,7 @@ MessageHandleManager::~MessageHandleManager()
 {
     SAFE_DELETE(joy_services_ptr_);
     SAFE_DELETE(voice_services_ptr_);
+    SAFE_DELETE(http_server_ptr_);
 }
 
 void MessageHandleManager::Init()
@@ -53,6 +55,9 @@ void MessageHandleManager::Init()
     m_can_finish = true;
 
     joy_services_ptr_ = new robot_dog::services::JoyHandleService();
+    voice_services_ptr_ = new robot_dog::services::VideoService();
+    http_server_ptr_ = new robot_dog::services::HttpServer();
+    http_server_ptr_->Run();
 }
 
 const UsherDogState& MessageHandleManager::GetDogState()
@@ -188,7 +193,7 @@ void MessageHandleManager::handleStateEvent(const robot_dog::TaskList& msg)
     }
 }
 
-void MessageHandleManager::HandleObuCmdMsg(const std::vector<robot_dog::ObuCmd>& obu_cmd_msg)
+void MessageHandleManager::HandleObuCmdMsg(const robot_dog::ObuCmdMsg& obu_cmd_msg)
 {
 }
 

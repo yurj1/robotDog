@@ -231,6 +231,17 @@ namespace robot_dog {
 
     }ObuCmd, *PObuCmd;
 
+    typedef struct tagObuCmdMsg
+    {
+        int id;
+        std::string name;
+        std::vector<ObuCmd> obu_cmd_list;
+
+        tagObuCmdMsg():id(0), name(""){}
+        tagObuCmdMsg(int id, std::string name, std::vector<ObuCmd> obu_cmd_list): id(id), name(name), obu_cmd_list(obu_cmd_list){}
+
+    }ObuCmdMsg, *PObuCmdMsg;
+
     typedef struct tagEvent
     {
         uint64_t code;
@@ -344,6 +355,7 @@ namespace robot_dog {
             FRONT_JUMP,             //前跳
             FRONT_POUNCE,           //向前仆人
             HELLO,                  //打招呼
+            HEART,
             Dance1,                 //舞蹈1
             Dance2,                  //舞蹈2
 

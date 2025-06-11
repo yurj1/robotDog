@@ -31,9 +31,9 @@ VideoService::~VideoService(){}
 
 void VideoService::Init(){}
 
-void VideoService::HandleVideoCode(const std::vector<robot_dog::ObuCmd>& obu_cmd_msg)
+void VideoService::HandleVideoCode(const robot_dog::ObuCmdMsg& obu_cmd_msg)
 {
-    for(auto cmd : obu_cmd_msg) {
+    for(auto cmd : obu_cmd_msg.obu_cmd_list) {
         AINFO << "Recv code: [" << cmd.code << "] val: [" << cmd.val <<"]";
         int code = 0;
         
@@ -62,8 +62,9 @@ void VideoService::HandleVideoCode(const std::vector<robot_dog::ObuCmd>& obu_cmd
 void VideoService::PlayAudio(const int& voice_val)
 {
     AINFO << "Play voice_code: " << voice_val;
-    std::vector<robot_dog::ObuCmd> voiceCode;
-    voiceCode.emplace_back(robot_dog::ObuCmd(VocieCode::CODE_PLAY_VIDEO, voice_val));
+    robot_dog::ObuCmdMsg voiceCode;
+    voiceCode.name = "arrival";
+    voiceCode.obu_cmd_list.emplace_back(robot_dog::ObuCmd(VocieCode::CODE_PLAY_VIDEO, voice_val));
     AfxGetApp()->PublishVideoOnInt(voiceCode);
 }
 

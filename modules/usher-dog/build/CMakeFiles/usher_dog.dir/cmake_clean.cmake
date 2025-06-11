@@ -223,6 +223,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/usher_dog.dir/src/manager/robot_dog_state_machine.cpp.o.d"
   "CMakeFiles/usher_dog.dir/src/message_manager/mqtt/MqttClientEventHandler.cpp.o"
   "CMakeFiles/usher_dog.dir/src/message_manager/mqtt/MqttClientEventHandler.cpp.o.d"
+  "CMakeFiles/usher_dog.dir/src/services/http_service.cpp.o"
+  "CMakeFiles/usher_dog.dir/src/services/http_service.cpp.o.d"
   "CMakeFiles/usher_dog.dir/src/services/joy_handle_service.cpp.o"
   "CMakeFiles/usher_dog.dir/src/services/joy_handle_service.cpp.o.d"
   "CMakeFiles/usher_dog.dir/src/services/unitree_sdk_service.cpp.o"

@@ -221,7 +221,7 @@ namespace athena
       void PublishPose(const robot_dog::Position& msg);
       void PublishState(const robot_dog::PercState& msg);
       void PublishAction(const robot_dog::ActionEntry& msg);
-      void PublishVideoOnInt(const std::vector<robot_dog::ObuCmd>& msg);
+      void PublishVideoOnInt(const robot_dog::ObuCmdMsg& msg);
       void PublishVideoOnString(const std::vector<robot_dog::Event>& msg);
 
       MessageHandleManager* GetMessageHandleManager(){ return message_handle_manager_; }

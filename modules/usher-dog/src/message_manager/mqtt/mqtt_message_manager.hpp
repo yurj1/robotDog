@@ -53,7 +53,7 @@ using  Json = nlohmann::json;
         // 设置断线重连处理
         client->set_callback(*m_eventHandlerPtr);
         auto sslopts = mqtt::ssl_options_builder()
-                            .trust_store("/home/meizan/workspace/athena-robot-dog/modules/usher-dog/bin/conf/ca.crt")
+                            .trust_store("./conf/ca.crt")
                             //.key_store("/home/ywb/Documents/c++project/SLS/mqtt_certs/client.crt")
                             //.private_key("/home/ywb/Documents/c++project/SLS/mqtt_certs/client.key")
                             .verify(true)
@@ -61,7 +61,7 @@ using  Json = nlohmann::json;
                                           { std::cerr << "SSL Error: " << msg << std::endl; })
                             .finalize();
       // 启用 SSL/TLS
-      sslopts.set_enable_server_cert_auth(true); // 验证服务器证书`
+      sslopts.set_enable_server_cert_auth(true); // 验证服务器证书
 
       auto connOpts = mqtt::connect_options_builder()
                           .clean_session(true)
@@ -73,12 +73,9 @@ using  Json = nlohmann::json;
         AINFO << "start_consuming...";
         client->start_consuming();
        
-          AINFO << "connect to mqtt server: " <<address << "...";
+          AINFO << "connect to mqtt server: " <<address << "...";   
           m_eventHandlerPtr->setConnectOptions(connOpts);
-          AINFO << 1;
-          //m_clientPtr->connect(connOpts, nullptr, *m_eventHandlerPtr);
           client->connect(connOpts, nullptr, *m_eventHandlerPtr);
-          AINFO << 2;
        }
        catch (const std::exception &ex)
        {
@@ -208,14 +205,28 @@ using  Json = nlohmann::json;
     void MqttMessageManager<T>::PublishPlanningPlan(const std::string& data)
     {
       if ( !client->is_connected()) return;
-      client->publish(mqtt::make_message(mqtt_planning_plan_pub, data, 0, false));//采用qos ==2 否则网络不稳定时多发会导致多次弹窗
+      client->publish(mqtt::make_message(mqtt_planning_plan_pub, data, 0, false));
     }
 
     template <typename T>
     void MqttMessageManager<T>::PublishTaskPoint(const std::string& data)
     {
       if ( !client->is_connected()) return;
-      client->publish(mqtt::make_message(mqtt_task_point_pub, data, 0, false));//采用qos ==2 否则网络不稳定时多发会导致多次弹窗
+      client->publish(mqtt::make_message(mqtt_task_point_pub, data, 0, false));
+    }
+
+    template <typename T>
+    void MqttMessageManager<T>::PublishDooroutPosition(const std::string& data)
+    {
+      if ( !client->is_connected()) return;
+      client->publish(mqtt::make_message(mqtt_doorout_position, data, 0, false));
+    }
+
+    template <typename T>
+    void MqttMessageManager<T>::PublishOutdoorRecommendedRoute(const std::string& data)
+    {
+      if ( !client->is_connected()) return;
+      client->publish(mqtt::make_message(mqtt_outdoor_recommended_route, data, 1, true));
     }
 
     template <typename T>

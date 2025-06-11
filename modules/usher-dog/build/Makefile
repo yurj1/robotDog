@@ -3183,6 +3183,30 @@ src/message_manager/mqtt/MqttClientEventHandler.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/usher_dog.dir/build.make CMakeFiles/usher_dog.dir/src/message_manager/mqtt/MqttClientEventHandler.cpp.s
 .PHONY : src/message_manager/mqtt/MqttClientEventHandler.cpp.s
 
+src/services/http_service.o: src/services/http_service.cpp.o
+.PHONY : src/services/http_service.o
+
+# target to build an object file
+src/services/http_service.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/usher_dog.dir/build.make CMakeFiles/usher_dog.dir/src/services/http_service.cpp.o
+.PHONY : src/services/http_service.cpp.o
+
+src/services/http_service.i: src/services/http_service.cpp.i
+.PHONY : src/services/http_service.i
+
+# target to preprocess a source file
+src/services/http_service.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/usher_dog.dir/build.make CMakeFiles/usher_dog.dir/src/services/http_service.cpp.i
+.PHONY : src/services/http_service.cpp.i
+
+src/services/http_service.s: src/services/http_service.cpp.s
+.PHONY : src/services/http_service.s
+
+# target to generate assembly for a file
+src/services/http_service.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/usher_dog.dir/build.make CMakeFiles/usher_dog.dir/src/services/http_service.cpp.s
+.PHONY : src/services/http_service.cpp.s
+
 src/services/joy_handle_service.o: src/services/joy_handle_service.cpp.o
 .PHONY : src/services/joy_handle_service.o
 
@@ -3651,6 +3675,9 @@ help:
 	@echo "... src/message_manager/mqtt/MqttClientEventHandler.o"
 	@echo "... src/message_manager/mqtt/MqttClientEventHandler.i"
 	@echo "... src/message_manager/mqtt/MqttClientEventHandler.s"
+	@echo "... src/services/http_service.o"
+	@echo "... src/services/http_service.i"
+	@echo "... src/services/http_service.s"
 	@echo "... src/services/joy_handle_service.o"
 	@echo "... src/services/joy_handle_service.i"
 	@echo "... src/services/joy_handle_service.s"
